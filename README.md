@@ -19,6 +19,7 @@ You can find the subject of this project [here.](https://github.com/Olbrien/42Li
 ## Research:
 
 <code>
+
 std::vector:
 
     Vectors are sequence containers representing arrays that can change in size.

@@ -8,7 +8,7 @@ You can find the subject of this project [here.](https://github.com/Olbrien/42Li
 ## Explaining My Code:
 
 ### Vectors:
-[Member Types](https://github.com/Olbrien/42Lisboa-lvl_5_ft_containers/blob/main/extras/vectors/member_types.cpp)
+• [Member Types](https://github.com/Olbrien/42Lisboa-lvl_5_ft_containers/blob/main/extras/vectors/member_types.cpp)
 
 ## Useful Links:
 

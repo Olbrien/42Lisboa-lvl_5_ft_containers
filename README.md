@@ -19,8 +19,6 @@ You can find the subject of this project [here.](https://github.com/Olbrien/42Li
 ## Research:
 
 <code>
----------------------------------------------------------------------------------------------
-
 std::vector:
 
     Vectors are sequence containers representing arrays that can change in size.
@@ -317,6 +315,4 @@ std::vector:
                     Output:    Size Type:
                                  size_type = 2
                                  size_type = 18446744073709551614
-
----------------------------------------------------------------------------------------------
 </code>

@@ -39,7 +39,7 @@ std::vector:
 
 
 
-                            template \<class T, class Alloc = allocator<T>>
+                            template < class T, class Alloc = allocator< T > >
                             class vector {
                                 // code
                             };
@@ -59,7 +59,7 @@ std::vector:
             other STL containers.
 
 
-            template < class T, class Alloc = std::allocator<T> >
+            template < class T, class Alloc = std::allocator< T > >
             class myVector {
                 public:
                     typedef T   value_type;   // myVector::value_type = T
@@ -71,8 +71,8 @@ std::vector:
                     #include <typeinfo>
 
                     int main() {
-                        std::vector<int>::value_type _value_type(0);
-                        std::vector<double>::value_type _value_type2(0);
+                        std::vector< int >::value_type _value_type(0);
+                        std::vector< double >::value_type _value_type2(0);
 
                         std::cout << typeid(_value_type).name() << std::endl;
                         std::cout << typeid(_value_type2).name() << std::endl;
@@ -85,15 +85,15 @@ std::vector:
         ::allocator_type:
             The second template parameter (Alloc).
 
-            It defaults to: allocator<value_type>.
+            It defaults to: allocator< value_type >.
             You can call the class template "allocator" using the allocator_type.
 
 
-            template < class T, class Alloc = std::allocator<T> >
+            template < class T, class Alloc = std::allocator< T > >
             class myVector {
                 public:
                     typedef Alloc  allocator_type;   // myVector::allocator_type =
-                                                        Alloc "(std::allocator<T>)"
+                                                        Alloc "(std::allocator< T >)"
             };
 
                 Example:
@@ -103,8 +103,8 @@ std::vector:
                     int main() {
                         std::cout << "Allocator Type: " << std::endl;
 
-                        std::vector<int>::allocator_type _allocator_type;
-                        std::vector<int>::value_type _value_type;
+                        std::vector< int >::allocator_type _allocator_type;
+                        std::vector< int >::value_type _value_type;
 
                         int *arr = _allocator_type.allocate(_value_type);
                         _allocator_type.construct(arr, 3);
@@ -135,8 +135,8 @@ std::vector:
                     int main() {
                         std::cout << "Reference: " << std::endl;
 
-                        std::vector<int>::value_type _value_type(3);
-                        std::vector<int>::reference _reference(_value_type);
+                        std::vector< int >::value_type _value_type(3);
+                        std::vector< int >::reference _reference(_value_type);
 
                         std::cout << "  reference = " << _reference << std::endl;
                         std::cout << "  value_type = " << _value_type << std::endl;
@@ -168,8 +168,8 @@ std::vector:
                     int main() {
                         std::cout << "Const Reference: " << std::endl;
 
-                        std::vector<int>::value_type _value_type(3);
-                        std::vector<int>::const_reference _const_reference(_value_type);
+                        std::vector< int >::value_type _value_type(3);
+                        std::vector< int >::const_reference _const_reference(_value_type);
 
                         std::cout << "  const reference = " << _const_reference << std::endl;
                         std::cout << "  value_type = " << _value_type << std::endl;
@@ -198,8 +198,8 @@ std::vector:
                     int main() {
                         std::cout << "Pointer: " << std::endl;
 
-                        std::vector<int>::value_type _value_type(3);
-                        std::vector<int>::pointer _pointer(&_value_type);
+                        std::vector< int >::value_type _value_type(3);
+                        std::vector< int >::pointer _pointer(&_value_type);
 
                         std::cout << "  pointer = " << _pointer << std::endl;
                         std::cout << "  *pointer = " << *_pointer << std::endl;
@@ -236,8 +236,8 @@ std::vector:
                     int main() {
                         std::cout << "Const Pointer: " << std::endl;
 
-                        std::vector<int>::value_type _value_type(3);
-                        std::vector<int>::const_pointer const_pointer(&_value_type);
+                        std::vector< int >::value_type _value_type(3);
+                        std::vector< int >::const_pointer const_pointer(&_value_type);
 
                         std::cout << "  const_pointer = " << const_pointer << std::endl;
                         std::cout << "  *const_pointer = " << *const_pointer << std::endl;
@@ -268,7 +268,7 @@ std::vector:
                     int main() {
                         std::cout << "Difference Type: " << std::endl;
 
-                        std::vector<char>::difference_type _difference_type;
+                        std::vector< char >::difference_type _difference_type;
 
                         _difference_type = 2;
                         std::cout << "  difference_type = " << _difference_type << std::endl;
@@ -304,7 +304,7 @@ std::vector:
                     int main() {
                         std::cout << "Size Type: " << std::endl;
 
-                        std::vector<char>::size_type _size_type;
+                        std::vector< char >::size_type _size_type;
 
                         _size_type = 2;
                         std::cout << "  size_type = " << _size_type << std::endl;

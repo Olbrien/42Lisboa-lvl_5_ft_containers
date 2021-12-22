@@ -39,7 +39,7 @@ std::vector:
 
 
 
-                            template <class T, class Alloc = allocator<T>>
+                            template \<class T, class Alloc = allocator<T>>
                             class vector {
                                 // code
                             };

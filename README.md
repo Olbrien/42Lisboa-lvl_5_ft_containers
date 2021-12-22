@@ -45,7 +45,6 @@ std::vector:
 
     Member Types:
 
-#####
         ::value_type:
             The first template parameter (T).
 
@@ -79,7 +78,7 @@ std::vector:
                     Output: i (int)
                             d (double)
 
-#####
+
         ::allocator_type:
             The second template parameter (Alloc).
 
@@ -120,7 +119,7 @@ std::vector:
 
                     Output: 3 1 2 (memory was free)
 
-#####
+
         ::reference
             allocator_type::reference.
 
@@ -153,7 +152,7 @@ std::vector:
                                reference = 5
                                value_type = 5
 
-#####
+
         ::const_reference
             allocator_type::const_reference.
 
@@ -183,7 +182,7 @@ std::vector:
                             can't change value because it's constant
 
 
-#####
+
         ::pointer
             allocator_type::pointer.
 
@@ -221,7 +220,7 @@ std::vector:
                               value_type = 5
 
 
-#####
+
         ::const_pointer
             allocator_type::const_pointer.
 
@@ -250,7 +249,7 @@ std::vector:
                                value_type = 3
 
 
-#####
+
         ::difference_type
             A signed integral type, usually the same as ptrdiff_t.
 
@@ -281,7 +280,7 @@ std::vector:
                                  difference_type = -2
 
 
-#####
+
         ::size_type
             An unsigned integral type that can represent any non-negative value,
             usually the same as size_t.

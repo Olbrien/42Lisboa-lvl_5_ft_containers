@@ -1,0 +1,119 @@
+---------------------------------------------------------------------------------------------
+
+Vector:
+
+	Member Types:
+		value_type					✅
+		allocator_type				✅
+		reference					✅
+		const_reference				✅
+		pointer						✅
+		const_pointer				✅
+		iterator					❌
+		const_iterator				❌
+		reverse_iterator			❌
+		const_reverse_iterator		❌
+		difference_type				✅
+		size_type					✅
+
+	Member Functions:
+		Default:
+			default constructor		✅
+			fill constructor		✅
+			range constructor		❌
+			copy constructor		❌
+			destructor				✅
+			operator=				❌
+
+		Iterators:
+			begin					✅
+			end						✅
+			rbegin					❌
+			rend					❌
+
+		Capacity:
+			size					✅
+			max_size				✅
+			resize					❌
+			capacity				✅
+			empty					❌
+			reserve					✅
+
+		Element Access:
+			operator[]				❌
+			at						❌
+			front					❌
+			back					❌
+
+		Modifiers:
+			assign					❌
+			push_back				✅
+			pop_back				❌
+			insert					❌
+			erase					❌
+			swap					❌
+			clear					❌
+
+		Allocator:
+			get_allocator			❌
+
+	Non-member function overloads:
+		operator ==					❌
+		operator !=					❌
+		operator >=					❌
+		operator >					❌
+		operator <=					❌
+		operator <					❌
+		swap						❌
+
+
+Random Access Iterator:
+
+	Member Types:
+		value_type					✅
+		difference_type				✅
+		pointer						✅
+		reference					✅
+		iterator_category			✅
+
+	Member Functions:
+			Default:
+				default constructor		✅
+				constructor pointer		✅
+				copy constructor		✅
+				copy assignable			✅
+				destructor				✅
+
+			Relational Operators:
+				a == b					✅
+				a != b					✅
+				a < b					❌
+				a > b					❌
+				a <= b					❌
+				a >= b					❌
+
+			Dereferences:
+				*a						✅
+				a->m					❌
+				*a = t					❌
+				a[n]					❌
+
+			Increment and Decrement Operators:
+				++a						✅
+				a++						✅
+				*a++					❌
+				--a						✅
+				a--						✅
+				*a--					❌
+
+			Arithmetic Operators:
+				a + n					❌
+				n + a					❌
+				a - n					❌
+				a - b					❌
+
+			Assignment Operators:
+				a += n					❌
+				a -= n					❌
+
+---------------------------------------------------------------------------------------------

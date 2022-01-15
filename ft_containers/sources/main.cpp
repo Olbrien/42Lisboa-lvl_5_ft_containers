@@ -38,11 +38,18 @@ int		vector_argument(std::string argument) {
 	else if (!argument.compare("v_mt_st")) { header_text("vector"); testVector::member_types__size_type(); return 0; }
 
 	if (!argument.compare("v_mt_i_d")) { header_text("vector"); testVector::member_types__iterator__default_member_functions(); return 0; }
-	//else if (!argument.compare("v_mt_i_r")) { header_text("vector"); testVector::member_types__iterator__relational_operators(); return 0; }
-	//else if (!argument.compare("v_mt_i_dr")) { header_text("vector"); testVector::member_types__iterator__dereferences(); return 0; }
-	//else if (!argument.compare("v_mt_i_id")) { header_text("vector"); testVector::member_types__iterator__increment_decrement_operators(); return 0; }
-	//else if (!argument.compare("v_mt_i_ar")) { header_text("vector"); testVector::member_types__iterator__arithmetic_operators(); return 0; }
-	//else if (!argument.compare("v_mt_i_as")) { header_text("vector"); testVector::member_types__iterator__assignment_operators(); return 0; }
+	else if (!argument.compare("v_mt_i_r")) { header_text("vector"); testVector::member_types__iterator__relational_operators(); return 0; }
+	else if (!argument.compare("v_mt_i_dr")) { header_text("vector"); testVector::member_types__iterator__dereferences(); return 0; }
+	else if (!argument.compare("v_mt_i_id")) { header_text("vector"); testVector::member_types__iterator__increment_decrement_operators(); return 0; }
+	else if (!argument.compare("v_mt_i_ar")) { header_text("vector"); testVector::member_types__iterator__arithmetic_operators(); return 0; }
+	else if (!argument.compare("v_mt_i_as")) { header_text("vector"); testVector::member_types__iterator__assignment_operators(); return 0; }
+
+	if (!argument.compare("v_mf_d_dc")) { header_text("vector"); testVector::member_functions__default_constructor(); return 0; }
+	else if (!argument.compare("v_mf_d_fc")) { header_text("vector"); testVector::member_functions__fill_constructor(); return 0; }
+	else if (!argument.compare("v_mf_d_ms")) { header_text("vector"); testVector::member_functions__max_size(); return 0; }
+	else if (!argument.compare("v_mf_d_re")) { header_text("vector"); testVector::member_functions__reserve(); return 0; }
+	else if (!argument.compare("v_mf_d_pu")) { header_text("vector"); testVector::member_functions__push_back(); return 0; }
+
 
 	return 1;
 }

@@ -1,14 +1,48 @@
 #include "../includes/main.hpp"
 
+void	header_text(std::string str) {
+	if (!str.compare("vector")) {
+		std::cout << std::endl;
+		std::cout << "*********************************************************************"
+				<< std::endl;
+		std::cout << "				Vector				" << std::endl;
+		std::cout << "*********************************************************************"
+				<< std::endl;
+	}
+	else if (!str.compare("map")) {
+		std::cout << std::endl;
+		std::cout << "*********************************************************************"
+				<< std::endl;
+		std::cout << "				Map				" << std::endl;
+		std::cout << "*********************************************************************"
+				<< std::endl;
+	}
+	else if (!str.compare("stack")) {
+		std::cout << std::endl;
+		std::cout << "*********************************************************************"
+				<< std::endl;
+		std::cout << "				Stack				" << std::endl;
+		std::cout << "*********************************************************************"
+				<< std::endl;
+	}
+}
+
 int		vector_argument(std::string argument) {
-	if (!argument.compare("v_mt_vt")) { testVector::member_types__value_type();	return 0; }
-	else if (!argument.compare("v_mt_at")) { testVector::member_types__allocator_type(); return 0; }
-	else if (!argument.compare("v_mt_r")) {	testVector::member_types__reference(); return 0; }
-	else if (!argument.compare("v_mt_cr")) { testVector::member_types__const_reference(); return 0;	}
-	else if (!argument.compare("v_mt_p")) { testVector::member_types__pointer(); return 0; }
-	else if (!argument.compare("v_mt_cp")) { testVector::member_types__const_pointer();	return 0; }
-	else if (!argument.compare("v_mt_dt")) { testVector::member_types__difference_type(); return 0;	}
-	else if (!argument.compare("v_mt_st")) { testVector::member_types__size_type(); return 0; }
+	if (!argument.compare("v_mt_vt")) { header_text("vector"); testVector::member_types__value_type();	return 0; }
+	else if (!argument.compare("v_mt_at")) { header_text("vector"); testVector::member_types__allocator_type(); return 0; }
+	else if (!argument.compare("v_mt_r")) {	header_text("vector"); testVector::member_types__reference(); return 0; }
+	else if (!argument.compare("v_mt_cr")) { header_text("vector"); testVector::member_types__const_reference(); return 0;	}
+	else if (!argument.compare("v_mt_p")) { header_text("vector"); testVector::member_types__pointer(); return 0; }
+	else if (!argument.compare("v_mt_cp")) { header_text("vector"); testVector::member_types__const_pointer();	return 0; }
+	else if (!argument.compare("v_mt_dt")) { header_text("vector"); testVector::member_types__difference_type(); return 0;	}
+	else if (!argument.compare("v_mt_st")) { header_text("vector"); testVector::member_types__size_type(); return 0; }
+
+	if (!argument.compare("v_mt_i_d")) { header_text("vector"); testVector::member_types__iterator__default_member_functions(); return 0; }
+	//else if (!argument.compare("v_mt_i_r")) { header_text("vector"); testVector::member_types__iterator__relational_operators(); return 0; }
+	//else if (!argument.compare("v_mt_i_dr")) { header_text("vector"); testVector::member_types__iterator__dereferences(); return 0; }
+	//else if (!argument.compare("v_mt_i_id")) { header_text("vector"); testVector::member_types__iterator__increment_decrement_operators(); return 0; }
+	//else if (!argument.compare("v_mt_i_ar")) { header_text("vector"); testVector::member_types__iterator__arithmetic_operators(); return 0; }
+	//else if (!argument.compare("v_mt_i_as")) { header_text("vector"); testVector::member_types__iterator__assignment_operators(); return 0; }
 
 	return 1;
 }
@@ -102,7 +136,6 @@ int		main(int argc, char **argv) {
 	std::string argument = std::string(argv[1]);
 	if (vector_argument(argument) == 0)
 		return 0;
-
 
 	// no valid argument found
 	welcome_message();

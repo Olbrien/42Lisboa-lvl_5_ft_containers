@@ -2,6 +2,7 @@
 # define MAIN_HPP
 
 #include <iostream>
+#include <typeinfo>
 #include <stdlib.h>
 
 #ifndef FT
@@ -13,6 +14,7 @@
 	#include "../includes/vector.hpp"
 #else
 	#include <vector>
+	namespace ft = std;
 #endif
 
 namespace testVector {
@@ -26,11 +28,11 @@ namespace testVector {
 	void	member_types__size_type();
 
 	void	member_types__iterator__default_member_functions();
-	void	member_types__iterator__relational_operators();
-	void	member_types__iterator__dereferences();
-	void	member_types__iterator__increment_decrement_operators();
-	void	member_types__iterator__arithmetic_operators();
-	void	member_types__iterator__assignment_operators();
+	//void	member_types__iterator__relational_operators();
+	//void	member_types__iterator__dereferences();
+	//void	member_types__iterator__increment_decrement_operators();
+	//void	member_types__iterator__arithmetic_operators();
+	//void	member_types__iterator__assignment_operators();
 }
 
 #endif

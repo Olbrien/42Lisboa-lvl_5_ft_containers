@@ -47,6 +47,7 @@ void	testVector::member_types__iterator__default_member_functions() {
 	std::cout << "    itA = " << *itA << std::endl;
 	std::cout << std::endl;
 }
+/*
 void	testVector::member_types__iterator__relational_operators() {
 	// Equality and Inequality Operators //
 	std::cout << "  Equality and Inequality Operators:" << std::endl;
@@ -270,3 +271,4 @@ void	testVector::member_types__iterator__assignment_operators() {
 
 	std::cout << std::endl;
 }
+*/

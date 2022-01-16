@@ -117,3 +117,69 @@ Random Access Iterator:
 				a -= n					❌
 
 ---------------------------------------------------------------------------------------------
+
+
+*********************************************************************
+*               Welcome to the std::container tester!               *
+*                                                                   *
+*  To use the tester you have to run the binary with one of the     *
+*  following arguments.                                             *
+*                                                                   *
+*  Vectors:                                                         *
+*      Member Types:                                                *
+*          value_type                                    v_mt_vt    *
+*          allocator_type                                v_mt_at    *
+*          reference                                     v_mt_r     *
+*          const_reference                               v_mt_cr    *
+*          pointer                                       v_mt_p     *
+*          const_pointer                                 v_mt_cp    *
+*          difference_type                               v_mt_dt    *
+*          size_type                                     v_mt_st    *
+*          iterator:                                                *
+*              Default Member Functions                  v_mt_i_d   *
+*              Relational Operators                      v_mt_i_r   *
+*              Dereferences                              v_mt_i_dr  *
+*              Increment and Decrement Operators         v_mt_i_id  *
+*              Arithmetic Operators                      v_mt_i_ar  *
+*              Assigment Operators                       v_mt_i_as  *
+*                                                                   * <------- METER OS QUE FALTA
+*      Member Functions:                                            *
+*          Default:                                                 *
+*              default constructor                       v_mf_d_dc  *
+*              fill constructor                          v_mf_d_fc  *
+*              range constructor                         v_mf_d_rc  *
+*              copy constructor                          v_mf_d_cc  *
+*              destructor                                v_mf_d_d   *
+*              operator=                                 v_mf_d_o=  *
+*          Iterators:                                               *
+*              begin                                     v_mf_i_b   *
+*              end                                       v_mf_i_e   *
+*              rbegin                                    v_mf_i_rb  *
+*              rend                                      v_mf_i_re  *
+*          Capacity:                                                *
+*              size                                      v_mf_c_s   *
+*              max_size                                  v_mf_c_ms  *
+*              resize                                    v_mf_c_r   *
+*              capacity                                  v_mf_c_c   *
+*              empty                                     v_mf_c_e   *
+*              reserve                                   v_mf_c_re  *
+*          Element Access:                                          *
+*              operator[]                                v_mf_ea_o  *
+*              at                                        v_mf_ea_a  *
+*              front                                     v_mf_ea_f  *
+*              back                                      v_mf_ea_b  *
+*          Modifiers:                                               *
+*              assign                                    v_mf_m_a   *
+*              push_back                                 v_mf_m_pu  *
+*              pop_back                                  v_mf_m_po  *
+*              insert                                    v_mf_m_i   *
+*              erase                                     v_mf_m_e   *
+*              swap                                      v_mf_m_s   *
+*              clear                                     v_mf_m_c   *
+*          Allocator:                                               *
+*              get_allocator                             v_mf_a_ga  *
+*          Non-member Function Overloads:                           *
+*              relational operators                      v_mf_n_ro  *
+*              swap                                      v_mf_n_s   *
+*                                                                   *
+*********************************************************************

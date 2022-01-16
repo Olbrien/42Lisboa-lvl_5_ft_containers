@@ -36,9 +36,40 @@ namespace testVector {
 
 	void	member_functions__default_constructor();
 	void	member_functions__fill_constructor();
-	void	member_functions__max_size();
-	void	member_functions__reserve();
-	void	member_functions__push_back();
+	void	member_functions__range_constructor();
+	void	member_functions__copy_constructor();
+	void	member_functions__destructor();
+	void	member_functions__operator_equal();
+
+	void	member_functions__iterator__begin();
+	void	member_functions__iterator__end();
+	void	member_functions__iterator__rbegin();
+	void	member_functions__iterator__rend();
+
+	void	member_functions__capacity__size();
+	void	member_functions__capacity__max_size();
+	void	member_functions__capacity__resize();
+	void	member_functions__capacity__capacity();
+	void	member_functions__capacity__empty();
+	void	member_functions__capacity__reserve();
+
+	void	member_functions__element__operator_at_position();
+	void	member_functions__element__at();
+	void	member_functions__element__front();
+	void	member_functions__element__back();
+
+	void	member_functions__modifiers__assign();
+	void	member_functions__modifiers__push_back();
+	void	member_functions__modifiers__pop_back();
+	void	member_functions__modifiers__insert();
+	void	member_functions__modifiers__erase();
+	void	member_functions__modifiers__swap();
+	void	member_functions__modifiers__clear();
+
+	void	member_functions__allocator__get_allocator();
+
+	void	member_functions__overloads__relational_operators();
+	void	member_functions__overloads__swap();
 }
 
 #endif

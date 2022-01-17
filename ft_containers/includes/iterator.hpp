@@ -7,108 +7,148 @@ namespace ft {
 
 template <class iterator_tag, class T>
 class random_access_iterator {
-    public:
-         /****************/
-        /* Member Types */
+	public:
+		/****************/
+		/* Member Types */
 
-        typedef T                                            value_type;
-        typedef std::ptrdiff_t                               difference_type;
-        typedef T                                            *pointer;
-        typedef T                                            &reference;
-        typedef iterator_tag                                 iterator_category;
+		typedef T                                            value_type;
+		typedef std::ptrdiff_t                               difference_type;
+		typedef T                                            *pointer;
+		typedef T                                            &reference;
+		typedef iterator_tag                                 iterator_category;
 
-         /********************/
-        /* Member functions */
+		/********************/
+		/* Member functions */
 
-        /****
-        ** Constructors
-        */
+		/****
+		** Constructors
+		*/
 
-        random_access_iterator() :   _pointer(NULL)
-        {};
+		random_access_iterator() :   _pointer(pointer())
+		{};
 
-        random_access_iterator(pointer ptr) {
-            _pointer = ptr;
-        };
+		random_access_iterator(pointer ptr) :   _pointer(ptr)
+		{};
 
-        random_access_iterator(const random_access_iterator & rhs) {
-            _pointer = rhs._pointer;
-            *this = rhs;
-        };
+		random_access_iterator(const random_access_iterator & rhs) {
+			_pointer = rhs._pointer;
+			*this = rhs;
+		};
 
-        random_access_iterator & operator=(const random_access_iterator & rhs) {
-            _pointer = rhs._pointer;
-            return *this;
-        };
+		random_access_iterator & operator=(const random_access_iterator & rhs) {
+			_pointer = rhs._pointer;
+			return *this;
+		};
 
-        /****
-        ** Destructor
-        */
+		/****
+		** Destructor
+		*/
 
-        ~random_access_iterator()
-        {};
+		~random_access_iterator()
+		{};
 
+		/****
+		** Relational Operators
+		*/
 
-        /****
-        ** Relational Operators
-        */
+		bool operator==(const random_access_iterator & rhs) {	// Temp until I get to do const_iterator
+			return (_pointer == rhs._pointer);
+		};
 
-        bool operator==(const random_access_iterator & rhs) {
-            if (this->_pointer == rhs._pointer)
-                return true;
-            return false;
-        };
+		bool operator!=(const random_access_iterator & rhs) {	// Temp until I get to do const_iterator
+			return (_pointer != rhs._pointer);
+		};
 
-        bool operator!=(const random_access_iterator & rhs) {
-            if (this->_pointer != rhs._pointer)
-                return true;
-            return false;
-        };
+		bool operator<(const random_access_iterator & rhs) {	// Temp until I get to do const_iterator
+			return (_pointer < rhs._pointer);
+		};
 
-        /****
-        ** Increment and Decrement Operators
-        */
+		bool operator<=(const random_access_iterator & rhs) {	// Temp until I get to do const_iterator
+			return (_pointer <= rhs._pointer);
+		};
 
-        // ++ Prefix
-        random_access_iterator operator ++() {
-            random_access_iterator temp;
-            temp._pointer = ++_pointer;
-            return temp;
-        };
+		bool operator>(const random_access_iterator & rhs) {	// Temp until I get to do const_iterator
+			return (_pointer > rhs._pointer);
+		};
 
-        // Postfix ++
-        random_access_iterator operator ++(int) {
-            random_access_iterator temp;
-            temp._pointer = _pointer++;
-            return temp;
-        };
+		bool operator>=(const random_access_iterator & rhs) {	// Temp until I get to do const_iterator
+			return (_pointer >= rhs._pointer);
+		};
 
-        // -- Prefix
-        random_access_iterator operator --() {
-            random_access_iterator temp;
-            temp._pointer = --_pointer;
-            return temp;
-        };
+		/****
+		** Dereferences
+		*/
 
-        // Postfix --
-        random_access_iterator operator --(int) {
-            random_access_iterator temp;
-            temp._pointer = _pointer--;
-            return temp;
-        };
+		reference	operator*() const {
+			return *_pointer;
+		};
 
-        /****
-        ** Dereferences
-        */
+		pointer		operator->() const {
+			return _pointer;
+		};
 
-        reference   operator*() {
-            return *_pointer;
-        };
+		reference	operator[](difference_type n) const {
+			return _pointer[n];
+		};
 
+		/****
+		** Increment and Decrement Operators
+		*/
 
+		// ++ Prefix
+		random_access_iterator operator++() {
+			random_access_iterator temp;
+			temp._pointer = ++_pointer;
+			return temp;
+		};
 
-    private:
-        pointer     _pointer;
+		// Postfix ++
+		random_access_iterator operator++(int) {
+			random_access_iterator temp;
+			temp._pointer = _pointer++;
+			return temp;
+		};
+
+		// -- Prefix
+		random_access_iterator operator--() {
+			random_access_iterator temp;
+			temp._pointer = --_pointer;
+			return temp;
+		};
+
+		// Postfix --
+		random_access_iterator operator--(int) {
+			random_access_iterator temp;
+			temp._pointer = _pointer--;
+			return temp;
+		};
+
+		/****
+		** Arithmetic Operators
+		*/
+
+		random_access_iterator operator+(difference_type n) {
+			return (_pointer + n);
+		};
+
+		random_access_iterator operator-(difference_type n) {
+			return (_pointer - n);
+		};
+
+		difference_type operator-(const random_access_iterator & rhs)  {
+			return (_pointer - rhs.base());
+		}
+
+		/****
+		** Base
+		*/
+
+		pointer		base() const {
+			return _pointer;
+		};
+
+	private:
+		pointer     _pointer;
 };
 
 }

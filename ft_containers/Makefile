@@ -30,7 +30,7 @@ OBJ2 = $(SRC:cpp=ft.o)
 
 all: message $(OBJ) $(OBJ2) $(NAME_STD) $(NAME_FT)
 
-c: clear message $(OBJ) $(OBJ2) $(NAME_STD) $(NAME_FT)
+c: clear fclean message $(OBJ) $(OBJ2) $(NAME_STD) $(NAME_FT) clean
 
 $(NAME_STD):
 	@echo "\n\033[0;32mCompiling ${NAME_STD}..."
@@ -67,8 +67,6 @@ fclean: message
 	@echo "\033[0m"
 
 re: clear fclean all
-
-cclean: all clean
 
 clear:
 	@clear

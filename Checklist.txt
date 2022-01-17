@@ -85,8 +85,8 @@ Random Access Iterator:
 				destructor				✅
 
 			Relational Operators:
-				a == b					✅
-				a != b					✅
+				a == b					❌
+				a != b					❌
 				a < b					❌
 				a > b					❌
 				a <= b					❌

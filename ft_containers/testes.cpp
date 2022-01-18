@@ -13,9 +13,9 @@ int main() {
 		std::cout << i << std::endl;
 	}
 
-	std::vector<int>::iterator iterA;
-	std::vector<int>::reverse_iterator iterB;
+	std::vector<int>::iterator iterA = vectorA.begin();
+	std::vector<int>::const_iterator iterB = vectorA.begin();
 
-	iterA = vectorA.begin();
-	iterB = vectorA.rbegin();
+
+
 }

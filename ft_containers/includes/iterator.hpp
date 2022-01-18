@@ -10,8 +10,6 @@ class random_access_iterator {
 	public:
 		/****************/
 		/* Member Types */
-		typedef std::iterator_traits<_Iterator>		__traits_type;
-
 		typedef T                                            value_type;
 		typedef std::ptrdiff_t                               difference_type;
 		typedef T                                            *pointer;

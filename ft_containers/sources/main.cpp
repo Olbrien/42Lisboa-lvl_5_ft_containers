@@ -45,11 +45,11 @@ int		vector_argument(std::string argument) {
 	else if (!argument.compare("v_mt_i_as")) { header_text("vector"); testVector::member_types__iterator__assignment_operators(); return 0; }
 
 	if (!argument.compare("v_mt_ci_d")) { header_text("vector"); testVector::member_types__const_iterator__default_member_functions(); return 0; }
-	else if (!argument.compare("v_mt_ci_r")) { header_text("vector"); testVector::member_types__const_iterator__relational_operators(); return 0; }
-	else if (!argument.compare("v_mt_ci_dr")) { header_text("vector"); testVector::member_types__const_iterator__dereferences(); return 0; }
-	else if (!argument.compare("v_mt_ci_id")) { header_text("vector"); testVector::member_types__const_iterator__increment_decrement_operators(); return 0; }
-	else if (!argument.compare("v_mt_ci_ar")) { header_text("vector"); testVector::member_types__const_iterator__arithmetic_operators(); return 0; }
-	else if (!argument.compare("v_mt_ci_as")) { header_text("vector"); testVector::member_types__const_iterator__assignment_operators(); return 0; }
+	//else if (!argument.compare("v_mt_ci_r")) { header_text("vector"); testVector::member_types__const_iterator__relational_operators(); return 0; }
+	//else if (!argument.compare("v_mt_ci_dr")) { header_text("vector"); testVector::member_types__const_iterator__dereferences(); return 0; }
+	//else if (!argument.compare("v_mt_ci_id")) { header_text("vector"); testVector::member_types__const_iterator__increment_decrement_operators(); return 0; }
+	//else if (!argument.compare("v_mt_ci_ar")) { header_text("vector"); testVector::member_types__const_iterator__arithmetic_operators(); return 0; }
+	//else if (!argument.compare("v_mt_ci_as")) { header_text("vector"); testVector::member_types__const_iterator__assignment_operators(); return 0; }
 
 	if (!argument.compare("v_mf_d_dc")) { header_text("vector"); testVector::member_functions__default_constructor(); return 0; }
 	else if (!argument.compare("v_mf_d_fc")) { header_text("vector"); testVector::member_functions__fill_constructor(); return 0; }

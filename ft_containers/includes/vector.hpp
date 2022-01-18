@@ -25,9 +25,9 @@ class vector {
         typedef typename std::size_t                      size_type;        // vector<T>::size_type
         typedef typename ft::random_access_iterator
                    <std::random_access_iterator_tag, T>   iterator;         // vector<T>::iterator
-        /*typedef typename ft::random_access_iterator
+        typedef typename ft::random_access_iterator
                    <std::random_access_iterator_tag,
-				   const T>   							  const_iterator;   // vector<T>::const_iterator*/
+				   const T>   							  const_iterator;   // vector<T>::const_iterator
 
          /********************/
         /* Member functions */
@@ -112,6 +112,14 @@ class vector {
 
         iterator end() {
             return iterator(_buffer + _size);
+        };
+
+        const_iterator begin() const {
+            return const_iterator(_buffer);
+        };
+
+        const_iterator end() const {
+            return const_iterator(_buffer + _size);
         };
 
         /****

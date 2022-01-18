@@ -67,7 +67,7 @@ Vector:
 		swap						❌
 
 
-Random Access Iterator:
+Random Access Iterator (Iterator and Const Iterator):
 
 	Member Types:
 		value_type					✅

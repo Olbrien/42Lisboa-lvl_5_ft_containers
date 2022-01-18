@@ -9,12 +9,8 @@ void	testVector::member_types__iterator__default_member_functions() {
 			std::cout << "  vector<int>	vectorA;" << std::endl;
 			std::cout << "  vector<int>	vectorB;" << std::endl << std::endl;
 
-	for (int i = 5; i < 40; i += 5) {
-		vectorA.push_back(i);
-	}
-	for (int i = 45; i < 80; i += 5) {
-		vectorB.push_back(i);
-	}
+	for (int i = 5; i < 40; i += 5) { vectorA.push_back(i); }
+	for (int i = 45; i < 80; i += 5) { vectorB.push_back(i); }
 
 			std::cout << "  for (int i = 5; i < 40; i += 5) { vectorA.push_back(i); }" << std::endl;
 			std::cout << "  for (int i = 45; i < 80; i += 5) { vectorB.push_back(i); }" << std::endl << std::endl;
@@ -68,12 +64,8 @@ void	testVector::member_types__iterator__relational_operators() {
 			std::cout << "  vector<int>	vectorA;" << std::endl;
 			std::cout << "  vector<int>	vectorB;" << std::endl << std::endl;
 
-	for (int i = 5; i < 40; i += 5) {
-		vectorA.push_back(i);
-	}
-	for (int i = 45; i < 80; i += 5) {
-		vectorB.push_back(i);
-	}
+	for (int i = 5; i < 40; i += 5) { vectorA.push_back(i); }
+	for (int i = 45; i < 80; i += 5) { vectorB.push_back(i); }
 
 			std::cout << "  for (int i = 5; i < 40; i += 5) { vectorA.push_back(i); }" << std::endl;
 			std::cout << "  for (int i = 45; i < 80; i += 5) { vectorB.push_back(i); }" << std::endl << std::endl;
@@ -135,12 +127,8 @@ void	testVector::member_types__iterator__dereferences() {
 			std::cout << "  vector<int>	vectorA;" << std::endl;
 			std::cout << "  vector<int>	vectorB;" << std::endl << std::endl;
 
-	for (int i = 5; i < 40; i += 5) {
-		vectorA.push_back(i);
-	}
-	for (int i = 45; i < 80; i += 5) {
-		vectorB.push_back(i);
-	}
+	for (int i = 5; i < 40; i += 5) { vectorA.push_back(i); }
+	for (int i = 45; i < 80; i += 5) { vectorB.push_back(i); }
 
 			std::cout << "  for (int i = 5; i < 40; i += 5) { vectorA.push_back(i); }" << std::endl;
 			std::cout << "  for (int i = 45; i < 80; i += 5) { vectorB.push_back(i); }" << std::endl << std::endl;
@@ -173,12 +161,8 @@ void	testVector::member_types__iterator__increment_decrement_operators() {
 			std::cout << "  vector<int>	vectorA;" << std::endl;
 			std::cout << "  vector<int>	vectorB;" << std::endl << std::endl;
 
-	for (int i = 5; i < 40; i += 5) {
-		vectorA.push_back(i);
-	}
-	for (int i = 45; i < 80; i += 5) {
-		vectorB.push_back(i);
-	}
+	for (int i = 5; i < 40; i += 5) { vectorA.push_back(i); }
+	for (int i = 45; i < 80; i += 5) { vectorB.push_back(i); }
 
 			std::cout << "  for (int i = 5; i < 40; i += 5) { vectorA.push_back(i); }" << std::endl;
 			std::cout << "  for (int i = 45; i < 80; i += 5) { vectorB.push_back(i); }" << std::endl << std::endl;
@@ -276,7 +260,6 @@ void	testVector::member_types__iterator__increment_decrement_operators() {
 			std::cout << "      (itC == itA) is	true" << std::endl << std::endl;
 	}
 }
-
 void	testVector::member_types__iterator__arithmetic_operators() {
 			std::cout << "Iterator arithmetic operators:" << std::endl << std::endl;
 	ft::vector<int> vectorA;
@@ -285,12 +268,8 @@ void	testVector::member_types__iterator__arithmetic_operators() {
 			std::cout << "  vector<int>	vectorA;" << std::endl;
 			std::cout << "  vector<int>	vectorB;" << std::endl << std::endl;
 
-	for (int i = 5; i < 40; i += 5) {
-		vectorA.push_back(i);
-	}
-	for (int i = 45; i < 80; i += 5) {
-		vectorB.push_back(i);
-	}
+	for (int i = 5; i < 40; i += 5) { vectorA.push_back(i); }
+	for (int i = 45; i < 80; i += 5) { vectorB.push_back(i); }
 
 			std::cout << "  for (int i = 5; i < 40; i += 5) { vectorA.push_back(i); }" << std::endl;
 			std::cout << "  for (int i = 45; i < 80; i += 5) { vectorB.push_back(i); }" << std::endl << std::endl;
@@ -324,45 +303,40 @@ void	testVector::member_types__iterator__arithmetic_operators() {
 			std::cout << "      difA is	" << difA << std::endl;
 			std::cout << "      std::distance(itA, itB) is	" << std::distance(itA, itB) << std::endl << std::endl;
 }
+void	testVector::member_types__iterator__assignment_operators() {
+			std::cout << "Iterator assigment operators:" << std::endl << std::endl;
+	ft::vector<int> vectorA;
+	ft::vector<int> vectorB;
 
-// void	testVector::member_types__iterator__assignment_operators() {
-// 			std::cout << "Iterator assigment operators:" << std::endl << std::endl;
-// 	ft::vector<int> vectorA;
-// 	ft::vector<int> vectorB;
+			std::cout << "  vector<int>	vectorA;" << std::endl;
+			std::cout << "  vector<int>	vectorB;" << std::endl << std::endl;
 
-// 			std::cout << "  vector<int>	vectorA;" << std::endl;
-// 			std::cout << "  vector<int>	vectorB;" << std::endl << std::endl;
+	for (int i = 5; i < 40; i += 5) { vectorA.push_back(i); }
+	for (int i = 45; i < 80; i += 5) { vectorB.push_back(i); }
 
-// 	for (int i = 5; i < 40; i += 5) {
-// 		vectorA.push_back(i);
-// 	}
-// 	for (int i = 45; i < 80; i += 5) {
-// 		vectorB.push_back(i);
-// 	}
+			std::cout << "  for (int i = 5; i < 40; i += 5) { vectorA.push_back(i); }" << std::endl;
+			std::cout << "  for (int i = 45; i < 80; i += 5) { vectorB.push_back(i); }" << std::endl << std::endl;
 
-// 			std::cout << "  for (int i = 5; i < 40; i += 5) { vectorA.push_back(i); }" << std::endl;
-// 			std::cout << "  for (int i = 45; i < 80; i += 5) { vectorB.push_back(i); }" << std::endl << std::endl;
+	ft::vector<int>::iterator itA = vectorA.begin();
+	ft::vector<int>::iterator itB = vectorB.begin();
+	ft::vector<int>::iterator itC = itA;
 
-// 	ft::vector<int>::iterator itA = vectorA.begin();
-// 	ft::vector<int>::iterator itB = vectorB.begin();
-// 	ft::vector<int>::iterator itC = itA;
+			std::cout << "  vector<int>::iterator itA = vectorA.begin();" << std::endl;
+			std::cout << "  vector<int>::iterator itB = vectorB.begin();" << std::endl;
+			std::cout << "  vector<int>::iterator itC = itA;" << std::endl << std::endl;
+			std::cout << "      *itA is	" << *itA << std::endl;
+			std::cout << "      *itB is	" << *itB << std::endl;
+			std::cout << "      *itC is	" << *itC << std::endl << std::endl;
 
-// 			std::cout << "  vector<int>::iterator itA = vectorA.begin();" << std::endl;
-// 			std::cout << "  vector<int>::iterator itB = vectorB.begin();" << std::endl;
-// 			std::cout << "  vector<int>::iterator itC = itA;" << std::endl << std::endl;
-// 			std::cout << "      *itA is	" << *itA << std::endl;
-// 			std::cout << "      *itB is	" << *itB << std::endl;
-// 			std::cout << "      *itC is	" << *itC << std::endl << std::endl;
+	 //*********************************//
+	// Assignment Operators += and -= //
+			std::cout << "Assignment operators += and -=:" << std::endl << std::endl;
 
-// 	 //*********************************//
-// 	// Assignment Operators += and -= //
-// 			std::cout << "Assignment operators += and -=:" << std::endl << std::endl;
+	itA += 1;
+			std::cout << "  itA += 1;" << std::endl << std::endl;
+			std::cout << "      *itA is	" << *itA << std::endl << std::endl;
 
-// 	itA += 1;
-// 			std::cout << "  itA += 1;" << std::endl << std::endl;
-// 			std::cout << "      *itA is	" << *itA << std::endl << std::endl;
-
-// 	itA -= 1;
-// 			std::cout << "  itA -= 1;" << std::endl << std::endl;
-// 			std::cout << "      *itA is	" << *itA << std::endl << std::endl;
-// }
+	itA -= 1;
+			std::cout << "  itA -= 1;" << std::endl << std::endl;
+			std::cout << "      *itA is	" << *itA << std::endl << std::endl;
+}

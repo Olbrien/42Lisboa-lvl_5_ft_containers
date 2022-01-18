@@ -13,7 +13,8 @@ MAIN = main
 TESTS_SUBJECT = subject_tests
 TESTS_VECTOR = member_functions \
 			   member_types \
-			   random_access_iterator
+			   iterator \
+			   const_iterator
 
 SRC = $(addsuffix .cpp, $(addprefix sources/, $(MAIN))) \
 	  $(addsuffix .cpp, $(addprefix sources/tests/vector/, $(TESTS_VECTOR)))

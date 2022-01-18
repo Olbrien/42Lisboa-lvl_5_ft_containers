@@ -10,6 +10,7 @@ class random_access_iterator {
 	public:
 		/****************/
 		/* Member Types */
+		typedef std::iterator_traits<_Iterator>		__traits_type;
 
 		typedef T                                            value_type;
 		typedef std::ptrdiff_t                               difference_type;
@@ -135,9 +136,23 @@ class random_access_iterator {
 			return (_pointer - n);
 		};
 
-		difference_type operator-(const random_access_iterator & rhs)  {
+		difference_type operator-(const random_access_iterator & rhs) const {
 			return (_pointer - rhs.base());
 		}
+
+		/****
+		** Assignment Operators
+		*/
+
+		random_access_iterator & operator+=(difference_type n) {
+			_pointer += n;
+			return *this;
+		};
+
+		random_access_iterator & operator-=(difference_type n) {
+			_pointer -=  n;
+			return *this;
+		};
 
 		/****
 		** Base

@@ -14,11 +14,8 @@ void	testVector::member_types__const_iterator__default_member_functions() {
 			std::cout << "  for (int i = 5; i < 40; i += 5) { vectorA.push_back(i); }" << std::endl;
 			std::cout << "  for (int i = 45; i < 80; i += 5) { vectorB.push_back(i); }" << std::endl << std::endl;
 
-	ft::vector<int>::const_iterator itA;
-	ft::vector<int>::const_iterator itB;
-
-	itA = vectorA.begin();
-	itB = vectorB.begin();
+	ft::vector<int>::const_iterator itA = vectorA.begin();
+	ft::vector<int>::const_iterator itB = vectorB.begin();
 
 			std::cout << "  vector<int>::iterator itA = vectorA.begin();" << std::endl;
 			std::cout << "  vector<int>::iterator itB = vectorB.begin();" << std::endl << std::endl;

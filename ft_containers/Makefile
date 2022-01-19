@@ -80,4 +80,8 @@ message:
 	@printf "\033[1;38m				!! Makefile by tisantos @42Lisboa !! \e[0m \n"
 	@printf "\n"
 
+std: clear fclean message $(OBJ) $(NAME_STD) clean
+
+ft: clear fclean message $(OBJ2) $(NAME_FT) clean
+
 #### ######## #### #### ######## #### #### ######## #### #### ######## #### #### ######## ####

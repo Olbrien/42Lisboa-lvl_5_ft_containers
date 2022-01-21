@@ -197,5 +197,3 @@ inline random_access_iterator<POINTER, _Container>
 {
 	return random_access_iterator<POINTER, _Container>(__i.base() + __n);
 }
-
-

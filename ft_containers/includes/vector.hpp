@@ -14,16 +14,16 @@ class vector {
          /****************/
         /* Member Types */
 
-        typedef T                                             value_type;       // vector<T>::value_type
-        typedef Alloc                                         allocator_type;   // vector<T>::allocator_type
-        typedef typename allocator_type::reference            reference;        // vector<T>::reference
-        typedef typename allocator_type::const_reference      const_reference;  // Vector<T>::const_reference
-        typedef typename allocator_type::pointer              pointer;          // vector<T>::pointer
-        typedef typename allocator_type::const_pointer        const_pointer;    // vector<T>::const_pointer
-        typedef typename std::ptrdiff_t                       difference_type;  // vector<T>::difference_type
-        typedef typename std::size_t                          size_type;        // vector<T>::size_type
-        typedef typename ft::random_access_iterator<T>        iterator;         // vector<T>::iterator
-        typedef typename ft::random_access_iterator<const T>  const_iterator;   // vector<T>::const_iterator
+        typedef T                                                   value_type;       // vector<T>::value_type
+        typedef Alloc                                               allocator_type;   // vector<T>::allocator_type
+        typedef typename allocator_type::reference                  reference;        // vector<T>::reference
+        typedef typename allocator_type::const_reference            const_reference;  // Vector<T>::const_reference
+        typedef typename allocator_type::pointer                    pointer;          // vector<T>::pointer
+        typedef typename allocator_type::const_pointer              const_pointer;    // vector<T>::const_pointer
+        typedef typename std::ptrdiff_t                             difference_type;  // vector<T>::difference_type
+        typedef typename std::size_t                                size_type;        // vector<T>::size_type
+        typedef typename ft::random_access_iterator<pointer>        iterator;         // vector<T>::iterator
+        typedef typename ft::random_access_iterator<const_pointer>  const_iterator;   // vector<T>::const_iterator
 
          /********************/
         /* Member functions */

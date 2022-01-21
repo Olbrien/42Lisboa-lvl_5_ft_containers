@@ -2,6 +2,7 @@
 # define ITERATOR_HPP
 
 #include <iostream>
+#include "iterator_traits.hpp"
 
 namespace ft {
 
@@ -10,11 +11,14 @@ class random_access_iterator {
 	public:
 		/****************/
 		/* Member Types */
-		typedef T                                            value_type;
-		typedef std::ptrdiff_t                               difference_type;
-		typedef T                                            *pointer;
-		typedef T                                            &reference;
-		typedef std::random_access_iterator_tag              iterator_category;
+
+		typedef ft::iterator_traits<T>						traits_type;
+
+		typedef typename traits_type::value_type			value_type;
+		typedef typename traits_type::difference_type		difference_type;
+		typedef typename traits_type::pointer				pointer;
+		typedef typename traits_type::reference				reference;
+		typedef typename traits_type::iterator_category		iterator_category;
 
 		/********************/
 		/* Member functions */

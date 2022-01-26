@@ -11,8 +11,8 @@ Vector:
 		const_pointer				✅
 		iterator					✅
 		const_iterator				✅
-		reverse_iterator			❌
-		const_reverse_iterator		❌
+		reverse_iterator			✅
+		const_reverse_iterator		✅
 		difference_type				✅
 		size_type					✅
 
@@ -20,7 +20,7 @@ Vector:
 		Default:
 			default constructor		✅
 			fill constructor		✅
-			range constructor		❌
+			range constructor		✅
 			copy constructor		❌
 			destructor				✅
 			operator=				❌
@@ -129,62 +129,62 @@ Random Access Iterator (Iterator and Const Iterator):
 Reverse Iterator (Reverse Iterator and Const Reverse Iterator):
 
 	Member Types:
-		iterator_type				✅❌
-		value_type					✅❌
-		difference_type				✅❌
-		pointer						✅❌
-		reference					✅❌
-		iterator_category			✅❌
+		iterator_type				✅
+		value_type					✅
+		difference_type				✅
+		pointer						✅
+		reference					✅
+		iterator_category			✅
 
 	Member Functions:
 			Default:
-				default constructor		✅❌
-				constructor pointer		✅❌
-				copy constructor		✅❌
-				destructor				✅❌
+				default constructor		✅
+				constructor pointer		✅
+				copy constructor		✅
+				destructor				✅
 
 			Relational Operators:
-				a == b					✅❌
-				a != b					✅❌
-				a < b					✅❌
-				a > b					✅❌
-				a <= b					✅❌
-				a >= b					✅❌
+				a == b					✅
+				a != b					✅
+				a < b					✅
+				a > b					✅
+				a <= b					✅
+				a >= b					✅
 
 			Dereferences:
-				*a						✅❌
-				a->m					✅❌
-				*a = t					✅❌
-				a[n]					✅❌
+				*a						✅
+				a->m					✅
+				*a = t					✅
+				a[n]					✅
 
 			Increment and Decrement Operators:
-				++a						✅❌
-				a++						✅❌
-				*a++					✅❌
-				--a						✅❌
-				a--						✅❌
-				*a--					✅❌
+				++a						✅
+				a++						✅
+				*a++					✅
+				--a						✅
+				a--						✅
+				*a--					✅
 
 			Arithmetic Operators:
-				a + n					✅❌
-				n + a					✅❌
-				a - n					✅❌
-				a - b					✅❌
+				a + n					✅
+				n + a					✅
+				a - n					✅
+				a - b					✅
 
 			Assignment Operators:
-				a += n					✅❌
-				a -= n					✅❌
+				a += n					✅
+				a -= n					✅
 
 			Base:
-				base					✅❌
+				base					✅
 
 			Extras:
-				it = const_it			❌
-				it == const_it			❌
-				it != const_it			❌
-				it < const_it			❌
-				it > const_it			❌
-				it <= const_it			❌
-				it >= const_it			❌
+				it = const_it			✅
+				it == const_it			✅
+				it != const_it			✅
+				it < const_it			✅
+				it > const_it			✅
+				it <= const_it			✅
+				it >= const_it			✅
 
 ---------------------------------------------------------------------------------------------

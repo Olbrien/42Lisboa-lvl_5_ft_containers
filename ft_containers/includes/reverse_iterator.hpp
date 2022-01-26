@@ -36,10 +36,9 @@ class reverse_iterator {
 		{};
 
 		template <class Iter>
-		reverse_iterator (const reverse_iterator<Iter> & rev_it) {
-			_pointer = rev_it._pointer;
-			*this = rev_it;
-		};
+		reverse_iterator (const reverse_iterator<Iter> & rev_it)
+								: _pointer(rev_it.base() - 1)
+		{};
 
 		/****
 		** Destructor

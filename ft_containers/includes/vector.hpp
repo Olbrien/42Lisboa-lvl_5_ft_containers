@@ -6,6 +6,7 @@
 #include <stdexcept>
 #include "iterator.hpp"
 #include "reverse_iterator.hpp"
+#include "type_traits.hpp"
 
 namespace ft {
 
@@ -63,6 +64,28 @@ class vector {
             }
         };
 
+		// Range
+		template <class InputIterator>
+        vector (InputIterator first, InputIterator last,
+                const allocator_type& alloc = allocator_type(),
+				typename enable_if<!is_integral<InputIterator>::value>::type* = 0)
+																:  _alloc(alloc),
+																   _size(last - first),
+																   _capacity(last - first)
+		{
+			if (_size <= 0) {
+				_buffer = 0;
+				return ;
+			}
+			_buffer = _alloc.allocate(_size);
+			size_type i = 0;
+			for (; first != last; first++) {
+				_alloc.construct(_buffer + i, *first);
+				i++;
+			}
+		};
+
+
         /****
         ** Destructor
         */
@@ -71,7 +94,8 @@ class vector {
             for (size_type i = 0; i < _size; i++) {
                     _alloc.destroy(_buffer + i);
             }
-            _alloc.deallocate(_buffer, _capacity);
+			if (_capacity > 0)
+            	_alloc.deallocate(_buffer, _capacity);
         };
 
         /****

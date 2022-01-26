@@ -16,7 +16,8 @@ TESTS_VECTOR = member_functions \
 			   member_types \
 			   iterator \
 			   const_iterator \
-			   reverse_iterator
+			   reverse_iterator \
+			   const_reverse_iterator
 
 SRC = $(addsuffix .cpp, $(addprefix sources/, $(MAIN))) \
 	  $(addsuffix .cpp, $(addprefix sources/tests/vector/, $(TESTS_VECTOR)))

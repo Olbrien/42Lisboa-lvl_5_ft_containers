@@ -60,14 +60,24 @@ int		vector_argument(std::string argument) {
 	else if (!argument.compare("26")) { header_text("vector"); testVector::member_types__reverse_iterator__assignment_operators(); return 0; }
 	else if (!argument.compare("27")) { header_text("vector"); testVector::member_types__reverse_iterator__base(); return 0; }
 
+	if (!argument.compare("28")) { header_text("vector"); testVector::member_types__const_reverse_iterator__default_member_functions(); return 0; }
+	else if (!argument.compare("29")) { header_text("vector"); testVector::member_types__const_reverse_iterator__relational_operators(); return 0; }
+	else if (!argument.compare("30")) { header_text("vector"); testVector::member_types__const_reverse_iterator__dereferences(); return 0; }
+	else if (!argument.compare("31")) { header_text("vector"); testVector::member_types__const_reverse_iterator__increment_decrement_operators(); return 0; }
+	else if (!argument.compare("32")) { header_text("vector"); testVector::member_types__const_reverse_iterator__arithmetic_operators(); return 0; }
+	else if (!argument.compare("33")) { header_text("vector"); testVector::member_types__const_reverse_iterator__assignment_operators(); return 0; }
+	else if (!argument.compare("34")) { header_text("vector"); testVector::member_types__const_reverse_iterator__base(); return 0; }
+	else if (!argument.compare("35")) { header_text("vector"); testVector::member_types__const_reverse_iterator__extras__iterator_to_const_iterator(); return 0; }
+
+	if (!argument.compare("36")) { header_text("vector"); testVector::member_functions__default_constructor(); return 0; }
+	else if (!argument.compare("37")) { header_text("vector"); testVector::member_functions__fill_constructor(); return 0; }
+	else if (!argument.compare("38")) { header_text("vector"); testVector::member_functions__range_constructor(); return 0; }
+	else if (!argument.compare("39")) { header_text("vector"); testVector::member_functions__copy_constructor(); return 0; }
+	else if (!argument.compare("40")) { header_text("vector"); testVector::member_functions__destructor(); return 0; }
+	else if (!argument.compare("41")) { header_text("vector"); testVector::member_functions__operator_equal(); return 0; }
 
 
-	if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__default_constructor(); return 0; }
-	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__fill_constructor(); return 0; }
-	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__range_constructor(); return 0; }
-	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__copy_constructor(); return 0; }
-	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__destructor(); return 0; }
-	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__operator_equal(); return 0; }
+
 
 	if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__iterator__begin(); return 0; }
 	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__iterator__end(); return 0; }
@@ -150,15 +160,25 @@ void	welcome_message() {
 	std::cout << "*              Arithmetic Operators			      25    *" << std::endl;
 	std::cout << "*              Assigment Operators			      26    *" << std::endl;
 	std::cout << "*              base					      27    *" << std::endl;
+	std::cout << "*          const_reverse_iterator:				    *" << std::endl;
+	std::cout << "*              Default Member Functions			      28    *" << std::endl;
+	std::cout << "*              Relational Operators			      29    *" << std::endl;
+	std::cout << "*              Dereferences				      30    *" << std::endl;
+	std::cout << "*              Increment and Decrement Operators	      31    *" << std::endl;
+	std::cout << "*              Arithmetic Operators			      32    *" << std::endl;
+	std::cout << "*              Assigment Operators			      33    *" << std::endl;
+	std::cout << "*              base					      34    *" << std::endl;
+	std::cout << "*              Extras:						    *" << std::endl;
+	std::cout << "*                  Reverse It With Const Reverse It	      35    *" << std::endl;
 	std::cout << "*								    *" << std::endl;
 	std::cout << "*      Member Functions:					    *" << std::endl;
 	std::cout << "*          Default:						    *" << std::endl;
-	std::cout << "*              default constructor			      xx    *" << std::endl;
-	std::cout << "*              fill constructor				      xx    *" << std::endl;
-	std::cout << "*              range constructor			      xx    *" << std::endl;
-	std::cout << "*              copy constructor				      xx    *" << std::endl;
-	std::cout << "*              destructor				      xx    *" << std::endl;
-	std::cout << "*              operator=				      xx    *" << std::endl;
+	std::cout << "*              default constructor			      36    *" << std::endl;
+	std::cout << "*              fill constructor				      37    *" << std::endl;
+	std::cout << "*              range constructor			      38    *" << std::endl;
+	std::cout << "*              copy constructor				      39    *" << std::endl;
+	std::cout << "*              destructor				      40    *" << std::endl;
+	std::cout << "*              operator=				      41    *" << std::endl;
 	std::cout << "*          Iterators:						    *" << std::endl;
 	std::cout << "*              begin					      xx    *" << std::endl;
 	std::cout << "*              end					      xx    *" << std::endl;

@@ -84,12 +84,10 @@ struct remove_cv<volatile T>  { typedef T type; };
 template<class T>
 struct remove_cv<const volatile T>  { typedef T type; };
 
-
 // is_integral
 
 template<class T>
 struct is_integral : public is_integral_helper<typename remove_cv<T>::type>::type
 {};
-
 
 #endif

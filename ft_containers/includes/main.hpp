@@ -96,5 +96,10 @@ namespace testVector {
 	void	member_functions__overloads__relational_operators();
 	void	member_functions__overloads__swap();
 }
+namespace testExtras {
+	void	extras__iterator_traits();
+	void	extras__enable_if();
+	void	extras__is_integral();
+}
 
 #endif

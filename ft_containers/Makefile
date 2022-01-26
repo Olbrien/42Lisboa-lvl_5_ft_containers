@@ -18,9 +18,11 @@ TESTS_VECTOR = member_functions \
 			   const_iterator \
 			   reverse_iterator \
 			   const_reverse_iterator
+TESTS_EXTRAS = extras
 
 SRC = $(addsuffix .cpp, $(addprefix sources/, $(MAIN))) \
-	  $(addsuffix .cpp, $(addprefix sources/tests/vector/, $(TESTS_VECTOR)))
+	  $(addsuffix .cpp, $(addprefix sources/tests/vector/, $(TESTS_VECTOR))) \
+	  $(addsuffix .cpp, $(addprefix sources/tests/extras/, $(TESTS_EXTRAS)))
 
 SBJ = $(addsuffix .cpp, $(addprefix sources/, $(MAIN))) \
 	  $(addsuffix .cpp, $(addprefix sources/tests/subject/, $(TESTS_SUBJECT)))

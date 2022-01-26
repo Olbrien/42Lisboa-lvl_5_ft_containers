@@ -25,6 +25,14 @@ void	header_text(std::string str) {
 		std::cout << "*********************************************************************"
 				<< std::endl;
 	}
+	else if (!str.compare("extras")) {
+		std::cout << std::endl;
+		std::cout << "*********************************************************************"
+				<< std::endl;
+		std::cout << "				Extras				" << std::endl;
+		std::cout << "*********************************************************************"
+				<< std::endl;
+	}
 }
 
 int		vector_argument(std::string argument) {
@@ -108,6 +116,13 @@ int		vector_argument(std::string argument) {
 
 	if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__overloads__relational_operators(); return 0; }
 	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__overloads__swap(); return 0; }
+
+	return 1;
+}
+int		extras_argument(std::string argument) {
+	if (!argument.compare("200")) { header_text("extras"); testExtras::extras__iterator_traits(); return 0; }
+	else if (!argument.compare("201")) { header_text("extras"); testExtras::extras__enable_if(); return 0; }
+	else if (!argument.compare("202")) { header_text("extras"); testExtras::extras__is_integral(); return 0; }
 
 	return 1;
 }
@@ -210,6 +225,11 @@ void	welcome_message() {
 	std::cout << "*              relational operators			      xx    *" << std::endl;
 	std::cout << "*              swap					      xx    *" << std::endl;
 	std::cout << "*								    *" << std::endl;
+	std::cout << "*  Extras:							    *" << std::endl;
+	std::cout << "*      iterator_traits					     200    *" << std::endl;
+	std::cout << "*      enable_if					     201    *" << std::endl;
+	std::cout << "*      is_integral					     202    *" << std::endl;
+	std::cout << "*								    *" << std::endl;
 	std::cout << "*********************************************************************"
 				<< std::endl;
 
@@ -227,6 +247,8 @@ int		main(int argc, char **argv) {
 	// trying to find matching argument
 	std::string argument = std::string(argv[1]);
 	if (vector_argument(argument) == 0)
+		return 0;
+	else if (extras_argument(argument) == 0)
 		return 0;
 
 	// no valid argument found

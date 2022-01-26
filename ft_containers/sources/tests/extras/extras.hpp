@@ -10,9 +10,14 @@ namespace testExtras {
 /* global variables */
 
 enum color { red, green, blue };
-color r = red;
-std::string str = "String is a class";
-int i = 5;
+color _enum = red;
+std::string _str = "String is a class";
+int _int = 5;
+long int _long_int = 2;
+char _char = 'b';
+double _double = 2.2;
+float _float = 2.2f;
+
 
 /***************************************/
 /* testExtras::extras__enable_if tests */
@@ -52,6 +57,21 @@ void isEnum (T,
 template <class T>
 void isEnum (const T&,
 			 typename enable_if<is_enum<T>::value>::type* = 0) {
+    std::cout << "True" << std::endl;
+}
+
+/*****************************************/
+/* testExtras::extras__is_integral tests */
+
+template <class T>
+void isIntegral (T,
+			 typename enable_if<!is_integral<T>::value>::type* = 0) {
+    std::cout << "False" << std::endl;
+}
+
+template <class T>
+void isIntegral (const T&,
+			 typename enable_if<is_integral<T>::value>::type* = 0) {
     std::cout << "True" << std::endl;
 }
 

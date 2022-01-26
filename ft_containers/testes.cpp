@@ -1,21 +1,10 @@
 #include <iostream>
+#include <vector>
 
-class teste {
-	public:
-		teste() : _i(5) {};
-		~teste() {};
+int main(void)
+{
+	std::vector<int> vectorA(5, 5);
 
-		void func(int i) {
-			std::cout << "here";
-		}
-
-	private:
-		const int _i;
-};
-
-int main() {
-	teste a;
-
-	a.func(5);
+	std::vector<int>::reverse_iterator itA = vectorA.rbegin();
 
 }

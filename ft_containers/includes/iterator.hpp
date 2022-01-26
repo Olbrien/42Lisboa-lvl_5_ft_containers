@@ -33,8 +33,8 @@ class random_access_iterator {
 		random_access_iterator(pointer ptr) :	_pointer(ptr)
 		{};
 
-		template <class S>
-		random_access_iterator(const random_access_iterator<S> & rhs)
+		template <class Iter>
+		random_access_iterator(const random_access_iterator<Iter> & rhs)
 											:	_pointer(rhs.base())
 		{};
 
@@ -64,7 +64,7 @@ class random_access_iterator {
 		};
 
 		pointer		operator->() const {
-			return _pointer;
+			return &(operator*());
 		};
 
 		reference	operator[](difference_type n) const {
@@ -76,10 +76,9 @@ class random_access_iterator {
 		*/
 
 		// ++ Prefix
-		random_access_iterator operator++() {
-			random_access_iterator temp;
-			temp._pointer = ++_pointer;
-			return temp;
+		random_access_iterator & operator++() {
+			++_pointer;
+			return *this;
 		};
 
 		// Postfix ++
@@ -90,10 +89,9 @@ class random_access_iterator {
 		};
 
 		// -- Prefix
-		random_access_iterator operator--() {
-			random_access_iterator temp;
-			temp._pointer = --_pointer;
-			return temp;
+		random_access_iterator & operator--() {
+			--_pointer;
+			return *this;
 		};
 
 		// Postfix --
@@ -261,8 +259,6 @@ operator+(typename random_access_iterator<Iterator>::difference_type n,
 	return (random_access_iterator<Iterator>(rhs.base() + n));
 }
 
-
 }
-
 
 #endif

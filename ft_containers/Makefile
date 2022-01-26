@@ -6,6 +6,7 @@ NAME_STD = std_container
 CC = clang++
 FT = 0
 CFLAGS = -Wall -Wextra -Werror "-D=FT $(FT)" -g -std=c++98
+#CFLAGS = "-D=FT $(FT)" -g
 
 #### ######## #### #### ######## #### #### ######## #### #### ######## #### #### ######## ####
 
@@ -14,7 +15,8 @@ TESTS_SUBJECT = subject_tests
 TESTS_VECTOR = member_functions \
 			   member_types \
 			   iterator \
-			   const_iterator
+			   const_iterator \
+			   reverse_iterator
 
 SRC = $(addsuffix .cpp, $(addprefix sources/, $(MAIN))) \
 	  $(addsuffix .cpp, $(addprefix sources/tests/vector/, $(TESTS_VECTOR)))

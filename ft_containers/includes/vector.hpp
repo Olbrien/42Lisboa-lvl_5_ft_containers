@@ -85,18 +85,47 @@ class vector {
 			}
 		};
 
+		// Copy Constructor
+		vector (const vector & x) : _alloc(x._alloc),
+									_size(0),
+									_capacity(0),
+									_buffer(NULL)
+		{
+			*this = x;
+		}
 
         /****
         ** Destructor
         */
 
         ~vector() {
-            for (size_type i = 0; i < _size; i++) {
-                    _alloc.destroy(_buffer + i);
-            }
+			destroy_buffer();
 			if (_capacity > 0)
             	_alloc.deallocate(_buffer, _capacity);
         };
+
+		/****
+		** Operator= (Assignment Operator)
+		*/
+
+		vector & operator=(const vector & x) {
+			if (this == &x) {
+				return *this;
+			}
+			if (_capacity >= x._size) {
+				destroy_buffer();
+			}
+			else {
+				this->~vector();
+				_buffer = _alloc.allocate(x._size);
+				_capacity = x._capacity;
+			}
+			for (size_type i = 0; i < x._size; i++) {
+				_alloc.construct(_buffer + i, x._buffer[i]);
+			}
+			_size = x._size;
+			return *this;
+		};
 
         /****
         ** Capacity
@@ -168,8 +197,6 @@ class vector {
 			return reverse_iterator(_buffer - 1);
 		};
 
-
-
         /****
         ** Modifiers
         */
@@ -187,10 +214,23 @@ class vector {
 
 
     private:
+         /********************/
+        /* Helper Functions */
+
+		void destroy_buffer() {
+			for (size_type i = 0; i < _size; i++) {
+				_alloc.destroy(_buffer + i);
+			}
+		}
+
+         /****************/
+        /* Private Data */
+
         allocator_type  _alloc;
         size_type       _size;
         size_type       _capacity;
         pointer         _buffer;
+
 };
 
 }

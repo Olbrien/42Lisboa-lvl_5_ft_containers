@@ -21,23 +21,23 @@ Vector:
 			default constructor		✅
 			fill constructor		✅
 			range constructor		✅
-			copy constructor		❌
+			copy constructor		✅
 			destructor				✅
-			operator=				❌
+			operator=				✅
 
 		Iterators:
-			begin					✅
-			end						✅
-			rbegin					❌
-			rend					❌
+			begin					❌✅
+			end						❌✅
+			rbegin					❌✅
+			rend					❌✅
 
 		Capacity:
-			size					✅
-			max_size				✅
+			size					❌✅
+			max_size				❌✅
 			resize					❌
-			capacity				✅
+			capacity				❌✅
 			empty					❌
-			reserve					✅
+			reserve					❌✅
 
 		Element Access:
 			operator[]				❌
@@ -47,7 +47,7 @@ Vector:
 
 		Modifiers:
 			assign					❌
-			push_back				✅
+			push_back				❌✅
 			pop_back				❌
 			insert					❌
 			erase					❌
@@ -188,3 +188,12 @@ Reverse Iterator (Reverse Iterator and Const Reverse Iterator):
 				it >= const_it			✅
 
 ---------------------------------------------------------------------------------------------
+
+Extras:
+
+	iterator_traits			✅
+	enable_if				✅
+	is_integral				✅
+
+---------------------------------------------------------------------------------------------
+

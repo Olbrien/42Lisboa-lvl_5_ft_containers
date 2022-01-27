@@ -92,12 +92,12 @@ int		vector_argument(std::string argument) {
 	else if (!argument.compare("44")) { header_text("vector"); testVector::member_functions__iterator__rbegin(); return 0; }
 	else if (!argument.compare("45")) { header_text("vector"); testVector::member_functions__iterator__rend(); return 0; }
 
-	if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__capacity__size(); return 0; }
-	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__capacity__max_size(); return 0; }
-	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__capacity__resize(); return 0; }
-	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__capacity__capacity(); return 0; }
-	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__capacity__empty(); return 0; }
-	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__capacity__reserve(); return 0; }
+	if (!argument.compare("46")) { header_text("vector"); testVector::member_functions__capacity__size(); return 0; }
+	else if (!argument.compare("47")) { header_text("vector"); testVector::member_functions__capacity__max_size(); return 0; }
+	else if (!argument.compare("48")) { header_text("vector"); testVector::member_functions__capacity__resize(); return 0; }
+	else if (!argument.compare("49")) { header_text("vector"); testVector::member_functions__capacity__capacity(); return 0; }
+	else if (!argument.compare("50")) { header_text("vector"); testVector::member_functions__capacity__empty(); return 0; }
+	else if (!argument.compare("51")) { header_text("vector"); testVector::member_functions__capacity__reserve(); return 0; }
 
 	if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__element__operator_at_position(); return 0; }
 	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__element__at(); return 0; }
@@ -200,12 +200,12 @@ void	welcome_message() {
 	std::cout << "*              rbegin					      44    *" << std::endl;
 	std::cout << "*              rend					      45    *" << std::endl;
 	std::cout << "*          Capacity:						    *" << std::endl;
-	std::cout << "*              size					      xx    *" << std::endl;
-	std::cout << "*              max_size					      xx    *" << std::endl;
-	std::cout << "*              resize					      xx    *" << std::endl;
-	std::cout << "*              capacity					      xx    *" << std::endl;
-	std::cout << "*              empty					      xx    *" << std::endl;
-	std::cout << "*              reserve					      xx    *" << std::endl;
+	std::cout << "*              size					      46    *" << std::endl;
+	std::cout << "*              max_size					      47    *" << std::endl;
+	std::cout << "*              resize					      48    *" << std::endl;
+	std::cout << "*              capacity					      49    *" << std::endl;
+	std::cout << "*              empty					      50    *" << std::endl;
+	std::cout << "*              reserve					      51    *" << std::endl;
 	std::cout << "*          Element Access:					    *" << std::endl;
 	std::cout << "*              operator[]				      xx    *" << std::endl;
 	std::cout << "*              at					      xx    *" << std::endl;

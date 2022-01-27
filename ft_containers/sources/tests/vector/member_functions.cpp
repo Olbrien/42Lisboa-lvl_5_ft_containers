@@ -663,10 +663,11 @@ void	testVector::member_functions__iterator__rend() {
 }
 
 void	testVector::member_functions__capacity__size() {
+			std::cout << "Capacity - size():" << std::endl << std::endl;
 
 }
 void	testVector::member_functions__capacity__max_size() {
-			std::cout << "max_size:" << std::endl << std::endl;
+			std::cout << "Capacity - max_size():" << std::endl << std::endl;
 
 	ft::vector<int> vectorA(5, 5);
 
@@ -676,16 +677,19 @@ void	testVector::member_functions__capacity__max_size() {
 			std::cout << std::endl;
 }
 void	testVector::member_functions__capacity__resize() {
+			std::cout << "Capacity - resize():" << std::endl << std::endl;
 
 }
 void	testVector::member_functions__capacity__capacity() {
+			std::cout << "Capacity - capacity():" << std::endl << std::endl;
 
 }
 void	testVector::member_functions__capacity__empty() {
+			std::cout << "Capacity - empty():" << std::endl << std::endl;
 
 }
 void	testVector::member_functions__capacity__reserve() {
-			std::cout << "reserve:" << std::endl << std::endl;
+			std::cout << "Capacity - reserve():" << std::endl << std::endl;
 
 	ft::vector<int> vectorA(5, 5);
 

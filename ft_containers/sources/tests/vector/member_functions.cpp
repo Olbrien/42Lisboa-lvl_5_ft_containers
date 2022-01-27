@@ -484,16 +484,182 @@ void	testVector::member_functions__operator_equal() {
 }
 
 void	testVector::member_functions__iterator__begin() {
+			std::cout << "Iterators - begin():" << std::endl << std::endl;
 
+	ft::vector<std::string> 	vectorA;
+	ft::vector<float>			vectorB;
+	ft::vector<int>				vectorC;
+
+			std::cout << "  vector<std::string>	vectorA;" << std::endl;
+			std::cout << "  vector<float>		vectorB;" << std::endl;
+			std::cout << "  vector<int>		vectorC;" << std::endl << std::endl;
+
+	vectorA.push_back("Olah");
+	vectorA.push_back("Hello");
+	vectorA.push_back("Gutten Tag");
+
+	vectorB.push_back(2.5);
+	vectorB.push_back(3.5);
+	vectorB.push_back(4.5);
+
+			std::cout << "  vectorA.push_back(\"Olah\");" << std::endl;
+			std::cout << "  vectorA.push_back(\"Hello\");" << std::endl;
+			std::cout << "  vectorA.push_back(\"Gutten Tag\");" << std::endl << std::endl;
+
+			std::cout << "  vectorB.push_back(2.5);" << std::endl;
+			std::cout << "  vectorB.push_back(3.5);" << std::endl;
+			std::cout << "  vectorB.push_back(4.5);" << std::endl << std::endl;
+
+	ft::vector<std::string>::iterator itA = vectorA.begin();
+	ft::vector<float>::iterator itB = vectorB.begin();
+	ft::vector<int>::iterator itC = vectorC.begin();
+
+			std::cout << "  vector<std::string>::iterator itA = vectorA.begin();" << std::endl;
+			std::cout << "  vector<float>::iterator itB = vectorB.begin();" << std::endl;
+			std::cout << "  vector<int>::iterator itC = vectorC.begin();" << std::endl << std::endl;
+
+			std::cout << "      *itA is " << *itA << std::endl;
+			std::cout << "      *itB is " << *itB << std::endl;
+			std::cout << "      *itC is Segmentation Fault" << std::endl << std::endl;
+			std::cout <<  *itC << std::endl;
 }
 void	testVector::member_functions__iterator__end() {
+			std::cout << "Iterators - end():" << std::endl << std::endl;
 
+	ft::vector<std::string> 	vectorA;
+	ft::vector<float>			vectorB;
+	ft::vector<int>				vectorC;
+
+			std::cout << "  vector<std::string>	vectorA;" << std::endl;
+			std::cout << "  vector<float>		vectorB;" << std::endl;
+			std::cout << "  vector<int>		vectorC;" << std::endl << std::endl;
+
+	vectorA.push_back("Olah");
+	vectorA.push_back("Hello");
+	vectorA.push_back("Gutten Tag");
+
+	vectorB.push_back(2.5);
+	vectorB.push_back(3.5);
+	vectorB.push_back(4.5);
+
+			std::cout << "  vectorA.push_back(\"Olah\");" << std::endl;
+			std::cout << "  vectorA.push_back(\"Hello\");" << std::endl;
+			std::cout << "  vectorA.push_back(\"Gutten Tag\");" << std::endl << std::endl;
+
+			std::cout << "  vectorB.push_back(2.5);" << std::endl;
+			std::cout << "  vectorB.push_back(3.5);" << std::endl;
+			std::cout << "  vectorB.push_back(4.5);" << std::endl << std::endl;
+
+	ft::vector<std::string>::iterator itA = vectorA.end();
+	ft::vector<float>::iterator itB = vectorB.end();
+	ft::vector<int>::iterator itC = vectorC.end();
+
+			std::cout << "  vector<std::string>::iterator itA = vectorA.end();" << std::endl;
+			std::cout << "  vector<float>::iterator itB = vectorB.end();" << std::endl;
+			std::cout << "  vector<int>::iterator itC = vectorC.end();" << std::endl << std::endl;
+
+			std::cout << "      *itA is " << *itA << std::endl;
+			std::cout << "      *itB is " << *itB << std::endl << std::endl;
+
+	itA = itA - 1;
+	itB = itB - 1;
+
+			std::cout << "  itA = itA - 1;" << std::endl;
+			std::cout << "  itB = itB - 1;" << std::endl << std::endl;
+
+			std::cout << "      *itA is " << *itA << std::endl;
+			std::cout << "      *itB is " << *itB << std::endl;
+			std::cout << "      *itC is Segmentation Fault" << std::endl << std::endl;
+			std::cout <<  *itC << std::endl;
 }
 void	testVector::member_functions__iterator__rbegin() {
+			std::cout << "Iterators - rbegin():" << std::endl << std::endl;
 
+	ft::vector<std::string> 	vectorA;
+	ft::vector<float>			vectorB;
+	ft::vector<int>				vectorC;
+
+			std::cout << "  vector<std::string>	vectorA;" << std::endl;
+			std::cout << "  vector<float>		vectorB;" << std::endl;
+			std::cout << "  vector<int>		vectorC;" << std::endl << std::endl;
+
+	vectorA.push_back("Olah");
+	vectorA.push_back("Hello");
+	vectorA.push_back("Gutten Tag");
+
+	vectorB.push_back(2.5);
+	vectorB.push_back(3.5);
+	vectorB.push_back(4.5);
+
+			std::cout << "  vectorA.push_back(\"Olah\");" << std::endl;
+			std::cout << "  vectorA.push_back(\"Hello\");" << std::endl;
+			std::cout << "  vectorA.push_back(\"Gutten Tag\");" << std::endl << std::endl;
+
+			std::cout << "  vectorB.push_back(2.5);" << std::endl;
+			std::cout << "  vectorB.push_back(3.5);" << std::endl;
+			std::cout << "  vectorB.push_back(4.5);" << std::endl << std::endl;
+
+	ft::vector<std::string>::reverse_iterator itA = vectorA.rbegin();
+	ft::vector<float>::reverse_iterator itB = vectorB.rbegin();
+	ft::vector<int>::reverse_iterator itC = vectorC.rbegin();
+
+			std::cout << "  vector<std::string>::reverse_iterator itA = vectorA.rbegin();" << std::endl;
+			std::cout << "  vector<float>::reverse_iterator itB = vectorB.rbegin();" << std::endl;
+			std::cout << "  vector<int>::reverse_iterator itC = vectorC.rbegin();" << std::endl << std::endl;
+
+			std::cout << "      *itA is " << *itA << std::endl;
+			std::cout << "      *itB is " << *itB << std::endl;
+			std::cout << "      *itC is Segmentation Fault" << std::endl << std::endl;
+			std::cout <<  *itC << std::endl;
 }
 void	testVector::member_functions__iterator__rend() {
+			std::cout << "Iterators - rend():" << std::endl << std::endl;
 
+	ft::vector<std::string> 	vectorA;
+	ft::vector<float>			vectorB;
+	ft::vector<int>				vectorC;
+
+			std::cout << "  vector<std::string>	vectorA;" << std::endl;
+			std::cout << "  vector<float>		vectorB;" << std::endl;
+			std::cout << "  vector<int>		vectorC;" << std::endl << std::endl;
+
+	vectorA.push_back("Olah");
+	vectorA.push_back("Hello");
+	vectorA.push_back("Gutten Tag");
+
+	vectorB.push_back(2.5);
+	vectorB.push_back(3.5);
+	vectorB.push_back(4.5);
+
+			std::cout << "  vectorA.push_back(\"Olah\");" << std::endl;
+			std::cout << "  vectorA.push_back(\"Hello\");" << std::endl;
+			std::cout << "  vectorA.push_back(\"Gutten Tag\");" << std::endl << std::endl;
+
+			std::cout << "  vectorB.push_back(2.5);" << std::endl;
+			std::cout << "  vectorB.push_back(3.5);" << std::endl;
+			std::cout << "  vectorB.push_back(4.5);" << std::endl << std::endl;
+
+	ft::vector<std::string>::reverse_iterator itA = vectorA.rend();
+	ft::vector<float>::reverse_iterator itB = vectorB.rend();
+	ft::vector<int>::reverse_iterator itC = vectorC.rend();
+
+			std::cout << "  vector<std::string>::reverse_iterator itA = vectorA.rend();" << std::endl;
+			std::cout << "  vector<float>::reverse_iterator itB = vectorB.rend();" << std::endl;
+			std::cout << "  vector<int>::reverse_iterator itC = vectorC.rend();" << std::endl << std::endl;
+
+			std::cout << "      *itA is " << *itA << std::endl;
+			std::cout << "      *itB is " << *itB << std::endl << std::endl;
+
+	itA = itA - 1;
+	itB = itB - 1;
+
+			std::cout << "  itA = itA - 1;" << std::endl;
+			std::cout << "  itB = itB - 1;" << std::endl << std::endl;
+
+			std::cout << "      *itA is " << *itA << std::endl;
+			std::cout << "      *itB is " << *itB << std::endl;
+			std::cout << "      *itC is Segmentation Fault" << std::endl << std::endl;
+			std::cout <<  *itC << std::endl;
 }
 
 void	testVector::member_functions__capacity__size() {

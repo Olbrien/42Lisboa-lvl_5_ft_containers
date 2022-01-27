@@ -49,10 +49,10 @@ class vector {
         vector (size_type n, const value_type& val = value_type(),
                  const allocator_type& alloc = allocator_type()) :  _alloc(alloc),
                                                                     _size(n),
-                                                                    _capacity(n)
+                                                                    _capacity(n),
+																	_buffer(0)
         {
 			if (n == 0) {
-				_buffer = NULL;
 				return ;
 			}
             if (n > max_size()){
@@ -71,13 +71,14 @@ class vector {
 				typename enable_if<!is_integral<InputIterator>::value>::type* = 0)
 																:  _alloc(alloc),
 																   _size(last - first),
-																   _capacity(last - first)
+																   _capacity(last - first),
+																   _buffer(0)
 		{
 			if (_size <= 0) {
-				_buffer = 0;
 				return ;
 			}
 			_buffer = _alloc.allocate(_size);
+
 			size_type i = 0;
 			for (; first != last; first++) {
 				_alloc.construct(_buffer + i, *first);

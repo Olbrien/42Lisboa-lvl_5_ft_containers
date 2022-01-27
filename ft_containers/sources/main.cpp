@@ -87,10 +87,10 @@ int		vector_argument(std::string argument) {
 
 
 
-	if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__iterator__begin(); return 0; }
-	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__iterator__end(); return 0; }
-	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__iterator__rbegin(); return 0; }
-	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__iterator__rend(); return 0; }
+	if (!argument.compare("42")) { header_text("vector"); testVector::member_functions__iterator__begin(); return 0; }
+	else if (!argument.compare("43")) { header_text("vector"); testVector::member_functions__iterator__end(); return 0; }
+	else if (!argument.compare("44")) { header_text("vector"); testVector::member_functions__iterator__rbegin(); return 0; }
+	else if (!argument.compare("45")) { header_text("vector"); testVector::member_functions__iterator__rend(); return 0; }
 
 	if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__capacity__size(); return 0; }
 	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__capacity__max_size(); return 0; }
@@ -195,10 +195,10 @@ void	welcome_message() {
 	std::cout << "*              destructor				      40    *" << std::endl;
 	std::cout << "*              operator=				      41    *" << std::endl;
 	std::cout << "*          Iterators:						    *" << std::endl;
-	std::cout << "*              begin					      xx    *" << std::endl;
-	std::cout << "*              end					      xx    *" << std::endl;
-	std::cout << "*              rbegin					      xx    *" << std::endl;
-	std::cout << "*              rend					      xx    *" << std::endl;
+	std::cout << "*              begin					      42    *" << std::endl;
+	std::cout << "*              end					      43    *" << std::endl;
+	std::cout << "*              rbegin					      44    *" << std::endl;
+	std::cout << "*              rend					      45    *" << std::endl;
 	std::cout << "*          Capacity:						    *" << std::endl;
 	std::cout << "*              size					      xx    *" << std::endl;
 	std::cout << "*              max_size					      xx    *" << std::endl;

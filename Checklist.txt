@@ -26,24 +26,24 @@ Vector:
 			operator=				✅
 
 		Iterators:
-			begin					❌✅
-			end						❌✅
-			rbegin					❌✅
-			rend					❌✅
+			begin					✅
+			end						✅
+			rbegin					✅
+			rend					✅
 
 		Capacity:
-			size					❌✅
-			max_size				❌✅
-			resize					❌
-			capacity				❌✅
-			empty					❌
-			reserve					❌✅
+			size					✅
+			max_size				✅
+			resize					✅
+			capacity				✅
+			empty					✅
+			reserve					✅
 
 		Element Access:
-			operator[]				❌
-			at						❌
-			front					❌
-			back					❌
+			operator[]				✅
+			at						✅
+			front					✅
+			back					✅
 
 		Modifiers:
 			assign					❌

@@ -99,10 +99,10 @@ int		vector_argument(std::string argument) {
 	else if (!argument.compare("50")) { header_text("vector"); testVector::member_functions__capacity__empty(); return 0; }
 	else if (!argument.compare("51")) { header_text("vector"); testVector::member_functions__capacity__reserve(); return 0; }
 
-	if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__element__operator_at_position(); return 0; }
-	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__element__at(); return 0; }
-	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__element__front(); return 0; }
-	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__element__back(); return 0; }
+	if (!argument.compare("52")) { header_text("vector"); testVector::member_functions__element__operator_at_position(); return 0; }
+	else if (!argument.compare("53")) { header_text("vector"); testVector::member_functions__element__at(); return 0; }
+	else if (!argument.compare("54")) { header_text("vector"); testVector::member_functions__element__front(); return 0; }
+	else if (!argument.compare("55")) { header_text("vector"); testVector::member_functions__element__back(); return 0; }
 
 	if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__modifiers__assign(); return 0; }
 	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__modifiers__push_back(); return 0; }
@@ -207,10 +207,10 @@ void	welcome_message() {
 	std::cout << "*              empty					      50    *" << std::endl;
 	std::cout << "*              reserve					      51    *" << std::endl;
 	std::cout << "*          Element Access:					    *" << std::endl;
-	std::cout << "*              operator[]				      xx    *" << std::endl;
-	std::cout << "*              at					      xx    *" << std::endl;
-	std::cout << "*              front					      xx    *" << std::endl;
-	std::cout << "*              back					      xx    *" << std::endl;
+	std::cout << "*              operator[]				      52    *" << std::endl;
+	std::cout << "*              at					      53    *" << std::endl;
+	std::cout << "*              front					      54    *" << std::endl;
+	std::cout << "*              back					      55    *" << std::endl;
 	std::cout << "*          Modifiers:						    *" << std::endl;
 	std::cout << "*              assign					      xx    *" << std::endl;
 	std::cout << "*              push_back				      xx    *" << std::endl;

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <typeinfo>
 #include <stdexcept>
+#include "utils.hpp"
 #include "iterator.hpp"
 #include "reverse_iterator.hpp"
 #include "type_traits.hpp"
@@ -12,67 +13,67 @@ namespace ft {
 
 template < class T, class Alloc = std::allocator<T> >
 class vector {
-    public:
-         /****************/
-        /* Member Types */
+	public:
+		/****************/
+		/* Member Types */
 
-        typedef T                                                       value_type;
-        typedef Alloc                                                   allocator_type;
-        typedef typename allocator_type::reference                      reference;
-        typedef typename allocator_type::const_reference                const_reference;
-        typedef typename allocator_type::pointer                        pointer;
-        typedef typename allocator_type::const_pointer                  const_pointer;
-        typedef typename std::ptrdiff_t                                 difference_type;
-        typedef typename std::size_t                                    size_type;
-        typedef typename ft::random_access_iterator<pointer>            iterator;
-        typedef typename ft::random_access_iterator<const_pointer>      const_iterator;
-        typedef typename ft::reverse_iterator<pointer>                  reverse_iterator;
-        typedef typename ft::reverse_iterator<const_pointer>            const_reverse_iterator;
+		typedef T                                                       value_type;
+		typedef Alloc                                                   allocator_type;
+		typedef typename allocator_type::reference                      reference;
+		typedef typename allocator_type::const_reference                const_reference;
+		typedef typename allocator_type::pointer                        pointer;
+		typedef typename allocator_type::const_pointer                  const_pointer;
+		typedef typename std::ptrdiff_t                                 difference_type;
+		typedef typename std::size_t                                    size_type;
+		typedef typename ft::random_access_iterator<pointer>            iterator;
+		typedef typename ft::random_access_iterator<const_pointer>      const_iterator;
+		typedef typename ft::reverse_iterator<pointer>                  reverse_iterator;
+		typedef typename ft::reverse_iterator<const_pointer>            const_reverse_iterator;
 
-         /********************/
-        /* Member functions */
+		/********************/
+		/* Member functions */
 
-        /****
-        ** Constructors
-        */
+		/****
+		** Constructors
+		*/
 
-        // Default
-        explicit
-        vector (const allocator_type& alloc = allocator_type()) :   _alloc(alloc),
-                                                                    _size(0),
-                                                                    _capacity(0),
-                                                                    _buffer(0)
-        {};
-
-        // Fill
-        explicit
-        vector (size_type n, const value_type& val = value_type(),
-                 const allocator_type& alloc = allocator_type()) :  _alloc(alloc),
-                                                                    _size(n),
-                                                                    _capacity(n),
+		// Default
+		explicit
+		vector (const allocator_type& alloc = allocator_type()) :   _alloc(alloc),
+																	_size(0),
+																	_capacity(0),
 																	_buffer(0)
-        {
+		{};
+
+		// Fill
+		explicit
+		vector (size_type n, const value_type& val = value_type(),
+				const allocator_type& alloc = allocator_type()) :  _alloc(alloc),
+																	_size(n),
+																	_capacity(n),
+																	_buffer(0)
+		{
 			if (n == 0) {
 				return ;
 			}
-            if (n > max_size()){
-                throw std::length_error("cannot create ft::vector larger than max_size()");
-            }
-            _buffer = _alloc.allocate(n);
-            for (size_type i = 0; i < n; i++) {
-                _alloc.construct(_buffer + i, val);
-            }
-        };
+			if (n > max_size()){
+				throw std::length_error("cannot create ft::vector larger than max_size()");
+			}
+			_buffer = _alloc.allocate(n);
+			for (size_type i = 0; i < n; i++) {
+				_alloc.construct(_buffer + i, val);
+			}
+		};
 
 		// Range
 		template <class InputIterator>
-        vector (InputIterator first, InputIterator last,
-                const allocator_type& alloc = allocator_type(),
+		vector (InputIterator first, InputIterator last,
+				const allocator_type& alloc = allocator_type(),
 				typename enable_if<!is_integral<InputIterator>::value>::type* = 0)
 																:  _alloc(alloc),
-																   _size(last - first),
-																   _capacity(last - first),
-																   _buffer(0)
+																_size(last - first),
+																_capacity(last - first),
+																_buffer(0)
 		{
 			if (_size <= 0) {
 				return ;
@@ -90,20 +91,20 @@ class vector {
 		vector (const vector & x) : _alloc(x._alloc),
 									_size(0),
 									_capacity(0),
-									_buffer(NULL)
+									_buffer(0)
 		{
 			*this = x;
 		}
 
-        /****
-        ** Destructor
-        */
+		/****
+		** Destructor
+		*/
 
-        ~vector() {
+		~vector() {
 			destroy_buffer();
 			if (_capacity > 0)
-            	_alloc.deallocate(_buffer, _capacity);
-        };
+				_alloc.deallocate(_buffer, _capacity);
+		};
 
 		/****
 		** Operator= (Assignment Operator)
@@ -128,59 +129,25 @@ class vector {
 			return *this;
 		};
 
-        /****
-        ** Capacity
-        */
+		/****
+		** Iterators
+		*/
 
-        size_type size() const {
-            return _size;
-        };
+		iterator begin() {
+			return iterator(_buffer);
+		};
 
-        size_type max_size() const {
-            return _alloc.max_size();
-        };
+		const_iterator begin() const {
+			return const_iterator(_buffer);
+		};
 
-        size_type capacity() const {
-            return _capacity;
-        };
+		iterator end() {
+			return iterator(_buffer + _size);
+		};
 
-        void reserve (size_type n) {
-            if (n > max_size()){
-                throw std::length_error("vector::reserve");
-            }
-            if (n > _capacity) {
-                pointer temp = _alloc.allocate(n);
-
-                for (size_type i = 0; i < _size; i++) {
-                    _alloc.construct(temp + i, _buffer[i]);
-                    _alloc.destroy(_buffer + i);
-                }
-                _alloc.deallocate(_buffer, _capacity);
-
-                _buffer = temp;
-                _capacity = n;
-            }
-        };
-
-        /****
-        ** Iterators
-        */
-
-        iterator begin() {
-            return iterator(_buffer);
-        };
-
-        const_iterator begin() const {
-            return const_iterator(_buffer);
-        };
-
-        iterator end() {
-            return iterator(_buffer + _size);
-        };
-
-        const_iterator end() const {
-            return const_iterator(_buffer + _size);
-        };
+		const_iterator end() const {
+			return const_iterator(_buffer + _size);
+		};
 
 		reverse_iterator rbegin() {
 			return reverse_iterator(_buffer + _size - 1);
@@ -198,25 +165,136 @@ class vector {
 			return reverse_iterator(_buffer - 1);
 		};
 
-        /****
-        ** Modifiers
-        */
+		/****
+		** Capacity
+		*/
 
-        void push_back (const value_type& val) {
-            if (_capacity == 0) {
-                reserve(1);
-            }
-            else if (_capacity == _size) {
-                reserve(_capacity * 2);
-            }
-            _alloc.construct(_buffer + _size, val);
-            _size++;
-        };
+		size_type size() const {
+			return _size;
+		};
+
+		size_type max_size() const {
+			return _alloc.max_size();
+		};
+
+		void resize (size_type n, value_type val = value_type()) {
+			if (n < _size) {
+				for (; _size > n; _size--) {
+					_alloc.destroy(_buffer + (_size - n));
+				}
+			}
+			else if (n > _size) {
+				if (_size * 2 < n) {
+					this->reserve(n);
+				}
+				size_type i = n - _size;
+				for (; i > 0; i--) {
+					this->push_back(val);
+				}
+			}
+		};
+
+		size_type capacity() const {
+			return _capacity;
+		};
+
+		bool empty() const {
+			return (_size == 0 ? true : false);
+		};
+
+		void reserve (size_type n) {
+			if (n > max_size()){
+				throw std::length_error("vector::reserve");
+			}
+			if (n > _capacity) {
+				pointer temp = _alloc.allocate(n);
+
+				for (size_type i = 0; i < _size; i++) {
+					_alloc.construct(temp + i, _buffer[i]);
+					_alloc.destroy(_buffer + i);
+				}
+				_alloc.deallocate(_buffer, _capacity);
+
+				_buffer = temp;
+				_capacity = n;
+			}
+		};
+
+		/****
+		** Element Access
+		*/
+
+		reference operator[] (size_type n) {
+			return reference(_buffer[n]);
+		};
+
+		const_reference operator[] (size_type n) const {
+			return const_reference(_buffer[n]);
+		};
+
+		reference at (size_type n) {
+			if (n >= _size) {
+				std::string error("vector::_M_range_check: n (which is ");
+				error += to_string(n)
+				         + std::string(")")
+						 + std::string(" >= this->size() ")
+						 + std::string("(which is "
+						 + to_string(_size)
+						 + std::string(")"));
+				throw(std::out_of_range(error));
+			}
+			return reference(_buffer[n]);
+		};
+		const_reference at (size_type n) const {
+			if (n >= _size) {
+				std::string error("vector::_M_range_check: n (which is ");
+				error += to_string(n)
+				         + std::string(")")
+						 + std::string(" >= this->size() ")
+						 + std::string("(which is "
+						 + to_string(_size)
+						 + std::string(")"));
+				throw(std::out_of_range(error));
+			}
+			return const_reference(_buffer[n]);
+		};
+
+		reference front() {
+			return reference(*_buffer);
+		};
+
+		const_reference front() const {
+			return const_reference(*_buffer);
+		};
+
+		reference back() {
+			return reference(*(_buffer + _size - 1));
+		};
+
+		const_reference back() const {
+			return const_reference(*(_buffer + _size - 1));
+		};
 
 
-    private:
-         /********************/
-        /* Helper Functions */
+		/****
+		** Modifiers
+		*/
+
+		void push_back (const value_type& val) {
+			if (_capacity == 0) {
+				reserve(1);
+			}
+			else if (_capacity == _size) {
+				reserve(_capacity * 2);
+			}
+			_alloc.construct(_buffer + _size, val);
+			_size++;
+		};
+
+
+	private:
+		/********************/
+		/* Helper Functions */
 
 		void destroy_buffer() {
 			for (size_type i = 0; i < _size; i++) {
@@ -224,13 +302,13 @@ class vector {
 			}
 		}
 
-         /****************/
-        /* Private Data */
+		/****************/
+		/* Private Data */
 
-        allocator_type  _alloc;
-        size_type       _size;
-        size_type       _capacity;
-        pointer         _buffer;
+		allocator_type  _alloc;
+		size_type       _size;
+		size_type       _capacity;
+		pointer         _buffer;
 
 };
 

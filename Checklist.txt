@@ -46,13 +46,15 @@ Vector:
 			back					✅
 
 		Modifiers:
-			assign					❌
-			push_back				❌✅
-			pop_back				❌
+			assign:
+				range				✅
+				fill				✅
+			push_back				✅
+			pop_back				✅
 			insert					❌
 			erase					❌
 			swap					❌
-			clear					❌
+			clear					✅
 
 		Allocator:
 			get_allocator			❌

@@ -84,9 +84,6 @@ int		vector_argument(std::string argument) {
 	else if (!argument.compare("40")) { header_text("vector"); testVector::member_functions__destructor(); return 0; }
 	else if (!argument.compare("41")) { header_text("vector"); testVector::member_functions__operator_equal(); return 0; }
 
-
-
-
 	if (!argument.compare("42")) { header_text("vector"); testVector::member_functions__iterator__begin(); return 0; }
 	else if (!argument.compare("43")) { header_text("vector"); testVector::member_functions__iterator__end(); return 0; }
 	else if (!argument.compare("44")) { header_text("vector"); testVector::member_functions__iterator__rbegin(); return 0; }
@@ -104,13 +101,14 @@ int		vector_argument(std::string argument) {
 	else if (!argument.compare("54")) { header_text("vector"); testVector::member_functions__element__front(); return 0; }
 	else if (!argument.compare("55")) { header_text("vector"); testVector::member_functions__element__back(); return 0; }
 
-	if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__modifiers__assign(); return 0; }
-	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__modifiers__push_back(); return 0; }
-	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__modifiers__pop_back(); return 0; }
-	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__modifiers__insert(); return 0; }
-	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__modifiers__erase(); return 0; }
-	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__modifiers__swap(); return 0; }
-	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__modifiers__clear(); return 0; }
+	if (!argument.compare("56")) { header_text("vector"); testVector::member_functions__modifiers__assign_range(); return 0; }
+	else if (!argument.compare("57")) { header_text("vector"); testVector::member_functions__modifiers__assign_fill(); return 0; }
+	else if (!argument.compare("58")) { header_text("vector"); testVector::member_functions__modifiers__push_back(); return 0; }
+	else if (!argument.compare("59")) { header_text("vector"); testVector::member_functions__modifiers__pop_back(); return 0; }
+	else if (!argument.compare("60")) { header_text("vector"); testVector::member_functions__modifiers__insert(); return 0; }
+	else if (!argument.compare("61")) { header_text("vector"); testVector::member_functions__modifiers__erase(); return 0; }
+	else if (!argument.compare("62")) { header_text("vector"); testVector::member_functions__modifiers__swap(); return 0; }
+	else if (!argument.compare("63")) { header_text("vector"); testVector::member_functions__modifiers__clear(); return 0; }
 
 	if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__allocator__get_allocator(); return 0; }
 
@@ -212,13 +210,15 @@ void	welcome_message() {
 	std::cout << "*              front					      54    *" << std::endl;
 	std::cout << "*              back					      55    *" << std::endl;
 	std::cout << "*          Modifiers:						    *" << std::endl;
-	std::cout << "*              assign					      xx    *" << std::endl;
-	std::cout << "*              push_back				      xx    *" << std::endl;
-	std::cout << "*              pop_back					      xx    *" << std::endl;
-	std::cout << "*              insert					      xx    *" << std::endl;
-	std::cout << "*              erase					      xx    *" << std::endl;
-	std::cout << "*              swap					      xx    *" << std::endl;
-	std::cout << "*              clear					      xx    *" << std::endl;
+	std::cout << "*              assign:					            *" << std::endl;
+	std::cout << "*                  range				      56    *" << std::endl;
+	std::cout << "*                  fill					      57    *" << std::endl;
+	std::cout << "*              push_back				      58    *" << std::endl;
+	std::cout << "*              pop_back					      59    *" << std::endl;
+	std::cout << "*              insert					      60    *" << std::endl;
+	std::cout << "*              erase					      61    *" << std::endl;
+	std::cout << "*              swap					      62    *" << std::endl;
+	std::cout << "*              clear					      63    *" << std::endl;
 	std::cout << "*          Allocator:						    *" << std::endl;
 	std::cout << "*              get_allocator				      xx    *" << std::endl;
 	std::cout << "*          Non-member Function Overloads:			    *" << std::endl;

@@ -83,7 +83,8 @@ namespace testVector {
 	void	member_functions__element__front();
 	void	member_functions__element__back();
 
-	void	member_functions__modifiers__assign();
+	void	member_functions__modifiers__assign_range();
+	void	member_functions__modifiers__assign_fill();
 	void	member_functions__modifiers__push_back();
 	void	member_functions__modifiers__pop_back();
 	void	member_functions__modifiers__insert();

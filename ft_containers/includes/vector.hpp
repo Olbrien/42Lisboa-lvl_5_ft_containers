@@ -66,6 +66,9 @@ class vector {
 		};
 
 		// Range
+		// enable_if is used here to distinguish between the Range and Fill
+		// otherwise it would give an error for being "ambiguous"
+		// https://stackoverflow.com/questions/14035520/choose-which-constructor-in-c
 		template <class InputIterator>
 		vector (InputIterator first, InputIterator last,
 				const allocator_type& alloc = allocator_type(),
@@ -101,9 +104,10 @@ class vector {
 		*/
 
 		~vector() {
-			destroy_buffer();
+			clear();
 			if (_capacity > 0)
 				_alloc.deallocate(_buffer, _capacity);
+			_capacity = 0;
 		};
 
 		/****
@@ -115,7 +119,7 @@ class vector {
 				return *this;
 			}
 			if (_capacity >= x._size) {
-				destroy_buffer();
+				clear();
 			}
 			else {
 				this->~vector();
@@ -280,6 +284,28 @@ class vector {
 		** Modifiers
 		*/
 
+		// Range
+		// enable_if used as same reason as Range / Fill constructor
+		template <class InputIterator>
+		void assign (InputIterator first, InputIterator last,
+					 typename enable_if<!is_integral<InputIterator>::value>::type* = 0) {
+			clear();
+			reserve(last - first);
+			for (; first != last; first++) {
+				push_back(*first);
+			}
+		};
+
+		// Fill
+		void assign (size_type n, const value_type& val) {
+			clear();
+			reserve(n);
+			for (; _size < n;) {
+				push_back(val);
+			}
+		};
+
+
 		void push_back (const value_type& val) {
 			if (_capacity == 0) {
 				reserve(1);
@@ -291,16 +317,38 @@ class vector {
 			_size++;
 		};
 
+		void pop_back() {
+			_alloc.destroy(_buffer + _size - 1);
+			if (_size > 0) {
+				_size--;
+			}
+		};
+
+		void clear() {
+			for (size_type i = 0; i < _size; i++) {
+				_alloc.destroy(_buffer + i);
+			}
+			_size = 0;
+		};
+
+
 
 	private:
 		/********************/
 		/* Helper Functions */
 
-		void destroy_buffer() {
+		void shrink_to_fit() {
+			pointer temp = _alloc.allocate(_size);
+
 			for (size_type i = 0; i < _size; i++) {
+				_alloc.construct(temp + i, _buffer[i]);
 				_alloc.destroy(_buffer + i);
 			}
-		}
+			_alloc.deallocate(_buffer, _capacity);
+
+			_buffer = temp;
+			_capacity = _size;
+		};
 
 		/****************/
 		/* Private Data */

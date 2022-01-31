@@ -88,7 +88,8 @@ namespace testVector {
 	void	member_functions__modifiers__push_back();
 	void	member_functions__modifiers__pop_back();
 	void	member_functions__modifiers__insert();
-	void	member_functions__modifiers__erase();
+	void	member_functions__modifiers__erase_position();
+	void	member_functions__modifiers__erase_range();
 	void	member_functions__modifiers__swap();
 	void	member_functions__modifiers__clear();
 

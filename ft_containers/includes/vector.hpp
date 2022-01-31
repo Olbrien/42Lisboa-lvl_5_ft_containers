@@ -324,6 +324,35 @@ class vector {
 			}
 		};
 
+		// https://stackoverflow.com/questions/17492092/stdvectoreraseiterator-position-does-not-necessarily-invoke-the-correspond
+		iterator erase (iterator position) {
+			difference_type pos = position - begin();
+
+			for (iterator begin = _buffer + pos; begin != this->end() - 1; begin++, pos++) {
+				_buffer[pos] = *(begin + 1);
+			}
+			_alloc.destroy(_buffer + _size - 1);
+			_size--;
+			return position;
+		};
+
+		iterator erase (iterator first, iterator last) {
+			difference_type range_to_erase = last - first;
+			size_type pos = first - begin();
+			size_type diff_until_end = end() - last;
+
+			iterator begin = _buffer + range_to_erase + pos;
+			for ( ; diff_until_end > 0; pos++, begin++, --diff_until_end) {
+				_buffer[pos] = *(begin);
+			}
+			for ( ; pos < _size; pos++) {
+				_alloc.destroy(_buffer + pos);
+			}
+
+			_size -= range_to_erase;
+			return first;
+		};
+
 		void clear() {
 			for (size_type i = 0; i < _size; i++) {
 				_alloc.destroy(_buffer + i);

@@ -106,9 +106,10 @@ int		vector_argument(std::string argument) {
 	else if (!argument.compare("58")) { header_text("vector"); testVector::member_functions__modifiers__push_back(); return 0; }
 	else if (!argument.compare("59")) { header_text("vector"); testVector::member_functions__modifiers__pop_back(); return 0; }
 	else if (!argument.compare("60")) { header_text("vector"); testVector::member_functions__modifiers__insert(); return 0; }
-	else if (!argument.compare("61")) { header_text("vector"); testVector::member_functions__modifiers__erase(); return 0; }
-	else if (!argument.compare("62")) { header_text("vector"); testVector::member_functions__modifiers__swap(); return 0; }
-	else if (!argument.compare("63")) { header_text("vector"); testVector::member_functions__modifiers__clear(); return 0; }
+	else if (!argument.compare("61")) { header_text("vector"); testVector::member_functions__modifiers__erase_position(); return 0; }
+	else if (!argument.compare("62")) { header_text("vector"); testVector::member_functions__modifiers__erase_range(); return 0; }
+	else if (!argument.compare("63")) { header_text("vector"); testVector::member_functions__modifiers__swap(); return 0; }
+	else if (!argument.compare("64")) { header_text("vector"); testVector::member_functions__modifiers__clear(); return 0; }
 
 	if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__allocator__get_allocator(); return 0; }
 
@@ -216,9 +217,11 @@ void	welcome_message() {
 	std::cout << "*              push_back				      58    *" << std::endl;
 	std::cout << "*              pop_back					      59    *" << std::endl;
 	std::cout << "*              insert					      60    *" << std::endl;
-	std::cout << "*              erase					      61    *" << std::endl;
-	std::cout << "*              swap					      62    *" << std::endl;
-	std::cout << "*              clear					      63    *" << std::endl;
+	std::cout << "*              erase:					            *" << std::endl;
+	std::cout << "*                  position				      61    *" << std::endl;
+	std::cout << "*                  range				      62    *" << std::endl;
+	std::cout << "*              swap					      63    *" << std::endl;
+	std::cout << "*              clear					      64    *" << std::endl;
 	std::cout << "*          Allocator:						    *" << std::endl;
 	std::cout << "*              get_allocator				      xx    *" << std::endl;
 	std::cout << "*          Non-member Function Overloads:			    *" << std::endl;

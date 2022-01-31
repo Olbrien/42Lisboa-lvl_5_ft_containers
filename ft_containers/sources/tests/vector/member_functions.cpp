@@ -1769,9 +1769,384 @@ void	testVector::member_functions__modifiers__pop_back() {
 void	testVector::member_functions__modifiers__insert() {
 
 }
-void	testVector::member_functions__modifiers__erase() {
+void	testVector::member_functions__modifiers__erase_position() {
+			std::cout << "Modifiers - erase():" << std::endl << std::endl;
+			std::cout << "Erase position:" << std::endl << std::endl;
 
+	typedef ft::vector<int>::iterator it;
+
+	ft::vector<int> vectorA;
+	ft::vector<int> vectorB;
+	ft::vector<int> vectorC;
+
+			std::cout << "  typename std::vector<int>::iterator it;" << std::endl << std::endl;
+
+			std::cout << "  vector<int> vectorA;" << std::endl;
+			std::cout << "  vector<int> vectorB;" << std::endl;
+			std::cout << "  vector<int> vectorC;" << std::endl << std::endl;
+
+	vectorA.push_back(5);
+	vectorA.push_back(10);
+	vectorA.push_back(15);
+	vectorA.push_back(20);
+	vectorA.push_back(25);
+	vectorA.push_back(30);
+
+	vectorB.push_back(1);
+	vectorB.push_back(2);
+	vectorB.push_back(3);
+	vectorB.push_back(4);
+
+			std::cout << "  vectorA.push_back(5);" << std::endl;
+			std::cout << "  vectorA.push_back(10);" << std::endl;
+			std::cout << "  vectorA.push_back(15);" << std::endl;
+			std::cout << "  vectorA.push_back(20);" << std::endl;
+			std::cout << "  vectorA.push_back(25);" << std::endl;
+			std::cout << "  vectorA.push_back(30);" << std::endl << std::endl;
+
+			std::cout << "  vectorA.push_back(1);" << std::endl;
+			std::cout << "  vectorA.push_back(2);" << std::endl;
+			std::cout << "  vectorA.push_back(3);" << std::endl;
+			std::cout << "  vectorA.push_back(4);" << std::endl << std::endl;
+
+			std::cout << "      vectorA is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorA.begin(); itA != vectorA.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
+			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorB is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorB.begin(); itA != vectorB.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
+			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorC is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorC.begin(); itA != vectorC.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorC.capacity() is	" << vectorC.capacity() << std::endl;
+			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
+			std::cout << std::endl;
+
+	it itA = vectorA.erase(vectorA.end() - 2);
+	it itB = vectorB.erase(vectorB.end() - 1);
+
+			std::cout << "  it itA = vectorA.erase(vectorA.end() - 2);" << std::endl;
+			std::cout << "  it itB = vectorB.erase(vectorB.end() - 1);" << std::endl << std::endl;
+
+			std::cout << "      vectorA is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorA.begin(); itA != vectorA.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
+			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
+			std::cout << "      *itA is			" << *itA << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorB is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorB.begin(); itA != vectorB.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
+			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
+			std::cout << "      *itB is			" << *itB << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorC is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorC.begin(); itA != vectorC.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorC.capacity() is	" << vectorC.capacity() << std::endl;
+			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
+			std::cout << std::endl;
+
+	itA = vectorA.erase(vectorA.begin());
+	itB = vectorB.erase(vectorB.begin());
+
+			std::cout << "  itA = vectorA.erase(vectorA.begin());" << std::endl;
+			std::cout << "  itB = vectorB.erase(vectorB.begin());" << std::endl << std::endl;
+
+			std::cout << "      vectorA is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorA.begin(); itA != vectorA.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
+			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
+			std::cout << "      *itA is			" << *itA << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorB is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorB.begin(); itA != vectorB.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
+			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
+			std::cout << "      *itB is			" << *itB << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorC is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorC.begin(); itA != vectorC.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorC.capacity() is	" << vectorC.capacity() << std::endl;
+			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
+			std::cout << std::endl;
+
+	itA = vectorA.erase(vectorA.begin());
+	itB = vectorB.erase(vectorB.begin());
+
+			std::cout << "  itA = vectorA.erase(vectorA.begin());" << std::endl;
+			std::cout << "  itB = vectorB.erase(vectorB.begin());" << std::endl << std::endl;
+
+			std::cout << "      vectorA is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorA.begin(); itA != vectorA.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
+			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
+			std::cout << "      *itA is			" << *itA << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorB is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorB.begin(); itA != vectorB.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
+			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
+			std::cout << "      *itB is			" << *itB << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorC is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorC.begin(); itA != vectorC.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorC.capacity() is	" << vectorC.capacity() << std::endl;
+			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
+			std::cout << std::endl;
+
+	itA = vectorA.erase(vectorA.begin());
+	itB = vectorB.erase(vectorB.begin());
+
+			std::cout << "  itA = vectorA.erase(vectorA.begin());" << std::endl;
+			std::cout << "  itB = vectorB.erase(vectorB.begin());" << std::endl << std::endl;
+
+			std::cout << "      vectorA is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorA.begin(); itA != vectorA.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
+			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
+			std::cout << "      *itA is			" << *itA << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorB is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorB.begin(); itA != vectorB.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
+			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
+			std::cout << "      *itB is			" << *itB << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorC is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorC.begin(); itA != vectorC.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorC.capacity() is	" << vectorC.capacity() << std::endl;
+			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "  vectorC.erase(vectorC.begin()) is Segmentation Fault !" << std::endl
+																					<< std::endl;
+
+	vectorC.erase(vectorC.begin());
 }
+void	testVector::member_functions__modifiers__erase_range() {
+			std::cout << "Modifiers - erase():" << std::endl << std::endl;
+			std::cout << "Erase range:" << std::endl << std::endl;
+
+	typedef ft::vector<int>::iterator it;
+
+	ft::vector<int> vectorA;
+	ft::vector<int> vectorB;
+
+			std::cout << "  typename std::vector<int>::iterator it;" << std::endl << std::endl;
+
+			std::cout << "  vector<int> vectorA;" << std::endl;
+			std::cout << "  vector<int> vectorB;" << std::endl << std::endl;
+
+	vectorA.push_back(5);
+	vectorA.push_back(10);
+	vectorA.push_back(15);
+	vectorA.push_back(20);
+	vectorA.push_back(25);
+	vectorA.push_back(30);
+	vectorA.push_back(35);
+	vectorA.push_back(40);
+	vectorA.push_back(45);
+	vectorA.push_back(50);
+
+	vectorB.push_back(1);
+	vectorB.push_back(2);
+	vectorB.push_back(3);
+
+			std::cout << "  vectorA.push_back(5);" << std::endl;
+			std::cout << "  vectorA.push_back(10);" << std::endl;
+			std::cout << "  vectorA.push_back(15);" << std::endl;
+			std::cout << "  vectorA.push_back(20);" << std::endl;
+			std::cout << "  vectorA.push_back(25);" << std::endl;
+			std::cout << "  vectorA.push_back(30);" << std::endl;
+			std::cout << "  vectorA.push_back(35);" << std::endl;
+			std::cout << "  vectorA.push_back(40);" << std::endl;
+			std::cout << "  vectorA.push_back(45);" << std::endl;
+			std::cout << "  vectorA.push_back(50);" << std::endl << std::endl;
+
+			std::cout << "  vectorA.push_back(1);" << std::endl;
+			std::cout << "  vectorA.push_back(2);" << std::endl;
+			std::cout << "  vectorA.push_back(3);" << std::endl << std::endl;
+
+			std::cout << "      vectorA is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorA.begin(); itA != vectorA.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
+			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorB is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorB.begin(); itA != vectorB.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
+			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
+			std::cout << std::endl;
+
+	it itA = vectorA.erase(vectorA.begin() + 2, vectorA.begin() + 2);
+	it itB = vectorB.erase(vectorB.end() - 2, vectorB.end() - 2);
+
+			std::cout << "  it itA =  vectorA.erase(vectorA.begin() + 2, vectorA.begin() + 2);" << std::endl;
+			std::cout << "  it itB = vectorB.erase(vectorB.end() - 2, vectorB.end() - 2);" << std::endl << std::endl;
+
+			std::cout << "      vectorA is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorA.begin(); itA != vectorA.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
+			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
+			std::cout << "      *itA is			" << *itA << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorB is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorB.begin(); itA != vectorB.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
+			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
+			std::cout << "      *itB is			" << *itB << std::endl;
+			std::cout << std::endl;
+
+	itA = vectorA.erase(vectorA.begin(), vectorA.end() - 3);
+	itB = vectorB.erase(vectorB.begin(), vectorB.end() - 3);
+
+			std::cout << "  itA = vectorA.erase(vectorA.begin(), vectorA.end() - 3);" << std::endl;
+			std::cout << "  itB = vectorB.erase(vectorB.begin(), vectorB.end() - 3);" << std::endl << std::endl;
+
+			std::cout << "      vectorA is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorA.begin(); itA != vectorA.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
+			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
+			std::cout << "      *itA is			" << *itA << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorB is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorB.begin(); itA != vectorB.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
+			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
+			std::cout << "      *itB is			" << *itB << std::endl;
+			std::cout << std::endl;
+
+	itA = vectorA.erase(vectorA.begin() + 1, vectorA.end() - 1);
+	itB = vectorB.erase(vectorB.begin() + 1, vectorB.end() - 1);
+
+			std::cout << "  itA = vectorA.erase(vectorA.begin() + 1, vectorA.end() - 1);" << std::endl;
+			std::cout << "  itB = vectorB.erase(vectorB.begin() + 1, vectorB.end() - 1);" << std::endl << std::endl;
+
+			std::cout << "      vectorA is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorA.begin(); itA != vectorA.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
+			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
+			std::cout << "      *itA is			" << *itA << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorB is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorB.begin(); itA != vectorB.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
+			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
+			std::cout << "      *itB is			" << *itB << std::endl;
+			std::cout << std::endl;
+
+	itA = vectorA.erase(vectorA.begin(), vectorA.end() - 1);
+	itB = vectorB.erase(vectorB.begin(), vectorB.end() - 1);
+
+			std::cout << "  itA = vectorA.erase(vectorA.begin(), vectorA.end() - 1);" << std::endl;
+			std::cout << "  itB = vectorB.erase(vectorB.begin(), vectorB.end() - 1);" << std::endl << std::endl;
+
+			std::cout << "      vectorA is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorA.begin(); itA != vectorA.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
+			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
+			std::cout << "      *itA is			" << *itA << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorB is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorB.begin(); itA != vectorB.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
+			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
+			std::cout << "      *itB is			" << *itB << std::endl;
+			std::cout << std::endl;
+
+	itA = vectorA.erase(vectorA.begin(), vectorA.end());
+	itB = vectorB.erase(vectorB.begin(), vectorB.end());
+
+			std::cout << "  itA = vectorA.erase(vectorA.begin(), vectorA.end());" << std::endl;
+			std::cout << "  itB = vectorB.erase(vectorB.begin(), vectorB.end());" << std::endl << std::endl;
+
+			std::cout << "      vectorA is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorA.begin(); itA != vectorA.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
+			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
+			std::cout << "      *itA is			" << *itA << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorB is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorB.begin(); itA != vectorB.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
+			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
+			std::cout << "      *itB is			" << *itB << std::endl;
+			std::cout << std::endl;
+}
+
 void	testVector::member_functions__modifiers__swap() {
 
 }

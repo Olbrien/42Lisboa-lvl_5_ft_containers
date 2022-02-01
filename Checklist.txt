@@ -52,7 +52,7 @@ Vector:
 			push_back				✅
 			pop_back				✅
 			insert:
-				single element		❌
+				single element		✅
 				fill				❌
 				range				❌
 			erase:

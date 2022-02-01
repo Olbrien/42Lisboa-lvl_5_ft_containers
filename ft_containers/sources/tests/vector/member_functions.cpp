@@ -2378,7 +2378,6 @@ void	testVector::member_functions__modifiers__erase_range() {
 			std::cout << "      *itB is			" << *itB << std::endl;
 			std::cout << std::endl;
 }
-
 void	testVector::member_functions__modifiers__swap() {
 
 }

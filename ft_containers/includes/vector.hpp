@@ -326,20 +326,20 @@ class vector {
 		// Single element
 		iterator insert (iterator position, const value_type& val) {
 			size_type pos = position - begin();
+			size_type diff_until_end = end() - position;
 
-			std::cout << "POS IS " << pos << std::endl;
-
+			// Put new element in the end
 			this->push_back(val);
 
-
-			// This is case _buffer starts empty,
-			// "return position" gives segmentation fault otherwise
-			if (_size == 1) {
-				return begin();
+			if (diff_until_end > 0) {
+				// Shift by 1 everything from the position you want until the end
+				for (size_type size_temp = _size; pos < size_temp ; size_temp--) {
+					_buffer[size_temp] = _buffer[size_temp - 1];
+				}
+				// Insert new value on the correct position
+				_buffer[pos] = val;
 			}
-			else {
-				return position;
-			}
+			return iterator(_buffer + pos);
 		};
 
 		// Fill
@@ -362,9 +362,11 @@ class vector {
 		iterator erase (iterator position) {
 			size_type pos = position - begin();
 
+			// Instead of deleting the pos it shifts everything by 1 from the pos + 1
 			for (iterator begin = _buffer + pos; begin != this->end() - 1; begin++, pos++) {
 				_buffer[pos] = *(begin + 1);
 			}
+			// Destroys last element
 			_alloc.destroy(_buffer + _size - 1);
 			_size--;
 			return position;
@@ -375,10 +377,12 @@ class vector {
 			size_type pos = first - begin();
 			size_type diff_until_end = end() - last;
 
+			// Instead of deleting from first to last it shifts everything
 			iterator begin = _buffer + range_to_erase + pos;
 			for ( ; diff_until_end > 0; pos++, begin++, --diff_until_end) {
 				_buffer[pos] = *(begin);
 			}
+			// And then deletes the last elements
 			for ( ; pos < _size; pos++) {
 				_alloc.destroy(_buffer + pos);
 			}

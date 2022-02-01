@@ -305,7 +305,6 @@ class vector {
 			}
 		};
 
-
 		void push_back (const value_type& val) {
 			if (_capacity == 0) {
 				reserve(1);
@@ -324,9 +323,44 @@ class vector {
 			}
 		};
 
+		// Single element
+		iterator insert (iterator position, const value_type& val) {
+			size_type pos = position - begin();
+
+			std::cout << "POS IS " << pos << std::endl;
+
+			this->push_back(val);
+
+
+			// This is case _buffer starts empty,
+			// "return position" gives segmentation fault otherwise
+			if (_size == 1) {
+				return begin();
+			}
+			else {
+				return position;
+			}
+		};
+
+		// Fill
+		void insert (iterator position, size_type n, const value_type& val) {
+			(void)position;
+			(void)n;
+			(void)val;
+		};
+
+		// Range
+		template <class InputIterator>
+		void insert (iterator position, InputIterator first, InputIterator last) {
+			(void)position;
+			(void)first;
+			(void)last;
+		};
+
+
 		// https://stackoverflow.com/questions/17492092/stdvectoreraseiterator-position-does-not-necessarily-invoke-the-correspond
 		iterator erase (iterator position) {
-			difference_type pos = position - begin();
+			size_type pos = position - begin();
 
 			for (iterator begin = _buffer + pos; begin != this->end() - 1; begin++, pos++) {
 				_buffer[pos] = *(begin + 1);
@@ -337,7 +371,7 @@ class vector {
 		};
 
 		iterator erase (iterator first, iterator last) {
-			difference_type range_to_erase = last - first;
+			size_type range_to_erase = last - first;
 			size_type pos = first - begin();
 			size_type diff_until_end = end() - last;
 

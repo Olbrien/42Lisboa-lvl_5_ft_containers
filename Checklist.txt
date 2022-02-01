@@ -51,7 +51,10 @@ Vector:
 				fill				✅
 			push_back				✅
 			pop_back				✅
-			insert					❌
+			insert:
+				single element		❌
+				fill				❌
+				range				❌
 			erase:
 				position			✅
 				range				✅

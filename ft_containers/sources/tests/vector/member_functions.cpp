@@ -1808,6 +1808,9 @@ void	testVector::member_functions__modifiers__insert_single_element() {
 
 			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
 			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
+			std::cout << "      vectorB.begin() is	" << *vectorB.begin() << std::endl;
+			std::cout << "      vectorB.end() is		" << *vectorB.end() << std::endl;
+
 			std::cout << std::endl;
 
 			std::cout << "      vectorC is		[ " ;
@@ -1816,6 +1819,9 @@ void	testVector::member_functions__modifiers__insert_single_element() {
 
 			std::cout << "      vectorC.capacity() is	" << vectorC.capacity() << std::endl;
 			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
+			std::cout << "      vectorC.begin() is	" << *vectorC.begin() << std::endl;
+			std::cout << "      vectorC.end() is		" << *vectorC.end() << std::endl;
+
 			std::cout << std::endl;
 
 	it itA = vectorA.insert(vectorA.begin(), 1);
@@ -1833,6 +1839,8 @@ void	testVector::member_functions__modifiers__insert_single_element() {
 			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
 			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
 			std::cout << "      *itA is			" << *itA << std::endl;
+			std::cout << "      vectorA.begin() is	" << *vectorA.begin() << std::endl;
+			std::cout << "      vectorA.end() is		" << *vectorA.end() << std::endl;
 			std::cout << std::endl;
 
 			std::cout << "      vectorB is		[ " ;
@@ -1842,6 +1850,8 @@ void	testVector::member_functions__modifiers__insert_single_element() {
 			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
 			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
 			std::cout << "      *itB is			" << *itB << std::endl;
+			std::cout << "      vectorB.begin() is	" << *vectorB.begin() << std::endl;
+			std::cout << "      vectorB.end() is		" << *vectorB.end() << std::endl;
 			std::cout << std::endl;
 
 			std::cout << "      vectorC is		[ " ;
@@ -1851,6 +1861,8 @@ void	testVector::member_functions__modifiers__insert_single_element() {
 			std::cout << "      vectorC.capacity() is	" << vectorC.capacity() << std::endl;
 			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
 			std::cout << "      *itC is			" << *itC << std::endl;
+			std::cout << "      vectorC.begin() is	" << *vectorC.begin() << std::endl;
+			std::cout << "      vectorC.end() is		" << *vectorC.end() << std::endl;
 			std::cout << std::endl;
 
 	itA = vectorA.insert(vectorA.end() - 1, 2);
@@ -1868,6 +1880,8 @@ void	testVector::member_functions__modifiers__insert_single_element() {
 			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
 			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
 			std::cout << "      *itA is			" << *itA << std::endl;
+			std::cout << "      vectorA.begin() is	" << *vectorA.begin() << std::endl;
+			std::cout << "      vectorA.end() is		" << *vectorA.end() << std::endl;
 			std::cout << std::endl;
 
 			std::cout << "      vectorB is		[ " ;
@@ -1877,6 +1891,8 @@ void	testVector::member_functions__modifiers__insert_single_element() {
 			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
 			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
 			std::cout << "      *itB is			" << *itB << std::endl;
+			std::cout << "      vectorB.begin() is	" << *vectorB.begin() << std::endl;
+			std::cout << "      vectorB.end() is		" << *vectorB.end() << std::endl;
 			std::cout << std::endl;
 
 			std::cout << "      vectorC is		[ " ;
@@ -1886,6 +1902,8 @@ void	testVector::member_functions__modifiers__insert_single_element() {
 			std::cout << "      vectorC.capacity() is	" << vectorC.capacity() << std::endl;
 			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
 			std::cout << "      *itC is			" << *itC << std::endl;
+			std::cout << "      vectorC.begin() is	" << *vectorC.begin() << std::endl;
+			std::cout << "      vectorC.end() is		" << *vectorC.end() << std::endl;
 			std::cout << std::endl;
 
 	itA = vectorA.insert(vectorA.end(), 3);
@@ -1903,6 +1921,8 @@ void	testVector::member_functions__modifiers__insert_single_element() {
 			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
 			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
 			std::cout << "      *itA is			" << *itA << std::endl;
+			std::cout << "      vectorA.begin() is	" << *vectorA.begin() << std::endl;
+			std::cout << "      vectorA.end() is		" << *vectorA.end() << std::endl;
 			std::cout << std::endl;
 
 			std::cout << "      vectorB is		[ " ;
@@ -1912,6 +1932,8 @@ void	testVector::member_functions__modifiers__insert_single_element() {
 			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
 			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
 			std::cout << "      *itB is			" << *itB << std::endl;
+			std::cout << "      vectorB.begin() is	" << *vectorB.begin() << std::endl;
+			std::cout << "      vectorB.end() is		" << *vectorB.end() << std::endl;
 			std::cout << std::endl;
 
 			std::cout << "      vectorC is		[ " ;
@@ -1921,6 +1943,8 @@ void	testVector::member_functions__modifiers__insert_single_element() {
 			std::cout << "      vectorC.capacity() is	" << vectorC.capacity() << std::endl;
 			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
 			std::cout << "      *itC is			" << *itC << std::endl;
+			std::cout << "      vectorC.begin() is	" << *vectorC.begin() << std::endl;
+			std::cout << "      vectorC.end() is		" << *vectorC.end() << std::endl;
 			std::cout << std::endl;
 
 	itA = vectorA.erase(vectorA.begin(), vectorA.end() - 2);
@@ -1938,6 +1962,8 @@ void	testVector::member_functions__modifiers__insert_single_element() {
 			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
 			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
 			std::cout << "      *itA is			" << *itA << std::endl;
+			std::cout << "      vectorA.begin() is	" << *vectorA.begin() << std::endl;
+			std::cout << "      vectorA.end() is		" << *vectorA.end() << std::endl;
 			std::cout << std::endl;
 
 			std::cout << "      vectorB is		[ " ;
@@ -1947,6 +1973,8 @@ void	testVector::member_functions__modifiers__insert_single_element() {
 			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
 			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
 			std::cout << "      *itB is			" << *itB << std::endl;
+			std::cout << "      vectorB.begin() is	" << *vectorB.begin() << std::endl;
+			std::cout << "      vectorB.end() is		" << *vectorB.end() << std::endl;
 			std::cout << std::endl;
 
 			std::cout << "      vectorC is		[ " ;
@@ -1956,6 +1984,8 @@ void	testVector::member_functions__modifiers__insert_single_element() {
 			std::cout << "      vectorC.capacity() is	" << vectorC.capacity() << std::endl;
 			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
 			std::cout << "      *itC is			" << *itC << std::endl;
+			std::cout << "      vectorC.begin() is	" << *vectorC.begin() << std::endl;
+			std::cout << "      vectorC.end() is		" << *vectorC.end() << std::endl;
 			std::cout << std::endl;
 
 	itA = vectorA.insert(vectorA.begin(), 1);
@@ -1973,6 +2003,8 @@ void	testVector::member_functions__modifiers__insert_single_element() {
 			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
 			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
 			std::cout << "      *itA is			" << *itA << std::endl;
+			std::cout << "      vectorA.begin() is	" << *vectorA.begin() << std::endl;
+			std::cout << "      vectorA.end() is		" << *vectorA.end() << std::endl;
 			std::cout << std::endl;
 
 			std::cout << "      vectorB is		[ " ;
@@ -1982,6 +2014,8 @@ void	testVector::member_functions__modifiers__insert_single_element() {
 			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
 			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
 			std::cout << "      *itB is			" << *itB << std::endl;
+			std::cout << "      vectorB.begin() is	" << *vectorB.begin() << std::endl;
+			std::cout << "      vectorB.end() is		" << *vectorB.end() << std::endl;
 			std::cout << std::endl;
 
 			std::cout << "      vectorC is		[ " ;
@@ -1991,11 +2025,217 @@ void	testVector::member_functions__modifiers__insert_single_element() {
 			std::cout << "      vectorC.capacity() is	" << vectorC.capacity() << std::endl;
 			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
 			std::cout << "      *itC is			" << *itC << std::endl;
+			std::cout << "      vectorC.begin() is	" << *vectorC.begin() << std::endl;
+			std::cout << "      vectorC.end() is		" << *vectorC.end() << std::endl;
 			std::cout << std::endl;
 }
 void	testVector::member_functions__modifiers__insert_fill() {
 			std::cout << "Modifiers - insert():" << std::endl << std::endl;
 			std::cout << "Fill:" << std::endl << std::endl;
+
+	ft::vector<int> vectorA;
+	ft::vector<int> vectorB;
+	ft::vector<int> vectorC;
+
+			std::cout << "  vector<int> vectorA;" << std::endl;
+			std::cout << "  vector<int> vectorB;" << std::endl;
+			std::cout << "  vector<int> vectorC;" << std::endl << std::endl;
+
+	vectorB.push_back(100);
+
+	vectorC.push_back(7);
+	vectorC.push_back(17);
+	vectorC.push_back(27);
+
+			std::cout << "  vectorB.push_back(100);" << std::endl << std::endl;
+
+			std::cout << "  vectorC.push_back(7);" << std::endl;
+			std::cout << "  vectorC.push_back(17);" << std::endl;
+			std::cout << "  vectorC.push_back(27);" << std::endl << std::endl;
+
+			std::cout << "      vectorA is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorA.begin(); itA != vectorA.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
+			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorB is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorB.begin(); itA != vectorB.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
+			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorC is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorC.begin(); itA != vectorC.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorC.capacity() is	" << vectorC.capacity() << std::endl;
+			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
+			std::cout << std::endl;
+
+	vectorA.insert(vectorA.begin(), 0, 1);
+	vectorB.insert(vectorB.begin() + 1, 0, 200);
+	vectorC.insert(vectorC.begin() + 2, 0, 37);
+
+			std::cout << "  vectorA.insert(vectorA.begin(), 0, 1);" << std::endl;
+			std::cout << "  vectorB.insert(vectorB.begin() + 1, 0, 200);" << std::endl;
+			std::cout << "  vectorC.insert(vectorC.begin() + 2, 0, 37);" << std::endl << std::endl;
+
+			std::cout << "      vectorA is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorA.begin(); itA != vectorA.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
+			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorB is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorB.begin(); itA != vectorB.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
+			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorC is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorC.begin(); itA != vectorC.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorC.capacity() is	" << vectorC.capacity() << std::endl;
+			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
+			std::cout << std::endl;
+
+	vectorA.insert(vectorA.end(), 5, 2);
+	vectorB.insert(vectorB.end(), 5, 300);
+	vectorC.insert(vectorC.end(), 5, 47);
+
+			std::cout << "  vectorA.insert(vectorA.end(), 5, 2);" << std::endl;
+			std::cout << "  vectorB.insert(vectorB.end(), 5, 300);" << std::endl;
+			std::cout << "  vectorC.insert(vectorC.end(), 5, 47);" << std::endl << std::endl;
+
+			std::cout << "      vectorA is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorA.begin(); itA != vectorA.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
+			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorB is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorB.begin(); itA != vectorB.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
+			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorC is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorC.begin(); itA != vectorC.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorC.capacity() is	" << vectorC.capacity() << std::endl;
+			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
+			std::cout << std::endl;
+
+	vectorA.insert(vectorA.end() - 1, 1, 3);
+	vectorB.insert(vectorB.end() - 1, 1, 400);
+	vectorC.insert(vectorC.end() - 1, 1, 57);
+
+			std::cout << "  vectorA.insert(vectorA.end() - 1, 1, 3);" << std::endl;
+			std::cout << "  vectorB.insert(vectorB.end() - 1, 1, 400);" << std::endl;
+			std::cout << "  vectorC.insert(vectorC.end() - 1, 1, 57);" << std::endl << std::endl;
+
+			std::cout << "      vectorA is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorA.begin(); itA != vectorA.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
+			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorB is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorB.begin(); itA != vectorB.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
+			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorC is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorC.begin(); itA != vectorC.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorC.capacity() is	" << vectorC.capacity() << std::endl;
+			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
+			std::cout << std::endl;
+
+	vectorA.erase(vectorA.begin(), vectorA.end() - 2);
+	vectorB.erase(vectorB.begin(), vectorB.end() - 2);
+	vectorC.erase(vectorC.begin(), vectorC.end() - 2);
+
+			std::cout << "  vectorA.erase(vectorA.begin(), vectorA.end() - 2);" << std::endl;
+			std::cout << "  vectorB.erase(vectorB.begin(), vectorB.end() - 2);" << std::endl;
+			std::cout << "  vectorC.erase(vectorC.begin(), vectorC.end() - 2);" << std::endl << std::endl;
+
+			std::cout << "      vectorA is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorA.begin(); itA != vectorA.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
+			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorB is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorB.begin(); itA != vectorB.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
+			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorC is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorC.begin(); itA != vectorC.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorC.capacity() is	" << vectorC.capacity() << std::endl;
+			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
+			std::cout << std::endl;
+
+	vectorA.insert(vectorA.begin(), 10, 1);
+	vectorB.insert(vectorB.begin(), 10, 4);
+	vectorC.insert(vectorC.begin(), 10, 3);
+
+			std::cout << "  vectorA.insert(vectorA.begin(), 10, 1);" << std::endl;
+			std::cout << "  vectorB.insert(vectorB.begin(), 10, 4);" << std::endl;
+			std::cout << "  vectorC.insert(vectorB.begin(), 10, 3);" << std::endl << std::endl;
+
+			std::cout << "      vectorA is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorA.begin(); itA != vectorA.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
+			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorB is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorB.begin(); itA != vectorB.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
+			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorC is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorC.begin(); itA != vectorC.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorC.capacity() is	" << vectorC.capacity() << std::endl;
+			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
+			std::cout << std::endl;
 }
 void	testVector::member_functions__modifiers__insert_range() {
 			std::cout << "Modifiers - insert():" << std::endl << std::endl;

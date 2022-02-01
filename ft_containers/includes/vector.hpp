@@ -333,7 +333,7 @@ class vector {
 
 			if (diff_until_end > 0) {
 				// Shift by 1 everything from the position you want until the end
-				for (size_type size_temp = _size; pos < size_temp ; size_temp--) {
+				for (size_type size_temp = _size - 1; pos < size_temp ; size_temp--) {
 					_buffer[size_temp] = _buffer[size_temp - 1];
 				}
 				// Insert new value on the correct position

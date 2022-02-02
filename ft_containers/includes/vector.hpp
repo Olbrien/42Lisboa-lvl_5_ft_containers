@@ -328,16 +328,20 @@ class vector {
 			size_type pos = position - begin();
 			size_type diff_until_end = end() - position;
 
-			// Put new element in the end
-			this->push_back(val);
-
 			if (diff_until_end > 0) {
+				// push_back() but without constructing last element
+				push_back_no_construct();
+
 				// Swap 1 by 1 from "end() - 1" until position
 				for (size_type size_temp = _size - 1; pos < size_temp ; size_temp--) {
-					_buffer[size_temp] = _buffer[size_temp - 1];
+					_alloc.construct(_buffer + size_temp, *(_buffer + size_temp - 1));
+					_alloc.destroy(_buffer + size_temp - 1);
 				}
 				// Insert new value on the correct position
-				_buffer[pos] = val;
+				_alloc.construct(_buffer + pos, val);
+			}
+			else {
+				this->push_back(val);
 			}
 			return iterator(_buffer + pos);
 		};
@@ -352,44 +356,57 @@ class vector {
 			if (n >= _capacity) {
 				reserve(_size + n);
 			}
-			for (size_type i = 0; n > i; i++) {
-				this->push_back(val);
-			}
 
 			if (n > 0 && pos != initial_size) {
-				// Swap 1 by 1 the new _size (size_temp) with the old _size before the push_backs
-				// (initial_size).
-				for (size_type size_temp = _size; initial_size >= pos; size_temp--, initial_size--) {
-					_buffer[size_temp] = _buffer[initial_size];
+				for (size_type i = 0; n > i; i++) {
+					push_back_no_construct();
+				}
+				// current_size = the current _size
+				// initial_size = is the _size before allocating more space with reserve() and
+				// push_back_no_construct()
+				// Swap 1 by 1 the new current_size-- with the initial_size--
+				// Until the initial_size reaches the position where new elements will be inserted
+				for (size_type current_size = _size; initial_size >= pos; current_size--, initial_size--) {
+					_alloc.construct(_buffer + current_size, *(_buffer + initial_size));
+					_alloc.destroy(_buffer + initial_size);
 					if (initial_size == 0)
 						break ;
 				}
 				// Inserts new values on the correct positions
 				for (; n > 0; n--, pos++) {
-					_buffer[pos] = val;
+					_alloc.construct(_buffer + pos, val);
+				}
+			}
+			else if (pos == initial_size) {
+				// if elements are being inserted at the end
+				for (size_type i = 0; n > i; i++) {
+					push_back(val);
 				}
 			}
 		};
 
-/*		// Range
+		// Range
 		template <class InputIterator>
-		void insert (iterator position, InputIterator first, InputIterator last) {
+		void insert (iterator position, InputIterator first, InputIterator last,
+					typename enable_if<!is_integral<InputIterator>::value>::type* = 0) {
 			(void)position;
 			(void)first;
 			(void)last;
 		};
-*/
+
 
 		// https://stackoverflow.com/questions/17492092/stdvectoreraseiterator-position-does-not-necessarily-invoke-the-correspond
 		iterator erase (iterator position) {
 			size_type pos = position - begin();
 
-			// Instead of deleting the pos it shifts everything by 1 from the pos + 1
+			// Destroys element at position
+			_alloc.destroy(_buffer + pos);
+
+			// Constructs at position with the pos + 1, then it destroys pos + 1
 			for (iterator begin = _buffer + pos; begin != this->end() - 1; begin++, pos++) {
-				_buffer[pos] = *(begin + 1);
+				_alloc.construct(_buffer + pos, *(begin + 1));
+				_alloc.destroy(_buffer + pos + 1);
 			}
-			// Destroys last element
-			_alloc.destroy(_buffer + _size - 1);
 			_size--;
 			return position;
 		};
@@ -399,14 +416,16 @@ class vector {
 			size_type pos = first - begin();
 			size_type diff_until_end = end() - last;
 
-			// Instead of deleting from first to last it shifts everything
+			// Deletes the range of elements
+			for (size_type temp_pos = pos ; temp_pos < range_to_erase; temp_pos++) {
+				_alloc.destroy(_buffer + temp_pos);
+			}
+
+			// Constructs at position with the pos + 1, then it destroys pos + 1
 			iterator begin = _buffer + range_to_erase + pos;
 			for ( ; diff_until_end > 0; pos++, begin++, --diff_until_end) {
-				_buffer[pos] = *(begin);
-			}
-			// And then deletes the last elements
-			for ( ; pos < _size; pos++) {
-				_alloc.destroy(_buffer + pos);
+				_alloc.construct(_buffer + pos, *(begin));
+				_alloc.destroy(_buffer + pos + 1);
 			}
 
 			_size -= range_to_erase;
@@ -437,6 +456,16 @@ class vector {
 
 			_buffer = temp;
 			_capacity = _size;
+		};
+
+		void push_back_no_construct () {
+			if (_capacity == 0) {
+				reserve(1);
+			}
+			else if (_capacity == _size) {
+				reserve(_capacity * 2);
+			}
+			_size++;
 		};
 
 		/****************/

@@ -332,7 +332,7 @@ class vector {
 			this->push_back(val);
 
 			if (diff_until_end > 0) {
-				// Shift by 1 everything from the position you want until the end
+				// Swap 1 by 1 from "end() - 1" until position
 				for (size_type size_temp = _size - 1; pos < size_temp ; size_temp--) {
 					_buffer[size_temp] = _buffer[size_temp - 1];
 				}
@@ -344,19 +344,41 @@ class vector {
 
 		// Fill
 		void insert (iterator position, size_type n, const value_type& val) {
-			(void)position;
-			(void)n;
-			(void)val;
+			size_type pos = position - begin();
+			size_type initial_size = end() - begin();
+
+			// if n >= capacity then you have to put _size == _capacity, otherwise
+			// it can be (x2)
+			if (n >= _capacity) {
+				reserve(_size + n);
+			}
+			for (size_type i = 0; n > i; i++) {
+				this->push_back(val);
+			}
+
+			if (n > 0 && pos != initial_size) {
+				// Swap 1 by 1 the new _size (size_temp) with the old _size before the push_backs
+				// (initial_size).
+				for (size_type size_temp = _size; initial_size >= pos; size_temp--, initial_size--) {
+					_buffer[size_temp] = _buffer[initial_size];
+					if (initial_size == 0)
+						break ;
+				}
+				// Inserts new values on the correct positions
+				for (; n > 0; n--, pos++) {
+					_buffer[pos] = val;
+				}
+			}
 		};
 
-		// Range
+/*		// Range
 		template <class InputIterator>
 		void insert (iterator position, InputIterator first, InputIterator last) {
 			(void)position;
 			(void)first;
 			(void)last;
 		};
-
+*/
 
 		// https://stackoverflow.com/questions/17492092/stdvectoreraseiterator-position-does-not-necessarily-invoke-the-correspond
 		iterator erase (iterator position) {

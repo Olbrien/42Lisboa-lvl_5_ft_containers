@@ -53,8 +53,8 @@ Vector:
 			pop_back				✅
 			insert:
 				single element		✅
-				fill				❌
-				range				❌
+				fill				✅
+				range				✅
 			erase:
 				position			✅
 				range				✅

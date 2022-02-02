@@ -357,16 +357,20 @@ class vector {
 				reserve(_size + n);
 			}
 
+			// This is case the pos is not in the end, otherwise you just push_back()
 			if (n > 0 && pos != initial_size) {
 				for (size_type i = 0; n > i; i++) {
 					push_back_no_construct();
 				}
+
+				// offset by 1 because you don't want end() but end() - 1
+				initial_size--;
 				// current_size = the current _size
 				// initial_size = is the _size before allocating more space with reserve() and
 				// push_back_no_construct()
 				// Swap 1 by 1 the new current_size-- with the initial_size--
 				// Until the initial_size reaches the position where new elements will be inserted
-				for (size_type current_size = _size; initial_size >= pos; current_size--, initial_size--) {
+				for (size_type current_size = _size - 1; initial_size >= pos; current_size--, initial_size--) {
 					_alloc.construct(_buffer + current_size, *(_buffer + initial_size));
 					_alloc.destroy(_buffer + initial_size);
 					if (initial_size == 0)
@@ -389,9 +393,41 @@ class vector {
 		template <class InputIterator>
 		void insert (iterator position, InputIterator first, InputIterator last,
 					typename enable_if<!is_integral<InputIterator>::value>::type* = 0) {
-			(void)position;
-			(void)first;
-			(void)last;
+			size_type pos = position - begin();
+			size_type size_of_range = last - first;
+			size_type initial_size = end() - begin();
+
+			// if size_of_range >= capacity then you have to put _size == _capacity, otherwise
+			// it can be (x2)
+			if (size_of_range >= _capacity) {
+				reserve(_size + size_of_range);
+			}
+
+			if (size_of_range > 0 && pos != initial_size) {
+				for (size_type i = 0; size_of_range > i; i++) {
+					push_back_no_construct();
+				}
+				--initial_size;
+				// same logic as Fill
+				for (size_type current_size = _size - 1; initial_size >= pos; current_size--, initial_size--) {
+					_alloc.construct(_buffer + current_size, *(_buffer + initial_size));
+					_alloc.destroy(_buffer + initial_size);
+					if (initial_size == 0)
+						break ;
+				}
+				// Inserts new values on the correct positions
+				while (first != last) {
+					_alloc.construct(_buffer + pos, *first);
+					first++;
+					pos++;
+				}
+			}
+			else if (pos == initial_size) {
+				while (first != last) {
+					push_back(*first);
+					first++;
+				}
+			}
 		};
 
 

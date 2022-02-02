@@ -2449,7 +2449,7 @@ void	testVector::member_functions__modifiers__insert_fill() {
 }
 void	testVector::member_functions__modifiers__insert_range() {
 			std::cout << "Modifiers - insert():" << std::endl << std::endl;
-			std::cout << "Range:" << std::endl << std::endl;
+			std::cout << "Range: " << std::endl << std::endl;
 
 	ft::vector<int> vectorA;
 	ft::vector<int> vectorB(1, 1);

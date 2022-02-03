@@ -65,13 +65,13 @@ Vector:
 			get_allocator			✅
 
 	Non-member function overloads:
-		operator ==					❌
-		operator !=					❌
-		operator >=					❌
-		operator >					❌
-		operator <=					❌
-		operator <					❌
-		swap						❌
+		operator ==					✅
+		operator !=					✅
+		operator >=					✅
+		operator >					✅
+		operator <=					✅
+		operator <					✅
+		swap						✅
 
 
 Random Access Iterator (Iterator and Const Iterator):
@@ -198,9 +198,11 @@ Reverse Iterator (Reverse Iterator and Const Reverse Iterator):
 
 Extras:
 
-	iterator_traits			✅
-	enable_if				✅
-	is_integral				✅
+	iterator_traits				✅
+	enable_if					✅
+	is_integral					✅
+	equal						✅
+	lexicographical_compare		✅
 
 ---------------------------------------------------------------------------------------------
 

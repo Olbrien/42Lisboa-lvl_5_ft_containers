@@ -115,8 +115,8 @@ int		vector_argument(std::string argument) {
 
 	if (!argument.compare("67")) { header_text("vector"); testVector::member_functions__allocator__get_allocator(); return 0; }
 
-	if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__overloads__relational_operators(); return 0; }
-	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__overloads__swap(); return 0; }
+	if (!argument.compare("68")) { header_text("vector"); testVector::member_functions__overloads__relational_operators(); return 0; }
+	else if (!argument.compare("69")) { header_text("vector"); testVector::member_functions__overloads__swap(); return 0; }
 
 	return 1;
 }
@@ -124,6 +124,8 @@ int		extras_argument(std::string argument) {
 	if (!argument.compare("200")) { header_text("extras"); testExtras::extras__iterator_traits(); return 0; }
 	else if (!argument.compare("201")) { header_text("extras"); testExtras::extras__enable_if(); return 0; }
 	else if (!argument.compare("202")) { header_text("extras"); testExtras::extras__is_integral(); return 0; }
+	else if (!argument.compare("203")) { header_text("extras"); testExtras::extras__equal(); return 0; }
+	else if (!argument.compare("204")) { header_text("extras"); testExtras::extras__lexicographical_compare(); return 0; }
 
 	return 1;
 }
@@ -230,13 +232,15 @@ void	welcome_message() {
 	std::cout << "*          Allocator:						    *" << std::endl;
 	std::cout << "*              get_allocator				      67    *" << std::endl;
 	std::cout << "*          Non-member Function Overloads:			    *" << std::endl;
-	std::cout << "*              relational operators			      xx    *" << std::endl;
-	std::cout << "*              swap					      xx    *" << std::endl;
+	std::cout << "*              relational operators			      68    *" << std::endl;
+	std::cout << "*              swap					      69    *" << std::endl;
 	std::cout << "*								    *" << std::endl;
 	std::cout << "*  Extras:							    *" << std::endl;
 	std::cout << "*      iterator_traits					     200    *" << std::endl;
 	std::cout << "*      enable_if					     201    *" << std::endl;
 	std::cout << "*      is_integral					     202    *" << std::endl;
+	std::cout << "*      equal						     203    *" << std::endl;
+	std::cout << "*      lexicographical_compare				     204    *" << std::endl;
 	std::cout << "*								    *" << std::endl;
 	std::cout << "*********************************************************************"
 				<< std::endl;

@@ -75,6 +75,14 @@ void isIntegral (const T&,
     std::cout << "True" << std::endl;
 }
 
+
+/*****************/
+/* extras__equal */
+
+bool isGreaterOrEqual(int first, int second) {
+    return first >= second;
+}
+
 }
 
 #endif

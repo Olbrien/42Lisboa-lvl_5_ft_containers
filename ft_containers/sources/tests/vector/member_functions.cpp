@@ -3506,8 +3506,428 @@ void	testVector::member_functions__allocator__get_allocator() {
 }
 
 void	testVector::member_functions__overloads__relational_operators() {
+			std::cout << "Non-member function overloads:" << std::endl << std::endl;
 
+	ft::vector<int> vectorA(5, 5);
+	ft::vector<int> vectorB(5, 5);
+	ft::vector<int> vectorC(4, 5);
+	ft::vector<int> vectorD(12, 5);
+	ft::vector<int> vectorE;
+
+	ft::vector<std::string> vectorF(5, "Olah");
+	ft::vector<std::string> vectorG(5, "Olah");
+	ft::vector<std::string> vectorH(5, "Olahn");
+	ft::vector<std::string> vectorI(12, "Not Olah");
+	ft::vector<std::string> vectorJ;
+
+			std::cout << "  vector<int>		vectorA(5, 5);" << std::endl;
+			std::cout << "  vector<int>		vectorB(5, 5);" << std::endl;
+			std::cout << "  vector<int>		vectorC(4, 5);" << std::endl;
+			std::cout << "  vector<int>		vectorD(12, 5);" << std::endl;
+			std::cout << "  vector<int>		vectorE;" << std::endl << std::endl;
+
+			std::cout << "  vector<std::string>	vectorF(5, \"Olah\");" << std::endl;
+			std::cout << "  vector<std::string>	vectorG(5, \"Olah\");" << std::endl;
+			std::cout << "  vector<std::string>	vectorH(5, \"Olahn\");" << std::endl;
+			std::cout << "  vector<std::string>	vectorI(12, \"Not Olah\");" << std::endl;
+			std::cout << "  vector<std::string>	vectorJ;" << std::endl << std::endl;
+
+	// operator==
+
+			std::cout << "      vectorA == vectorB is	"; (vectorA == vectorB) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA == vectorC is	"; (vectorA == vectorC) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA == vectorD is	"; (vectorA == vectorD) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA == vectorE is	"; (vectorA == vectorE) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+			std::cout << "      vectorF == vectorG is	"; (vectorF == vectorG) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF == vectorH is	"; (vectorF == vectorH) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF == vectorI is	"; (vectorF == vectorI) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF == vectorJ is	"; (vectorF == vectorJ) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+	// operator!=
+
+			std::cout << "      vectorA != vectorB is	"; (vectorA != vectorB) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA != vectorC is	"; (vectorA != vectorC) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA != vectorD is	"; (vectorA != vectorD) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA != vectorE is	"; (vectorA != vectorE) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+			std::cout << "      vectorF != vectorG is	"; (vectorF != vectorG) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF != vectorH is	"; (vectorF != vectorH) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF != vectorI is	"; (vectorF != vectorI) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF != vectorJ is	"; (vectorF != vectorJ) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+	// operator<
+
+			std::cout << "      vectorA < vectorB is	"; (vectorA < vectorB) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA < vectorC is	"; (vectorA < vectorC) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA < vectorD is	"; (vectorA < vectorD) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA < vectorE is	"; (vectorA < vectorE) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+			std::cout << "      vectorF < vectorG is	"; (vectorF < vectorG) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF < vectorH is	"; (vectorF < vectorH) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF < vectorI is	"; (vectorF < vectorI) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF < vectorJ is	"; (vectorF < vectorJ) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+	// operator<=
+
+			std::cout << "      vectorA <= vectorB is	"; (vectorA <= vectorB) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA <= vectorC is	"; (vectorA <= vectorC) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA <= vectorD is	"; (vectorA <= vectorD) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA <= vectorE is	"; (vectorA <= vectorE) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+			std::cout << "      vectorF <= vectorG is	"; (vectorF <= vectorG) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF <= vectorH is	"; (vectorF <= vectorH) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF <= vectorI is	"; (vectorF <= vectorI) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF <= vectorJ is	"; (vectorF <= vectorJ) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+	// operator>
+
+			std::cout << "      vectorA > vectorB is	"; (vectorA > vectorB) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA > vectorC is	"; (vectorA > vectorC) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA > vectorD is	"; (vectorA > vectorD) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA > vectorE is	"; (vectorA > vectorE) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+			std::cout << "      vectorF > vectorG is	"; (vectorF > vectorG) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF > vectorH is	"; (vectorF > vectorH) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF > vectorI is	"; (vectorF > vectorI) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF > vectorJ is	"; (vectorF > vectorJ) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+	// operator>=
+
+			std::cout << "      vectorA >= vectorB is	"; (vectorA >= vectorB) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA >= vectorC is	"; (vectorA >= vectorC) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA >= vectorD is	"; (vectorA >= vectorD) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA >= vectorE is	"; (vectorA >= vectorE) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+			std::cout << "      vectorF >= vectorG is	"; (vectorF >= vectorG) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF >= vectorH is	"; (vectorF >= vectorH) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF >= vectorI is	"; (vectorF >= vectorI) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF >= vectorJ is	"; (vectorF >= vectorJ) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+
+	vectorA.push_back(5);
+	vectorB.push_back(5);
+	vectorC.push_back(5);
+	vectorC.push_back(5);
+	vectorD.push_back(5000);
+
+	vectorF.push_back("Oi");
+	vectorG.push_back("Yo");
+
+			std::cout << "  vectorA.push_back(5);" << std::endl;
+			std::cout << "  vectorB.push_back(5);" << std::endl;
+			std::cout << "  vectorC.push_back(5);" << std::endl;
+			std::cout << "  vectorC.push_back(5);" << std::endl;
+			std::cout << "  vectorD.push_back(5000);" << std::endl << std::endl;
+
+			std::cout << "  vectorF.push_back(\"Oi\");" << std::endl;
+			std::cout << "  vectorG.push_back(\"Yo\");" << std::endl << std::endl;
+
+	// operator==
+
+			std::cout << "      vectorA == vectorB is	"; (vectorA == vectorB) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA == vectorC is	"; (vectorA == vectorC) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA == vectorD is	"; (vectorA == vectorD) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA == vectorE is	"; (vectorA == vectorE) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+			std::cout << "      vectorF == vectorG is	"; (vectorF == vectorG) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF == vectorH is	"; (vectorF == vectorH) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF == vectorI is	"; (vectorF == vectorI) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF == vectorJ is	"; (vectorF == vectorJ) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+	// operator!=
+
+			std::cout << "      vectorA != vectorB is	"; (vectorA != vectorB) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA != vectorC is	"; (vectorA != vectorC) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA != vectorD is	"; (vectorA != vectorD) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA != vectorE is	"; (vectorA != vectorE) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+			std::cout << "      vectorF != vectorG is	"; (vectorF != vectorG) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF != vectorH is	"; (vectorF != vectorH) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF != vectorI is	"; (vectorF != vectorI) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF != vectorJ is	"; (vectorF != vectorJ) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+	// operator<
+
+			std::cout << "      vectorA < vectorB is	"; (vectorA < vectorB) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA < vectorC is	"; (vectorA < vectorC) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA < vectorD is	"; (vectorA < vectorD) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA < vectorE is	"; (vectorA < vectorE) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+			std::cout << "      vectorF < vectorG is	"; (vectorF < vectorG) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF < vectorH is	"; (vectorF < vectorH) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF < vectorI is	"; (vectorF < vectorI) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF < vectorJ is	"; (vectorF < vectorJ) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+	// operator<=
+
+			std::cout << "      vectorA <= vectorB is	"; (vectorA <= vectorB) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA <= vectorC is	"; (vectorA <= vectorC) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA <= vectorD is	"; (vectorA <= vectorD) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA <= vectorE is	"; (vectorA <= vectorE) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+			std::cout << "      vectorF <= vectorG is	"; (vectorF <= vectorG) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF <= vectorH is	"; (vectorF <= vectorH) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF <= vectorI is	"; (vectorF <= vectorI) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF <= vectorJ is	"; (vectorF <= vectorJ) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+	// operator>
+
+			std::cout << "      vectorA > vectorB is	"; (vectorA > vectorB) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA > vectorC is	"; (vectorA > vectorC) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA > vectorD is	"; (vectorA > vectorD) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA > vectorE is	"; (vectorA > vectorE) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+			std::cout << "      vectorF > vectorG is	"; (vectorF > vectorG) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF > vectorH is	"; (vectorF > vectorH) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF > vectorI is	"; (vectorF > vectorI) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF > vectorJ is	"; (vectorF > vectorJ) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+	// operator>=
+
+			std::cout << "      vectorA >= vectorB is	"; (vectorA >= vectorB) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA >= vectorC is	"; (vectorA >= vectorC) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA >= vectorD is	"; (vectorA >= vectorD) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorA >= vectorE is	"; (vectorA >= vectorE) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+			std::cout << "      vectorF >= vectorG is	"; (vectorF >= vectorG) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF >= vectorH is	"; (vectorF >= vectorH) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF >= vectorI is	"; (vectorF >= vectorI) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      vectorF >= vectorJ is	"; (vectorF >= vectorJ) ? std::cout << "True\n\n" : std::cout << "False\n\n";
 }
 void	testVector::member_functions__overloads__swap() {
+			std::cout << "Non-member function swap():" << std::endl << std::endl;
+
+	typedef ft::vector<int>::iterator it;
+
+	ft::vector<int> vectorA(1, 1);
+	ft::vector<int> vectorB;
+	ft::vector<int> vectorC(2, 2);
+	ft::vector<int> vectorD(7, 7);
+
+			std::cout << "  typename std::vector<int>::iterator it;" << std::endl << std::endl;
+
+			std::cout << "  vector<int> vectorA(1, 1);" << std::endl;
+			std::cout << "  vector<int> vectorB;" << std::endl;
+			std::cout << "  vector<int> vectorC(2, 2);" << std::endl;
+			std::cout << "  vector<int> vectorD(7, 7);" << std::endl << std::endl;
+
+	it itA = vectorA.begin();
+	vectorB.begin();
+	it itC = vectorC.begin();
+	it itD = vectorD.begin();
+
+			std::cout << "  it itA = vectorA.begin();" << std::endl;
+			std::cout << "  vectorB.begin();" << std::endl;
+			std::cout << "  it itC = vectorC.begin();" << std::endl;
+			std::cout << "  it itD = vectorD.begin();" << std::endl << std::endl;
+
+			std::cout << "      vectorA is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorA.begin(); itA != vectorA.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
+			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
+			std::cout << "      vectorA.begin() is	" << *vectorA.begin() << std::endl;
+			std::cout << "      *itA is			" << *itA << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorB is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorB.begin(); itA != vectorB.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
+			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
+			//std::cout << "      vectorB.begin() is	" << *vectorB.begin() << std::endl;
+			//std::cout << "      *itB is			" << *itB << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorC is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorC.begin(); itA != vectorC.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorC.capacity() is	" << vectorC.capacity() << std::endl;
+			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
+			std::cout << "      vectorC.begin() is	" << *vectorC.begin() << std::endl;
+			std::cout << "      *itC is			" << *itC << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorD is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorD.begin(); itA != vectorD.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorD.capacity() is	" << vectorD.capacity() << std::endl;
+			std::cout << "      vectorD.size() is		" << vectorD.size() << std::endl;
+			std::cout << "      vectorD.begin() is	" << *vectorD.begin() << std::endl;
+			std::cout << "      *itD is			" << *itD << std::endl;
+			std::cout << std::endl;
+
+	ft::swap(vectorA, vectorB);
+	ft::swap(vectorC, vectorD);
+
+			std::cout << "  swap(vectorA, vectorB);" << std::endl;
+			std::cout << "  swap(vectorC, vectorD);" << std::endl << std::endl;
+
+			std::cout << "      vectorA is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorA.begin(); itA != vectorA.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
+			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
+			//std::cout << "      vectorA.begin() is	" << *vectorA.begin() << std::endl;
+			//std::cout << "      *itA is			" << *itA << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorB is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorB.begin(); itA != vectorB.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
+			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
+			std::cout << "      vectorB.begin() is	" << *vectorB.begin() << std::endl;
+			//std::cout << "      *itB is			" << *itB << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorC is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorC.begin(); itA != vectorC.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorC.capacity() is	" << vectorC.capacity() << std::endl;
+			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
+			std::cout << "      vectorC.begin() is	" << *vectorC.begin() << std::endl;
+			std::cout << "      *itC is			" << *itC << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorD is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorD.begin(); itA != vectorD.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorD.capacity() is	" << vectorD.capacity() << std::endl;
+			std::cout << "      vectorD.size() is		" << vectorD.size() << std::endl;
+			std::cout << "      vectorD.begin() is	" << *vectorD.begin() << std::endl;
+			std::cout << "      *itD is			" << *itD << std::endl;
+			std::cout << std::endl;
+
+	swap(vectorA, vectorD);
+	swap(vectorB, vectorC);
+
+			std::cout << "  swap(vectorA, vectorD);" << std::endl;
+			std::cout << "  swap(vectorB, vectorC);" << std::endl << std::endl;
+
+			std::cout << "      vectorA is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorA.begin(); itA != vectorA.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
+			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
+			std::cout << "      vectorA.begin() is	" << *vectorA.begin() << std::endl;
+			std::cout << "      *itA is			" << *itA << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorB is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorB.begin(); itA != vectorB.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
+			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
+			std::cout << "      vectorB.begin() is	" << *vectorB.begin() << std::endl;
+			//std::cout << "      *itB is			" << *itB << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorC is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorC.begin(); itA != vectorC.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorC.capacity() is	" << vectorC.capacity() << std::endl;
+			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
+			std::cout << "      vectorC.begin() is	" << *vectorC.begin() << std::endl;
+			std::cout << "      *itC is			" << *itC << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorD is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorD.begin(); itA != vectorD.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorD.capacity() is	" << vectorD.capacity() << std::endl;
+			std::cout << "      vectorD.size() is		" << vectorD.size() << std::endl;
+			//std::cout << "      vectorD.begin() is	" << *vectorD.begin() << std::endl;
+			std::cout << "      *itD is			" << *itD << std::endl;
+			std::cout << std::endl;
+
+
+			std::cout << "      itA is		[ " ;
+			for (int i = 0 ; i < 1; i++) { std::cout << *(itA + i) << " "; }
+			std::cout << "]" << std::endl;
+
+			std::cout << "      itC is		[ " ;
+			for (int i = 0 ; i < 2; i++) { std::cout << *(itC + i) << " "; }
+			std::cout << "]" << std::endl;
+
+			std::cout << "      itD is		[ " ;
+			for (int i = 0 ; i < 7; i++) { std::cout << *(itD + i) << " "; }
+			std::cout << "]" << std::endl << std::endl;
+
+	vectorA.push_back(90);
+	vectorB.push_back(70);
+	vectorC.push_back(50);
+	vectorD.push_back(30);
+
+			std::cout << "  vectorA.push_back(90);" << std::endl;
+			std::cout << "  vectorB.push_back(70);" << std::endl;
+			std::cout << "  vectorC.push_back(50);" << std::endl;
+			std::cout << "  vectorD.push_back(30);" << std::endl << std::endl;
+
+			std::cout << "      vectorA is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorA.begin(); itA != vectorA.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
+			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
+			std::cout << "      vectorA.begin() is	" << *vectorA.begin() << std::endl;
+			std::cout << "      *itA is			" << *itA << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorB is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorB.begin(); itA != vectorB.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
+			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
+			std::cout << "      vectorB.begin() is	" << *vectorB.begin() << std::endl;
+			//std::cout << "      *itB is			" << *itB << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorC is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorC.begin(); itA != vectorC.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorC.capacity() is	" << vectorC.capacity() << std::endl;
+			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
+			std::cout << "      vectorC.begin() is	" << *vectorC.begin() << std::endl;
+			std::cout << "      *itC is			" << *itC << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      vectorD is		[ " ;
+			for (ft::vector<int>::iterator itA = vectorD.begin(); itA != vectorD.end(); itA++) { std::cout << *itA << " ";	}
+			std::cout << "]" << std::endl;
+
+			std::cout << "      vectorD.capacity() is	" << vectorD.capacity() << std::endl;
+			std::cout << "      vectorD.size() is		" << vectorD.size() << std::endl;
+			std::cout << "      vectorD.begin() is	" << *vectorD.begin() << std::endl;
+			std::cout << "      *itD is			" << *itD << std::endl;
+			std::cout << std::endl;
+
+
+			std::cout << "      itA is		[ " ;
+			for (int i = 0 ; i < 2; i++) { std::cout << *(itA + i) << " "; }
+			std::cout << "]" << std::endl;
+
+			std::cout << "      itC is		[ " ;
+			for (int i = 0 ; i < 3; i++) { std::cout << *(itC + i) << " "; }
+			std::cout << "]" << std::endl;
+
+			std::cout << "      itD is		[ " ;
+			for (int i = 0 ; i < 8; i++) { std::cout << *(itD + i) << " "; }
+			std::cout << "]" << std::endl;
 
 }

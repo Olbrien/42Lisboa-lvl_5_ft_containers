@@ -104,6 +104,8 @@ namespace testExtras {
 	void	extras__iterator_traits();
 	void	extras__enable_if();
 	void	extras__is_integral();
+	void	extras__equal();
+	void	extras__lexicographical_compare();
 }
 
 #endif

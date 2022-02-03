@@ -1,4 +1,5 @@
 #include "../../../includes/main.hpp"
+#include <algorithm>
 #include "extras.hpp"
 
 void	testExtras::extras__iterator_traits() {
@@ -25,7 +26,7 @@ void	testExtras::extras__iterator_traits() {
 			std::cout << std::endl;
 }
 void	testExtras::extras__enable_if() {
-			std::cout << "Enable If:" << std::endl << std::endl;
+			std::cout << "enable_if():" << std::endl << std::endl;
 
 			std::cout << "  template <class T>" << std::endl;
 			std::cout << "  void isClass (T, typename enable_if<!is_class<T>::value>::type* = 0) {" << std::endl;
@@ -69,7 +70,7 @@ void	testExtras::extras__enable_if() {
 			std::cout << std::endl;
 }
 void	testExtras::extras__is_integral() {
-			std::cout << "Is Integral:" << std::endl << std::endl;
+			std::cout << "is_integral():" << std::endl << std::endl;
 
 			std::cout << "  template <class T>" << std::endl;
 			std::cout << "  void isIntegral (T, " << std::endl
@@ -109,4 +110,65 @@ void	testExtras::extras__is_integral() {
 			std::cout << "  isIntegral(_float)" ;
 			std::cout << "       is ";  testExtras::isIntegral(testExtras::_float);
 			std::cout << std::endl;
+}
+void	testExtras::extras__equal() {
+			std::cout << "equal():" << std::endl << std::endl;
+
+			std::cout << "       bool isGreaterOrEqual(int first, int second) {" << std::endl <<
+						 "          return first >= second;" << std::endl <<
+						 "       }" << std::endl << std::endl;
+
+	ft::vector<int> vectorA(2, 2);
+	ft::vector<int> vectorB(3, 3);
+	ft::vector<int> vectorH(3, 3);
+
+			std::cout << "  vector<int> vectorA(2, 2);" << std::endl;
+			std::cout << "  vector<int> vectorB(3, 3);" << std::endl;
+			std::cout << "  vector<int> vectorH(3, 3);" << std::endl << std::endl;
+
+			std::cout << std::boolalpha;
+
+			std::cout << "  equal(vectorA.begin(), vectorA.end(), vectorB.begin());" << std::endl;
+			std::cout << "  equal(vectorB.begin(), vectorB.end(), vectorH.begin());" << std::endl << std::endl;
+
+			std::cout << "  equal(vectorA.begin(), vectorA.end(), vectorB.begin(), isGreaterOrEqual;" << std::endl;
+			std::cout << "  equal(vectorB.begin(), vectorB.end(), vectorH.begin(), isGreaterOrEqual;" << std::endl << std::endl;
+
+			std::cout << "       " << ft::equal(vectorA.begin(), vectorA.end(), vectorB.begin()) << std::endl;
+			std::cout << "       " << ft::equal(vectorB.begin(), vectorB.end(), vectorH.begin()) << std::endl << std::endl;
+
+			std::cout << "       " << ft::equal(vectorA.begin(), vectorA.end(), vectorB.begin(), testExtras::isGreaterOrEqual) << std::endl;
+			std::cout << "       " << ft::equal(vectorB.begin(), vectorB.end(), vectorH.begin(), testExtras::isGreaterOrEqual) << std::endl << std::endl;
+}
+void	testExtras::extras__lexicographical_compare() {
+			std::cout << "lexicographical_compare():" << std::endl << std::endl;
+
+			std::cout << "       bool isGreaterOrEqual(int first, int second) {" << std::endl <<
+						 "          return first >= second;" << std::endl <<
+						 "       }" << std::endl << std::endl;
+
+	ft::vector<int> vectorA(5, 5);
+	ft::vector<int> vectorB(5, 4);
+
+			std::cout << "  vector<int>		vectorA(5, 5);" << std::endl;
+			std::cout << "  vector<int>		vectorB(5, 4);" << std::endl << std::endl;
+
+			std::cout << std::boolalpha;
+
+			std::cout << "  lexicographical_compare(vectorA.begin(), vectorA.end(), vectorB.begin(), vectorB.end());" << std::endl;
+			std::cout << "  lexicographical_compare(vectorB.begin(), vectorB.end(), vectorA.begin(), vectorA.end());" << std::endl << std::endl;
+
+			std::cout << "  lexicographical_compare(vectorA.begin(), vectorA.end(), vectorB.begin(), vectorB.end(), isGreaterOrEqual);" << std::endl;
+			std::cout << "  lexicographical_compare(vectorB.begin(), vectorB.end(), vectorA.begin(), vectorA.end(), isGreaterOrEqual);" << std::endl << std::endl;
+
+			std::cout << "       " << ft::lexicographical_compare(vectorA.begin(), vectorA.end(), vectorB.begin(), vectorB.end()) << std::endl;
+			std::cout << "       " << ft::lexicographical_compare(vectorB.begin(), vectorB.end(), vectorA.begin(), vectorA.end()) << std::endl << std::endl;
+
+			std::cout << "       " << ft::lexicographical_compare(vectorA.begin(), vectorA.end(), vectorB.begin(), vectorB.end(), testExtras::isGreaterOrEqual) << std::endl;
+			std::cout << "       " << ft::lexicographical_compare(vectorB.begin(), vectorB.end(), vectorA.begin(), vectorA.end(), testExtras::isGreaterOrEqual) << std::endl;
+
+
+
+
+	//ft::lexicographical_compare(lhs.begin(), lhs.end(), rhs.begin(), rhs.end())
 }

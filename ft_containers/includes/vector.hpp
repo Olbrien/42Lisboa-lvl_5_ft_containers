@@ -468,6 +468,23 @@ class vector {
 			return first;
 		};
 
+		void swap (vector& x) {
+			allocator_type  alloc_temp = x._alloc;
+			size_type       size_temp = x._size;
+			size_type       capacity_temp = x._capacity;
+			pointer         buffer_temp = x._buffer;
+
+			x._alloc = _alloc;
+			x._size = _size;
+			x._capacity = _capacity;
+			x._buffer = _buffer;
+
+			_alloc = alloc_temp;
+			_size = size_temp;
+			_capacity = capacity_temp;
+			_buffer = buffer_temp;
+		}
+
 		void clear() {
 			for (size_type i = 0; i < _size; i++) {
 				_alloc.destroy(_buffer + i);
@@ -475,6 +492,13 @@ class vector {
 			_size = 0;
 		};
 
+		/****
+		** Allocator
+		*/
+
+		allocator_type get_allocator() const {
+			return _alloc;
+		};
 
 
 	private:

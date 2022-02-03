@@ -113,7 +113,7 @@ int		vector_argument(std::string argument) {
 	else if (!argument.compare("65")) { header_text("vector"); testVector::member_functions__modifiers__swap(); return 0; }
 	else if (!argument.compare("66")) { header_text("vector"); testVector::member_functions__modifiers__clear(); return 0; }
 
-	if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__allocator__get_allocator(); return 0; }
+	if (!argument.compare("67")) { header_text("vector"); testVector::member_functions__allocator__get_allocator(); return 0; }
 
 	if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__overloads__relational_operators(); return 0; }
 	else if (!argument.compare("xx")) { header_text("vector"); testVector::member_functions__overloads__swap(); return 0; }
@@ -228,7 +228,7 @@ void	welcome_message() {
 	std::cout << "*              swap					      65    *" << std::endl;
 	std::cout << "*              clear					      66    *" << std::endl;
 	std::cout << "*          Allocator:						    *" << std::endl;
-	std::cout << "*              get_allocator				      xx    *" << std::endl;
+	std::cout << "*              get_allocator				      67    *" << std::endl;
 	std::cout << "*          Non-member Function Overloads:			    *" << std::endl;
 	std::cout << "*              relational operators			      xx    *" << std::endl;
 	std::cout << "*              swap					      xx    *" << std::endl;

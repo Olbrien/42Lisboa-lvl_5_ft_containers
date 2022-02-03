@@ -58,11 +58,11 @@ Vector:
 			erase:
 				position			✅
 				range				✅
-			swap					❌
+			swap					✅
 			clear					✅
 
 		Allocator:
-			get_allocator			❌
+			get_allocator			✅
 
 	Non-member function overloads:
 		operator ==					❌

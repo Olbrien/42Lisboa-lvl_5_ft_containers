@@ -1,5 +1,4 @@
 #include "../../../includes/main.hpp"
-#include <algorithm>
 #include "extras.hpp"
 
 void	testExtras::extras__iterator_traits() {
@@ -171,4 +170,140 @@ void	testExtras::extras__lexicographical_compare() {
 
 
 	//ft::lexicographical_compare(lhs.begin(), lhs.end(), rhs.begin(), rhs.end())
+}
+void	testExtras::extras__pair() {
+			std::cout << "pair():" << std::endl << std::endl;
+			std::cout << "Constructors:" << std::endl << std::endl;
+
+	ft::pair<int, int> obj1(5, 10);
+	ft::pair<std::string, int> obj2("Save Yourself", 10);
+	ft::pair<int, int> obj3(obj1);
+	ft::pair<int, int> obj4(12, 9);
+	ft::pair<int, int> obj5;
+
+			std::cout << "  pair<int, int> obj1(5, 10);" << std::endl;
+			std::cout << "  pair<std::string, int> obj2(\"Save Yourself\", 10);" << std::endl;
+			std::cout << "  pair<int, int> obj3(obj1);" << std::endl;
+			std::cout << "  pair<int, int> obj4;" << std::endl << std::endl;
+
+			std::cout << "       obj1.first is	" << obj1.first << std::endl;
+			std::cout << "       obj1.second is	" << obj1.second << std::endl;
+			std::cout << "       &obj1.first is	" << &obj1.first << std::endl;
+			std::cout << "       &obj1.second is	" << &obj1.second << std::endl << std::endl;
+
+			std::cout << "       obj2.first is	" << obj2.first << std::endl;
+			std::cout << "       obj2.second is	" << obj2.second << std::endl;
+			std::cout << "       &obj2.first is	" << &obj2.first << std::endl;
+			std::cout << "       &obj2.second is	" << &obj2.second << std::endl << std::endl;
+
+			std::cout << "       obj3.first is	" << obj3.first << std::endl;
+			std::cout << "       obj3.second is	" << obj3.second << std::endl;
+			std::cout << "       &obj3.first is	" << &obj3.first << std::endl;
+			std::cout << "       &obj3.second is	" << &obj3.second << std::endl << std::endl;
+
+			std::cout << "       obj4.first is	" << obj4.first << std::endl;
+			std::cout << "       obj4.second is	" << obj4.second << std::endl;
+			std::cout << "       &obj4.first is	" << &obj4.first << std::endl;
+			std::cout << "       &obj4.second is	" << &obj4.second << std::endl << std::endl;
+
+
+			std::cout << "Assignment Operator=:" << std::endl << std::endl;
+
+	obj5 = obj3;
+
+			std::cout << "  obj5 = obj3;" << std::endl << std::endl;
+
+			std::cout << "       obj5.first is	" << obj5.first << std::endl;
+			std::cout << "       obj5.second is	" << obj5.second << std::endl;
+			std::cout << "       &obj5.first is	" << &obj5.first << std::endl;
+			std::cout << "       &obj5.second is	" << &obj5.second << std::endl << std::endl;
+
+
+			std::cout << "Relational Operators:" << std::endl << std::endl;
+
+			std::cout << std::boolalpha;
+
+			std::cout << "       (obj5.first == obj3.first) is	" << (obj5.first == obj3.first) << std::endl;
+			std::cout << "       (obj5.second == obj3.second is	" << (obj5.second == obj3.second) << std::endl;
+			std::cout << "       (obj5.first == obj3.second is	" << (obj5.first == obj3.second) << std::endl << std::endl;
+
+			std::cout << "       (obj4.first == obj4.first) is	" << (obj4.first == obj1.first) << std::endl;
+			std::cout << "       (obj4.second == obj4.second is	" << (obj4.second == obj1.second) << std::endl;
+			std::cout << "       (obj4.first == obj4.second is	" << (obj4.first == obj1.second) << std::endl << std::endl;
+
+			std::cout << "       (obj5.first != obj3.first) is	" << (obj5.first != obj3.first) << std::endl;
+			std::cout << "       (obj5.second != obj3.second is	" << (obj5.second != obj3.second) << std::endl;
+			std::cout << "       (obj5.first != obj3.second is	" << (obj5.first != obj3.second) << std::endl << std::endl;
+
+			std::cout << "       (obj4.first != obj4.first) is	" << (obj4.first != obj1.first) << std::endl;
+			std::cout << "       (obj4.second != obj4.second is	" << (obj4.second != obj1.second) << std::endl;
+			std::cout << "       (obj4.first != obj4.second is	" << (obj4.first != obj1.second) << std::endl << std::endl;
+
+			std::cout << "       (obj5.first < obj3.first) is	" << (obj5.first < obj3.first) << std::endl;
+			std::cout << "       (obj5.second < obj3.second is	" << (obj5.second < obj3.second) << std::endl;
+			std::cout << "       (obj5.first < obj3.second is	" << (obj5.first < obj3.second) << std::endl << std::endl;
+
+			std::cout << "       (obj4.first < obj4.first) is	" << (obj4.first < obj1.first) << std::endl;
+			std::cout << "       (obj4.second < obj4.second is	" << (obj4.second < obj1.second) << std::endl;
+			std::cout << "       (obj4.first < obj4.second is	" << (obj4.first < obj1.second) << std::endl << std::endl;
+
+			std::cout << "       (obj5.first <= obj3.first) is	" << (obj5.first <= obj3.first) << std::endl;
+			std::cout << "       (obj5.second <= obj3.second is	" << (obj5.second <= obj3.second) << std::endl;
+			std::cout << "       (obj5.first <= obj3.second is	" << (obj5.first <= obj3.second) << std::endl << std::endl;
+
+			std::cout << "       (obj4.first <= obj4.first) is	" << (obj4.first <= obj1.first) << std::endl;
+			std::cout << "       (obj4.second <= obj4.second is	" << (obj4.second <= obj1.second) << std::endl;
+			std::cout << "       (obj4.first <= obj4.second is	" << (obj4.first <= obj1.second) << std::endl << std::endl;
+
+			std::cout << "       (obj5.first > obj3.first) is	" << (obj5.first > obj3.first) << std::endl;
+			std::cout << "       (obj5.second > obj3.second is	" << (obj5.second > obj3.second) << std::endl;
+			std::cout << "       (obj5.first > obj3.second is	" << (obj5.first > obj3.second) << std::endl << std::endl;
+
+			std::cout << "       (obj4.first > obj4.first) is	" << (obj4.first > obj1.first) << std::endl;
+			std::cout << "       (obj4.second > obj4.second is	" << (obj4.second > obj1.second) << std::endl;
+			std::cout << "       (obj4.first > obj4.second is	" << (obj4.first > obj1.second) << std::endl << std::endl;
+
+			std::cout << "       (obj5.first >= obj3.first) is	" << (obj5.first >= obj3.first) << std::endl;
+			std::cout << "       (obj5.second >= obj3.second is	" << (obj5.second >= obj3.second) << std::endl;
+			std::cout << "       (obj5.first >= obj3.second is	" << (obj5.first >= obj3.second) << std::endl << std::endl;
+
+			std::cout << "       (obj4.first >= obj4.first) is	" << (obj4.first >= obj1.first) << std::endl;
+			std::cout << "       (obj4.second >= obj4.second is	" << (obj4.second >= obj1.second) << std::endl;
+			std::cout << "       (obj4.first >= obj4.second is	" << (obj4.first >= obj1.second) << std::endl << std::endl;
+
+
+}
+void	testExtras::extras__make_pair() {
+			std::cout << "make_pair():" << std::endl << std::endl;
+
+	ft::pair<std::string, int> obj1;
+	ft::pair<int, int> obj2(12, 9);
+	ft::pair<double, float> obj3 = ft::make_pair(25.5, 25.5);
+
+			std::cout << "  pair<std::string, int> obj1;" << std::endl;
+			std::cout << "  pair<int, int> obj2(12, 9);" << std::endl;
+			std::cout << "  pair<double, float> obj3 = make_pair(25.5, 25.5);" << std::endl << std::endl;
+
+	obj1 = ft::make_pair("Die Young and Save Yourself", 4);
+	obj2 = ft::make_pair(2, 4);
+
+			std::cout << "  obj1 = ft::make_pair(\"Die Young and Save Yourself\", 4);" << std::endl;
+			std::cout << "  obj2 = ft::make_pair(2, 4);" << std::endl << std::endl;
+
+
+			std::cout << "       obj1.first is	" << obj1.first << std::endl;
+			std::cout << "       obj1.second is	" << obj1.second << std::endl;
+			std::cout << "       &obj1.first is	" << &obj1.first << std::endl;
+			std::cout << "       &obj1.second is	" << &obj1.second << std::endl << std::endl;
+
+			std::cout << "       obj2.first is	" << obj2.first << std::endl;
+			std::cout << "       obj2.second is	" << obj2.second << std::endl;
+			std::cout << "       &obj2.first is	" << &obj2.first << std::endl;
+			std::cout << "       &obj2.second is	" << &obj2.second << std::endl << std::endl;
+
+			std::cout << "       obj3.first is	" << obj3.first << std::endl;
+			std::cout << "       obj3.second is	" << obj3.second << std::endl;
+			std::cout << "       &obj3.first is	" << &obj3.first << std::endl;
+			std::cout << "       &obj3.second is	" << &obj3.second << std::endl << std::endl;
+
 }

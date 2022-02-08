@@ -2,11 +2,11 @@
 # define EXTRAS_HPP
 
 #include <iostream>
-#include "../../../includes/type_traits.hpp"
+#include "../../../includes/utils/type_traits.hpp"
 
 namespace testExtras {
 
-//////////////////////
+/********************/
 /* global variables */
 
 enum color { red, green, blue };

@@ -4,11 +4,11 @@
 #include <iostream>
 #include <typeinfo>
 #include <stdexcept>
-#include "utils.hpp"
-#include "iterator.hpp"
-#include "reverse_iterator.hpp"
-#include "type_traits.hpp"
-#include "algorithm.hpp"
+#include "./utils/utils.hpp"
+#include "./utils/random_access_iterator.hpp"
+#include "./utils/reverse_iterator.hpp"
+#include "./utils/type_traits.hpp"
+#include "./utils/algorithm.hpp"
 
 namespace ft {
 

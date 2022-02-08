@@ -196,6 +196,172 @@ Reverse Iterator (Reverse Iterator and Const Reverse Iterator):
 
 ---------------------------------------------------------------------------------------------
 
+Map:
+
+	Member Types:
+		key_type					❌
+		mapped_type					❌
+		value_type					❌
+		allocator_type				❌
+		reference					❌
+		const_reference				❌
+		pointer						❌
+		const_pointer				❌
+		iterator					❌
+		const_iterator				❌
+		reverse_iterator			❌
+		const_reverse_iterator		❌
+		difference_type				❌
+		size_type					❌
+
+	Member Functions:
+		Default:
+			default constructor		❌
+			range constructor		❌
+			copy constructor		❌
+			destructor				❌
+			operator=				❌
+
+		Iterators:
+			begin					❌
+			end						❌
+			rbegin					❌
+			rend					❌
+
+		Capacity:
+			empty					❌
+			size					❌
+			max_size				❌
+
+		Element Access:
+			operator[]				❌
+
+		Modifiers:
+			insert:
+				single element		❌
+				with hint			❌
+				range				❌
+				initializer_list	❌
+			erase					❌
+			swap					❌
+			clear					❌
+
+		Observers:
+			key_comp				❌
+			value_comp				❌
+
+		Operations:
+			find					❌
+			counters				❌
+			lower_bound				❌
+			upper_bound				❌
+			equal_range				❌
+
+		Allocator:
+			get_allocator			❌
+
+Bidirectional Iterator (Iterator and Const Iterator):
+
+	Member Types:
+		value_type					❌
+		difference_type				❌
+		pointer						❌
+		reference					❌
+		iterator_category			❌
+
+	Member Functions:
+			Default:
+				default constructor		❌
+				constructor pointer		❌
+				copy constructor		❌
+				copy assignable			❌
+				destructor				❌
+
+			Relational Operators:
+				a == b					❌
+				a != b					❌
+
+			Dereferences:
+				*a						❌
+				a->m					❌
+				*a = t					❌
+
+			Increment and Decrement Operators:
+				++a						❌
+				a++						❌
+				*a++					❌
+				--a						❌
+				a--						❌
+				*a--					❌
+
+			Extras:
+				it = const_it			❌
+				it == const_it			❌
+				it != const_it			❌
+
+Reverse Iterator (Reverse Iterator and Const Reverse Iterator):
+
+	Member Types:
+		iterator_type				❌
+		value_type					❌
+		difference_type				❌
+		pointer						❌
+		reference					❌
+		iterator_category			❌
+
+	Member Functions:
+			Default:
+				default constructor		❌
+				constructor pointer		❌
+				copy constructor		❌
+				destructor				❌
+
+			Relational Operators:
+				a == b					❌
+				a != b					❌
+				a < b					❌
+				a > b					❌
+				a <= b					❌
+				a >= b					❌
+
+			Dereferences:
+				*a						❌
+				a->m					❌
+				*a = t					❌
+				a[n]					❌
+
+			Increment and Decrement Operators:
+				++a						❌
+				a++						❌
+				*a++					❌
+				--a						❌
+				a--						❌
+				*a--					❌
+
+			Arithmetic Operators:
+				a + n					❌
+				n + a					❌
+				a - n					❌
+				a - b					❌
+
+			Assignment Operators:
+				a += n					❌
+				a -= n					❌
+
+			Base:
+				base					❌
+
+			Extras:
+				it = const_it			❌
+				it == const_it			❌
+				it != const_it			❌
+				it < const_it			❌
+				it > const_it			❌
+				it <= const_it			❌
+				it >= const_it			❌
+
+---------------------------------------------------------------------------------------------
+
 Extras:
 
 	iterator_traits				✅
@@ -203,6 +369,8 @@ Extras:
 	is_integral					✅
 	equal						✅
 	lexicographical_compare		✅
+	pair						✅
+	make_pair					✅
 
 ---------------------------------------------------------------------------------------------
 

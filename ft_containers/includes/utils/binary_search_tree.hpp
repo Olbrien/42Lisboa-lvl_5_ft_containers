@@ -15,38 +15,36 @@ struct Node {
 };
 
 template <class T>
-class BST {
+class binary_search_tree {
     public:
-        // Constructor
-        BST() : _myBst(NULL)
+		/****************/
+		/* Member Types */
+
+		typedef T                                                       value_type;
+		typedef typename std::ptrdiff_t                                 difference_type;
+		typedef typename std::size_t                                    size_type;
+
+		/********************/
+		/* Member functions */
+
+		/****
+		** Constructors
+		*/
+
+		// Default
+        binary_search_tree() : _node(NULL)
         {};
 
-        // Destructor
-        ~BST()
+		/****
+		** Destructor
+		*/
+
+        ~binary_search_tree()
         {};
 
-        // Printing BST inorder
-        void    inorder(Node<T> *root) {
-            if (root != NULL) {
-                inorder(root->left);
-                std::cout << root->data << "->";
-                inorder(root->right);
-            }
-        }
-
-        /* return the node with minimum key value
-        found in that tree. Note that the
-        entire tree does not need to be searched. */
-        Node<T>     *minValueNode(Node<T> *node)
-        {
-            Node<T> *current = node;
-
-            /* loop down to find the leftmost leaf */
-            while (current && current->left != NULL)
-                current = current->left;
-
-            return current;
-        }
+		/****
+		** Insertion
+		*/
 
         // Insert
         Node<T>     *insert(Node<T> *root, T data) {
@@ -65,6 +63,10 @@ class BST {
 
             return root;
         };
+
+		/****
+		** Deletion
+		*/
 
         // Delete Node
         Node<T>     *deleteNode(Node<T> *root, T data) {
@@ -105,21 +107,57 @@ class BST {
             return root;
         }
 
+        /****
+		** Searching
+		*/
+
+
     private:
-        Node<T>     *_myBst;
+        /********************/
+		/* Helper Functions */
+
+        // Printing binary_search_tree inorder
+        void    inorder(Node<T> *root) {
+            if (root != NULL) {
+                inorder(root->left);
+                std::cout << root->data << "->";
+                inorder(root->right);
+            }
+        }
+
+        /* return the node with minimum key value
+        found in that tree. Note that the
+        entire tree does not need to be searched. */
+        Node<T>     *minValueNode(Node<T> *node)
+        {
+            Node<T> *current = node;
+
+            /* loop down to find the leftmost leaf */
+            while (current && current->left != NULL)
+                current = current->left;
+
+            return current;
+        }
+
+        /****************/
+		/* Private Data */
+
+        Node<T>         *_node;
+        
 };
 
 }
 
 #endif
 
+// https://github.com/stevenkim18/ft_containers/blob/main/containers/map/BST.hpp
 
 // #include <iostream>
 // #include "binary_search_tree.hpp"
 
 // int main() {
 //     ft::Node<int> *root = NULL;
-//     ft::BST<int> bst;
+//     ft::binary_search_tree<int> bst;
 
 //     root = bst.insert(root, 1);
 //     root = bst.insert(root, 6);

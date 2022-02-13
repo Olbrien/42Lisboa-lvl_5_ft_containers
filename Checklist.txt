@@ -202,17 +202,19 @@ Map:
 		key_type					✅
 		mapped_type					✅
 		value_type					✅
-		allocator_type				❌
-		reference					❌
-		const_reference				❌
-		pointer						❌
-		const_pointer				❌
+		key_compare					✅
+		value_compare				✅ # No Tests Done
+		allocator_type				✅ # No Tests Done
+		reference					✅ # No Tests Done
+		const_reference				✅ # No Tests Done
+		pointer						✅ # No Tests Done
+		const_pointer				✅ # No Tests Done
 		iterator					❌
 		const_iterator				❌
 		reverse_iterator			❌
 		const_reverse_iterator		❌
-		difference_type				❌
-		size_type					❌
+		difference_type				✅
+		size_type					✅
 
 	Member Functions:
 		Default:

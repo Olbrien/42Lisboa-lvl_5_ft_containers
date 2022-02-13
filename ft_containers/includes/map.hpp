@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "../includes/utils/utility.hpp"
+#include "../includes/utils/binary_search_tree.hpp"
 
 namespace ft {
 
@@ -13,11 +14,10 @@ class map {
 		/****************/
 		/* Member Types */
 
-		typedef Key									key_type;
-		typedef T									mapped_type;
-		typedef ft::pair<key_type, mapped_type>		value_type;
-		typedef Compare								key_compare;
-		typedef Alloc   							allocator_type;
+		typedef Key											key_type;
+		typedef T											mapped_type;
+		typedef ft::pair<key_type, mapped_type>				value_type;
+		typedef Compare										key_compare;
 
 		class value_compare : std::binary_function<value_type, value_type, bool> {
 			private:
@@ -36,7 +36,47 @@ class map {
 				}
 		};
 
+		typedef Alloc										allocator_type;
+		typedef typename allocator_type::reference			reference;
+		typedef typename allocator_type::const_reference	const_reference;
+		typedef typename allocator_type::pointer			pointer;
+		typedef typename allocator_type::const_pointer		const_pointer;
+	//	typedef typename ft::Binary_search_tree<value_type, key_compare>::iterator 			iterator;
+	//	typedef typename ft::Binary_search_tree<value_type, key_compare>::const_iterator	const_iterator;
+	//	typedef typename ft::reverse_iterator<iterator>    									reverse_iterator;
+	//	typedef typename ft::reverse_iterator<const_iterator>    							const_reverse_iterator;
+		typedef typename std::ptrdiff_t                     difference_type;
+		typedef typename std::size_t                        size_type;
+
+		/********************/
+		/* Member functions */
+
+		/****
+		** Constructors
+		*/
+
+		// Default
+		explicit map (const key_compare& comp = key_compare(),
+					  const allocator_type& alloc = allocator_type()) :	_comp(comp),
+					  													_alloc(alloc),
+					  													_bst(NULL)
+		{};
+
+		/****
+		** Modifiers
+		*/
+
+		// single element
+		pair<iterator,bool> insert (const value_type& val) {
+			
+		};
+
+
 	private:
+		ft::binary_search_tree<value_type>				_bst;
+		allocator_type									_alloc;
+		key_compare										_comp;
+		
 };
 
 }

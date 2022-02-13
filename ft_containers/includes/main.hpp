@@ -107,13 +107,14 @@ namespace testMap {
 	void	member_types__key_type();
 	void	member_types__mapped_type();
 	void	member_types__value_type();
-	// void	member_types__allocator_type();
-	// void	member_types__reference();
-	// void	member_types__const_reference();
-	// void	member_types__pointer();
-	// void	member_types__const_pointer();
-	// void	member_types__difference_type();
-	// void	member_types__size_type();
+	void	member_types__value_compare();
+	void	member_types__allocator_type();
+	void	member_types__reference();
+	void	member_types__const_reference();
+	void	member_types__pointer();
+	void	member_types__const_pointer();
+	void	member_types__difference_type();
+	void	member_types__size_type();
 
 	// void	member_types__iterator__default_member_functions();
 	// void	member_types__iterator__relational_operators();

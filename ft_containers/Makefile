@@ -42,14 +42,16 @@ OBJ2 = $(SRC:cpp=ft.o)
 #### ######## #### #### ######## #### #### ######## #### #### ######## #### #### ######## ####
 
 all: message $(OBJ) $(OBJ2) $(NAME_STD) $(NAME_FT)
+#all: message $(NAME_STD) $(NAME_FT)
 
 c: clear fclean message $(OBJ) $(OBJ2) $(NAME_STD) $(NAME_FT) clean
+#c: clear fclean message $(NAME_STD) $(NAME_FT) clean
 
-$(NAME_STD):
+$(NAME_STD): # $(OBJ)
 	@echo "\n\033[0;32mCompiling ${NAME_STD}..."
 	@$(CC) $(CFLAGS) -o $(NAME_STD) $(OBJ)
 
-$(NAME_FT):
+$(NAME_FT): # $(OBJ2)
 	@echo "\033[0;32mCompiling ${NAME_FT}..."
 	@$(CC) $(CFLAGS) -o $(NAME_FT) $(OBJ2)
 	@echo "\n\033[0mDone !\n"

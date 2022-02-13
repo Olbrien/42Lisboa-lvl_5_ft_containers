@@ -199,9 +199,9 @@ Reverse Iterator (Reverse Iterator and Const Reverse Iterator):
 Map:
 
 	Member Types:
-		key_type					❌
-		mapped_type					❌
-		value_type					❌
+		key_type					✅
+		mapped_type					✅
+		value_type					✅
 		allocator_type				❌
 		reference					❌
 		const_reference				❌

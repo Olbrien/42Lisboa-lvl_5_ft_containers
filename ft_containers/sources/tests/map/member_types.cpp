@@ -1,23 +1,86 @@
 #include "../../../includes/main.hpp"
 
-// void	testVector::member_types__value_type() {
-// 			std::cout << "Value Type: " << std::endl << std::endl;
+void	testMap::member_types__key_type() {
+			std::cout << "Key Type: " << std::endl << std::endl;
 
-// 	ft::vector<int>::value_type vt(5);
-// 	ft::vector<double>::value_type vt2(5);
-// 	ft::vector<char>::value_type vt3('X');
+	ft::map<int, int>::key_type kt1;
+	ft::map<std::string, double>::key_type kt2;
+	ft::map<int, char *>::key_type kt3;
+	ft::map<char *, int>::key_type kt4;
+	ft::map<double, int>::key_type kt5;
 
-// 			std::cout << "  vector<int>::value_type       vt(5);" << std::endl;
-// 			std::cout << "  vector<double>::value_type    vt2(5);" << std::endl;
-// 			std::cout << "  vector<char>::value_type      vt3('X');" << std::endl;
+			std::cout << "  ft::map<int, int>::key_type			kt1;" << std::endl;
+			std::cout << "  ft::map<std::string, double>::key_type	kt2;" << std::endl;
+			std::cout << "  ft::map<int, char *>::key_type		kt3;" << std::endl;
+			std::cout << "  ft::map<char *, int>::key_type		kt4;" << std::endl;
+			std::cout << "  ft::map<double, int>::key_type		kt5;" << std::endl;
 
-// 			std::cout << std::endl;
+			std::cout << std::endl;
 
-// 			std::cout << "      typeid(vt).name()  is	" << typeid(vt).name() << std::endl;
-// 			std::cout << "      typeid(vt2).name() is	" << typeid(vt2).name() << std::endl;
-// 			std::cout << "      typeid(vt3).name() is	" << typeid(vt3).name() << std::endl;
-// 			std::cout << std::endl;
-// }
+			std::cout << "      typeid(kt1).name() is	" << typeid(kt1).name() << std::endl;
+			std::cout << "      typeid(kt2).name() is	" << typeid(kt2).name() << std::endl;
+			std::cout << "      typeid(kt3).name() is	" << typeid(kt3).name() << std::endl;
+			std::cout << "      typeid(kt4).name() is	" << typeid(kt4).name() << std::endl;
+			std::cout << "      typeid(kt5).name() is	" << typeid(kt5).name() << std::endl;
+			std::cout << std::endl;
+}
+void	testMap::member_types__mapped_type() {
+			std::cout << "Mapped Type: " << std::endl << std::endl;
+
+	ft::map<int, int>::mapped_type mt1;
+	ft::map<std::string, double>::mapped_type mt2;
+	ft::map<int, char *>::mapped_type mt3;
+	ft::map<char *, int>::mapped_type mt4;
+	ft::map<double, int>::mapped_type mt5;
+
+			std::cout << "  ft::map<int, int>::mapped_type		mt1;" << std::endl;
+			std::cout << "  ft::map<std::string, double>::mapped_type	mt2;" << std::endl;
+			std::cout << "  ft::map<int, char *>::mapped_type		mt3;" << std::endl;
+			std::cout << "  ft::map<char *, int>::mapped_type		mt4;" << std::endl;
+			std::cout << "  ft::map<double, int>::mapped_type		mt5;" << std::endl;
+
+			std::cout << std::endl;
+
+			std::cout << "      typeid(mt1).name() is	" << typeid(mt1).name() << std::endl;
+			std::cout << "      typeid(mt2).name() is	" << typeid(mt2).name() << std::endl;
+			std::cout << "      typeid(mt3).name() is	" << typeid(mt3).name() << std::endl;
+			std::cout << "      typeid(mt4).name() is	" << typeid(mt4).name() << std::endl;
+			std::cout << "      typeid(mt5).name() is	" << typeid(mt5).name() << std::endl;
+			std::cout << std::endl;
+}
+void	testMap::member_types__value_type() {
+			std::cout << "Value Type: " << std::endl << std::endl;
+
+	ft::map<int, int>::value_type vt1;
+	ft::map<std::string, double>::value_type vt2;
+	ft::map<int, char *>::value_type vt3;
+	ft::map<char *, int>::value_type vt4;
+	ft::map<double, int>::value_type vt5;
+
+			std::cout << "  ft::map<int, int>::value_type			vt1;" << std::endl;
+			std::cout << "  ft::map<std::string, double>::value_type	vt2;" << std::endl;
+			std::cout << "  ft::map<int, char *>::value_type		vt3;" << std::endl;
+			std::cout << "  ft::map<char *, int>::value_type		vt4;" << std::endl;
+			std::cout << "  ft::map<double, int>::value_type		vt5;" << std::endl;
+
+			std::cout << std::endl;
+
+			std::cout << "      typeid(vt1.first).name() is	" << typeid(vt1.first).name() << std::endl;
+			std::cout << "      typeid(vt1.second).name() is	" << typeid(vt1.second).name() << std::endl << std::endl;
+
+			std::cout << "      typeid(vt2.first).name() is	" << typeid(vt2.first).name() << std::endl;
+			std::cout << "      typeid(vt2.second).name() is	" << typeid(vt2.second).name() << std::endl << std::endl;
+
+			std::cout << "      typeid(vt3.first).name() is	" << typeid(vt3.first).name() << std::endl;
+			std::cout << "      typeid(vt3.second).name() is	" << typeid(vt3.second).name() << std::endl << std::endl;
+
+			std::cout << "      typeid(vt4.first).name() is	" << typeid(vt4.first).name() << std::endl;
+			std::cout << "      typeid(vt4.second).name() is	" << typeid(vt4.second).name() << std::endl << std::endl;
+
+			std::cout << "      typeid(vt5.first).name() is	" << typeid(vt5.first).name() << std::endl;
+			std::cout << "      typeid(vt5.second).name() is	" << typeid(vt5.second).name() << std::endl << std::endl;
+			std::cout << std::endl;
+}
 // void	testVector::member_types__allocator_type() {
 // 			std::cout << "Allocator Type: " << std::endl << std::endl;
 

@@ -12,6 +12,7 @@
 
 #if FT
 	#include "../includes/vector.hpp"
+	#include "../includes/map.hpp"
 	#include "../includes/utils/utility.hpp"
 #else
 	#include <vector>
@@ -103,9 +104,9 @@ namespace testVector {
 	void	member_functions__overloads__swap();
 }
 namespace testMap {
-	// void	member_types__key_type();
-	// void	member_types__mapped_type();
-	// void	member_types__value_type();
+	void	member_types__key_type();
+	void	member_types__mapped_type();
+	void	member_types__value_type();
 	// void	member_types__allocator_type();
 	// void	member_types__reference();
 	// void	member_types__const_reference();

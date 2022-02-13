@@ -120,84 +120,84 @@ int		vector_argument(std::string argument) {
 
 	return 1;
 }
-/*int		map_argument(std::string argument) {
+int		map_argument(std::string argument) {
 	if (!argument.compare("70")) { header_text("map"); testMap::member_types__key_type();	return 0; }
 	else if (!argument.compare("71")) { header_text("map"); testMap::member_types__mapped_type();	return 0; }
 	else if (!argument.compare("72")) { header_text("map"); testMap::member_types__value_type();	return 0; }
-	else if (!argument.compare("73")) { header_text("map"); testMap::member_types__allocator_type(); return 0; }
-	else if (!argument.compare("74")) {	header_text("map"); testMap::member_types__reference(); return 0; }
-	else if (!argument.compare("75")) { header_text("map"); testMap::member_types__const_reference(); return 0;	}
-	else if (!argument.compare("76")) { header_text("map"); testMap::member_types__pointer(); return 0; }
-	else if (!argument.compare("77")) { header_text("map"); testMap::member_types__const_pointer();	return 0; }
-	else if (!argument.compare("78")) { header_text("map"); testMap::member_types__difference_type(); return 0;	}
-	else if (!argument.compare("79")) { header_text("map"); testMap::member_types__size_type(); return 0; }
+	// else if (!argument.compare("73")) { header_text("map"); testMap::member_types__allocator_type(); return 0; }
+	// else if (!argument.compare("74")) {	header_text("map"); testMap::member_types__reference(); return 0; }
+	// else if (!argument.compare("75")) { header_text("map"); testMap::member_types__const_reference(); return 0;	}
+	// else if (!argument.compare("76")) { header_text("map"); testMap::member_types__pointer(); return 0; }
+	// else if (!argument.compare("77")) { header_text("map"); testMap::member_types__const_pointer();	return 0; }
+	// else if (!argument.compare("78")) { header_text("map"); testMap::member_types__difference_type(); return 0;	}
+	// else if (!argument.compare("79")) { header_text("map"); testMap::member_types__size_type(); return 0; }
 
-	if (!argument.compare("80")) { header_text("map"); testMap::member_types__iterator__default_member_functions(); return 0; }
-	else if (!argument.compare("81")) { header_text("map"); testMap::member_types__iterator__relational_operators(); return 0; }
-	else if (!argument.compare("82")) { header_text("map"); testMap::member_types__iterator__dereferences(); return 0; }
-	else if (!argument.compare("83")) { header_text("map"); testMap::member_types__iterator__increment_decrement_operators(); return 0; }
+	// if (!argument.compare("80")) { header_text("map"); testMap::member_types__iterator__default_member_functions(); return 0; }
+	// else if (!argument.compare("81")) { header_text("map"); testMap::member_types__iterator__relational_operators(); return 0; }
+	// else if (!argument.compare("82")) { header_text("map"); testMap::member_types__iterator__dereferences(); return 0; }
+	// else if (!argument.compare("83")) { header_text("map"); testMap::member_types__iterator__increment_decrement_operators(); return 0; }
 
-	if (!argument.compare("84")) { header_text("map"); testMap::member_types__const_iterator__default_member_functions(); return 0; }
-	else if (!argument.compare("85")) { header_text("map"); testMap::member_types__const_iterator__relational_operators(); return 0; }
-	else if (!argument.compare("86")) { header_text("map"); testMap::member_types__const_iterator__dereferences(); return 0; }
-	else if (!argument.compare("87")) { header_text("map"); testMap::member_types__const_iterator__increment_decrement_operators(); return 0; }
-	else if (!argument.compare("88")) { header_text("map"); testMap::member_types__const_iterator__extras__iterator_to_const_iterator(); return 0; }
+	// if (!argument.compare("84")) { header_text("map"); testMap::member_types__const_iterator__default_member_functions(); return 0; }
+	// else if (!argument.compare("85")) { header_text("map"); testMap::member_types__const_iterator__relational_operators(); return 0; }
+	// else if (!argument.compare("86")) { header_text("map"); testMap::member_types__const_iterator__dereferences(); return 0; }
+	// else if (!argument.compare("87")) { header_text("map"); testMap::member_types__const_iterator__increment_decrement_operators(); return 0; }
+	// else if (!argument.compare("88")) { header_text("map"); testMap::member_types__const_iterator__extras__iterator_to_const_iterator(); return 0; }
 
-	if (!argument.compare("89")) { header_text("map"); testMap::member_types__reverse_iterator__default_member_functions(); return 0; }
-	else if (!argument.compare("90")) { header_text("map"); testMap::member_types__reverse_iterator__relational_operators(); return 0; }
-	else if (!argument.compare("91")) { header_text("map"); testMap::member_types__reverse_iterator__dereferences(); return 0; }
-	else if (!argument.compare("92")) { header_text("map"); testMap::member_types__reverse_iterator__increment_decrement_operators(); return 0; }
-	else if (!argument.compare("93")) { header_text("map"); testMap::member_types__reverse_iterator__arithmetic_operators(); return 0; }
-	else if (!argument.compare("94")) { header_text("map"); testMap::member_types__reverse_iterator__assignment_operators(); return 0; }
-	else if (!argument.compare("95")) { header_text("map"); testMap::member_types__reverse_iterator__base(); return 0; }
+	// if (!argument.compare("89")) { header_text("map"); testMap::member_types__reverse_iterator__default_member_functions(); return 0; }
+	// else if (!argument.compare("90")) { header_text("map"); testMap::member_types__reverse_iterator__relational_operators(); return 0; }
+	// else if (!argument.compare("91")) { header_text("map"); testMap::member_types__reverse_iterator__dereferences(); return 0; }
+	// else if (!argument.compare("92")) { header_text("map"); testMap::member_types__reverse_iterator__increment_decrement_operators(); return 0; }
+	// else if (!argument.compare("93")) { header_text("map"); testMap::member_types__reverse_iterator__arithmetic_operators(); return 0; }
+	// else if (!argument.compare("94")) { header_text("map"); testMap::member_types__reverse_iterator__assignment_operators(); return 0; }
+	// else if (!argument.compare("95")) { header_text("map"); testMap::member_types__reverse_iterator__base(); return 0; }
 
-	if (!argument.compare("96")) { header_text("map"); testMap::member_types__const_reverse_iterator__default_member_functions(); return 0; }
-	else if (!argument.compare("97")) { header_text("map"); testMap::member_types__const_reverse_iterator__relational_operators(); return 0; }
-	else if (!argument.compare("98")) { header_text("map"); testMap::member_types__const_reverse_iterator__dereferences(); return 0; }
-	else if (!argument.compare("99")) { header_text("map"); testMap::member_types__const_reverse_iterator__increment_decrement_operators(); return 0; }
-	else if (!argument.compare("100")) { header_text("map"); testMap::member_types__const_reverse_iterator__arithmetic_operators(); return 0; }
-	else if (!argument.compare("101")) { header_text("map"); testMap::member_types__const_reverse_iterator__assignment_operators(); return 0; }
-	else if (!argument.compare("102")) { header_text("map"); testMap::member_types__const_reverse_iterator__base(); return 0; }
-	else if (!argument.compare("103")) { header_text("map"); testMap::member_types__const_reverse_iterator__extras__iterator_to_const_iterator(); return 0; }
+	// if (!argument.compare("96")) { header_text("map"); testMap::member_types__const_reverse_iterator__default_member_functions(); return 0; }
+	// else if (!argument.compare("97")) { header_text("map"); testMap::member_types__const_reverse_iterator__relational_operators(); return 0; }
+	// else if (!argument.compare("98")) { header_text("map"); testMap::member_types__const_reverse_iterator__dereferences(); return 0; }
+	// else if (!argument.compare("99")) { header_text("map"); testMap::member_types__const_reverse_iterator__increment_decrement_operators(); return 0; }
+	// else if (!argument.compare("100")) { header_text("map"); testMap::member_types__const_reverse_iterator__arithmetic_operators(); return 0; }
+	// else if (!argument.compare("101")) { header_text("map"); testMap::member_types__const_reverse_iterator__assignment_operators(); return 0; }
+	// else if (!argument.compare("102")) { header_text("map"); testMap::member_types__const_reverse_iterator__base(); return 0; }
+	// else if (!argument.compare("103")) { header_text("map"); testMap::member_types__const_reverse_iterator__extras__iterator_to_const_iterator(); return 0; }
 
-	if (!argument.compare("104")) { header_text("map"); testMap::member_functions__default_constructor(); return 0; }
-	else if (!argument.compare("105")) { header_text("map"); testMap::member_functions__range_constructor(); return 0; }
-	else if (!argument.compare("106")) { header_text("map"); testMap::member_functions__copy_constructor(); return 0; }
-	else if (!argument.compare("107")) { header_text("map"); testMap::member_functions__destructor(); return 0; }
-	else if (!argument.compare("108")) { header_text("map"); testMap::member_functions__operator_equal(); return 0; }
+	// if (!argument.compare("104")) { header_text("map"); testMap::member_functions__default_constructor(); return 0; }
+	// else if (!argument.compare("105")) { header_text("map"); testMap::member_functions__range_constructor(); return 0; }
+	// else if (!argument.compare("106")) { header_text("map"); testMap::member_functions__copy_constructor(); return 0; }
+	// else if (!argument.compare("107")) { header_text("map"); testMap::member_functions__destructor(); return 0; }
+	// else if (!argument.compare("108")) { header_text("map"); testMap::member_functions__operator_equal(); return 0; }
 
-	if (!argument.compare("109")) { header_text("map"); testMap::member_functions__iterator__begin(); return 0; }
-	else if (!argument.compare("110")) { header_text("map"); testMap::member_functions__iterator__end(); return 0; }
-	else if (!argument.compare("111")) { header_text("map"); testMap::member_functions__iterator__rbegin(); return 0; }
-	else if (!argument.compare("112")) { header_text("map"); testMap::member_functions__iterator__rend(); return 0; }
+	// if (!argument.compare("109")) { header_text("map"); testMap::member_functions__iterator__begin(); return 0; }
+	// else if (!argument.compare("110")) { header_text("map"); testMap::member_functions__iterator__end(); return 0; }
+	// else if (!argument.compare("111")) { header_text("map"); testMap::member_functions__iterator__rbegin(); return 0; }
+	// else if (!argument.compare("112")) { header_text("map"); testMap::member_functions__iterator__rend(); return 0; }
 
-	if (!argument.compare("113")) { header_text("map"); testMap::member_functions__capacity__empty(); return 0; }
-	else if (!argument.compare("114")) { header_text("map"); testMap::member_functions__capacity__size(); return 0; }
-	else if (!argument.compare("115")) { header_text("map"); testMap::member_functions__capacity__max_size(); return 0; }
+	// if (!argument.compare("113")) { header_text("map"); testMap::member_functions__capacity__empty(); return 0; }
+	// else if (!argument.compare("114")) { header_text("map"); testMap::member_functions__capacity__size(); return 0; }
+	// else if (!argument.compare("115")) { header_text("map"); testMap::member_functions__capacity__max_size(); return 0; }
 
-	if (!argument.compare("116")) { header_text("map"); testMap::member_functions__element__operator_at_position(); return 0; }
+	// if (!argument.compare("116")) { header_text("map"); testMap::member_functions__element__operator_at_position(); return 0; }
 
-	if (!argument.compare("117")) { header_text("map"); testMap::member_functions__modifiers__insert_single_element(); return 0; }
-	else if (!argument.compare("118")) { header_text("map"); testMap::member_functions__modifiers__insert_with_hint(); return 0; }
-	else if (!argument.compare("119")) { header_text("map"); testMap::member_functions__modifiers__insert_range(); return 0; }
-	else if (!argument.compare("120")) { header_text("map"); testMap::member_functions__modifiers__insert_initializer_list(); return 0; }
-	else if (!argument.compare("121")) { header_text("map"); testMap::member_functions__modifiers__erase(); return 0; }
-	else if (!argument.compare("122")) { header_text("map"); testMap::member_functions__modifiers__swap(); return 0; }
-	else if (!argument.compare("123")) { header_text("map"); testMap::member_functions__modifiers__clear(); return 0; }
+	// if (!argument.compare("117")) { header_text("map"); testMap::member_functions__modifiers__insert_single_element(); return 0; }
+	// else if (!argument.compare("118")) { header_text("map"); testMap::member_functions__modifiers__insert_with_hint(); return 0; }
+	// else if (!argument.compare("119")) { header_text("map"); testMap::member_functions__modifiers__insert_range(); return 0; }
+	// else if (!argument.compare("120")) { header_text("map"); testMap::member_functions__modifiers__insert_initializer_list(); return 0; }
+	// else if (!argument.compare("121")) { header_text("map"); testMap::member_functions__modifiers__erase(); return 0; }
+	// else if (!argument.compare("122")) { header_text("map"); testMap::member_functions__modifiers__swap(); return 0; }
+	// else if (!argument.compare("123")) { header_text("map"); testMap::member_functions__modifiers__clear(); return 0; }
 
-	if (!argument.compare("124")) { header_text("map"); testMap::member_functions__observers__key_comp(); return 0; }
-	else if (!argument.compare("125")) { header_text("map"); testMap::member_functions__observers__value_comp(); return 0; }
+	// if (!argument.compare("124")) { header_text("map"); testMap::member_functions__observers__key_comp(); return 0; }
+	// else if (!argument.compare("125")) { header_text("map"); testMap::member_functions__observers__value_comp(); return 0; }
 
-	if (!argument.compare("126")) { header_text("map"); testMap::member_functions__operations__find(); return 0; }
-	else if (!argument.compare("127")) { header_text("map"); testMap::member_functions__operations__count(); return 0; }
-	else if (!argument.compare("128")) { header_text("map"); testMap::member_functions__operations__lower_bound(); return 0; }
-	else if (!argument.compare("129")) { header_text("map"); testMap::member_functions__operations__upper_bound(); return 0; }
-	else if (!argument.compare("130")) { header_text("map"); testMap::member_functions__operations__equal_range(); return 0; }
+	// if (!argument.compare("126")) { header_text("map"); testMap::member_functions__operations__find(); return 0; }
+	// else if (!argument.compare("127")) { header_text("map"); testMap::member_functions__operations__count(); return 0; }
+	// else if (!argument.compare("128")) { header_text("map"); testMap::member_functions__operations__lower_bound(); return 0; }
+	// else if (!argument.compare("129")) { header_text("map"); testMap::member_functions__operations__upper_bound(); return 0; }
+	// else if (!argument.compare("130")) { header_text("map"); testMap::member_functions__operations__equal_range(); return 0; }
 
-	if (!argument.compare("131")) { header_text("map"); testMap::member_functions__allocator__get_allocator(); return 0; }
+	// if (!argument.compare("131")) { header_text("map"); testMap::member_functions__allocator__get_allocator(); return 0; }
 
 	return 1;
-}*/
+}
 int		extras_argument(std::string argument) {
 	if (!argument.compare("200")) { header_text("extras"); testExtras::extras__iterator_traits(); return 0; }
 	else if (!argument.compare("201")) { header_text("extras"); testExtras::extras__enable_if(); return 0; }
@@ -424,8 +424,8 @@ int		main(int argc, char **argv) {
 	std::string argument = std::string(argv[1]);
 	if (vector_argument(argument) == 0)
 		return 0;
-	/*else if (map_argument(argument) == 0)
-		return 0;*/
+	else if (map_argument(argument) == 0)
+		return 0;
 	else if (extras_argument(argument) == 0)
 		return 0;
 

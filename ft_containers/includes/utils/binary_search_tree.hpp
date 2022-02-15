@@ -5,7 +5,7 @@
 
 namespace ft {
 
-template <class T>
+template <class T> // T = ft::pair<Key, Value> of the prev one
 struct Node {
     Node(T value) : data(value), left(NULL), right(NULL) {};
 
@@ -14,7 +14,7 @@ struct Node {
     Node    *right;
 };
 
-template <class T>
+template <class T> // T = ft::pair<Key, Value> of the prev one
 class binary_search_tree {
     public:
 		/****************/

@@ -2,36 +2,20 @@
 #include <vector>
 #include <map>
 #include <algorithm>
-
-
-class   matrix {
-    private:
-        std::string     __name;
-        int     __row;
-        int     __col;
-        int     __init_value;
-        std::vector<std::vector<int> > __matrix;
-
-    public:
-
-        matrix(int row, int col, std::string name, double init, std::vector<std::vector<int> > matrix) : __row(0),
-                                                                                                         __col(col),
-                                                                                                         __name(name),
-                                                                                                         __init_value(init),
-                                                                                                         __matrix(matrix)
-        {};
-
-};
-
+#include "./includes/utils/binary_search_tree_new.hpp"
 
 int main(void) {
-	
-    std::vector<std::vector<int> > myVector = {{ 0, 1, 2}}; 
-    std::vector<int>::iterator iter;    
+	ft::BST<int> alo;
 
-    for (iter = myVector.begin(); iter != myVector.end(); iter++) {
-        std::cout << *iter << std::endl;
-    }
+    alo.insert(1);
+    alo.insert(2);
+    alo.insert(3);
+    alo.insert(13);
+    alo.insert(15);
+    alo.insert(95);
+    alo.insert(50);
+    alo.insert(60);
 
-    matrix theMatrix(1, 2, "Hello", 5, myVector);
+    alo.print_tree_in_order();
+
 }

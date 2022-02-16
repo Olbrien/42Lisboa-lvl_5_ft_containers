@@ -32,6 +32,7 @@ class BST {
         BST<T>() :  _root(nullptr)
         {};
 
+// Insert ainda incompleto
         void insert(int key) {
             // Invoking Insert() function
             // and passing root node and given key
@@ -66,12 +67,12 @@ class BST {
             return find_max_node(_root);
         };
 
-        int successor(int key) {
-
+        BSTNode<T>  *successor(int key) {
+            return (successor_node(search(key)));  
         };
 
-        int predecessor(int key) {
-
+        BSTNode<T>  *predecessor(int key) {
+            return (predecessor_node(search(key)));
         };
 
         void remove(int v) {
@@ -169,11 +170,34 @@ class BST {
             }
         };
 
-        int         successor_node(BSTNode<T> *node) {
+        BSTNode<T>      *successor_node(BSTNode<T> *node) {
+            // The successor is the minimum key value
+            // of right subtree
+            if (node->right != nullptr) {
+                return find_min_node(node->right);
+            }
+            // If no any right subtree
+            else
+            {
+                BSTNode<T> *parentNode = node->parent;
+                BSTNode<T> *currentNode = node;
 
+                // If currentNode is not root and
+                // currentNode is its right children
+                // continue moving up
+                while ((parentNode != nullptr) && (currentNode == parentNode->Right)) {
+                    currentNode = parentNode;
+                    parentNode = currentNode->parent;
+                }
+
+                // If parentNode is not NULL
+                // then the key of parentNode is
+                // the successor of node
+                return parentNode;
+            }
         };
 
-        int         predecessor_node(BSTNode<T> *node) {
+        BSTNode<T>      *predecessor_node(BSTNode<T> *node) {
 
         };
 

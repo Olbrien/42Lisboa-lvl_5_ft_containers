@@ -29,7 +29,7 @@ class BST {
 		/********************/
 		/* Member functions */
 
-        BST<T>() :  _root(NULL)
+        BST<T>() :  _root(nullptr)
         {};
 
         void insert(int key) {
@@ -46,15 +46,24 @@ class BST {
         };
 
         bool search(int key) {
+            // Invoking Search() operation
+            // and passing root node
+            BSTNode<T> *result = search_node(_root, key);
 
+            if (result == nullptr) {
+                return false;
+            } 
+            else {
+                return true;
+            }   
         };
 
-        int find_min() {
-
+        BSTNode<T>  *find_min() {
+            return find_min_node(_root);
         };
 
-        int find_max() {
-
+        BSTNode<T>  *find_max() {
+            return find_max_node(_root);
         };
 
         int successor(int key) {
@@ -76,13 +85,13 @@ class BST {
         BSTNode<T>     *insert_node(BSTNode<T> *node, int key) {
             // If BST doesn't exist create a new node as root
             // Or if the child has no nodes 
-            if (node == NULL) {
+            if (node == nullptr) {
                 node = new BSTNode<T>();
 
                 node->key = key;
-                node->left = NULL;
-                node->right = NULL;
-                node->parent = NULL;
+                node->left = nullptr;
+                node->right = nullptr;
+                node->parent = nullptr;
             }
             // If the given key is greater than
             // node's key then go to right subtree
@@ -100,9 +109,10 @@ class BST {
         };
 
         void        print_tree_in_order_node(BSTNode<T> *node) {
-            if (node == NULL) {
+            if (node == nullptr) {
                 return ;
             }
+
             // Get the smallest key first
             // which is in the left subtree
             print_tree_in_order_node(node->left);
@@ -115,15 +125,48 @@ class BST {
         };
 
         BSTNode<T>     *search_node(BSTNode<T> *node, int key) {
-
+            // The key is not found
+            if (node == nullptr) {
+                return nullptr;
+            }
+            // The given key is found
+            else if (node->key == key) {
+                return node;
+            }
+            // The given key is greater than
+            // current node's key
+            else if (node->key < key) {
+                return search_node(node->right, key);
+            }
+            // The given key is less than
+            // current node's key    
+            else {
+                return search_node(node->left, key);
+            }
         };
 
-        int         find_min_node(BSTNode<T> *node) {
-
+        BSTNode<T>      *find_min_node(BSTNode<T> *node) {
+            if (node == nullptr) {
+                return nullptr;
+            }
+            else if (node->left == nullptr) {
+                return node;
+            }
+            else {
+                return find_min_node(node->left);
+            }
         };
 
-        int         find_max_node(BSTNode<T> *node) {
-
+        BSTNode<T>     *find_max_node(BSTNode<T> *node) {
+            if (node == nullptr) {
+                return nullptr;
+            }
+            else if (node->right == nullptr) {
+                return node;
+            }
+            else {
+                return find_max_node(node->right);
+            }
         };
 
         int         successor_node(BSTNode<T> *node) {

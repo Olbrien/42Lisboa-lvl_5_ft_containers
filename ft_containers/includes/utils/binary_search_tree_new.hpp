@@ -67,7 +67,7 @@ class BST {
             return find_max_node(_root);
         };
 
-        BSTNode<T>  *successor(int key) {
+        BSTNode<T>  *successor(T key) {
             return (successor_node(search(key)));  
         };
 
@@ -185,7 +185,7 @@ class BST {
                 // If currentNode is not root and
                 // currentNode is its right children
                 // continue moving up
-                while ((parentNode != nullptr) && (currentNode == parentNode->Right)) {
+                while ((parentNode != nullptr) && (currentNode == parentNode->right)) {
                     currentNode = parentNode;
                     parentNode = currentNode->parent;
                 }
@@ -213,11 +213,9 @@ class BST {
 
 };
 
-
-
-
 }
 
 #endif
 
 // https://medium.com/swlh/binary-search-trees-c-484377f0d349
+// https://github.com/stevenkim18/ft_containers/blob/main/containers/map/BST.hpp

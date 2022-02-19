@@ -6,6 +6,7 @@
 
 int main(void) {
 	ft::BST<int> alo;
+    ft::BSTNode<int> *aloNode;
 
     alo.insert(33);
     alo.insert(20);
@@ -31,5 +32,8 @@ int main(void) {
 
     std::cout << alo.find_min()->key << std::endl;
     std::cout << alo.find_max()->key << std::endl;
+
+    aloNode = alo.successor(5);
+
 
 }

@@ -29,7 +29,8 @@ class BST {
 		/********************/
 		/* Member functions */
 
-        BST<T>() :  _root(nullptr)
+        BST<T>() :  _root(nullptr), 
+                    _size(0)
         {};
 
 
@@ -37,6 +38,7 @@ class BST {
             // Invoking Insert() function
             // and passing root node and given key
             _root = insert_node(_root, key);
+            _size++;
         };
 
         void print_tree_in_order() {
@@ -72,6 +74,10 @@ class BST {
         void remove(T key) {
             _root = remove_node(_root, key);
         };
+
+        size_t  get_size() {
+            return (_size);
+        }
 
     protected:
         /********************/
@@ -237,6 +243,7 @@ class BST {
                 if (node->left == nullptr && node->right == nullptr) {
                     node = nullptr;
                     delete tmp_node;
+                    _size--;
                 }
                 // The node have only one child at right
                 else if (node->left == nullptr && node->right != nullptr) {
@@ -247,6 +254,7 @@ class BST {
                     // Bypass node
                     node = node->right;
                     delete tmp_node;
+                    _size--;
                 }
                 // The node have only one child at left
                 else if (node->left != nullptr && node->right == nullptr)
@@ -258,6 +266,7 @@ class BST {
                     // Bypass node
                     node = node->left;
                     delete tmp_node;
+                    _size--;
                 }
                 // The node have two children (left and right)
                 else
@@ -290,6 +299,7 @@ class BST {
 		/* Private Data */
 
         BSTNode<T>                      *_root;
+        size_t		                    _size;
 
 };
 

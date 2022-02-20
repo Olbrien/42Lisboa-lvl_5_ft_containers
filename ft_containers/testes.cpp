@@ -84,6 +84,7 @@ int main(void) {
     std::cout << "remove(33)" << std::endl;
     alo.print_tree_in_order();
 
-
     std::cout << std::endl;
+
+    std::cout << "size = " << alo.get_size() << std::endl;
 }

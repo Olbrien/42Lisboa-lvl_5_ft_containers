@@ -8,12 +8,10 @@ namespace ft {
 template <class T>
 class BSTNode {
     public:
-        T           key;
+        T           data;
         BSTNode     *left;
         BSTNode     *right;
         BSTNode     *parent;
-
-        int         height;
 };
 
 template <class T>
@@ -22,36 +20,46 @@ class BST {
 		/****************/
 		/* Member Types */
 
-		typedef T                                                       value_type;
-		typedef typename std::ptrdiff_t                                 difference_type;
 		typedef typename std::size_t                                    size_type;
 
 		/********************/
 		/* Member functions */
 
-        BST<T>() :  _root(nullptr), 
+        BST<T>() :  _root(nullptr),
                     _size(0)
         {};
 
+		~BST() {
+			remove_all();
+		};
 
-        void insert(int key) {                                  // ESTE NAO TA BOM AINDA
+
+        void insert(T data) {
             // Invoking Insert() function
-            // and passing root node and given key
-            _root = insert_node(_root, key);
+            // and passing root node and given data
+            _root = insert_node(_root, data);
             _size++;
         };
 
         void print_tree_in_order() {
-            // Traverse the BST from root node 
-            // then print all keys
+            // Traverse the BST from root node
+            // then print all datas
             print_tree_in_order_node(_root);
             std::cout << std::endl;
         };
 
-        BSTNode<T>   *search(T key) {
+		// Search a entire ::pair<key, value>
+        BSTNode<T>   *search(T data) {
             // Invoking Search() operation
             // and passing root node
-            BSTNode<T> *result = search_node(_root, key);
+            BSTNode<T> *result = search_node(_root, data);
+            return result;
+        };
+
+		// Search for a Key of a ::pair<key, value>
+		template <typename K>
+        BSTNode<T>   *search(K key) {
+			BSTNode<T> *result = search_key(_root, key);
             return result;
         };
 
@@ -63,47 +71,52 @@ class BST {
             return find_max_node(_root);
         };
 
-        BSTNode<T>  *successor(T key) {
-            return (successor_node(search(key)));  
+        BSTNode<T>  *successor(T data) {
+            return (successor_node(search(data)));
         };
 
-        BSTNode<T>  *predecessor(T key) {
-            return (predecessor_node(search(key)));
+        BSTNode<T>  *predecessor(T data) {
+            return (predecessor_node(search(data)));
         };
 
-        void remove(T key) {
-            _root = remove_node(_root, key);
+        void remove(T data) {
+        	_root = remove_node(_root, data);
         };
 
-        size_t  get_size() {
+        size_type  get_size() {
             return (_size);
         }
+
+		void	remove_all() {
+			remove_all_nodes(_root);
+			_root = nullptr;
+		}
 
     protected:
         /********************/
 		/* Helper Functions */
 
-        BSTNode<T>     *insert_node(BSTNode<T> *node, T& key) {            // GOOD - Falta size só
+        BSTNode<T>     *insert_node(BSTNode<T> *node, T& data) {
             // If BST doesn't exist create a new node as root
-            // Or if the child has no nodes 
+            // Or if the child has no nodes
             if (node == nullptr) {
                 node = new BSTNode<T>();
 
-                node->key = key;
+                node->data = data;
                 node->left = nullptr;
                 node->right = nullptr;
                 node->parent = nullptr;
             }
-            // If the given key is greater than
-            // node's key then go to right subtree
-            else if (key > node->key) {
-                node->right = insert_node(node->right, key);
+            // If the given data is greater than
+            // node's data then go to right subtree
+            else if (data > node->data) {
+                node->right = insert_node(node->right, data);
                 node->right->parent = node;
             }
-            // If the given key is smaller than
-            // node's key then go to left subtree
-            else if (key < node->key) {
-                node->left = insert_node(node->left, key);
+            // If the given data is smaller than
+            // node's data then go to left subtree
+            else if (data < node->data) {
+                node->left = insert_node(node->left, data);
                 node->left->parent = node;
             }
             return node;
@@ -114,35 +127,59 @@ class BST {
                 return ;
             }
 
-            // Get the smallest key first
+            // Get the smallest data first
             // which is in the left subtree
             print_tree_in_order_node(node->left);
 
-            std::cout << node->key << " ";
+            std::cout << "[" <<node->data.first << ", ";
+            std::cout << node->data.second << "] ";
 
-            // Continue to the greatest key
+            // Continue to the greatest data
             print_tree_in_order_node(node->right);
 
         };
 
-        BSTNode<T>     *search_node(BSTNode<T> *node, T& key) {
-            // The key is not found
+        BSTNode<T>     *search_node(BSTNode<T> *node, T& data) {
+            // The data is not found
             if (node == nullptr) {
                 return nullptr;
             }
-            // The given key is found
-            else if (node->key == key) {
+            // The given data is found
+            else if (node->data == data) {
+                return node;
+            }
+            // The given data is greater than
+            // current node's data
+            else if (node->data < data) {
+                return search_node(node->right, data);
+            }
+            // The given data is less than
+            // current node's data
+            else {
+                return search_node(node->left, data);
+            }
+            return (nullptr);
+        };
+
+		template <class K>
+        BSTNode<T>     *search_key(BSTNode<T> *node, K& key) {
+            // The data is not found
+            if (node == nullptr) {
+                return nullptr;
+            }
+            // The given key is found (key is first of the ::pair<first, second>)
+            else if (node->data.first == key) {
                 return node;
             }
             // The given key is greater than
             // current node's key
-            else if (node->key < key) {
-                return search_node(node->right, key);
+            else if (node->data.first < key) {
+                return search_key(node->right, key);
             }
             // The given key is less than
-            // current node's key    
+            // current node's key
             else {
-                return search_node(node->left, key);
+                return search_key(node->left, key);
             }
             return (nullptr);
         };
@@ -175,7 +212,7 @@ class BST {
             if (node == nullptr) {
                 return nullptr;
             }
-            // The successor is the minimum key value
+            // The successor is the minimum data value
             // of right subtree
             if (node->right != nullptr) {
                 return find_min_node(node->right);
@@ -194,7 +231,7 @@ class BST {
                 }
 
                 // If parentNode is not NULL
-                // then the key of parentNode is
+                // then the data of parentNode is
                 // the successor of node
                 return parentNode;
             }
@@ -204,7 +241,7 @@ class BST {
             if (node == nullptr) {
                 return nullptr;
             }
-            // The predecessor is the maximum key value
+            // The predecessor is the maximum data value
             // of left subtree
             if (node->right != nullptr) {
                 return find_max_node(node->left);
@@ -223,20 +260,20 @@ class BST {
                 }
 
                 // If parentNode is not NULL
-                // then the key of parentNode is
+                // then the data of parentNode is
                 // the predecessor of node
                 return parentNode;
             }
         };
 
-        BSTNode<T>     *remove_node(BSTNode<T> *node, T& key) {
+        BSTNode<T>     *remove_node(BSTNode<T> *node, T& data) {
             // The given node is not found in BST
             if (node == nullptr) {
                 return nullptr;
             }
 
             // Target node is found
-            if (node->key == key) {
+            if (node->data == data) {
                 BSTNode<T>    *tmp_node = node;
                 // If the node is a leaf node
                 // The node can be safely removed
@@ -274,32 +311,44 @@ class BST {
                     // Find successor or predecessor to avoid quarrel
                     BSTNode<T>  *predecessorKey = predecessor_node(node);
 
-                    // Replace node's key with successor's key
-                    node->key = predecessorKey->key;
+                    // Replace node's data with successor's data
+                    node->data = predecessorKey->data;
 
-                    // Delete the old successor's key
-                    node->right = remove_node(node->left, predecessorKey->key);
+                    // Delete the old successor's data
+                    node->left = remove_node(node->left, predecessorKey->data);
                 }
             }
-            // Target node's key is smaller than
-            // the given key then search to right
-            else if (node->key < key)
-                node->right = remove_node(node->right, key);
-            // Target node's key is greater than
-            // the given key then search to left
+            // Target node's data is smaller than
+            // the given data then search to right
+            else if (node->data < data)
+                node->right = remove_node(node->right, data);
+            // Target node's data is greater than
+            // the given data then search to left
             else
-                node->left = remove_node(node->left, key);
+                node->left = remove_node(node->left, data);
 
             // Return the updated BST
             return node;
         };
 
-    private:       
+		void		remove_all_nodes(BSTNode<T>* node) {
+			if (node) {
+				if (node->left)
+					remove_all_nodes(node->left);
+				if (node->right)
+					remove_all_nodes(node->right);
+				delete node;
+				node = nullptr;
+				_size--;
+			}
+		}
+
+    private:
         /****************/
 		/* Private Data */
 
         BSTNode<T>                      *_root;
-        size_t		                    _size;
+        size_type		                 _size;
 
 };
 

@@ -170,6 +170,7 @@ int main(void) {
 	//BSTreeIT();
 
 	ft::map<int, int> teste;
+	teste.insert(ft::pair<int,int>(0, 0));
 	teste.insert(ft::pair<int,int>(4, 4));
 	teste.insert(ft::pair<int,int>(2, 2));
 	teste.insert(ft::pair<int,int>(3, 3));

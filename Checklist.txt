@@ -225,8 +225,8 @@ Map:
 			operator=				❌
 
 		Iterators:
-			begin					✅
-			end						✅  # Maybe, mas acho que sim
+			begin					✅❌	const missing
+			end						✅❌	const missing
 			rbegin					❌
 			rend					❌
 

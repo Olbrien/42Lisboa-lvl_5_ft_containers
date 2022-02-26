@@ -12,6 +12,8 @@ class BSTNode {
         BSTNode     *left;
         BSTNode     *right;
         BSTNode     *parent;
+
+		bool		end_node;
 };
 
 template <class T>
@@ -25,10 +27,17 @@ class BST {
 		/********************/
 		/* Member functions */
 
-        BST<T>() :  _root(NULL),
-                    _size(0)
+        BST<T>() :  _size(0)
         {
-			_end = NULL;
+			// You start your binary search tree with an existing but empty root
+			// This is because of map.end(), you need to get the node after end,
+			// and being able to -- the previous node
+			_root = new BSTNode<T>();
+
+			_root->left = NULL;
+			_root->right = NULL;
+			_root->parent = NULL;
+			_root->end_node = true;
 		};
 
 		BST(const BST & obj) {
@@ -64,14 +73,6 @@ class BST {
 		};
 
         void insert(T data) {
-
-			// In case it has an end node (empty), you have to delete it.
-			// This node is created when calling map.end(), or in this function,
-			// find_end()
-			if (_end != NULL) {
-				delete_end_node();
-			}
-
             // Invoking Insert() function
             // and passing root node and given data
             _root = insert_node(_root, data);
@@ -112,22 +113,7 @@ class BST {
 		// This has to be done because if you do map.end()--, it has to go to the
 		// last existing node.
 		BSTNode<T>	*find_end() {
-
-			if (_end == NULL) {
-				_end = new BSTNode<T>();
-			}
-			else {
-				delete_end_node();
-				_end = new BSTNode<T>();
-			}
-
-			BSTNode<T> *temp = _root;
-
-			temp = find_max_node(_root);
-			temp->right = _end;
-			temp->right->parent = temp;
-
-			return (_end);
+			return(find_end_node(_root));
 		}
 
         BSTNode<T>  *successor(T data) {
@@ -142,7 +128,7 @@ class BST {
         	_root = remove_node(_root, data);
         };
 
-        size_type  get_size() {
+        size_type  get_size() const {
             return (_size);
         }
 
@@ -156,15 +142,30 @@ class BST {
 		/* Helper Functions */
 
         BSTNode<T>     *insert_node(BSTNode<T> *node, T& data) {
-            // If BST doesn't exist create a new node as root
-            // Or if the child has no nodes
-            if (node == NULL) {
+			// If it's being inserted on a spot that isn't the end_node(empty node)
+			// for instance, the left side
+			if (node == NULL) {
                 node = new BSTNode<T>();
 
                 node->data = data;
                 node->left = NULL;
                 node->right = NULL;
                 node->parent = NULL;
+				node->end_node = false;
+			}
+			// If it's being inserted before the end_node(empty node)
+            else if (node->end_node == true) {
+
+                BSTNode<T> *newNode = new BSTNode<T>();
+                newNode->data = data;
+                newNode->left = node->left;
+                newNode->right = node;
+                newNode->parent = node->parent;
+				newNode->end_node = false;
+
+				node->parent = newNode;
+
+				node = newNode;
             }
             // If the given data is greater than
             // node's data then go to right subtree
@@ -256,6 +257,20 @@ class BST {
         };
 
         BSTNode<T>     *find_max_node(BSTNode<T> *node) {
+			// To retrieve the Node before the end_node(empty node)
+            if (node == NULL || node->end_node == true) {
+                return NULL;
+            }
+            else if (node->right->end_node == true) {
+                return node;
+            }
+            else {
+                return find_max_node(node->right);
+            }
+        };
+
+        BSTNode<T>     *find_end_node(BSTNode<T> *node) {
+			// To retrieve the end_node(empty node)
             if (node == NULL) {
                 return NULL;
             }
@@ -263,7 +278,7 @@ class BST {
                 return node;
             }
             else {
-                return find_max_node(node->right);
+                return find_end_node(node->right);
             }
         };
 
@@ -402,46 +417,11 @@ class BST {
 			}
 		}
 
-		// Deletes the _end node if it is created.
-		void		delete_end_node() {
-			_end = NULL;
-
-			BSTNode<T> *end = _root;
-			BSTNode<T> *start = _root;
-
-			end = find_max_node(_root);
-
-			int i = 0;
-			while (start->data.first != end->data.first) {
-				start = successor(start->data);
-				i++;
-			}
-
-			int x = 0;
-			while (i > 1) {
-				_root = successor(_root->data);
-				i--;
-				x++;
-			}
-
-			delete _root->right;
-			_root->right = NULL;
-
-			while (x > 0) {
-				_root = predecessor(_root->data);
-				x--;
-			}
-		}
-
         /****************/
 		/* Private Data */
 
         BSTNode<T>                      *_root;
         size_type		                 _size;
-
-
-        BSTNode<T>                      *_end;
-
 
 };
 

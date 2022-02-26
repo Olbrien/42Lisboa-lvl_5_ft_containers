@@ -176,6 +176,36 @@ int main(void) {
 	teste.insert(ft::pair<int,int>(1, 1));
 	teste.insert(ft::pair<int,int>(8, 8));
 
+	ft::map<int, int>::iterator it = teste.begin();
+	ft::map<int, int>::iterator it2 = teste.end();
+
+	std::cout << it->first << std::endl;
+	it++;
+	std::cout << it->first << std::endl;
+	it++;
+	std::cout << it->first << std::endl;
+	it++;
+	std::cout << it->first << std::endl;
+	it++;
+	std::cout << it->first << std::endl;
+	it++;
+	std::cout << it->first << std::endl;
+	it++;
+
+	std::cout << std::endl;
+
+	it2--;
+	std::cout << it2->first << std::endl;
+	it2--;
+	std::cout << it2->first << std::endl;
+	it2--;
+	std::cout << it2->first << std::endl;
+	it2--;
+	std::cout << it2->first << std::endl;
+	it2--;
+	std::cout << it2->first << std::endl;
+
+
 
 	for (ft::map<int, int>::iterator teste_beg = teste.begin();
 						 teste_beg != teste.end(); teste_beg++) {
@@ -184,6 +214,7 @@ int main(void) {
 	}
 
 	std::cout << std::endl << std::endl;
+
 
 
 	teste.insert(ft::pair<int,int>(5, 5));
@@ -200,5 +231,9 @@ int main(void) {
 
 	std::cout << testeplease->first << std::endl;
 	std::cout << testeplease->second << std::endl;
+
+	std::cout << "size=" << teste.size() << std::endl;
+
+
 
 }

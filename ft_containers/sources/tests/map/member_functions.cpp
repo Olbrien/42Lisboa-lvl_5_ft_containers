@@ -582,7 +582,7 @@ void	testMap::member_functions__iterator__end() {
 							<< ", " << itC->second << "]" << std::endl;
 			}
 
-/*
+
 			std::cout << std::endl;
 
 			for (ft::map<float, float>::iterator itC = mapB.begin();
@@ -590,7 +590,7 @@ void	testMap::member_functions__iterator__end() {
 				std::cout << "      itB.first and itB.second is [" << itC->first
 							<< ", " << itC->second << "]" << std::endl;
 			}
-*/
+
 }
 // void	testMap::member_functions__iterator__rbegin() {
 // 			std::cout << "Iterators - rbegin():" << std::endl << std::endl;

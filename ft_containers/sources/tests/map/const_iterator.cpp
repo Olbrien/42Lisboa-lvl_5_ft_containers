@@ -1,6 +1,6 @@
 #include "../../../includes/main.hpp"
 
-// void	testVector::member_types__const_iterator__default_member_functions() {
+// void	testMap::member_types__const_iterator__default_member_functions() {
 // 			std::cout << "Const Iterator default member functions: " << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA;
@@ -54,7 +54,7 @@
 // 			std::cout << "      *itA is			" << *itA << std::endl;
 // 			std::cout << std::endl;
 // }
-// void	testVector::member_types__const_iterator__relational_operators() {
+// void	testMap::member_types__const_iterator__relational_operators() {
 // 			std::cout << "Const Iterator relational operators:" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA;
@@ -117,7 +117,7 @@
 
 // 			std::cout << std::endl;
 // }
-// void	testVector::member_types__const_iterator__dereferences() {
+// void	testMap::member_types__const_iterator__dereferences() {
 // 			std::cout << "Const Iterator dereferences:" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA;
@@ -151,7 +151,7 @@
 // 			std::cout << "      itA[1] is	" << itA[1] << std::endl;
 // 			std::cout << "      itA[5] is	" << itA[5] << std::endl << std::endl;
 // }
-// void	testVector::member_types__const_iterator__increment_decrement_operators() {
+// void	testMap::member_types__const_iterator__increment_decrement_operators() {
 // 			std::cout << "Const Iterator increment and decrement operators:" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA;
@@ -259,7 +259,7 @@
 // 			std::cout << "      (itC == itA) is	true" << std::endl << std::endl;
 // 	}
 // }
-// void	testVector::member_types__const_iterator__arithmetic_operators() {
+// void	testMap::member_types__const_iterator__arithmetic_operators() {
 // 			std::cout << "Const Iterator arithmetic operators:" << std::endl << std::endl;
 // 	ft::vector<int> vectorA;
 // 	ft::vector<int> vectorB;
@@ -302,7 +302,7 @@
 // 			std::cout << "      difA is	" << difA << std::endl;
 // 			std::cout << "      std::distance(itA, itB) is	" << std::distance(itA, itB) << std::endl << std::endl;
 // }
-// void	testVector::member_types__const_iterator__assignment_operators() {
+// void	testMap::member_types__const_iterator__assignment_operators() {
 // 			std::cout << "Const Iterator assigment operators:" << std::endl << std::endl;
 // 	ft::vector<int> vectorA;
 // 	ft::vector<int> vectorB;
@@ -339,7 +339,7 @@
 // 			std::cout << "  itA -= 1;" << std::endl << std::endl;
 // 			std::cout << "      *itA is	" << *itA << std::endl << std::endl;
 // }
-// void	testVector::member_types__const_iterator__extras__iterator_to_const_iterator() {
+// void	testMap::member_types__const_iterator__extras__iterator_to_const_iterator() {
 // 			std::cout << "Iterator With Const Iterator:" << std::endl << std::endl;
 // 	ft::vector<int> vectorA(5, 5);
 

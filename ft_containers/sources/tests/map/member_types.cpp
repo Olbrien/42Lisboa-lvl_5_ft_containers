@@ -81,17 +81,41 @@ void	testMap::member_types__value_type() {
 			std::cout << "      typeid(vt5.second).name() is	" << typeid(vt5.second).name() << std::endl << std::endl;
 			std::cout << std::endl;
 }
-void	testMap::member_types__value_compare() {
-			std::cout << "Value Compare: " << std::endl << std::endl;
-
-	std::cout << "CANNOT BE DONE YET" << std::endl;
-}
 void	testMap::member_types__allocator_type() {
 			std::cout << "Allocator Type: " << std::endl << std::endl;
 
-	ft::map<int, int>::allocator_type alloc;
+	ft::map<const int, int>::allocator_type	alloc;
 
-	std::cout << "CANNOT BE DONE YET" << std::endl;
+			std::cout << "  map<int, int>::allocator_type	alloc;" << std::endl;
+
+	ft::pair<const int, int> *here = alloc.allocate(3);
+	alloc.construct(here, ft::pair<const int, int>(1, 10));
+	alloc.construct(here + 1, ft::pair<const int, int>(2, 20));
+	alloc.construct(here + 2, ft::pair<const int, int>(3, 30));
+
+			std::cout << "  ft::pair<const int, int> *here = alloc.allocate(3);" << std::endl
+																				 << std::endl;
+			std::cout << "  alloc.construct(here, ft::pair<const int, int>(1, 10));" << std::endl;
+			std::cout << "  alloc.construct(here + 1, ft::pair<const int, int>(2, 20));" << std::endl;
+			std::cout << "  alloc.construct(here + 2, ft::pair<const int, int>(3, 30));" << std::endl
+																						 << std::endl;
+
+			std::cout << "      [ " << here[0].first << ", " << here[0].second << " ]" << std::endl;
+			std::cout << "      [ " << here[1].first << ", " << here[1].second << " ]" << std::endl;
+			std::cout << "      [ " << here[2].first << ", " << here[2].second << " ]" << std::endl
+																					   << std::endl;
+
+
+	alloc.destroy(here);
+	alloc.destroy(here + 1);
+	alloc.destroy(here + 2);
+	alloc.deallocate(here, 3);
+
+			std::cout << "  alloc.destroy(here);" << std::endl;
+			std::cout << "  alloc.destroy(here + 1);" << std::endl;
+			std::cout << "  alloc.destroy(here + 2);" << std::endl;
+			std::cout << "  alloc.deallocate(here, 3);" << std::endl;
+			std::cout << std::endl;
 }
 void	testMap::member_types__reference() {
 			std::cout << "Reference: " << std::endl << std::endl;

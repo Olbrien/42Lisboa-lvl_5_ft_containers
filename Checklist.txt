@@ -202,13 +202,13 @@ Map:
 		key_type					✅
 		mapped_type					✅
 		value_type					✅
-		key_compare					✅
-		value_compare				✅ # No Tests Done
-		allocator_type				✅ # No Tests Done
-		reference					✅ # No Tests Done
-		const_reference				✅ # No Tests Done
-		pointer						✅ # No Tests Done
-		const_pointer				✅ # No Tests Done
+		key_compare					✅ # Tests only done on key_comp()
+		value_compare				✅ # Tests only done on value_comp()
+		allocator_type				✅
+		reference					✅
+		const_reference				✅
+		pointer						✅
+		const_pointer				✅
 		iterator					❌
 		const_iterator				❌
 		reverse_iterator			❌
@@ -225,8 +225,8 @@ Map:
 			operator=				❌
 
 		Iterators:
-			begin					❌
-			end						❌
+			begin					✅
+			end						✅  # Maybe, mas acho que sim
 			rbegin					❌
 			rend					❌
 

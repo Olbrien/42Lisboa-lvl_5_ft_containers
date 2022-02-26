@@ -1,6 +1,6 @@
 #include "../../../includes/main.hpp"
 
-// void	testVector::member_types__reverse_iterator__default_member_functions() {
+// void	testMap::member_types__reverse_iterator__default_member_functions() {
 // 			std::cout << "Reverse Iterator default member functions: " << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA;
@@ -52,7 +52,7 @@
 // 			std::cout << "      *itA is			" << *itA << std::endl;
 // 			std::cout << std::endl;
 // }
-// void	testVector::member_types__reverse_iterator__relational_operators() {
+// void	testMap::member_types__reverse_iterator__relational_operators() {
 // 			std::cout << "Reverse Iterator relational operators:" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA;
@@ -115,7 +115,7 @@
 
 // 			std::cout << std::endl;
 // }
-// void	testVector::member_types__reverse_iterator__dereferences() {
+// void	testMap::member_types__reverse_iterator__dereferences() {
 // 			std::cout << "Reverse Iterator dereferences:" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA;
@@ -149,7 +149,7 @@
 // 			std::cout << "      itA[1] is	" << itA[1] << std::endl;
 // 			std::cout << "      itA[5] is	" << itA[5] << std::endl << std::endl;
 // }
-// void	testVector::member_types__reverse_iterator__increment_decrement_operators() {
+// void	testMap::member_types__reverse_iterator__increment_decrement_operators() {
 // 			std::cout << "Reverse Iterator increment and decrement operators:" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA;
@@ -257,7 +257,7 @@
 // 			std::cout << "      (itC == itA) is	true" << std::endl << std::endl;
 // 	}
 // }
-// void	testVector::member_types__reverse_iterator__arithmetic_operators() {
+// void	testMap::member_types__reverse_iterator__arithmetic_operators() {
 // 			std::cout << "Reverse Iterator arithmetic operators:" << std::endl << std::endl;
 // 	ft::vector<int> vectorA;
 // 	ft::vector<int> vectorB;
@@ -324,7 +324,7 @@
 // 			std::cout << "      std::distance(itD, itE) is	" << std::distance(itD, itE) << std::endl;
 // 			std::cout << "      std::distance(itE, itC) is	" << std::distance(itE, itC) << std::endl << std::endl;
 // }
-// void	testVector::member_types__reverse_iterator__assignment_operators() {
+// void	testMap::member_types__reverse_iterator__assignment_operators() {
 // 			std::cout << "Reverse Iterator assigment operators:" << std::endl << std::endl;
 // 	ft::vector<int> vectorA;
 // 	ft::vector<int> vectorB;
@@ -361,7 +361,7 @@
 // 			std::cout << "  itA -= 1;" << std::endl << std::endl;
 // 			std::cout << "      *itA is	" << *itA << std::endl << std::endl;
 // }
-// void	testVector::member_types__reverse_iterator__base() {
+// void	testMap::member_types__reverse_iterator__base() {
 // 			std::cout << "Reverse Iterator base: " << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA;

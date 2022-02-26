@@ -1,6 +1,6 @@
 #include "../../../includes/main.hpp"
 
-// void	testVector::member_types__iterator__default_member_functions() {
+// void	testMap::member_types__iterator__default_member_functions() {
 // 			std::cout << "Iterator default member functions: " << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA;
@@ -55,7 +55,7 @@
 // 			std::cout << "      *itA is			" << *itA << std::endl;
 // 			std::cout << std::endl;
 // }
-// void	testVector::member_types__iterator__relational_operators() {
+// void	testMap::member_types__iterator__relational_operators() {
 // 			std::cout << "Iterator relational operators:" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA;
@@ -118,7 +118,7 @@
 
 // 			std::cout << std::endl;
 // }
-// void	testVector::member_types__iterator__dereferences() {
+// void	testMap::member_types__iterator__dereferences() {
 // 			std::cout << "Iterator dereferences:" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA;
@@ -152,7 +152,7 @@
 // 			std::cout << "      itA[1] is	" << itA[1] << std::endl;
 // 			std::cout << "      itA[5] is	" << itA[5] << std::endl << std::endl;
 // }
-// void	testVector::member_types__iterator__increment_decrement_operators() {
+// void	testMap::member_types__iterator__increment_decrement_operators() {
 // 			std::cout << "Iterator increment and decrement operators:" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA;

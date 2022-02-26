@@ -6,6 +6,7 @@ NAME_STD = std_container
 CC = clang++
 FT = 0
 CFLAGS = -Wall -Wextra -Werror "-D=FT $(FT)" -g -std=c++98
+#CFLAGS = -Wall -Wextra -Werror -fsanitize=address "-D=FT $(FT)" -g -std=c++98
 #CFLAGS = "-D=FT $(FT)" -g
 
 #### ######## #### #### ######## #### #### ######## #### #### ######## #### #### ######## ####
@@ -41,17 +42,17 @@ OBJ2 = $(SRC:cpp=ft.o)
 
 #### ######## #### #### ######## #### #### ######## #### #### ######## #### #### ######## ####
 
-all: message $(OBJ) $(OBJ2) $(NAME_STD) $(NAME_FT)
-#all: message $(NAME_STD) $(NAME_FT)
+#all: message $(OBJ) $(OBJ2) $(NAME_STD) $(NAME_FT)
+all: message $(NAME_STD) $(NAME_FT)
 
-c: clear fclean message $(OBJ) $(OBJ2) $(NAME_STD) $(NAME_FT) clean
-#c: clear fclean message $(NAME_STD) $(NAME_FT) clean
+#c: clear fclean message $(OBJ) $(OBJ2) $(NAME_STD) $(NAME_FT) clean
+c: clear fclean message $(NAME_STD) $(NAME_FT) clean
 
-$(NAME_STD): # $(OBJ)
+$(NAME_STD): $(OBJ) #
 	@echo "\n\033[0;32mCompiling ${NAME_STD}..."
 	@$(CC) $(CFLAGS) -o $(NAME_STD) $(OBJ)
 
-$(NAME_FT): # $(OBJ2)
+$(NAME_FT): $(OBJ2) #
 	@echo "\033[0;32mCompiling ${NAME_FT}..."
 	@$(CC) $(CFLAGS) -o $(NAME_FT) $(OBJ2)
 	@echo "\n\033[0mDone !\n"

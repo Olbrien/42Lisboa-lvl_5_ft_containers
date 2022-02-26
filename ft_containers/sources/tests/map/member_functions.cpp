@@ -1,6 +1,6 @@
 #include "../../../includes/main.hpp"
 
-// void	testVector::member_functions__default_constructor() {
+// void	testMap::member_functions__default_constructor() {
 // 		std::cout << "Default Constructor:" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA;
@@ -13,7 +13,7 @@
 // 			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
 // 			std::cout << std::endl;
 // }
-// void	testVector::member_functions__fill_constructor() {
+// void	testMap::member_functions__fill_constructor() {
 // 			std::cout << "Fill Constructor:" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA(5, 10);
@@ -61,7 +61,7 @@
 // 		std::cout << "  vector<int> vectorE(-1, 1);" << std::endl << std::endl;
 // 		ft::vector<int> vectorE(-1, 1);
 // }
-// void	testVector::member_functions__range_constructor() {
+// void	testMap::member_functions__range_constructor() {
 // 			std::cout << "Range Constructor:" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA;
@@ -220,7 +220,7 @@
 // 			std::cout << "      vectorL.capacity() is	" << vectorL.capacity() << std::endl;
 // 			std::cout << std::endl;
 // }
-// void	testVector::member_functions__copy_constructor() {
+// void	testMap::member_functions__copy_constructor() {
 // 			std::cout << "Copy Constructor:" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA;
@@ -308,7 +308,7 @@
 // 			std::cout << "      vectorG.capacity() is	" << vectorG.capacity() << std::endl;
 // 			std::cout << std::endl;
 // }
-// void	testVector::member_functions__destructor() {
+// void	testMap::member_functions__destructor() {
 // 			std::cout << "Destructor:" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA(12354555, 42);
@@ -323,7 +323,7 @@
 // 			std::cout << "  vector<int> vectorD(1, 1);" << std::endl;
 // 			std::cout << "  vector<int> vectorE;" << std::endl << std::endl;
 // }
-// void	testVector::member_functions__operator_equal() {
+// void	testMap::member_functions__operator_equal() {
 // 			std::cout << "Operator =:" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA(1, 5);
@@ -482,97 +482,117 @@
 // 			std::cout << "      vectorH.capacity() is	" << vectorH.capacity() << std::endl;
 // 			std::cout << std::endl;
 // }
+void	testMap::member_functions__iterator__begin() {
+			std::cout << "Iterators - begin():" << std::endl << std::endl;
 
-// void	testVector::member_functions__iterator__begin() {
-// 			std::cout << "Iterators - begin():" << std::endl << std::endl;
+	ft::map<std::string, float> 	mapA;
+	ft::map<float, float>			mapB;
 
-// 	ft::vector<std::string> 	vectorA;
-// 	ft::vector<float>			vectorB;
-// 	ft::vector<int>				vectorC;
+			std::cout << "  map<std::string, float> 	mapA;" << std::endl;
+			std::cout << "  map<float, float>		mapB;" << std::endl << std::endl;
 
-// 			std::cout << "  vector<std::string>	vectorA;" << std::endl;
-// 			std::cout << "  vector<float>		vectorB;" << std::endl;
-// 			std::cout << "  vector<int>		vectorC;" << std::endl << std::endl;
+	mapA.insert(ft::pair<std::string, float>("Olah", 1));
+	mapA.insert(ft::pair<std::string, float>("Hello", 2));
+	mapA.insert(ft::pair<std::string, float>("Gutten Tag", 3));
 
-// 	vectorA.push_back("Olah");
-// 	vectorA.push_back("Hello");
-// 	vectorA.push_back("Gutten Tag");
+	mapB.insert(ft::pair<float, float>(1, 1));
 
-// 	vectorB.push_back(2.5);
-// 	vectorB.push_back(3.5);
-// 	vectorB.push_back(4.5);
+			std::cout << "  mapA.insert(ft::pair<std::string, float>(\"Olah\", 1));" << std::endl;
+			std::cout << "  mapA.insert(ft::pair<std::string, float>(\"Hello\", 2));" << std::endl;
+			std::cout << "  mapA.insert(ft::pair<std::string, float>(\"Gutten Tag\", 3));" << std::endl << std::endl;
 
-// 			std::cout << "  vectorA.push_back(\"Olah\");" << std::endl;
-// 			std::cout << "  vectorA.push_back(\"Hello\");" << std::endl;
-// 			std::cout << "  vectorA.push_back(\"Gutten Tag\");" << std::endl << std::endl;
+			std::cout << "  mapB.insert(ft::pair<float, float>(1, 1));" << std::endl << std::endl;
 
-// 			std::cout << "  vectorB.push_back(2.5);" << std::endl;
-// 			std::cout << "  vectorB.push_back(3.5);" << std::endl;
-// 			std::cout << "  vectorB.push_back(4.5);" << std::endl << std::endl;
 
-// 	ft::vector<std::string>::iterator itA = vectorA.begin();
-// 	ft::vector<float>::iterator itB = vectorB.begin();
-// 	ft::vector<int>::iterator itC = vectorC.begin();
+	ft::map<std::string, float>::iterator itA = mapA.begin();
+	ft::map<float, float>::iterator itB = mapB.begin();
 
-// 			std::cout << "  vector<std::string>::iterator itA = vectorA.begin();" << std::endl;
-// 			std::cout << "  vector<float>::iterator itB = vectorB.begin();" << std::endl;
-// 			std::cout << "  vector<int>::iterator itC = vectorC.begin();" << std::endl << std::endl;
+			std::cout << "  vector<std::string>::iterator itA = vectorA.begin();" << std::endl;
+			std::cout << "  vector<float>::iterator itB = vectorB.begin();" << std::endl << std::endl;
 
-// 			std::cout << "      *itA is " << *itA << std::endl;
-// 			std::cout << "      *itB is " << *itB << std::endl;
-// 			std::cout << "      *itC is Segmentation Fault" << std::endl << std::endl;
-// 			std::cout <<  *itC << std::endl;
-// }
-// void	testVector::member_functions__iterator__end() {
-// 			std::cout << "Iterators - end():" << std::endl << std::endl;
+			std::cout << "      itA.first and itA.second is [" << itA->first
+					  << ", " << itA->second << "]" << std::endl;
 
-// 	ft::vector<std::string> 	vectorA;
-// 	ft::vector<float>			vectorB;
-// 	ft::vector<int>				vectorC;
+			std::cout << "      itB.first and itB.second is [" << itB->first
+					  << ", " << itB->second << "]" << std::endl;
+}
+void	testMap::member_functions__iterator__end() {
+			std::cout << "Iterators - end():" << std::endl << std::endl;
 
-// 			std::cout << "  vector<std::string>	vectorA;" << std::endl;
-// 			std::cout << "  vector<float>		vectorB;" << std::endl;
-// 			std::cout << "  vector<int>		vectorC;" << std::endl << std::endl;
+	ft::map<std::string, float> 	mapA;
+	ft::map<float, float>			mapB;
 
-// 	vectorA.push_back("Olah");
-// 	vectorA.push_back("Hello");
-// 	vectorA.push_back("Gutten Tag");
+			std::cout << "  map<std::string, float> 	mapA;" << std::endl;
+			std::cout << "  map<float, float>		mapB;" << std::endl << std::endl;
 
-// 	vectorB.push_back(2.5);
-// 	vectorB.push_back(3.5);
-// 	vectorB.push_back(4.5);
+	mapA.insert(ft::pair<std::string, float>("Olah", 1));
+	mapA.insert(ft::pair<std::string, float>("Hello", 2));
+	mapA.insert(ft::pair<std::string, float>("Gutten Tag", 3));
 
-// 			std::cout << "  vectorA.push_back(\"Olah\");" << std::endl;
-// 			std::cout << "  vectorA.push_back(\"Hello\");" << std::endl;
-// 			std::cout << "  vectorA.push_back(\"Gutten Tag\");" << std::endl << std::endl;
+	mapB.insert(ft::pair<float, float>(1, 1));
 
-// 			std::cout << "  vectorB.push_back(2.5);" << std::endl;
-// 			std::cout << "  vectorB.push_back(3.5);" << std::endl;
-// 			std::cout << "  vectorB.push_back(4.5);" << std::endl << std::endl;
+			std::cout << "  mapA.insert(ft::pair<std::string, float>(\"Olah\", 1));" << std::endl;
+			std::cout << "  mapA.insert(ft::pair<std::string, float>(\"Hello\", 2));" << std::endl;
+			std::cout << "  mapA.insert(ft::pair<std::string, float>(\"Gutten Tag\", 3));" << std::endl << std::endl;
 
-// 	ft::vector<std::string>::iterator itA = vectorA.end();
-// 	ft::vector<float>::iterator itB = vectorB.end();
-// 	ft::vector<int>::iterator itC = vectorC.end();
+			std::cout << "  mapB.insert(ft::pair<float, float>(1, 1));" << std::endl << std::endl;
 
-// 			std::cout << "  vector<std::string>::iterator itA = vectorA.end();" << std::endl;
-// 			std::cout << "  vector<float>::iterator itB = vectorB.end();" << std::endl;
-// 			std::cout << "  vector<int>::iterator itC = vectorC.end();" << std::endl << std::endl;
 
-// 			std::cout << "      *itA is " << *itA << std::endl;
-// 			std::cout << "      *itB is " << *itB << std::endl << std::endl;
 
-// 	itA = itA - 1;
-// 	itB = itB - 1;
+	ft::map<std::string, float>::iterator itA = mapA.end();
+	ft::map<float, float>::iterator itB = mapB.end();
 
-// 			std::cout << "  itA = itA - 1;" << std::endl;
-// 			std::cout << "  itB = itB - 1;" << std::endl << std::endl;
+	itA--;
+	itB--;
 
-// 			std::cout << "      *itA is " << *itA << std::endl;
-// 			std::cout << "      *itB is " << *itB << std::endl;
-// 			std::cout << "      *itC is Segmentation Fault" << std::endl << std::endl;
-// 			std::cout <<  *itC << std::endl;
-// }
-// void	testVector::member_functions__iterator__rbegin() {
+			std::cout << "  vector<std::string>::iterator itA = vectorA.end();" << std::endl;
+			std::cout << "  vector<float>::iterator itB = vectorB.end();" << std::endl << std::endl;
+
+			std::cout << "  itA--;" << std::endl;
+			std::cout << "  itB--;" << std::endl << std::endl;
+
+			std::cout << "      itA.first and itA.second is [" << itA->first
+					  << ", " << itA->second << "]" << std::endl;
+
+			std::cout << "      itB.first and itB.second is [" << itB->first
+					  << ", " << itB->second << "]" << std::endl << std::endl;
+
+
+	mapA.insert(ft::pair<std::string, float>("GASDASD", 4));
+	mapB.insert(ft::pair<float, float>(2, 2));
+
+			std::cout << "  mapA.insert(ft::pair<std::string, float>(\"GASDASD\", 4));" << std::endl;
+			std::cout << "  mapB.insert(ft::pair<float, float>(2, 2));" << std::endl << std::endl;
+
+			std::cout << "      itA.first and itA.second is [" << itA->first
+					  << ", " << itA->second << "]" << std::endl;
+
+			std::cout << "      itB.first and itB.second is [" << itB->first
+					  << ", " << itB->second << "]" << std::endl << std::endl;
+
+
+	mapA.insert(ft::pair<std::string, float>("Byba", 5));
+
+
+		std::cout << "  mapA.insert(ft::pair<std::string, float>(\"Byba\", 5));" << std::endl << std::endl;
+
+			for (ft::map<std::string, float>::iterator itC = mapA.begin();
+								itC != mapA.end(); itC++) {
+				std::cout << "      itA.first and itA.second is [" << itC->first
+							<< ", " << itC->second << "]" << std::endl;
+			}
+
+/*
+			std::cout << std::endl;
+
+			for (ft::map<float, float>::iterator itC = mapB.begin();
+								itC != mapB.end(); itC++) {
+				std::cout << "      itB.first and itB.second is [" << itC->first
+							<< ", " << itC->second << "]" << std::endl;
+			}
+*/
+}
+// void	testMap::member_functions__iterator__rbegin() {
 // 			std::cout << "Iterators - rbegin():" << std::endl << std::endl;
 
 // 	ft::vector<std::string> 	vectorA;
@@ -612,7 +632,7 @@
 // 			std::cout << "      *itC is Segmentation Fault" << std::endl << std::endl;
 // 			std::cout <<  *itC << std::endl;
 // }
-// void	testVector::member_functions__iterator__rend() {
+// void	testMap::member_functions__iterator__rend() {
 // 			std::cout << "Iterators - rend():" << std::endl << std::endl;
 
 // 	ft::vector<std::string> 	vectorA;
@@ -662,7 +682,7 @@
 // 			std::cout <<  *itC << std::endl;
 // }
 
-// void	testVector::member_functions__capacity__size() {
+// void	testMap::member_functions__capacity__size() {
 // 			std::cout << "Capacity - size():" << std::endl << std::endl;
 
 // 	ft::vector<int>					vectorA;
@@ -701,7 +721,7 @@
 // 			std::cout << "      vectorA.size() is	" << vectorB.size() << std::endl;
 // 			std::cout << "      vectorA.size() is	" << vectorC.size() << std::endl << std::endl;
 // }
-// void	testVector::member_functions__capacity__max_size() {
+// void	testMap::member_functions__capacity__max_size() {
 // 			std::cout << "Capacity - max_size():" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA(5, 5);
@@ -720,7 +740,7 @@
 // 			std::cout << "      vectorD.max_size() is	" << vectorA.max_size() << std::endl;
 // 			std::cout << std::endl;
 // }
-// void	testVector::member_functions__capacity__resize() {
+// void	testMap::member_functions__capacity__resize() {
 // 			std::cout << "Capacity - resize():" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA(5, 5);
@@ -825,7 +845,7 @@
 // 			std::cout << "      vectorD.size() is		" << vectorD.size() << std::endl;
 // 			std::cout << "      vectorD.capacity() is	" << vectorD.capacity() << std::endl << std::endl;
 // }
-// void	testVector::member_functions__capacity__capacity() {
+// void	testMap::member_functions__capacity__capacity() {
 // 			std::cout << "Capacity - capacity():" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA;
@@ -884,7 +904,7 @@
 // 			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
 // 			std::cout << std::endl;
 // }
-// void	testVector::member_functions__capacity__empty() {
+// void	testMap::member_functions__capacity__empty() {
 // 			std::cout << "Capacity - empty():" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA;
@@ -911,7 +931,7 @@
 // 			std::cout << "      vectorD.empty() is	" << vectorD.empty() << std::endl;
 // 			std::cout << "      vectorE.empty() is	" << vectorE.empty() << std::endl << std::endl;
 // }
-// void	testVector::member_functions__capacity__reserve() {
+// void	testMap::member_functions__capacity__reserve() {
 // 			std::cout << "Capacity - reserve():" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA(5, 5);
@@ -986,7 +1006,7 @@
 // 			std::cout << std::endl;
 // }
 
-// void	testVector::member_functions__element__operator_at_position() {
+// void	testMap::member_functions__element__operator_at_position() {
 // 			std::cout << "Capacity - operator[]:" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA;
@@ -1029,7 +1049,7 @@
 // 			std::cout << "      ref5 is	" << ref5 << std::endl;
 // 			std::cout << "      ref6 is	" << ref6 << std::endl << std::endl;
 // }
-// void	testVector::member_functions__element__at() {
+// void	testMap::member_functions__element__at() {
 // 			std::cout << "Capacity - at():" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA;
@@ -1087,7 +1107,7 @@
 
 // 			std::cout << std::endl;
 // }
-// void	testVector::member_functions__element__front() {
+// void	testMap::member_functions__element__front() {
 // 			std::cout << "Capacity - front():" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA;
@@ -1120,7 +1140,7 @@
 // 			std::cout << "      vectorB.front() is Segmentation Fault !" << std::endl << std::endl;
 // 			std::cout << vectorB.front() << std::endl;
 // }
-// void	testVector::member_functions__element__back() {
+// void	testMap::member_functions__element__back() {
 // 			std::cout << "Capacity - back():" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA;
@@ -1154,7 +1174,7 @@
 // 			std::cout << vectorB.back() << std::endl;
 // }
 
-// void	testVector::member_functions__modifiers__assign_range() {
+// void	testMap::member_functions__modifiers__assign_range() {
 // 			std::cout << "Modifiers - assign():" << std::endl << std::endl;
 // 			std::cout << "Range assign:" << std::endl << std::endl;
 
@@ -1408,7 +1428,7 @@
 // 			std::cout << "      vectorD.size() is		" << vectorD.size() << std::endl;
 // 			std::cout << std::endl;
 // }
-// void	testVector::member_functions__modifiers__assign_fill() {
+// void	testMap::member_functions__modifiers__assign_fill() {
 // 			std::cout << "Modifiers - assign():" << std::endl << std::endl;
 // 			std::cout << "Fill assign:" << std::endl << std::endl;
 
@@ -1646,7 +1666,7 @@
 // 			std::cout << "      vectorD.size() is		" << vectorD.size() << std::endl;
 // 			std::cout << std::endl;
 // }
-// void	testVector::member_functions__modifiers__push_back() {
+// void	testMap::member_functions__modifiers__push_back() {
 // 			std::cout << "Modifiers - push_back():" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA(2, 2);
@@ -1698,7 +1718,7 @@
 // 			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
 // 			std::cout << std::endl;
 // }
-// void	testVector::member_functions__modifiers__pop_back() {
+// void	testMap::member_functions__modifiers__pop_back() {
 // 			std::cout << "Modifiers - pop_back():" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA;
@@ -1766,7 +1786,7 @@
 // 	vectorA.pop_back();
 // 	vectorB.pop_back();
 // }
-// void	testVector::member_functions__modifiers__insert_single_element() {
+// void	testMap::member_functions__modifiers__insert_single_element() {
 // 			std::cout << "Modifiers - insert():" << std::endl << std::endl;
 // 			std::cout << "Single element:" << std::endl << std::endl;
 
@@ -2029,7 +2049,7 @@
 // 			//std::cout << "      vectorC.end() is		" << *vectorC.end() << std::endl;
 // 			std::cout << std::endl;
 // }
-// void	testVector::member_functions__modifiers__insert_fill() {
+// void	testMap::member_functions__modifiers__insert_fill() {
 // 			std::cout << "Modifiers - insert():" << std::endl << std::endl;
 // 			std::cout << "Fill:" << std::endl << std::endl;
 
@@ -2447,7 +2467,7 @@
 // 			std::cout << "      vectorD.begin() is	" << *vectorD.begin() << std::endl;
 // 			std::cout << std::endl;
 // }
-// void	testVector::member_functions__modifiers__insert_range() {
+// void	testMap::member_functions__modifiers__insert_range() {
 // 			std::cout << "Modifiers - insert():" << std::endl << std::endl;
 // 			std::cout << "Range: " << std::endl << std::endl;
 
@@ -2791,7 +2811,7 @@
 // 			std::cout << "]" << std::endl;
 // 			std::cout << std::endl;
 // }
-// void	testVector::member_functions__modifiers__erase_position() {
+// void	testMap::member_functions__modifiers__erase_position() {
 // 			std::cout << "Modifiers - erase():" << std::endl << std::endl;
 // 			std::cout << "Erase position:" << std::endl << std::endl;
 
@@ -2983,7 +3003,7 @@
 // 			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
 // 			std::cout << std::endl;
 // }
-// void	testVector::member_functions__modifiers__erase_range() {
+// void	testMap::member_functions__modifiers__erase_range() {
 // 			std::cout << "Modifiers - erase():" << std::endl << std::endl;
 // 			std::cout << "Erase range:" << std::endl << std::endl;
 
@@ -3163,7 +3183,7 @@
 // 			std::cout << "      *itB is			" << *itB << std::endl;
 // 			std::cout << std::endl;
 // }
-// void	testVector::member_functions__modifiers__swap() {
+// void	testMap::member_functions__modifiers__swap() {
 // 			std::cout << "Modifiers - swap():" << std::endl << std::endl;
 
 // 	typedef ft::vector<int>::iterator it;
@@ -3399,7 +3419,7 @@
 // 			std::cout << "]" << std::endl;
 
 // }
-// void	testVector::member_functions__modifiers__clear() {
+// void	testMap::member_functions__modifiers__clear() {
 // 			std::cout << "Modifiers - clear():" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA(5,5);
@@ -3467,7 +3487,7 @@
 // 			std::cout << std::endl;
 // }
 
-// void	testVector::member_functions__allocator__get_allocator() {
+// void	testMap::member_functions__allocator__get_allocator() {
 // 			std::cout << "Allocator - get_allocator():" << std::endl << std::endl;
 
 // 	ft::vector<int>		vectorA;
@@ -3505,7 +3525,7 @@
 // 			std::cout << "  vectorA.get_allocator().deallocate(arr, 3);" << std::endl;
 // }
 
-// void	testVector::member_functions__overloads__relational_operators() {
+// void	testMap::member_functions__overloads__relational_operators() {
 // 			std::cout << "Non-member function overloads:" << std::endl << std::endl;
 
 // 	ft::vector<int> vectorA(5, 5);
@@ -3695,7 +3715,7 @@
 // 			std::cout << "      vectorF >= vectorI is	"; (vectorF >= vectorI) ? std::cout << "True\n" : std::cout << "False\n";
 // 			std::cout << "      vectorF >= vectorJ is	"; (vectorF >= vectorJ) ? std::cout << "True\n\n" : std::cout << "False\n\n";
 // }
-// void	testVector::member_functions__overloads__swap() {
+// void	testMap::member_functions__overloads__swap() {
 // 			std::cout << "Non-member function swap():" << std::endl << std::endl;
 
 // 	typedef ft::vector<int>::iterator it;

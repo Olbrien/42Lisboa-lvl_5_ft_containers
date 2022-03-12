@@ -105,13 +105,13 @@ class BST {
             return find_min_node(_root);
         };
 
-        BSTNode<T>  *find_max() {
-            return find_max_node(_root);
-        };
+		BSTNode<T>  *find_max() {
+			return find_max_node(_root);
+		};
 
-		// This function adds an end node (empty) to the after the last element.
-		// This has to be done because if you do map.end()--, it has to go to the
-		// last existing node.
+		// This function goes beyond the last element. It goes to an end_node() that has
+		// undefined value (empty). This is for map.end() to do --, and iterate to the last
+		// element.
 		BSTNode<T>	*find_end() {
 			return(find_end_node(_root));
 		}

@@ -115,10 +115,10 @@ namespace testMap {
 	void	member_types__difference_type();
 	void	member_types__size_type();
 
-	// void	member_types__iterator__default_member_functions();
-	// void	member_types__iterator__relational_operators();
-	// void	member_types__iterator__dereferences();
-	// void	member_types__iterator__increment_decrement_operators();
+	void	member_types__iterator__default_member_functions();
+	void	member_types__iterator__relational_operators();
+	void	member_types__iterator__dereferences();
+	void	member_types__iterator__increment_decrement_operators();
 
 	// void	member_types__const_iterator__default_member_functions();
 	// void	member_types__const_iterator__relational_operators();

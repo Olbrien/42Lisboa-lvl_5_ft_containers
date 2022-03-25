@@ -132,10 +132,10 @@ int		map_argument(std::string argument) {
 	else if (!argument.compare("78")) { header_text("map"); testMap::member_types__difference_type(); return 0;	}
 	else if (!argument.compare("79")) { header_text("map"); testMap::member_types__size_type(); return 0; }
 
-	// if (!argument.compare("80")) { header_text("map"); testMap::member_types__iterator__default_member_functions(); return 0; }
-	// else if (!argument.compare("81")) { header_text("map"); testMap::member_types__iterator__relational_operators(); return 0; }
-	// else if (!argument.compare("82")) { header_text("map"); testMap::member_types__iterator__dereferences(); return 0; }
-	// else if (!argument.compare("83")) { header_text("map"); testMap::member_types__iterator__increment_decrement_operators(); return 0; }
+	if (!argument.compare("80")) { header_text("map"); testMap::member_types__iterator__default_member_functions(); return 0; }
+	else if (!argument.compare("81")) { header_text("map"); testMap::member_types__iterator__relational_operators(); return 0; }
+	else if (!argument.compare("82")) { header_text("map"); testMap::member_types__iterator__dereferences(); return 0; }
+	else if (!argument.compare("83")) { header_text("map"); testMap::member_types__iterator__increment_decrement_operators(); return 0; }
 
 	// if (!argument.compare("84")) { header_text("map"); testMap::member_types__const_iterator__default_member_functions(); return 0; }
 	// else if (!argument.compare("85")) { header_text("map"); testMap::member_types__const_iterator__relational_operators(); return 0; }

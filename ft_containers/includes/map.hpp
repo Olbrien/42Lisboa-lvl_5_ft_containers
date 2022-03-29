@@ -43,7 +43,7 @@ class map {
 		typedef typename allocator_type::pointer								pointer;
 		typedef typename allocator_type::const_pointer							const_pointer;
 		typedef typename ft::BST_iterator<Key, T>								iterator;
-	//	typedef typename ft::BST_const_iterator<const value_type>				const_iterator;
+		typedef typename ft::BST_const_iterator<Key, T>							const_iterator;
 	//	typedef typename ft::BST_reverse_iterator<iterator>						reverse_iterator;
 	//	typedef typename ft::BST_const_reverse_iterator<const_iterator>			const_reverse_iterator;
 		typedef typename std::ptrdiff_t											difference_type;
@@ -71,9 +71,9 @@ class map {
 			return iterator(_bst.find_min());
 		};
 
-		/*const_iterator begin() const {
-			return const_iterator(_buffer);
-		};*/
+		const_iterator begin() const {
+			return const_iterator(_bst.find_min());
+		};
 
 		iterator end() {
 			if (_bst.get_size() == 0)
@@ -82,9 +82,9 @@ class map {
 			return iterator(_bst.find_end());
 		};
 
-		/*const_iterator end() const {
-			return const_iterator(_buffer + _size);
-		};*/
+		const_iterator end() const {
+			return const_iterator(_bst.find_end());
+		};
 
 		/****
 		** Capacity

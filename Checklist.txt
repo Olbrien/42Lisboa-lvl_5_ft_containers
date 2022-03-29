@@ -225,8 +225,8 @@ Map:
 			operator=				❌
 
 		Iterators:
-			begin					✅❌	const missing
-			end						✅❌	const missing
+			begin					✅
+			end						✅
 			rbegin					❌
 			rend					❌
 
@@ -297,9 +297,9 @@ Bidirectional Iterator (Iterator and Const Iterator):
 				*a--					✅
 
 			Extras:
-				it = const_it			❌
-				it == const_it			❌
-				it != const_it			❌
+				it = const_it			✅
+				it == const_it			✅
+				it != const_it			✅
 
 Reverse Iterator (Reverse Iterator and Const Reverse Iterator):
 

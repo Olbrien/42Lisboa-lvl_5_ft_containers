@@ -44,8 +44,8 @@ class BST {
 			_root->rend_node = false;
 
 			rend->left = NULL;
-			rend->right = _root;
-			rend->parent = NULL;
+			rend->right = NULL;
+			rend->parent = _root;
 			rend->end_node = false;
 			rend->rend_node = true;
 
@@ -161,14 +161,10 @@ class BST {
 		/* Helper Functions */
 
         BSTNode<T>     *insert_node(BSTNode<T> *node, T& data) {
-			// Eu não acho que isto esteja a acontecer
-			// acho que posso apagar.
-			//
 			// If it's being inserted on a spot that isn't the end_node(empty node)
 			// or the rend_node(empty node)
 			if (node == NULL) {
                 node = new BSTNode<T>();
-
                 node->data = data;
                 node->left = NULL;
                 node->right = NULL;
@@ -450,6 +446,33 @@ class BST {
                     node->left->parent = node->parent;
 
                     // Bypass node
+                    node = node->left;
+                    delete tmp_node;
+                    _size--;
+                }
+                // The node is the left most
+                else if (node->left != NULL && node->left->rend_node == true &&
+						 node->right != NULL) {
+                    // The only child will be connected to
+                    // the parent's of node directly
+                    node->right->parent = node->parent;
+
+                    // Bypass node
+					node->right->left = node->left;
+                    node = node->right;
+                    delete tmp_node;
+                    _size--;
+                }
+                // The node is the right most
+                else if (node->left != NULL && node->right != NULL &&
+						 node->right->end_node == true)
+                {
+                    // The only child will be connected to
+                    // the parent's of node directly
+                    node->left->parent = node->parent;
+
+                    // Bypass node
+					node->left->right = node->right;
                     node = node->left;
                     delete tmp_node;
                     _size--;

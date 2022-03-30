@@ -2801,7 +2801,7 @@ void	testVector::member_functions__modifiers__erase_position() {
 	ft::vector<int> vectorB;
 	ft::vector<int> vectorC;
 
-			std::cout << "  typename std::vector<int>::iterator it;" << std::endl << std::endl;
+			std::cout << "  typedef std::vector<int>::iterator it;" << std::endl << std::endl;
 
 			std::cout << "  vector<int> vectorA;" << std::endl;
 			std::cout << "  vector<int> vectorB;" << std::endl;
@@ -3173,7 +3173,7 @@ void	testVector::member_functions__modifiers__swap() {
 	ft::vector<int> vectorC(2, 2);
 	ft::vector<int> vectorD(7, 7);
 
-			std::cout << "  typename std::vector<int>::iterator it;" << std::endl << std::endl;
+			std::cout << "  typedef std::vector<int>::iterator it;" << std::endl << std::endl;
 
 			std::cout << "  vector<int> vectorA(1, 1);" << std::endl;
 			std::cout << "  vector<int> vectorB;" << std::endl;
@@ -3705,7 +3705,7 @@ void	testVector::member_functions__overloads__swap() {
 	ft::vector<int> vectorC(2, 2);
 	ft::vector<int> vectorD(7, 7);
 
-			std::cout << "  typename std::vector<int>::iterator it;" << std::endl << std::endl;
+			std::cout << "  typedef std::vector<int>::iterator it;" << std::endl << std::endl;
 
 			std::cout << "  vector<int> vectorA(1, 1);" << std::endl;
 			std::cout << "  vector<int> vectorB;" << std::endl;

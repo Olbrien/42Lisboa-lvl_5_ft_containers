@@ -114,6 +114,14 @@ class map {
 		};
 
 
+		void erase (iterator position) {
+			if (this->size() > 0) {
+				_bst.remove(position._ptr->data);
+			}
+		}
+
+
+
 	private:
 		ft::BST<value_type>								_bst;
 		allocator_type									_alloc;

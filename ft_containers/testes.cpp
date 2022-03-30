@@ -246,7 +246,7 @@ void MapInsertTest()
 
 }
 
-/*void MapBeginToEnd()
+void MapBeginToEnd()
 {
 	ft::map<int, int> teste;
 	teste.insert(ft::pair<int,int>(11, 11));
@@ -294,20 +294,97 @@ void MapInsertTest()
 	// itD--;
 	// std::cout << itD->first << "	[1]" << std::endl << std::endl;
 
+}
 
-
-
-}*/
 
 
 int main(void) {
 
 	//BSTree();
 	//BSTreeIT();
-	MapInsertTest();
+	//MapInsertTest();
 	//MapBeginToEnd();
 
+	ft::map<int, std::string> mapA;
+
+	mapA.insert(ft::pair<int, std::string>(5, "Cinco"));
+	mapA.insert(ft::pair<int, std::string>(10, "Dez"));
+	mapA.insert(ft::pair<int, std::string>(15, "Quinze"));
+	mapA.insert(ft::pair<int, std::string>(20, "Vinte"));
+	mapA.insert(ft::pair<int, std::string>(25, "Vinte e Cinco"));
+	mapA.insert(ft::pair<int, std::string>(30, "Trinta"));
+
+	std::cout << "      mapA is		" ;
+	for ( struct { int i; ft::map<int, std::string>::iterator itA; } s = {0, mapA.begin()}; s.itA != mapA.end(); s.itA++) {
+		if (s.i == 0)
+			std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+		else
+			std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+		s.i = 1;
+	}
+
+	std::cout << std::endl;
+
+	ft::map<int, std::string>::iterator it = mapA.begin();
+
+	mapA.erase(mapA.begin());
+
+	std::cout << "      mapA is		" ;
+	for ( struct { int i; ft::map<int, std::string>::iterator itA; } s = {0, mapA.begin()}; s.itA != mapA.end(); s.itA++) {
+		if (s.i == 0)
+			std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+		else
+			std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+		s.i = 1;
+	}
+
+	std::cout << std::endl;
+
+	it = mapA.end();
+	it--;
+
+	mapA.erase(it);
+
+	std::cout << "      mapA is		" ;
+	for ( struct { int i; ft::map<int, std::string>::iterator itA; } s = {0, mapA.begin()}; s.itA != mapA.end(); s.itA++) {
+		if (s.i == 0)
+			std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+		else
+			std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+		s.i = 1;
+	}
+	std::cout << std::endl;
+
+	it = mapA.end();
+	it--;
+
+	mapA.erase(it);
+
+	std::cout << "      mapA is		" ;
+	for ( struct { int i; ft::map<int, std::string>::iterator itA; } s = {0, mapA.begin()}; s.itA != mapA.end(); s.itA++) {
+		if (s.i == 0)
+			std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+		else
+			std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+		s.i = 1;
+	}
+
+	std::cout << std::endl;
 
 
+	mapA.insert(ft::pair<int, std::string>(45, "quarenta e cinco"));
+	mapA.insert(ft::pair<int, std::string>(4, "quatro"));
+	mapA.insert(ft::pair<int, std::string>(2, "dois"));
+
+	std::cout << "      mapA is		" ;
+	for ( struct { int i; ft::map<int, std::string>::iterator itA; } s = {0, mapA.begin()}; s.itA != mapA.end(); s.itA++) {
+		if (s.i == 0)
+			std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+		else
+			std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+		s.i = 1;
+	}
+
+	std::cout << std::endl;
 
 }

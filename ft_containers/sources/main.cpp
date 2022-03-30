@@ -33,6 +33,22 @@ void	header_text(std::string str) {
 		std::cout << "*********************************************************************"
 				<< std::endl;
 	}
+	else if (!str.compare("extras")) {
+		std::cout << std::endl;
+		std::cout << "*********************************************************************"
+				<< std::endl;
+		std::cout << "				Extras				" << std::endl;
+		std::cout << "*********************************************************************"
+				<< std::endl;
+	}
+	else if (!str.compare("anything")) {
+		std::cout << std::endl;
+		std::cout << "*********************************************************************"
+				<< std::endl;
+		std::cout << "				Anything			" << std::endl;
+		std::cout << "*********************************************************************"
+				<< std::endl;
+	}
 }
 
 int		vector_argument(std::string argument) {
@@ -181,20 +197,22 @@ int		map_argument(std::string argument) {
 	// else if (!argument.compare("118")) { header_text("map"); testMap::member_functions__modifiers__insert_with_hint(); return 0; }
 	// else if (!argument.compare("119")) { header_text("map"); testMap::member_functions__modifiers__insert_range(); return 0; }
 	// else if (!argument.compare("120")) { header_text("map"); testMap::member_functions__modifiers__insert_initializer_list(); return 0; }
-	// else if (!argument.compare("121")) { header_text("map"); testMap::member_functions__modifiers__erase(); return 0; }
-	// else if (!argument.compare("122")) { header_text("map"); testMap::member_functions__modifiers__swap(); return 0; }
-	// else if (!argument.compare("123")) { header_text("map"); testMap::member_functions__modifiers__clear(); return 0; }
+	if (!argument.compare("121")) { header_text("map"); testMap::member_functions__modifiers__erase_position(); return 0; }
+	// else if (!argument.compare("122")) { header_text("map"); testMap::member_functions__modifiers__erase_key(); return 0; }
+	// else if (!argument.compare("123")) { header_text("map"); testMap::member_functions__modifiers__erase_range(); return 0; }
+	// else if (!argument.compare("124")) { header_text("map"); testMap::member_functions__modifiers__swap(); return 0; }
+	// else if (!argument.compare("125")) { header_text("map"); testMap::member_functions__modifiers__clear(); return 0; }
 
-	// if (!argument.compare("124")) { header_text("map"); testMap::member_functions__observers__key_comp(); return 0; }
-	// else if (!argument.compare("125")) { header_text("map"); testMap::member_functions__observers__value_comp(); return 0; }
+	// if (!argument.compare("126")) { header_text("map"); testMap::member_functions__observers__key_comp(); return 0; }
+	// else if (!argument.compare("127")) { header_text("map"); testMap::member_functions__observers__value_comp(); return 0; }
 
-	// if (!argument.compare("126")) { header_text("map"); testMap::member_functions__operations__find(); return 0; }
-	// else if (!argument.compare("127")) { header_text("map"); testMap::member_functions__operations__count(); return 0; }
-	// else if (!argument.compare("128")) { header_text("map"); testMap::member_functions__operations__lower_bound(); return 0; }
-	// else if (!argument.compare("129")) { header_text("map"); testMap::member_functions__operations__upper_bound(); return 0; }
-	// else if (!argument.compare("130")) { header_text("map"); testMap::member_functions__operations__equal_range(); return 0; }
+	// if (!argument.compare("128")) { header_text("map"); testMap::member_functions__operations__find(); return 0; }
+	// else if (!argument.compare("129")) { header_text("map"); testMap::member_functions__operations__count(); return 0; }
+	// else if (!argument.compare("130")) { header_text("map"); testMap::member_functions__operations__lower_bound(); return 0; }
+	// else if (!argument.compare("131")) { header_text("map"); testMap::member_functions__operations__upper_bound(); return 0; }
+	// else if (!argument.compare("132")) { header_text("map"); testMap::member_functions__operations__equal_range(); return 0; }
 
-	// if (!argument.compare("131")) { header_text("map"); testMap::member_functions__allocator__get_allocator(); return 0; }
+	// if (!argument.compare("133")) { header_text("map"); testMap::member_functions__allocator__get_allocator(); return 0; }
 
 	return 1;
 }
@@ -206,6 +224,11 @@ int		extras_argument(std::string argument) {
 	else if (!argument.compare("204")) { header_text("extras"); testExtras::extras__lexicographical_compare(); return 0; }
 	else if (!argument.compare("205")) { header_text("extras"); testExtras::extras__pair(); return 0; }
 	else if (!argument.compare("206")) { header_text("extras"); testExtras::extras__make_pair(); return 0; }
+
+	return 1;
+}
+int		anything_argument(std::string argument) {
+	if (!argument.compare("207")) { header_text("anything"); testAnything::anything__tests(); return 0; }
 
 	return 1;
 }
@@ -382,20 +405,23 @@ void	welcome_message() {
 	std::cout << "*                  with hint				     118    *" << std::endl;
 	std::cout << "*                  range				     119    *" << std::endl;
 	std::cout << "*                  initializer_list			     120    *" << std::endl;
-	std::cout << "*              erase					     121    *" << std::endl;
-	std::cout << "*              swap					     122    *" << std::endl;
-	std::cout << "*              clear					     123    *" << std::endl;
+	std::cout << "*              erase:					            *" << std::endl;
+	std::cout << "*                  erase position			     121    *" << std::endl;
+	std::cout << "*                  erase key				     122    *" << std::endl;
+	std::cout << "*                  erase range				     123    *" << std::endl;
+	std::cout << "*              swap					     124    *" << std::endl;
+	std::cout << "*              clear					     125    *" << std::endl;
 	std::cout << "*          observers:						    *" << std::endl;
-	std::cout << "*              key_comp					     124    *" << std::endl;
-	std::cout << "*              value_comp				     125    *" << std::endl;
+	std::cout << "*              key_comp					     126    *" << std::endl;
+	std::cout << "*              value_comp				     127    *" << std::endl;
 	std::cout << "*          operations:						    *" << std::endl;
-	std::cout << "*              find					     126    *" << std::endl;
-	std::cout << "*              count					     127    *" << std::endl;
-	std::cout << "*              lower_bound				     128    *" << std::endl;
-	std::cout << "*              upper_bound				     129    *" << std::endl;
-	std::cout << "*              equal_range				     130    *" << std::endl;
+	std::cout << "*              find					     128    *" << std::endl;
+	std::cout << "*              count					     129    *" << std::endl;
+	std::cout << "*              lower_bound				     130    *" << std::endl;
+	std::cout << "*              upper_bound				     131    *" << std::endl;
+	std::cout << "*              equal_range				     132    *" << std::endl;
 	std::cout << "*          Allocator:						    *" << std::endl;
-	std::cout << "*              get_allocator				     131    *" << std::endl;
+	std::cout << "*              get_allocator				     133    *" << std::endl;
 	std::cout << "*								    *" << std::endl;
 	std::cout << "*  Extras:							    *" << std::endl;
 	std::cout << "*      iterator_traits					     200    *" << std::endl;
@@ -405,6 +431,9 @@ void	welcome_message() {
 	std::cout << "*      lexicographical_compare				     204    *" << std::endl;
 	std::cout << "*      pair						     205    *" << std::endl;
 	std::cout << "*      make_pair					     206    *" << std::endl;
+	std::cout << "*								    *" << std::endl;
+	std::cout << "*  Anything:							    *" << std::endl;
+	std::cout << "*      test_anything					     207    *" << std::endl;
 	std::cout << "*								    *" << std::endl;
 	std::cout << "*********************************************************************"
 				<< std::endl;
@@ -427,6 +456,8 @@ int		main(int argc, char **argv) {
 	else if (map_argument(argument) == 0)
 		return 0;
 	else if (extras_argument(argument) == 0)
+		return 0;
+	else if (anything_argument(argument) == 0)
 		return 0;
 
 	// no valid argument found

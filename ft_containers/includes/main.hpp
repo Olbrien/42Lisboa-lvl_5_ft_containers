@@ -164,7 +164,9 @@ namespace testMap {
 	// void	member_functions__modifiers__insert_with_hint();
 	// void	member_functions__modifiers__insert_range();
 	// void	member_functions__modifiers__insert_initializer_list();
-	// void	member_functions__modifiers__erase();
+	void	member_functions__modifiers__erase_position();
+	// void	member_functions__modifiers__erase_key();
+	// void	member_functions__modifiers__erase_range();
 	// void	member_functions__modifiers__swap();
 	// void	member_functions__modifiers__clear();
 
@@ -187,6 +189,9 @@ namespace testExtras {
 	void	extras__lexicographical_compare();
 	void	extras__pair();
 	void	extras__make_pair();
+}
+namespace testAnything {
+	void	anything__tests();
 }
 
 #endif

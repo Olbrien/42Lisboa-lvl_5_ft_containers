@@ -244,7 +244,7 @@ Map:
 				with hint			❌
 				range				❌
 				initializer_list	❌
-			erase					❌
+			erase					✅❌❌
 			swap					❌
 			clear					❌
 

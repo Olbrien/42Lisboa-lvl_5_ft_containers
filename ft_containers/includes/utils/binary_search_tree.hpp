@@ -13,7 +13,8 @@ class BSTNode {
         BSTNode     *right;
         BSTNode     *parent;
 
-		bool		end_node;
+		bool		end_node;   // If this node is after the last element of the tree (map.end())
+		bool		rend_node;  // If this node is before the first element of the tree (map_rend())
 };
 
 template <class T>
@@ -32,12 +33,22 @@ class BST {
 			// You start your binary search tree with an existing but empty root
 			// This is because of map.end(), you need to get the node after end,
 			// and being able to -- the previous node
+			// And then you add the rend_node(empty) to the left of end_node(empty)
 			_root = new BSTNode<T>();
+			BSTNode<T> *rend = new BSTNode<T>();
 
-			_root->left = NULL;
+			_root->left = rend;
 			_root->right = NULL;
 			_root->parent = NULL;
 			_root->end_node = true;
+			_root->rend_node = false;
+
+			rend->left = NULL;
+			rend->right = _root;
+			rend->parent = NULL;
+			rend->end_node = false;
+			rend->rend_node = true;
+
 		};
 
 		BST(const BST & obj) {
@@ -109,6 +120,14 @@ class BST {
 			return find_max_node(_root);
 		};
 
+
+		// This function goes beyond the first element. It goes to an rend_node() that has
+		// undefined value (empty). This is for map.rend() to do --, and iterate to the last
+		// element.
+		BSTNode<T>	*find_rend() {
+			return(find_rend_node(_root));
+		}
+
 		// This function goes beyond the last element. It goes to an end_node() that has
 		// undefined value (empty). This is for map.end() to do --, and iterate to the last
 		// element.
@@ -142,8 +161,11 @@ class BST {
 		/* Helper Functions */
 
         BSTNode<T>     *insert_node(BSTNode<T> *node, T& data) {
+			// Eu não acho que isto esteja a acontecer
+			// acho que posso apagar.
+			//
 			// If it's being inserted on a spot that isn't the end_node(empty node)
-			// for instance, the left side
+			// or the rend_node(empty node)
 			if (node == NULL) {
                 node = new BSTNode<T>();
 
@@ -152,6 +174,29 @@ class BST {
                 node->right = NULL;
                 node->parent = NULL;
 				node->end_node = false;
+				node->rend_node = false;
+			}
+			// If it's the first element being inserted
+			// If the end_node and rend_node are connected
+			else if (node->end_node == true &&
+					node->left != NULL		&&
+					node->left->rend_node == true) {
+
+                BSTNode<T> *newNode = new BSTNode<T>();
+                newNode->data = data;
+                newNode->left = node->left;
+                newNode->right = node;
+                newNode->parent = node->parent;
+				newNode->end_node = false;
+				newNode->rend_node = false;
+
+				node->parent = newNode;
+				node->left->parent = newNode;
+
+				node->left->right = NULL;
+				node->left = NULL;
+
+				node = newNode;
 			}
 			// If it's being inserted before the end_node(empty node)
             else if (node->end_node == true) {
@@ -162,6 +207,22 @@ class BST {
                 newNode->right = node;
                 newNode->parent = node->parent;
 				newNode->end_node = false;
+				newNode->rend_node = false;
+
+				node->parent = newNode;
+
+				node = newNode;
+            }
+			// If it's being inserted after the rend_node(empty node)
+            else if (node->rend_node == true) {
+
+                BSTNode<T> *newNode = new BSTNode<T>();
+                newNode->data = data;
+                newNode->left = node;
+                newNode->right = node->right;
+                newNode->parent = node->parent;
+				newNode->end_node = false;
+				newNode->rend_node = false;
 
 				node->parent = newNode;
 
@@ -245,10 +306,11 @@ class BST {
         };
 
         BSTNode<T>      *find_min_node(BSTNode<T> *node) {
-            if (node == NULL) {
+			// To retrieve the Node after the rend_node(empty node)
+            if (node == NULL || node->rend_node == true) {
                 return NULL;
             }
-            else if (node->left == NULL) {
+            else if (node->left->rend_node == true) {
                 return node;
             }
             else {
@@ -268,6 +330,19 @@ class BST {
                 return find_max_node(node->right);
             }
         };
+
+        BSTNode<T>      *find_rend_node(BSTNode<T> *node) {
+			// To retrieve the rend_node(empty node)
+            if (node == NULL) {
+                return NULL;
+            }
+            else if (node->left == NULL) {
+                return node;
+            }
+            else {
+                return find_rend_node(node->left);
+            }
+		}
 
         BSTNode<T>     *find_end_node(BSTNode<T> *node) {
 			// To retrieve the end_node(empty node)

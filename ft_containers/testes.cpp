@@ -1,13 +1,24 @@
 #include <iostream>
-#include <vector>
-#include <map>
 #include <algorithm>
-#include "./includes/map.hpp"
-#include "./includes/utils/binary_search_tree.hpp"
-#include "./includes/utils/binary_search_tree_iterator.hpp"
-#include "./includes/utils/utility.hpp"
 
-void	BSTree() {
+#ifndef FT
+# define FT 1    // 0 == Tests the original containers
+                 // 1 == Tests my containers
+#endif
+
+#if FT
+	#include "./includes/map.hpp"
+	#include "./includes/utils/binary_search_tree.hpp"
+	#include "./includes/utils/binary_search_tree_iterator.hpp"
+	#include "./includes/utils/utility.hpp"
+#else
+	#include <vector>
+	#include <map>
+	namespace ft = std;
+#endif
+
+
+/*void	BSTree() {
 
 	ft::BST<ft::pair<int, std::string>> 		alo;
     ft::BSTNode<ft::pair<int, std::string>>		*aloNode;
@@ -125,9 +136,9 @@ void	BSTree() {
 
     std::cout << "size = " << alo.get_size() << std::endl;
 
-}
+}*/
 
-void	BSTreeIT() {
+/*void	BSTreeIT() {
 	ft::BST<ft::pair<int, std::string>> 			alo;
 
 	alo.insert(ft::pair<int, std::string>(5, "Hello"));
@@ -163,12 +174,10 @@ void	BSTreeIT() {
 
 
 }
+*/
 
-int main(void) {
-
-	//BSTree();
-	//BSTreeIT();
-
+void MapInsertTest()
+{
 	ft::map<int, int> teste;
 	teste.insert(ft::pair<int,int>(0, 0));
 	teste.insert(ft::pair<int,int>(4, 4));
@@ -205,8 +214,8 @@ int main(void) {
 	std::cout << it2->first << std::endl;
 	it2--;
 	std::cout << it2->first << std::endl;
-
-
+	it2--;
+	std::cout << it2->first << std::endl;
 
 	for (ft::map<int, int>::iterator teste_beg = teste.begin();
 						 teste_beg != teste.end(); teste_beg++) {
@@ -215,7 +224,6 @@ int main(void) {
 	}
 
 	std::cout << std::endl << std::endl;
-
 
 
 	teste.insert(ft::pair<int,int>(5, 5));
@@ -228,12 +236,77 @@ int main(void) {
 
 	ft::map<int, int>::iterator testeplease = teste.end();
 
+
 	testeplease--;
 
 	std::cout << testeplease->first << std::endl;
 	std::cout << testeplease->second << std::endl;
 
 	std::cout << "size=" << teste.size() << std::endl;
+
+}
+
+/*void MapBeginToEnd()
+{
+	ft::map<int, int> teste;
+	teste.insert(ft::pair<int,int>(11, 11));
+	teste.insert(ft::pair<int,int>(22, 22));
+
+	for (ft::map<int, int>::iterator teste_beg = teste.begin();
+						 teste_beg != teste.end(); teste_beg++) {
+		std::cout << "      itA.first and itA.second is [" << teste_beg->first
+					<< ", " << teste_beg->second << "]" << std::endl;
+	}
+
+	std::cout << std::endl;
+
+	//With normal iterator
+	std::cout << "Normal Iterator" << std::endl;
+	ft::map<int, int>::iterator itA = teste.begin();
+	ft::map<int, int>::iterator itB = teste.end();
+
+	std::cout << itA->first << "	[0]	itA++" << std::endl;
+	itA++;
+	std::cout << itA->first << "	[1]	itA++" << std::endl;
+	itA++;
+	std::cout << itA->first << "	[end]" << std::endl << std::endl;
+
+	std::cout << itB->first << "	[end]	itB--" << std::endl;
+	itB--;
+	std::cout << itB->first << "	[1]	itB--" << std::endl;
+	itB--;
+	std::cout << itB->first << "	[0]" << std::endl << std::endl;
+
+	// //With reverse iterator
+	// std::cout << "Reverse Iterator" << std::endl;
+	// ft::map<int, int>::reverse_iterator itC = teste.rbegin();
+	// ft::map<int, int>::reverse_iterator itD = teste.rend();
+
+	// std::cout << itC->first << "	[1]	itC++" << std::endl;
+	// itC++;
+	// std::cout << itC->first << "	[0]	itC++" << std::endl;
+	// itC++;
+	// std::cout << itC->first << "	[rbegin]" << std::endl << std::endl;
+
+	// std::cout << itD->first << "	[rbegin] itD--" << std::endl;
+	// itD--;
+	// std::cout << itD->first << "	[0]	 itD--" << std::endl;
+	// itD--;
+	// std::cout << itD->first << "	[1]" << std::endl << std::endl;
+
+
+
+
+}*/
+
+
+int main(void) {
+
+	//BSTree();
+	//BSTreeIT();
+	MapInsertTest();
+	//MapBeginToEnd();
+
 
 
 

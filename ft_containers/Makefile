@@ -6,7 +6,7 @@ NAME_STD = std_container
 CC = clang++
 FT = 0
 CFLAGS = -Wall -Wextra -Werror "-D=FT $(FT)" -g -std=c++98
-#CFLAGS = -Wall -Wextra -Werror -fsanitize=address "-D=FT $(FT)" -g -std=c++98
+FFLAGS = -Wall -Wextra -Werror -fsanitize=address "-D=FT $(FT)" -g -std=c++98
 #CFLAGS = "-D=FT $(FT)" -g
 
 #### ######## #### #### ######## #### #### ######## #### #### ######## #### #### ######## ####
@@ -47,8 +47,13 @@ OBJ2 = $(SRC:cpp=ft.o)
 #all: message $(OBJ) $(OBJ2) $(NAME_STD) $(NAME_FT)
 all: message $(NAME_STD) $(NAME_FT)
 
+#         Compiles and clears the screen      #
 #c: clear fclean message $(OBJ) $(OBJ2) $(NAME_STD) $(NAME_FT) clean
 c: clear fclean message $(NAME_STD) $(NAME_FT) clean
+
+#         Compiles with fsanitize=address     #
+f: clear fclean message std_sanitize ft_sanitize clean
+
 
 $(NAME_STD): $(OBJ) #
 	@echo "\n\033[0;32mCompiling ${NAME_STD}..."
@@ -58,6 +63,16 @@ $(NAME_FT): $(OBJ2) #
 	@echo "\033[0;32mCompiling ${NAME_FT}..."
 	@$(CC) $(CFLAGS) -o $(NAME_FT) $(OBJ2)
 	@echo "\n\033[0mDone !\n"
+
+std_sanitize: $(OBJ) #
+	@echo "\n\033[0;32mCompiling ${NAME_STD}..."
+	@$(CC) $(FFLAGS) -o $(NAME_STD) $(OBJ)
+
+ft_sanitize: $(OBJ2) #
+	@echo "\033[0;32mCompiling ${NAME_FT}..."
+	@$(CC) $(FFLAGS) -o $(NAME_FT) $(OBJ2)
+	@echo "\n\033[0mDone !\n"
+
 
 %.std.o: %.cpp
 	@printf "\033[0;33mGenerating ${NAME_STD} objects... %s\n" $@

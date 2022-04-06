@@ -151,8 +151,8 @@ namespace testMap {
 
 	void	member_functions__iterator__begin();
 	void	member_functions__iterator__end();
-	// void	member_functions__iterator__rbegin();
-	// void	member_functions__iterator__rend();
+	void	member_functions__iterator__rbegin();
+	void	member_functions__iterator__rend();
 
 	// void	member_functions__capacity__empty();
 	// void	member_functions__capacity__size();

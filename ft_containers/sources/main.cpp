@@ -184,8 +184,8 @@ int		map_argument(std::string argument) {
 
 	if (!argument.compare("109")) { header_text("map"); testMap::member_functions__iterator__begin(); return 0; }
 	else if (!argument.compare("110")) { header_text("map"); testMap::member_functions__iterator__end(); return 0; }
-	// else if (!argument.compare("111")) { header_text("map"); testMap::member_functions__iterator__rbegin(); return 0; }
-	// else if (!argument.compare("112")) { header_text("map"); testMap::member_functions__iterator__rend(); return 0; }
+	else if (!argument.compare("111")) { header_text("map"); testMap::member_functions__iterator__rbegin(); return 0; }
+	else if (!argument.compare("112")) { header_text("map"); testMap::member_functions__iterator__rend(); return 0; }
 
 	// if (!argument.compare("113")) { header_text("map"); testMap::member_functions__capacity__empty(); return 0; }
 	// else if (!argument.compare("114")) { header_text("map"); testMap::member_functions__capacity__size(); return 0; }

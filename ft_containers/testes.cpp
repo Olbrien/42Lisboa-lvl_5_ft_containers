@@ -385,6 +385,13 @@ int main(void) {
 		s.i = 1;
 	}
 
+	it = mapA.end();
+	it--;
+
+	mapA.erase(it--);
+	std::cout << "      			[ " << it->first << " : " << it->second << " ]" << std::endl;
+
+
 	std::cout << std::endl;
 
 }

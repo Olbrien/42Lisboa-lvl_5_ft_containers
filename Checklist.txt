@@ -227,8 +227,8 @@ Map:
 		Iterators:
 			begin					✅
 			end						✅
-			rbegin					❌
-			rend					❌
+			rbegin					✅
+			rend					✅
 
 		Capacity:
 			empty					❌

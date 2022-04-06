@@ -507,8 +507,8 @@ void	testMap::member_functions__iterator__begin() {
 	ft::map<std::string, float>::iterator itA = mapA.begin();
 	ft::map<float, float>::iterator itB = mapB.begin();
 
-			std::cout << "  vector<std::string>::iterator itA = vectorA.begin();" << std::endl;
-			std::cout << "  vector<float>::iterator itB = vectorB.begin();" << std::endl << std::endl;
+			std::cout << "  map<std::string, float>::iterator itA = mapA.begin();" << std::endl;
+			std::cout << "  map<float, float>::iterator itB = mapB.begin();" << std::endl << std::endl;
 
 			std::cout << "      itA.first and itA.second is [" << itA->first
 					  << ", " << itA->second << "]" << std::endl;
@@ -592,96 +592,85 @@ void	testMap::member_functions__iterator__end() {
 			}
 
 }
-// void	testMap::member_functions__iterator__rbegin() {
-// 			std::cout << "Iterators - rbegin():" << std::endl << std::endl;
+void	testMap::member_functions__iterator__rbegin() {
+			std::cout << "Iterators - rbegin():" << std::endl << std::endl;
 
-// 	ft::vector<std::string> 	vectorA;
-// 	ft::vector<float>			vectorB;
-// 	ft::vector<int>				vectorC;
+	ft::map<std::string, float>		mapA;
+	ft::map<float, float>			mapB;
 
-// 			std::cout << "  vector<std::string>	vectorA;" << std::endl;
-// 			std::cout << "  vector<float>		vectorB;" << std::endl;
-// 			std::cout << "  vector<int>		vectorC;" << std::endl << std::endl;
+			std::cout << "  map<std::string, float>		mapA;" << std::endl;
+			std::cout << "  map<float, float>			mapB;" << std::endl << std::endl;
 
-// 	vectorA.push_back("Olah");
-// 	vectorA.push_back("Hello");
-// 	vectorA.push_back("Gutten Tag");
+	mapA.insert(ft::pair<std::string, float>("Olah", 1));
+	mapA.insert(ft::pair<std::string, float>("Hello", 2));
+	mapA.insert(ft::pair<std::string, float>("Gutten Tag", 3));
 
-// 	vectorB.push_back(2.5);
-// 	vectorB.push_back(3.5);
-// 	vectorB.push_back(4.5);
+	mapB.insert(ft::pair<float, float>(1, 1));
 
-// 			std::cout << "  vectorA.push_back(\"Olah\");" << std::endl;
-// 			std::cout << "  vectorA.push_back(\"Hello\");" << std::endl;
-// 			std::cout << "  vectorA.push_back(\"Gutten Tag\");" << std::endl << std::endl;
+			std::cout << "  mapA.insert(ft::pair<std::string, float>(\"Olah\", 1));" << std::endl;
+			std::cout << "  mapA.insert(ft::pair<std::string, float>(\"Hello\", 2));" << std::endl;
+			std::cout << "  mapA.insert(ft::pair<std::string, float>(\"Gutten Tag\", 3));" << std::endl << std::endl;
 
-// 			std::cout << "  vectorB.push_back(2.5);" << std::endl;
-// 			std::cout << "  vectorB.push_back(3.5);" << std::endl;
-// 			std::cout << "  vectorB.push_back(4.5);" << std::endl << std::endl;
+			std::cout << "  mapB.insert(ft::pair<float, float>(1, 1));" << std::endl << std::endl;
 
-// 	ft::vector<std::string>::reverse_iterator itA = vectorA.rbegin();
-// 	ft::vector<float>::reverse_iterator itB = vectorB.rbegin();
-// 	ft::vector<int>::reverse_iterator itC = vectorC.rbegin();
+	ft::map<std::string, float>::reverse_iterator itA = mapA.rbegin();
+	ft::map<float, float>::reverse_iterator itB = mapB.rbegin();
 
-// 			std::cout << "  vector<std::string>::reverse_iterator itA = vectorA.rbegin();" << std::endl;
-// 			std::cout << "  vector<float>::reverse_iterator itB = vectorB.rbegin();" << std::endl;
-// 			std::cout << "  vector<int>::reverse_iterator itC = vectorC.rbegin();" << std::endl << std::endl;
+			std::cout << "  map<std::string, float>::reverse_iterator itA = mapA.rbegin();" << std::endl;
+			std::cout << "  map<float, float>::reverse_iterator itB = mapB.rbegin();" << std::endl << std::endl;
 
-// 			std::cout << "      *itA is " << *itA << std::endl;
-// 			std::cout << "      *itB is " << *itB << std::endl;
-// 			std::cout << "      *itC is Segmentation Fault" << std::endl << std::endl;
-// 			std::cout <<  *itC << std::endl;
-// }
-// void	testMap::member_functions__iterator__rend() {
-// 			std::cout << "Iterators - rend():" << std::endl << std::endl;
+			std::cout << "      itA.first and itA.second is [" << itA->first
+					  << ", " << itA->second << "]" << std::endl;
 
-// 	ft::vector<std::string> 	vectorA;
-// 	ft::vector<float>			vectorB;
-// 	ft::vector<int>				vectorC;
+			std::cout << "      itB.first and itB.second is [" << itB->first
+					  << ", " << itB->second << "]" << std::endl;
+}
+void	testMap::member_functions__iterator__rend() {
+			std::cout << "Iterators - rend():" << std::endl << std::endl;
 
-// 			std::cout << "  vector<std::string>	vectorA;" << std::endl;
-// 			std::cout << "  vector<float>		vectorB;" << std::endl;
-// 			std::cout << "  vector<int>		vectorC;" << std::endl << std::endl;
+	ft::map<std::string, float>		mapA;
+	ft::map<float, float>			mapB;
 
-// 	vectorA.push_back("Olah");
-// 	vectorA.push_back("Hello");
-// 	vectorA.push_back("Gutten Tag");
+			std::cout << "  map<std::string, float>		mapA;" << std::endl;
+			std::cout << "  map<float, float>			mapB;" << std::endl << std::endl;
 
-// 	vectorB.push_back(2.5);
-// 	vectorB.push_back(3.5);
-// 	vectorB.push_back(4.5);
+	mapA.insert(ft::pair<std::string, float>("Olah", 1));
+	mapA.insert(ft::pair<std::string, float>("Hello", 2));
+	mapA.insert(ft::pair<std::string, float>("Gutten Tag", 3));
 
-// 			std::cout << "  vectorA.push_back(\"Olah\");" << std::endl;
-// 			std::cout << "  vectorA.push_back(\"Hello\");" << std::endl;
-// 			std::cout << "  vectorA.push_back(\"Gutten Tag\");" << std::endl << std::endl;
+	mapB.insert(ft::pair<float, float>(1, 1));
 
-// 			std::cout << "  vectorB.push_back(2.5);" << std::endl;
-// 			std::cout << "  vectorB.push_back(3.5);" << std::endl;
-// 			std::cout << "  vectorB.push_back(4.5);" << std::endl << std::endl;
+			std::cout << "  mapA.insert(ft::pair<std::string, float>(\"Olah\", 1));" << std::endl;
+			std::cout << "  mapA.insert(ft::pair<std::string, float>(\"Hello\", 2));" << std::endl;
+			std::cout << "  mapA.insert(ft::pair<std::string, float>(\"Gutten Tag\", 3));" << std::endl << std::endl;
 
-// 	ft::vector<std::string>::reverse_iterator itA = vectorA.rend();
-// 	ft::vector<float>::reverse_iterator itB = vectorB.rend();
-// 	ft::vector<int>::reverse_iterator itC = vectorC.rend();
+			std::cout << "  mapB.insert(ft::pair<float, float>(1, 1));" << std::endl << std::endl;
 
-// 			std::cout << "  vector<std::string>::reverse_iterator itA = vectorA.rend();" << std::endl;
-// 			std::cout << "  vector<float>::reverse_iterator itB = vectorB.rend();" << std::endl;
-// 			std::cout << "  vector<int>::reverse_iterator itC = vectorC.rend();" << std::endl << std::endl;
+	ft::map<std::string, float>::reverse_iterator itA = mapA.rend();
+	ft::map<float, float>::reverse_iterator itB = mapB.rend();
 
-// 			std::cout << "      *itA is " << *itA << std::endl;
-// 			std::cout << "      *itB is " << *itB << std::endl << std::endl;
+	itA--;
+	itB--;
 
-// 	itA = itA - 1;
-// 	itB = itB - 1;
+			std::cout << "  itA--;" << std::endl;
+			std::cout << "  itB--;" << std::endl << std::endl;
 
-// 			std::cout << "  itA = itA - 1;" << std::endl;
-// 			std::cout << "  itB = itB - 1;" << std::endl << std::endl;
+			std::cout << "  map<std::string, float>::reverse_iterator itA = mapA.rend();" << std::endl;
+			std::cout << "  map<float, float>::reverse_iterator itB = mapB.rend();" << std::endl << std::endl;
 
-// 			std::cout << "      *itA is " << *itA << std::endl;
-// 			std::cout << "      *itB is " << *itB << std::endl;
-// 			std::cout << "      *itC is Segmentation Fault" << std::endl << std::endl;
-// 			std::cout <<  *itC << std::endl;
-// }
+			std::cout << "      itA.first and itA.second is [" << itA->first
+					  << ", " << itA->second << "]" << std::endl;
 
+			std::cout << "      itB.first and itB.second is [" << itB->first
+					  << ", " << itB->second << "]" << std::endl << std::endl;
+
+	itA--;
+
+			std::cout << "  itA--;" << std::endl << std::endl;
+
+			std::cout << "      itA.first and itA.second is [" << itA->first
+					  << ", " << itA->second << "]" << std::endl;
+}
 // void	testMap::member_functions__capacity__size() {
 // 			std::cout << "Capacity - size():" << std::endl << std::endl;
 

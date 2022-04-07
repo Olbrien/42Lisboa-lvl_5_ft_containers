@@ -172,9 +172,9 @@ int		map_argument(std::string argument) {
 
 	if (!argument.compare("98")) { header_text("map"); testMap::member_functions__empty_constructor(); return 0; }
 	else if (!argument.compare("99")) { header_text("map"); testMap::member_functions__range_constructor(); return 0; }
-	// else if (!argument.compare("100")) { header_text("map"); testMap::member_functions__copy_constructor(); return 0; }
-	// else if (!argument.compare("101")) { header_text("map"); testMap::member_functions__destructor(); return 0; }
-	// else if (!argument.compare("102")) { header_text("map"); testMap::member_functions__operator_equal(); return 0; }
+	else if (!argument.compare("100")) { header_text("map"); testMap::member_functions__copy_constructor(); return 0; }
+	else if (!argument.compare("101")) { header_text("map"); testMap::member_functions__destructor(); return 0; }
+	else if (!argument.compare("102")) { header_text("map"); testMap::member_functions__operator_equal(); return 0; }
 
 	if (!argument.compare("103")) { header_text("map"); testMap::member_functions__iterator__begin(); return 0; }
 	else if (!argument.compare("104")) { header_text("map"); testMap::member_functions__iterator__end(); return 0; }

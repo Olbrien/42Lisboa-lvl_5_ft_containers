@@ -59,12 +59,11 @@ class map {
 		// Empty
 		explicit map (const key_compare& comp = key_compare(),
 					  const allocator_type& alloc = allocator_type()) :	_alloc(alloc),
-					  													_comp(comp),
-																		_root(NULL)
+					  													_comp(comp)
+																		//_root(NULL)
 		{};
 
 		// Range
-
 		template <class InputIterator>
 		map (InputIterator first, InputIterator last,
 			 const key_compare& comp = key_compare(),
@@ -78,6 +77,30 @@ class map {
 				}
 			}
 		};
+
+		// Copy
+		map (const map& x) {
+			*this = x;
+		}
+
+		/****
+		** Operator= (Assignment Operator)
+		*/
+		map & operator=(const map & x) {
+			if (this == &x) {
+				return *this;
+			}
+			_alloc = x._alloc;
+			_comp = x._comp;
+			_bst.remove_all(true);
+
+			for (const_iterator first = x.begin(); first != x.end(); first++) {
+				_bst.insert(first._ptr->data);
+			}
+			return *this;
+		}
+
+
 
 		/****
 		** Iterators
@@ -163,7 +186,7 @@ class map {
 		ft::BST<value_type>								_bst;
 		allocator_type									_alloc;
 		key_compare										_comp;
-		ft::BSTNode<value_type>							*_root;
+		//ft::BSTNode<value_type>							*_root;
 
 };
 

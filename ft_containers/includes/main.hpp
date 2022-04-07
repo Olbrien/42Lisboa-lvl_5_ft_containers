@@ -139,9 +139,9 @@ namespace testMap {
 
 	void	member_functions__empty_constructor();
 	void	member_functions__range_constructor();
-	// void	member_functions__copy_constructor();
-	// void	member_functions__destructor();
-	// void	member_functions__operator_equal();
+	void	member_functions__copy_constructor();
+	void	member_functions__destructor();
+	void	member_functions__operator_equal();
 
 	void	member_functions__iterator__begin();
 	void	member_functions__iterator__end();

@@ -80,9 +80,9 @@ void	testMap::member_types__iterator__relational_operators() {
 	ft::map<int, std::string>::iterator itB = mapB.begin();
 	ft::map<int, std::string>::iterator itC = itA;
 
-			std::cout << "  ft::map<int, std::string>::iterator itA = mapA.begin();" << std::endl;
-			std::cout << "  ft::map<int, std::string>::iterator itB = mapB.begin();" << std::endl;
-			std::cout << "  ft::map<int, std::string>::iterator itC = itA;" << std::endl << std::endl;
+			std::cout << "  map<int, std::string>::iterator itA = mapA.begin();" << std::endl;
+			std::cout << "  map<int, std::string>::iterator itB = mapB.begin();" << std::endl;
+			std::cout << "  map<int, std::string>::iterator itC = itA;" << std::endl << std::endl;
 			std::cout << "      itA->first is	" << itA->first << std::endl;
 			std::cout << "      itA->second is	" << itA->second << std::endl << std::endl;
 			std::cout << "      itB->first is	" << itB->first << std::endl;

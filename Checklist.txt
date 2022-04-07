@@ -209,10 +209,10 @@ Map:
 		const_reference				✅
 		pointer						✅
 		const_pointer				✅
-		iterator					❌
-		const_iterator				❌
-		reverse_iterator			❌
-		const_reverse_iterator		❌
+		iterator					✅
+		const_iterator				✅
+		reverse_iterator			✅
+		const_reverse_iterator		✅
 		difference_type				✅
 		size_type					✅
 
@@ -304,42 +304,42 @@ Bidirectional Iterator (Iterator and Const Iterator):
 Reverse Iterator (Reverse Iterator and Const Reverse Iterator):
 
 	Member Types:
-		iterator_type				❌
-		value_type					❌
-		difference_type				❌
-		pointer						❌
-		reference					❌
-		iterator_category			❌
+		iterator_type				✅
+		value_type					✅
+		difference_type				✅
+		pointer						✅
+		reference					✅
+		iterator_category			✅
 
 	Member Functions:
 			Default:
-				default constructor		❌
-				constructor pointer		❌
-				copy constructor		❌
-				copy assignable			❌
-				destructor				❌
+				default constructor		✅
+				constructor pointer		✅
+				copy constructor		✅
+				copy assignable			✅
+				destructor				✅
 
 			Relational Operators:
-				a == b					❌
-				a != b					❌
+				a == b					✅
+				a != b					✅
 
 			Dereferences:
-				*a						❌
-				a->m					❌
-				*a = t					❌
+				*a						✅
+				a->m					✅
+				*a = t					✅
 
 			Increment and Decrement Operators:
-				++a						❌
-				a++						❌
-				*a++					❌
-				--a						❌
-				a--						❌
-				*a--					❌
+				++a						✅
+				a++						✅
+				*a++					✅
+				--a						✅
+				a--						✅
+				*a--					✅
 
 			Extras:
-				it = const_it			❌
-				it == const_it			❌
-				it != const_it			❌
+				it = const_it			✅
+				it == const_it			✅
+				it != const_it			✅
 
 ---------------------------------------------------------------------------------------------
 

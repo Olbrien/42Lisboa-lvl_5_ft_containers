@@ -126,22 +126,16 @@ namespace testMap {
 	void	member_types__const_iterator__increment_decrement_operators();
 	void	member_types__const_iterator__extras__iterator_to_const_iterator();
 
-	// void	member_types__reverse_iterator__default_member_functions();
-	// void	member_types__reverse_iterator__relational_operators();
-	// void	member_types__reverse_iterator__dereferences();
-	// void	member_types__reverse_iterator__increment_decrement_operators();
-	// void	member_types__reverse_iterator__arithmetic_operators();
-	// void	member_types__reverse_iterator__assignment_operators();
-	// void	member_types__reverse_iterator__base();
+	void	member_types__reverse_iterator__default_member_functions();
+	void	member_types__reverse_iterator__relational_operators();
+	void	member_types__reverse_iterator__dereferences();
+	void	member_types__reverse_iterator__increment_decrement_operators();
 
-	// void	member_types__const_reverse_iterator__default_member_functions();
-	// void	member_types__const_reverse_iterator__relational_operators();
-	// void	member_types__const_reverse_iterator__dereferences();
-	// void	member_types__const_reverse_iterator__increment_decrement_operators();
-	// void	member_types__const_reverse_iterator__arithmetic_operators();
-	// void	member_types__const_reverse_iterator__assignment_operators();
-	// void	member_types__const_reverse_iterator__base();
-	// void	member_types__const_reverse_iterator__extras__iterator_to_const_iterator();
+	void	member_types__const_reverse_iterator__default_member_functions();
+	void	member_types__const_reverse_iterator__relational_operators();
+	void	member_types__const_reverse_iterator__dereferences();
+	void	member_types__const_reverse_iterator__increment_decrement_operators();
+	void	member_types__const_reverse_iterator__extras__iterator_to_const_iterator();
 
 	// void	member_functions__default_constructor();
 	// void	member_functions__range_constructor();

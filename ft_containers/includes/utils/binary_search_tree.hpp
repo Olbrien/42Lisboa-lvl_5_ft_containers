@@ -8,6 +8,19 @@ namespace ft {
 template <class T>
 class BSTNode {
     public:
+
+		// This does not have _data (because you can't put NULL as a param)
+		BSTNode (BSTNode *_left, BSTNode *_right, BSTNode *_parent, bool _end, bool _rend) :
+				left(_left), right(_right), parent(_parent), end_node(_end),
+				rend_node(_rend)
+		{};
+
+		// This one has _data
+		BSTNode (T _data, BSTNode *_left, BSTNode *_right, BSTNode *_parent, bool _end, bool _rend) :
+				data(_data), left(_left), right(_right), parent(_parent), end_node(_end),
+				rend_node(_rend)
+		{};
+
         T           data;
         BSTNode     *left;
         BSTNode     *right;
@@ -17,13 +30,17 @@ class BSTNode {
 		bool		rend_node;  // If this node is before the first element of the tree (map_rend())
 };
 
-template <class T>
+template <class T, class Alloc = std::allocator<T>, class Node = ft::BSTNode<T>,
+		  class Node_Alloc = std::allocator<Node> >
 class BST {
     public:
 		/****************/
 		/* Member Types */
 
 		typedef typename std::size_t                                    size_type;
+		typedef Alloc													allocator_type;
+		typedef Node													node_type;
+		typedef Node_Alloc												node_allocator_type;
 
 		/********************/
 		/* Member functions */
@@ -34,21 +51,11 @@ class BST {
 			// This is because of map.end(), you need to get the node after end,
 			// and being able to -- the previous node
 			// And then you add the rend_node(empty) to the left of end_node(empty)
-			_root = new BSTNode<T>();
-			BSTNode<T> *rend = new BSTNode<T>();
+			_root = _node_allocator.allocate(1);
+			BSTNode<T> *rend = _node_allocator.allocate(1);
 
-			_root->left = rend;
-			_root->right = NULL;
-			_root->parent = NULL;
-			_root->end_node = true;
-			_root->rend_node = false;
-
-			rend->left = NULL;
-			rend->right = NULL;
-			rend->parent = _root;
-			rend->end_node = false;
-			rend->rend_node = true;
-
+			_node_allocator.construct(_root, node_type(rend, NULL, NULL, true, false));
+			_node_allocator.construct(rend, node_type(NULL, NULL, _root, false, true));
 		};
 
 		BST(const BST & obj) {
@@ -164,13 +171,8 @@ class BST {
 			// If it's being inserted on a spot that isn't the end_node(empty node)
 			// or the rend_node(empty node)
 			if (node == NULL) {
-                node = new BSTNode<T>();
-                node->data = data;
-                node->left = NULL;
-                node->right = NULL;
-                node->parent = NULL;
-				node->end_node = false;
-				node->rend_node = false;
+				node = _node_allocator.allocate(1);
+				_node_allocator.construct(node, node_type(data, NULL, NULL, NULL, false, false));
 			}
 			// If it's the first element being inserted
 			// If the end_node and rend_node are connected
@@ -178,13 +180,8 @@ class BST {
 					node->left != NULL		&&
 					node->left->rend_node == true) {
 
-                BSTNode<T> *newNode = new BSTNode<T>();
-                newNode->data = data;
-                newNode->left = node->left;
-                newNode->right = node;
-                newNode->parent = node->parent;
-				newNode->end_node = false;
-				newNode->rend_node = false;
+				BSTNode<T> *newNode = _node_allocator.allocate(1);
+				_node_allocator.construct(newNode, node_type(data, node->left, node, node->parent, false, false));
 
 				node->parent = newNode;
 				node->left->parent = newNode;
@@ -196,14 +193,8 @@ class BST {
 			}
 			// If it's being inserted before the end_node(empty node)
             else if (node->end_node == true) {
-
-                BSTNode<T> *newNode = new BSTNode<T>();
-                newNode->data = data;
-                newNode->left = node->left;
-                newNode->right = node;
-                newNode->parent = node->parent;
-				newNode->end_node = false;
-				newNode->rend_node = false;
+				BSTNode<T> *newNode = _node_allocator.allocate(1);
+				_node_allocator.construct(newNode, node_type(data, node->left, node, node->parent, false, false));
 
 				node->parent = newNode;
 
@@ -212,13 +203,8 @@ class BST {
 			// If it's being inserted after the rend_node(empty node)
             else if (node->rend_node == true) {
 
-                BSTNode<T> *newNode = new BSTNode<T>();
-                newNode->data = data;
-                newNode->left = node;
-                newNode->right = node->right;
-                newNode->parent = node->parent;
-				newNode->end_node = false;
-				newNode->rend_node = false;
+				BSTNode<T> *newNode = _node_allocator.allocate(1);
+				_node_allocator.construct(newNode, node_type(data, node, node->right, node->parent, false, false));
 
 				node->parent = newNode;
 
@@ -424,7 +410,8 @@ class BST {
                 // The node can be safely removed
                 if (node->left == NULL && node->right == NULL) {
                     node = NULL;
-                    delete tmp_node;
+					_node_allocator.destroy(tmp_node);
+					_node_allocator.deallocate(tmp_node, 1);
                     _size--;
                 }
                 // The node have only one child at right
@@ -435,7 +422,8 @@ class BST {
 
                     // Bypass node
                     node = node->right;
-                    delete tmp_node;
+					_node_allocator.destroy(tmp_node);
+					_node_allocator.deallocate(tmp_node, 1);
                     _size--;
                 }
                 // The node have only one child at left
@@ -447,7 +435,8 @@ class BST {
 
                     // Bypass node
                     node = node->left;
-                    delete tmp_node;
+					_node_allocator.destroy(tmp_node);
+					_node_allocator.deallocate(tmp_node, 1);
                     _size--;
                 }
                 // The node is the left most
@@ -460,7 +449,8 @@ class BST {
                     // Bypass node
 					node->right->left = node->left;
                     node = node->right;
-                    delete tmp_node;
+					_node_allocator.destroy(tmp_node);
+					_node_allocator.deallocate(tmp_node, 1);
                     _size--;
                 }
                 // The node is the right most
@@ -474,7 +464,8 @@ class BST {
                     // Bypass node
 					node->left->right = node->right;
                     node = node->left;
-                    delete tmp_node;
+					_node_allocator.destroy(tmp_node);
+					_node_allocator.deallocate(tmp_node, 1);
                     _size--;
                 }
                 // The node have two children (left and right)
@@ -509,7 +500,9 @@ class BST {
 					remove_all_nodes(node->left);
 				if (node->right)
 					remove_all_nodes(node->right);
-				delete node;
+
+				_node_allocator.destroy(node);
+				_node_allocator.deallocate(node, 1);
 				node = NULL;
 				_size--;
 			}
@@ -519,6 +512,7 @@ class BST {
 		/* Private Data */
 
         BSTNode<T>                      *_root;
+		node_allocator_type				 _node_allocator;
         size_type		                 _size;
 
 };

@@ -64,7 +64,6 @@ class BST {
 
 		~BST() {
 			remove_all(false);
-			_size = 0;
 		};
 
 		BST & operator=(BST & obj) {
@@ -166,6 +165,7 @@ class BST {
 		void	remove_all(bool keep_end_rend_nodes) {
 			remove_all_nodes(_root);
 			_root = NULL;
+			_size = 0;
 
 			// If you want to clear just the nodes and not the _end and _rend nodes
 			if (keep_end_rend_nodes == true) {

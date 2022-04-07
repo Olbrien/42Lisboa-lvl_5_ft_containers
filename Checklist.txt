@@ -219,7 +219,7 @@ Map:
 	Member Functions:
 		Default:
 			empty constructor		✅
-			range constructor		❌
+			range constructor		✅
 			copy constructor		❌
 			destructor				❌
 			operator=				❌

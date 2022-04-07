@@ -63,6 +63,22 @@ class map {
 																		_root(NULL)
 		{};
 
+		// Range
+
+		template <class InputIterator>
+		map (InputIterator first, InputIterator last,
+			 const key_compare& comp = key_compare(),
+			 const allocator_type& alloc = allocator_type()) : _alloc(alloc),
+			 												   _comp(comp)
+		{
+			// Check if you're sending an empty iterator (from an empty map)
+			if (first._ptr != NULL) {
+				for (; first != last; first++) {
+					_bst.insert(*first);
+				}
+			}
+		};
+
 		/****
 		** Iterators
 		*/

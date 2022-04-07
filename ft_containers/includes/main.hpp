@@ -137,7 +137,7 @@ namespace testMap {
 	void	member_types__const_reverse_iterator__increment_decrement_operators();
 	void	member_types__const_reverse_iterator__extras__iterator_to_const_iterator();
 
-	// void	member_functions__default_constructor();
+	void	member_functions__empty_constructor();
 	// void	member_functions__range_constructor();
 	// void	member_functions__copy_constructor();
 	// void	member_functions__destructor();
@@ -148,9 +148,9 @@ namespace testMap {
 	void	member_functions__iterator__rbegin();
 	void	member_functions__iterator__rend();
 
-	// void	member_functions__capacity__empty();
-	// void	member_functions__capacity__size();
-	// void	member_functions__capacity__max_size();
+	void	member_functions__capacity__empty();
+	void	member_functions__capacity__size();
+	//void	member_functions__capacity__max_size();
 
 	// void	member_functions__element__operator_at_position();
 

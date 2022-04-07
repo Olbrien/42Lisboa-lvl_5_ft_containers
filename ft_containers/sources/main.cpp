@@ -170,7 +170,7 @@ int		map_argument(std::string argument) {
 	else if (!argument.compare("96")) { header_text("map"); testMap::member_types__const_reverse_iterator__increment_decrement_operators(); return 0; }
 	else if (!argument.compare("97")) { header_text("map"); testMap::member_types__const_reverse_iterator__extras__iterator_to_const_iterator(); return 0; }
 
-	// if (!argument.compare("98")) { header_text("map"); testMap::member_functions__default_constructor(); return 0; }
+	if (!argument.compare("98")) { header_text("map"); testMap::member_functions__empty_constructor(); return 0; }
 	// else if (!argument.compare("99")) { header_text("map"); testMap::member_functions__range_constructor(); return 0; }
 	// else if (!argument.compare("100")) { header_text("map"); testMap::member_functions__copy_constructor(); return 0; }
 	// else if (!argument.compare("101")) { header_text("map"); testMap::member_functions__destructor(); return 0; }
@@ -181,9 +181,9 @@ int		map_argument(std::string argument) {
 	else if (!argument.compare("105")) { header_text("map"); testMap::member_functions__iterator__rbegin(); return 0; }
 	else if (!argument.compare("106")) { header_text("map"); testMap::member_functions__iterator__rend(); return 0; }
 
-	// if (!argument.compare("107")) { header_text("map"); testMap::member_functions__capacity__empty(); return 0; }
-	// else if (!argument.compare("108")) { header_text("map"); testMap::member_functions__capacity__size(); return 0; }
-	// else if (!argument.compare("109")) { header_text("map"); testMap::member_functions__capacity__max_size(); return 0; }
+	if (!argument.compare("107")) { header_text("map"); testMap::member_functions__capacity__empty(); return 0; }
+	else if (!argument.compare("108")) { header_text("map"); testMap::member_functions__capacity__size(); return 0; }
+	//else if (!argument.compare("109")) { header_text("map"); testMap::member_functions__capacity__max_size(); return 0; }
 
 	// if (!argument.compare("110")) { header_text("map"); testMap::member_functions__element__operator_at_position(); return 0; }
 
@@ -371,7 +371,7 @@ void	welcome_message() {
 	std::cout << "*								    *" << std::endl;
 	std::cout << "*      Member Functions:					    *" << std::endl;
 	std::cout << "*          Default:						    *" << std::endl;
-	std::cout << "*              default constructor			      98    *" << std::endl;
+	std::cout << "*              empty constructor			      98    *" << std::endl;
 	std::cout << "*              range constructor			      99    *" << std::endl;
 	std::cout << "*              copy constructor				     100    *" << std::endl;
 	std::cout << "*              destructor				     101    *" << std::endl;

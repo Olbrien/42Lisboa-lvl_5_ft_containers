@@ -218,7 +218,7 @@ Map:
 
 	Member Functions:
 		Default:
-			default constructor		❌
+			empty constructor		✅
 			range constructor		❌
 			copy constructor		❌
 			destructor				❌
@@ -231,8 +231,8 @@ Map:
 			rend					✅
 
 		Capacity:
-			empty					❌
-			size					❌
+			empty					✅
+			size					✅
 			max_size				❌
 
 		Element Access:

@@ -1,5 +1,5 @@
-#ifndef BINARY_SEARCH_TREE_NEW_HPP
-# define BINARY_SEARCH_TREE_NEW_HPP
+#ifndef BINARY_SEARCH_TREE_HPP
+# define BINARY_SEARCH_TREE_HPP
 
 #include <iostream>
 
@@ -528,4 +528,3 @@ class BST {
 #endif
 
 // https://medium.com/swlh/binary-search-trees-c-484377f0d349
-// https://github.com/stevenkim18/ft_containers/blob/main/containers/map/BST.hpp

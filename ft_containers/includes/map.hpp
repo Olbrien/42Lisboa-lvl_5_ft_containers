@@ -56,7 +56,7 @@ class map {
 		** Constructors
 		*/
 
-		// Default
+		// Empty
 		explicit map (const key_compare& comp = key_compare(),
 					  const allocator_type& alloc = allocator_type()) :	_alloc(alloc),
 					  													_comp(comp),
@@ -114,6 +114,10 @@ class map {
 		size_type size() const {
 			return (_bst.get_size());
 		}
+
+		//size_type max_size() const {
+		//	return (std::allocator<ft::BST<value_type> >().max_size());
+		//}
 
 		/****
 		** Modifiers

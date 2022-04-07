@@ -181,6 +181,10 @@ class map {
 		}
 
 
+		allocator_type get_allocator() const {
+			return _alloc;
+		}
+
 
 	private:
 		ft::BST<value_type>								_bst;

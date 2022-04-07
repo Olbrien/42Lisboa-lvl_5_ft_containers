@@ -206,7 +206,7 @@ int		map_argument(std::string argument) {
 	// else if (!argument.compare("125")) { header_text("map"); testMap::member_functions__operations__upper_bound(); return 0; }
 	// else if (!argument.compare("126")) { header_text("map"); testMap::member_functions__operations__equal_range(); return 0; }
 
-	// if (!argument.compare("127")) { header_text("map"); testMap::member_functions__allocator__get_allocator(); return 0; }
+	if (!argument.compare("127")) { header_text("map"); testMap::member_functions__allocator__get_allocator(); return 0; }
 
 	return 1;
 }

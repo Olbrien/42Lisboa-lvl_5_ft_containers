@@ -3600,44 +3600,26 @@ void	testMap::member_functions__modifiers__erase_position() {
 // 			std::cout << std::endl;
 // }
 
-// void	testMap::member_functions__allocator__get_allocator() {
-// 			std::cout << "Allocator - get_allocator():" << std::endl << std::endl;
+void	testMap::member_functions__allocator__get_allocator() {
+			std::cout << "Allocator - get_allocator():" << std::endl << std::endl;
 
-// 	ft::vector<int>		vectorA;
-// 	int					*arr;
+	ft::map<int, int>	mapA;
+	ft::pair<const int, int>  *pair;
 
-// 			std::cout << "  vector<int>		vectorA;" << std::endl;
-// 			std::cout << "  int			*arr;" << std::endl << std::endl;
+	pair = mapA.get_allocator().allocate(1);
 
-// 	arr = vectorA.get_allocator().allocate(3);
+			std::cout << "  map<int, int>	mapA;" << std::endl;
+			std::cout << "  pair<const int, int>  *pair;" << std::endl << std::endl;
 
-// 	vectorA.get_allocator().construct(arr, 1);
-// 	vectorA.get_allocator().construct(arr + 1, 2);
-// 	vectorA.get_allocator().construct(arr + 2, 3);
+	int pair_size = sizeof(ft::map<int,int>::value_type) * 5;
 
-// 			std::cout << "  arr = vectorA.get_allocator().allocate(3);" << std::endl << std::endl;
+			std::cout << "  int pair_size = sizeof(ft::map<int,int>::value_type) * 5;" << std::endl << std::endl;
+			std::cout << "      pair_size = " << pair_size << " bytes" << std::endl << std::endl;
 
-// 			std::cout << "  vectorA.get_allocator().construct(arr, 1);" << std::endl;
-// 			std::cout << "  vectorA.get_allocator().construct(arr + 1, 2);" << std::endl;
-// 			std::cout << "  vectorA.get_allocator().construct(arr + 2, 3);" << std::endl << std::endl;
+	mapA.get_allocator().deallocate(pair,5);
 
-// 			std::cout << "      arr is		[ " << arr[0] << " "
-// 											    << arr[1] << " "
-// 												<< arr[2] << " ]" << std::endl << std::endl;
-
-// 	vectorA.get_allocator().destroy(arr);
-// 	vectorA.get_allocator().destroy(arr + 1);
-// 	vectorA.get_allocator().destroy(arr + 2);
-
-// 			std::cout << "  vectorA.get_allocator().destroy(arr);" << std::endl;
-// 			std::cout << "  vectorA.get_allocator().destroy(arr + 1);" << std::endl;
-// 			std::cout << "  vectorA.get_allocator().destroy(arr + 2);" << std::endl << std::endl;
-
-// 	vectorA.get_allocator().deallocate(arr, 3);
-
-// 			std::cout << "  vectorA.get_allocator().deallocate(arr, 3);" << std::endl;
-// }
-
+			std::cout << "  mapA.get_allocator().deallocate(pair,5);" << std::endl << std::endl;
+}
 // void	testMap::member_functions__overloads__relational_operators() {
 // 			std::cout << "Non-member function overloads:" << std::endl << std::endl;
 

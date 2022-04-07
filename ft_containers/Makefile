@@ -54,6 +54,12 @@ c: clear fclean message $(NAME_STD) $(NAME_FT) clean
 #         Compiles with fsanitize=address     #
 f: clear fclean message std_sanitize ft_sanitize clean
 
+#         Compiles only STD                   #
+std: clear fclean message $(NAME_STD) clean
+
+#         Compiles only FT                    #
+ft: clear fclean message $(NAME_FT) clean
+
 
 $(NAME_STD): $(OBJ) #
 	@echo "\n\033[0;32mCompiling ${NAME_STD}..."

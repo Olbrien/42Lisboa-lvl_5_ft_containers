@@ -260,7 +260,7 @@ Map:
 			equal_range				❌
 
 		Allocator:
-			get_allocator			❌
+			get_allocator			✅
 
 Bidirectional Iterator (Iterator and Const Iterator):
 

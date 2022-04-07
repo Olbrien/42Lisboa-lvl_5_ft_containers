@@ -173,7 +173,7 @@ namespace testMap {
 	// void	member_functions__operations__upper_bound();
 	// void	member_functions__operations__equal_range();
 
-	// void	member_functions__allocator__get_allocator();
+	void	member_functions__allocator__get_allocator();
 }
 namespace testExtras {
 	void	extras__iterator_traits();

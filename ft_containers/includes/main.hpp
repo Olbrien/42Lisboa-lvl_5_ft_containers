@@ -150,7 +150,7 @@ namespace testMap {
 
 	void	member_functions__capacity__empty();
 	void	member_functions__capacity__size();
-	//void	member_functions__capacity__max_size();
+	void	member_functions__capacity__max_size();
 
 	// void	member_functions__element__operator_at_position();
 

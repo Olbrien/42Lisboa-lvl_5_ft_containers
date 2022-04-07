@@ -115,9 +115,9 @@ class map {
 			return (_bst.get_size());
 		}
 
-		//size_type max_size() const {
-		//	return (std::allocator<ft::BST<value_type> >().max_size());
-		//}
+		size_type max_size() const {
+			return (_bst.max_size());
+		}
 
 		/****
 		** Modifiers

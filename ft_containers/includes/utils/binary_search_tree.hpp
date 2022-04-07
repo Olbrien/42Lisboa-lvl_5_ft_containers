@@ -158,6 +158,10 @@ class BST {
             return (_size);
         }
 
+		size_type  max_size() const {
+			return (_node_allocator.max_size());
+		}
+
 		void	remove_all() {
 			remove_all_nodes(_root);
 			_root = NULL;

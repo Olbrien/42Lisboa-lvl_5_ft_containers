@@ -233,7 +233,7 @@ Map:
 		Capacity:
 			empty					✅
 			size					✅
-			max_size				❌
+			max_size				✅
 
 		Element Access:
 			operator[]				❌

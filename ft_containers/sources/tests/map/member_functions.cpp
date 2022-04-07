@@ -716,30 +716,30 @@ void	testMap::member_functions__capacity__size() {
 			std::cout << "      mapB.size() is	" << mapB.size() << std::endl;
 			std::cout << "      mapC.size() is	" << mapC.size() << std::endl << std::endl;
 }
-// void	testMap::member_functions__capacity__max_size() {
-// 			std::cout << "Capacity - max_size():" << std::endl << std::endl;
+void	testMap::member_functions__capacity__max_size() {
+			std::cout << "Capacity - max_size():" << std::endl << std::endl;
 
-// 	ft::map<std::string, std::string>		mapA;
-// 	ft::map<std::string, int>				mapB;
-// 	ft::map<float, double>					mapC;
+	ft::map<std::string, std::string>		mapA;
+	ft::map<std::string, int>				mapB;
+	ft::map<float, double>					mapC;
 
-// 			std::cout << "  map<std::string, std::string>		mapA;" << std::endl;
-// 			std::cout << "  map<std::string, int>			mapB;" << std::endl;
-// 			std::cout << "  map<float, double>			mapC;" << std::endl << std::endl;
+			std::cout << "  map<std::string, std::string>		mapA;" << std::endl;
+			std::cout << "  map<std::string, int>			mapB;" << std::endl;
+			std::cout << "  map<float, double>			mapC;" << std::endl << std::endl;
 
-// 	mapA.insert(ft::pair<std::string, std::string>("Mekie Sócieee", "Tao mano"));
-// 	mapB.insert(ft::pair<std::string, int>("Olahh", 20));
-// 	mapC.insert(ft::pair<float, double>(1.5, 21.0));
+	mapA.insert(ft::pair<std::string, std::string>("Mekie Sócieee", "Tao mano"));
+	mapB.insert(ft::pair<std::string, int>("Olahh", 20));
+	mapC.insert(ft::pair<float, double>(1.5, 21.0));
 
-// 			std::cout << "  mapA.insert(ft::pair<std::string, std::string>(\"Mekie Sócieee\", \"Tao mano\"));" << std::endl;
-// 			std::cout << "  mapB.insert(ft::pair<std::string, int>(\"Olahh\", 20));" << std::endl;
-// 			std::cout << "  mapC.insert(ft::pair<float, double>(1.5, 21.0));" << std::endl << std::endl;
+			std::cout << "  mapA.insert(ft::pair<std::string, std::string>(\"Mekie Sócieee\", \"Tao mano\"));" << std::endl;
+			std::cout << "  mapB.insert(ft::pair<std::string, int>(\"Olahh\", 20));" << std::endl;
+			std::cout << "  mapC.insert(ft::pair<float, double>(1.5, 21.0));" << std::endl << std::endl;
 
-// 			std::cout << "      mapA.max_size() is	" << mapA.max_size() << std::endl;
-// 			std::cout << "      mapB.max_size() is	" << mapB.max_size() << std::endl;
-// 			std::cout << "      mapC.max_size() is	" << mapC.max_size() << std::endl;
-// 			std::cout << std::endl;
-// }
+			std::cout << "      mapA.max_size() is	" << mapA.max_size() << std::endl;
+			std::cout << "      mapB.max_size() is	" << mapB.max_size() << std::endl;
+			std::cout << "      mapC.max_size() is	" << mapC.max_size() << std::endl;
+			std::cout << std::endl;
+}
 void	testMap::member_functions__capacity__empty() {
 			std::cout << "Capacity - empty():" << std::endl << std::endl;
 

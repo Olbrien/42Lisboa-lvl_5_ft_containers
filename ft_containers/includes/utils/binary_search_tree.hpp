@@ -63,7 +63,8 @@ class BST {
 		}
 
 		~BST() {
-			remove_all();
+			remove_all(false);
+			_size = 0;
 		};
 
 		BST & operator=(BST & obj) {
@@ -71,7 +72,7 @@ class BST {
 				return *this;
 			}
 			if (_root != NULL) {
-				this->remove_all();
+				this->remove_all(false);
 			}
 			if (_root == NULL && obj._root != NULL) {
 				BSTNode<T>    *node_start_pos = obj._root;
@@ -119,11 +120,11 @@ class BST {
             return result;
         };
 
-        BSTNode<T>  *find_min() {
+        BSTNode<T>  *find_min() const {
             return find_min_node(_root);
         };
 
-		BSTNode<T>  *find_max() {
+		BSTNode<T>  *find_max() const {
 			return find_max_node(_root);
 		};
 
@@ -131,14 +132,14 @@ class BST {
 		// This function goes beyond the first element. It goes to an rend_node() that has
 		// undefined value (empty). This is for map.rend() to do --, and iterate to the last
 		// element.
-		BSTNode<T>	*find_rend() {
+		BSTNode<T>	*find_rend() const {
 			return(find_rend_node(_root));
 		}
 
 		// This function goes beyond the last element. It goes to an end_node() that has
 		// undefined value (empty). This is for map.end() to do --, and iterate to the last
 		// element.
-		BSTNode<T>	*find_end() {
+		BSTNode<T>	*find_end() const {
 			return(find_end_node(_root));
 		}
 
@@ -162,9 +163,18 @@ class BST {
 			return (_node_allocator.max_size());
 		}
 
-		void	remove_all() {
+		void	remove_all(bool keep_end_rend_nodes) {
 			remove_all_nodes(_root);
 			_root = NULL;
+
+			// If you want to clear just the nodes and not the _end and _rend nodes
+			if (keep_end_rend_nodes == true) {
+				_root = _node_allocator.allocate(1);
+				BSTNode<T> *rend = _node_allocator.allocate(1);
+
+				_node_allocator.construct(_root, node_type(rend, NULL, NULL, true, false));
+				_node_allocator.construct(rend, node_type(NULL, NULL, _root, false, true));
+			}
 		}
 
     private:
@@ -291,7 +301,7 @@ class BST {
             return (NULL);
         };
 
-        BSTNode<T>      *find_min_node(BSTNode<T> *node) {
+        BSTNode<T>      *find_min_node(BSTNode<T> *node) const {
 			// To retrieve the Node after the rend_node(empty node)
             if (node == NULL || node->rend_node == true) {
                 return NULL;
@@ -304,7 +314,7 @@ class BST {
             }
         };
 
-        BSTNode<T>     *find_max_node(BSTNode<T> *node) {
+        BSTNode<T>     *find_max_node(BSTNode<T> *node) const {
 			// To retrieve the Node before the end_node(empty node)
             if (node == NULL || node->end_node == true) {
                 return NULL;
@@ -317,7 +327,7 @@ class BST {
             }
         };
 
-        BSTNode<T>      *find_rend_node(BSTNode<T> *node) {
+        BSTNode<T>      *find_rend_node(BSTNode<T> *node) const {
 			// To retrieve the rend_node(empty node)
             if (node == NULL) {
                 return NULL;
@@ -330,7 +340,7 @@ class BST {
             }
 		}
 
-        BSTNode<T>     *find_end_node(BSTNode<T> *node) {
+        BSTNode<T>     *find_end_node(BSTNode<T> *node) const {
 			// To retrieve the end_node(empty node)
             if (node == NULL) {
                 return NULL;
@@ -508,7 +518,6 @@ class BST {
 				_node_allocator.destroy(node);
 				_node_allocator.deallocate(node, 1);
 				node = NULL;
-				_size--;
 			}
 		}
 

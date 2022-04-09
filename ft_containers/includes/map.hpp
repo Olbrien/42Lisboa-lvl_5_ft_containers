@@ -166,10 +166,10 @@ class map {
 		ft::pair<iterator,bool> insert (const value_type& val) {
 			if (_bst.search(val) == NULL || _bst.get_size() == 0) {
 				_bst.insert(val);
-				return (ft::make_pair(_bst.search(val), false));
+				return (ft::make_pair(_bst.search(val), true));
 			}
 			else {
-				return (ft::make_pair(_bst.search(val), true));
+				return (ft::make_pair(_bst.search(val), false));
 			}
 		};
 

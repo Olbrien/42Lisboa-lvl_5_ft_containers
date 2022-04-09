@@ -187,26 +187,25 @@ int		map_argument(std::string argument) {
 
 	// if (!argument.compare("110")) { header_text("map"); testMap::member_functions__element__operator_at_position(); return 0; }
 
-	// if (!argument.compare("111")) { header_text("map"); testMap::member_functions__modifiers__insert_single_element(); return 0; }
+	if (!argument.compare("111")) { header_text("map"); testMap::member_functions__modifiers__insert_single_element(); return 0; }
 	// else if (!argument.compare("112")) { header_text("map"); testMap::member_functions__modifiers__insert_with_hint(); return 0; }
 	// else if (!argument.compare("113")) { header_text("map"); testMap::member_functions__modifiers__insert_range(); return 0; }
-	// else if (!argument.compare("114")) { header_text("map"); testMap::member_functions__modifiers__insert_initializer_list(); return 0; }
-	if (!argument.compare("115")) { header_text("map"); testMap::member_functions__modifiers__erase_position(); return 0; }
-	// else if (!argument.compare("116")) { header_text("map"); testMap::member_functions__modifiers__erase_key(); return 0; }
-	// else if (!argument.compare("117")) { header_text("map"); testMap::member_functions__modifiers__erase_range(); return 0; }
-	// else if (!argument.compare("118")) { header_text("map"); testMap::member_functions__modifiers__swap(); return 0; }
-	// else if (!argument.compare("119")) { header_text("map"); testMap::member_functions__modifiers__clear(); return 0; }
+	if (!argument.compare("114")) { header_text("map"); testMap::member_functions__modifiers__erase_position(); return 0; }
+	// else if (!argument.compare("115")) { header_text("map"); testMap::member_functions__modifiers__erase_key(); return 0; }
+	// else if (!argument.compare("116")) { header_text("map"); testMap::member_functions__modifiers__erase_range(); return 0; }
+	// else if (!argument.compare("117")) { header_text("map"); testMap::member_functions__modifiers__swap(); return 0; }
+	// else if (!argument.compare("118")) { header_text("map"); testMap::member_functions__modifiers__clear(); return 0; }
 
-	// if (!argument.compare("120")) { header_text("map"); testMap::member_functions__observers__key_comp(); return 0; }
-	// else if (!argument.compare("121")) { header_text("map"); testMap::member_functions__observers__value_comp(); return 0; }
+	// if (!argument.compare("119")) { header_text("map"); testMap::member_functions__observers__key_comp(); return 0; }
+	// else if (!argument.compare("120")) { header_text("map"); testMap::member_functions__observers__value_comp(); return 0; }
 
-	// if (!argument.compare("122")) { header_text("map"); testMap::member_functions__operations__find(); return 0; }
-	// else if (!argument.compare("123")) { header_text("map"); testMap::member_functions__operations__count(); return 0; }
-	// else if (!argument.compare("124")) { header_text("map"); testMap::member_functions__operations__lower_bound(); return 0; }
-	// else if (!argument.compare("125")) { header_text("map"); testMap::member_functions__operations__upper_bound(); return 0; }
-	// else if (!argument.compare("126")) { header_text("map"); testMap::member_functions__operations__equal_range(); return 0; }
+	// if (!argument.compare("121")) { header_text("map"); testMap::member_functions__operations__find(); return 0; }
+	// else if (!argument.compare("122")) { header_text("map"); testMap::member_functions__operations__count(); return 0; }
+	// else if (!argument.compare("123")) { header_text("map"); testMap::member_functions__operations__lower_bound(); return 0; }
+	// else if (!argument.compare("124")) { header_text("map"); testMap::member_functions__operations__upper_bound(); return 0; }
+	// else if (!argument.compare("125")) { header_text("map"); testMap::member_functions__operations__equal_range(); return 0; }
 
-	if (!argument.compare("127")) { header_text("map"); testMap::member_functions__allocator__get_allocator(); return 0; }
+	if (!argument.compare("126")) { header_text("map"); testMap::member_functions__allocator__get_allocator(); return 0; }
 
 	return 1;
 }
@@ -392,24 +391,23 @@ void	welcome_message() {
 	std::cout << "*                  single element			     111    *" << std::endl;
 	std::cout << "*                  with hint				     112    *" << std::endl;
 	std::cout << "*                  range				     113    *" << std::endl;
-	std::cout << "*                  initializer_list			     114    *" << std::endl;
 	std::cout << "*              erase:					            *" << std::endl;
-	std::cout << "*                  erase position			     115    *" << std::endl;
-	std::cout << "*                  erase key				     116    *" << std::endl;
-	std::cout << "*                  erase range				     117    *" << std::endl;
-	std::cout << "*              swap					     118    *" << std::endl;
-	std::cout << "*              clear					     119    *" << std::endl;
+	std::cout << "*                  erase position			     114    *" << std::endl;
+	std::cout << "*                  erase key				     115    *" << std::endl;
+	std::cout << "*                  erase range				     116    *" << std::endl;
+	std::cout << "*              swap					     117    *" << std::endl;
+	std::cout << "*              clear					     118    *" << std::endl;
 	std::cout << "*          observers:						    *" << std::endl;
-	std::cout << "*              key_comp					     120    *" << std::endl;
-	std::cout << "*              value_comp				     121    *" << std::endl;
+	std::cout << "*              key_comp					     119    *" << std::endl;
+	std::cout << "*              value_comp				     120    *" << std::endl;
 	std::cout << "*          operations:						    *" << std::endl;
-	std::cout << "*              find					     122    *" << std::endl;
-	std::cout << "*              count					     123    *" << std::endl;
-	std::cout << "*              lower_bound				     124    *" << std::endl;
-	std::cout << "*              upper_bound				     125    *" << std::endl;
-	std::cout << "*              equal_range				     126    *" << std::endl;
+	std::cout << "*              find					     121    *" << std::endl;
+	std::cout << "*              count					     122    *" << std::endl;
+	std::cout << "*              lower_bound				     123    *" << std::endl;
+	std::cout << "*              upper_bound				     124    *" << std::endl;
+	std::cout << "*              equal_range				     125    *" << std::endl;
 	std::cout << "*          Allocator:						    *" << std::endl;
-	std::cout << "*              get_allocator				     127    *" << std::endl;
+	std::cout << "*              get_allocator				     126    *" << std::endl;
 	std::cout << "*								    *" << std::endl;
 	std::cout << "*  Extras:							    *" << std::endl;
 	std::cout << "*      iterator_traits					     200    *" << std::endl;

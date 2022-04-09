@@ -296,14 +296,8 @@ void MapBeginToEnd()
 
 }
 
-
-
-int main(void) {
-
-	//BSTree();
-	//BSTreeIT();
-	//MapInsertTest();
-	//MapBeginToEnd();
+void MapTest2()
+{
 
 	ft::map<int, std::string> mapA;
 
@@ -393,5 +387,27 @@ int main(void) {
 
 
 	std::cout << std::endl;
+}
+
+
+int main(void) {
+
+	//BSTree();
+	//BSTreeIT();
+	//MapInsertTest();
+	//MapBeginToEnd();
+	//MapTest2();
+
+
+	typedef ft::map<int, int>::iterator it;
+	ft::pair<ft::map<int, int>::iterator,bool> ret;
+
+
+	ft::map<int, int> mapA;
+	ft::map<int, int> mapB;
+	ft::map<int, int> mapC;
+
+	ret = mapA.insert(ft::pair<int, int>(1, 1));
+
 
 }

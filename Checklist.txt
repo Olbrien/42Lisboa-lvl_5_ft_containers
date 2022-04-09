@@ -240,10 +240,9 @@ Map:
 
 		Modifiers:
 			insert:
-				single element		❌
+				single element		✅
 				with hint			❌
 				range				❌
-				initializer_list	❌
 			erase					✅❌❌
 			swap					❌
 			clear					❌

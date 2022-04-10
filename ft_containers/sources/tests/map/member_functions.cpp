@@ -2538,242 +2538,345 @@ void	testMap::member_functions__modifiers__erase_range() {
 			std::cout << "      mapB.size() is	" << mapB.size() << std::endl;
 			std::cout << std::endl;
 }
-// void	testMap::member_functions__modifiers__swap() {
-// 			std::cout << "Modifiers - swap():" << std::endl << std::endl;
+void	testMap::member_functions__modifiers__swap() {
+			std::cout << "Modifiers - swap():" << std::endl << std::endl;
 
-// 	typedef ft::vector<int>::iterator it;
+	ft::map<int, int> mapA;
+	ft::map<int, int> mapB;
+	ft::map<int, int> mapC;
+	ft::map<int, int> mapD;
+	ft::map<int, int> mapE;
+	ft::map<int, int> mapF;
 
-// 	ft::vector<int> vectorA(1, 1);
-// 	ft::vector<int> vectorB;
-// 	ft::vector<int> vectorC(2, 2);
-// 	ft::vector<int> vectorD(7, 7);
-
-// 			std::cout << "  typedef std::vector<int>::iterator it;" << std::endl << std::endl;
-
-// 			std::cout << "  vector<int> vectorA(1, 1);" << std::endl;
-// 			std::cout << "  vector<int> vectorB;" << std::endl;
-// 			std::cout << "  vector<int> vectorC(2, 2);" << std::endl;
-// 			std::cout << "  vector<int> vectorD(7, 7);" << std::endl << std::endl;
-
-// 	it itA = vectorA.begin();
-// 	vectorB.begin();
-// 	it itC = vectorC.begin();
-// 	it itD = vectorD.begin();
-
-// 			std::cout << "  it itA = vectorA.begin();" << std::endl;
-// 			std::cout << "  vectorB.begin();" << std::endl;
-// 			std::cout << "  it itC = vectorC.begin();" << std::endl;
-// 			std::cout << "  it itD = vectorD.begin();" << std::endl << std::endl;
-
-// 			std::cout << "      vectorA is		[ " ;
-// 			for (ft::vector<int>::iterator itA = vectorA.begin(); itA != vectorA.end(); itA++) { std::cout << *itA << " ";	}
-// 			std::cout << "]" << std::endl;
-
-// 			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
-// 			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
-// 			std::cout << "      vectorA.begin() is	" << *vectorA.begin() << std::endl;
-// 			std::cout << "      *itA is			" << *itA << std::endl;
-// 			std::cout << std::endl;
-
-// 			std::cout << "      vectorB is		[ " ;
-// 			for (ft::vector<int>::iterator itA = vectorB.begin(); itA != vectorB.end(); itA++) { std::cout << *itA << " ";	}
-// 			std::cout << "]" << std::endl;
-
-// 			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
-// 			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
-// 			//std::cout << "      vectorB.begin() is	" << *vectorB.begin() << std::endl;
-// 			//std::cout << "      *itB is			" << *itB << std::endl;
-// 			std::cout << std::endl;
-
-// 			std::cout << "      vectorC is		[ " ;
-// 			for (ft::vector<int>::iterator itA = vectorC.begin(); itA != vectorC.end(); itA++) { std::cout << *itA << " ";	}
-// 			std::cout << "]" << std::endl;
-
-// 			std::cout << "      vectorC.capacity() is	" << vectorC.capacity() << std::endl;
-// 			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
-// 			std::cout << "      vectorC.begin() is	" << *vectorC.begin() << std::endl;
-// 			std::cout << "      *itC is			" << *itC << std::endl;
-// 			std::cout << std::endl;
-
-// 			std::cout << "      vectorD is		[ " ;
-// 			for (ft::vector<int>::iterator itA = vectorD.begin(); itA != vectorD.end(); itA++) { std::cout << *itA << " ";	}
-// 			std::cout << "]" << std::endl;
-
-// 			std::cout << "      vectorD.capacity() is	" << vectorD.capacity() << std::endl;
-// 			std::cout << "      vectorD.size() is		" << vectorD.size() << std::endl;
-// 			std::cout << "      vectorD.begin() is	" << *vectorD.begin() << std::endl;
-// 			std::cout << "      *itD is			" << *itD << std::endl;
-// 			std::cout << std::endl;
-
-// 	vectorA.swap(vectorB);
-// 	vectorC.swap(vectorD);
-
-// 			std::cout << "  vectorA.swap(vectorB);" << std::endl;
-// 			std::cout << "  vectorC.swap(vectorD);" << std::endl << std::endl;
-
-// 			std::cout << "      vectorA is		[ " ;
-// 			for (ft::vector<int>::iterator itA = vectorA.begin(); itA != vectorA.end(); itA++) { std::cout << *itA << " ";	}
-// 			std::cout << "]" << std::endl;
-
-// 			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
-// 			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
-// 			//std::cout << "      vectorA.begin() is	" << *vectorA.begin() << std::endl;
-// 			//std::cout << "      *itA is			" << *itA << std::endl;
-// 			std::cout << std::endl;
-
-// 			std::cout << "      vectorB is		[ " ;
-// 			for (ft::vector<int>::iterator itA = vectorB.begin(); itA != vectorB.end(); itA++) { std::cout << *itA << " ";	}
-// 			std::cout << "]" << std::endl;
-
-// 			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
-// 			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
-// 			std::cout << "      vectorB.begin() is	" << *vectorB.begin() << std::endl;
-// 			//std::cout << "      *itB is			" << *itB << std::endl;
-// 			std::cout << std::endl;
-
-// 			std::cout << "      vectorC is		[ " ;
-// 			for (ft::vector<int>::iterator itA = vectorC.begin(); itA != vectorC.end(); itA++) { std::cout << *itA << " ";	}
-// 			std::cout << "]" << std::endl;
-
-// 			std::cout << "      vectorC.capacity() is	" << vectorC.capacity() << std::endl;
-// 			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
-// 			std::cout << "      vectorC.begin() is	" << *vectorC.begin() << std::endl;
-// 			std::cout << "      *itC is			" << *itC << std::endl;
-// 			std::cout << std::endl;
-
-// 			std::cout << "      vectorD is		[ " ;
-// 			for (ft::vector<int>::iterator itA = vectorD.begin(); itA != vectorD.end(); itA++) { std::cout << *itA << " ";	}
-// 			std::cout << "]" << std::endl;
-
-// 			std::cout << "      vectorD.capacity() is	" << vectorD.capacity() << std::endl;
-// 			std::cout << "      vectorD.size() is		" << vectorD.size() << std::endl;
-// 			std::cout << "      vectorD.begin() is	" << *vectorD.begin() << std::endl;
-// 			std::cout << "      *itD is			" << *itD << std::endl;
-// 			std::cout << std::endl;
-
-// 	vectorA.swap(vectorD);
-// 	vectorB.swap(vectorC);
-
-// 			std::cout << "  vectorA.swap(vectorD);" << std::endl;
-// 			std::cout << "  vectorB.swap(vectorC);" << std::endl << std::endl;
-
-// 			std::cout << "      vectorA is		[ " ;
-// 			for (ft::vector<int>::iterator itA = vectorA.begin(); itA != vectorA.end(); itA++) { std::cout << *itA << " ";	}
-// 			std::cout << "]" << std::endl;
-
-// 			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
-// 			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
-// 			std::cout << "      vectorA.begin() is	" << *vectorA.begin() << std::endl;
-// 			std::cout << "      *itA is			" << *itA << std::endl;
-// 			std::cout << std::endl;
-
-// 			std::cout << "      vectorB is		[ " ;
-// 			for (ft::vector<int>::iterator itA = vectorB.begin(); itA != vectorB.end(); itA++) { std::cout << *itA << " ";	}
-// 			std::cout << "]" << std::endl;
-
-// 			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
-// 			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
-// 			std::cout << "      vectorB.begin() is	" << *vectorB.begin() << std::endl;
-// 			//std::cout << "      *itB is			" << *itB << std::endl;
-// 			std::cout << std::endl;
-
-// 			std::cout << "      vectorC is		[ " ;
-// 			for (ft::vector<int>::iterator itA = vectorC.begin(); itA != vectorC.end(); itA++) { std::cout << *itA << " ";	}
-// 			std::cout << "]" << std::endl;
-
-// 			std::cout << "      vectorC.capacity() is	" << vectorC.capacity() << std::endl;
-// 			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
-// 			std::cout << "      vectorC.begin() is	" << *vectorC.begin() << std::endl;
-// 			std::cout << "      *itC is			" << *itC << std::endl;
-// 			std::cout << std::endl;
-
-// 			std::cout << "      vectorD is		[ " ;
-// 			for (ft::vector<int>::iterator itA = vectorD.begin(); itA != vectorD.end(); itA++) { std::cout << *itA << " ";	}
-// 			std::cout << "]" << std::endl;
-
-// 			std::cout << "      vectorD.capacity() is	" << vectorD.capacity() << std::endl;
-// 			std::cout << "      vectorD.size() is		" << vectorD.size() << std::endl;
-// 			//std::cout << "      vectorD.begin() is	" << *vectorD.begin() << std::endl;
-// 			std::cout << "      *itD is			" << *itD << std::endl;
-// 			std::cout << std::endl;
+	mapA[1] = 1;
+	mapC[2] = 2;
+	mapD[7] = 7;
 
 
-// 			std::cout << "      itA is		[ " ;
-// 			for (int i = 0 ; i < 1; i++) { std::cout << *(itA + i) << " "; }
-// 			std::cout << "]" << std::endl;
+			std::cout << "  map<int, int> mapA;" << std::endl;
+			std::cout << "  map<int, int> mapB;" << std::endl;
+			std::cout << "  map<int, int> mapC;" << std::endl;
+			std::cout << "  map<int, int> mapD;" << std::endl;
+			std::cout << "  map<int, int> mapE;" << std::endl;
+			std::cout << "  map<int, int> mapF;" << std::endl << std::endl;
 
-// 			std::cout << "      itC is		[ " ;
-// 			for (int i = 0 ; i < 2; i++) { std::cout << *(itC + i) << " "; }
-// 			std::cout << "]" << std::endl;
+			std::cout << "  mapA[1] = 1;" << std::endl;
+			std::cout << "  mapC[2] = 2;" << std::endl;
+			std::cout << "  mapD[7] = 7;" << std::endl << std::endl;
 
-// 			std::cout << "      itD is		[ " ;
-// 			for (int i = 0 ; i < 7; i++) { std::cout << *(itD + i) << " "; }
-// 			std::cout << "]" << std::endl << std::endl;
-
-// 	vectorA.push_back(90);
-// 	vectorB.push_back(70);
-// 	vectorC.push_back(50);
-// 	vectorD.push_back(30);
-
-// 			std::cout << "  vectorA.push_back(90);" << std::endl;
-// 			std::cout << "  vectorB.push_back(70);" << std::endl;
-// 			std::cout << "  vectorC.push_back(50);" << std::endl;
-// 			std::cout << "  vectorD.push_back(30);" << std::endl << std::endl;
-
-// 			std::cout << "      vectorA is		[ " ;
-// 			for (ft::vector<int>::iterator itA = vectorA.begin(); itA != vectorA.end(); itA++) { std::cout << *itA << " ";	}
-// 			std::cout << "]" << std::endl;
-
-// 			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
-// 			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
-// 			std::cout << "      vectorA.begin() is	" << *vectorA.begin() << std::endl;
-// 			std::cout << "      *itA is			" << *itA << std::endl;
-// 			std::cout << std::endl;
-
-// 			std::cout << "      vectorB is		[ " ;
-// 			for (ft::vector<int>::iterator itA = vectorB.begin(); itA != vectorB.end(); itA++) { std::cout << *itA << " ";	}
-// 			std::cout << "]" << std::endl;
-
-// 			std::cout << "      vectorB.capacity() is	" << vectorB.capacity() << std::endl;
-// 			std::cout << "      vectorB.size() is		" << vectorB.size() << std::endl;
-// 			std::cout << "      vectorB.begin() is	" << *vectorB.begin() << std::endl;
-// 			//std::cout << "      *itB is			" << *itB << std::endl;
-// 			std::cout << std::endl;
-
-// 			std::cout << "      vectorC is		[ " ;
-// 			for (ft::vector<int>::iterator itA = vectorC.begin(); itA != vectorC.end(); itA++) { std::cout << *itA << " ";	}
-// 			std::cout << "]" << std::endl;
-
-// 			std::cout << "      vectorC.capacity() is	" << vectorC.capacity() << std::endl;
-// 			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
-// 			std::cout << "      vectorC.begin() is	" << *vectorC.begin() << std::endl;
-// 			std::cout << "      *itC is			" << *itC << std::endl;
-// 			std::cout << std::endl;
-
-// 			std::cout << "      vectorD is		[ " ;
-// 			for (ft::vector<int>::iterator itA = vectorD.begin(); itA != vectorD.end(); itA++) { std::cout << *itA << " ";	}
-// 			std::cout << "]" << std::endl;
-
-// 			std::cout << "      vectorD.capacity() is	" << vectorD.capacity() << std::endl;
-// 			std::cout << "      vectorD.size() is		" << vectorD.size() << std::endl;
-// 			std::cout << "      vectorD.begin() is	" << *vectorD.begin() << std::endl;
-// 			std::cout << "      *itD is			" << *itD << std::endl;
-// 			std::cout << std::endl;
+			std::cout << "      mapA is		" ;
+			for ( struct { int i; ft::map<int, int>::iterator itA; } s = {0, mapA.begin()}; s.itA != mapA.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapA.size() is	" << mapA.size() << std::endl;
+			std::cout << std::endl;
 
 
-// 			std::cout << "      itA is		[ " ;
-// 			for (int i = 0 ; i < 2; i++) { std::cout << *(itA + i) << " "; }
-// 			std::cout << "]" << std::endl;
+			std::cout << "      mapB is		\n" ;
+			for ( struct { int i; ft::map<int, int>::iterator itA; } s = {0, mapB.begin()}; s.itA != mapB.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapB.size() is	" << mapB.size() << std::endl;
+			std::cout << std::endl;
 
-// 			std::cout << "      itC is		[ " ;
-// 			for (int i = 0 ; i < 3; i++) { std::cout << *(itC + i) << " "; }
-// 			std::cout << "]" << std::endl;
 
-// 			std::cout << "      itD is		[ " ;
-// 			for (int i = 0 ; i < 8; i++) { std::cout << *(itD + i) << " "; }
-// 			std::cout << "]" << std::endl;
+			std::cout << "      mapC is		" ;
+			for ( struct { int i; ft::map<int, int>::iterator itA; } s = {0, mapC.begin()}; s.itA != mapC.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapC.size() is	" << mapC.size() << std::endl;
+			std::cout << std::endl;
 
-// }
+
+			std::cout << "      mapD is		" ;
+			for ( struct { int i; ft::map<int, int>::iterator itA; } s = {0, mapD.begin()}; s.itA != mapD.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapD.size() is	" << mapD.size() << std::endl;
+			std::cout << std::endl;
+
+
+	mapA.swap(mapB);
+	mapC.swap(mapD);
+
+			std::cout << "  mapA.swap(mapB);" << std::endl;
+			std::cout << "  mapC.swap(mapD);" << std::endl << std::endl;
+
+			std::cout << "      mapA is		\n" ;
+			for ( struct { int i; ft::map<int, int>::iterator itA; } s = {0, mapA.begin()}; s.itA != mapA.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapA.size() is	" << mapA.size() << std::endl;
+			std::cout << std::endl;
+
+
+			std::cout << "      mapB is		" ;
+			for ( struct { int i; ft::map<int, int>::iterator itA; } s = {0, mapB.begin()}; s.itA != mapB.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapB.size() is	" << mapB.size() << std::endl;
+			std::cout << std::endl;
+
+
+			std::cout << "      mapC is		" ;
+			for ( struct { int i; ft::map<int, int>::iterator itA; } s = {0, mapC.begin()}; s.itA != mapC.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapC.size() is	" << mapC.size() << std::endl;
+			std::cout << std::endl;
+
+
+			std::cout << "      mapD is		" ;
+			for ( struct { int i; ft::map<int, int>::iterator itA; } s = {0, mapD.begin()}; s.itA != mapD.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapD.size() is	" << mapD.size() << std::endl;
+			std::cout << std::endl;
+
+
+	mapA.swap(mapD);
+	mapB.swap(mapC);
+
+			std::cout << "  mapA.swap(mapD);" << std::endl;
+			std::cout << "  mapB.swap(mapC);" << std::endl << std::endl;
+
+			std::cout << "      mapA is		" ;
+			for ( struct { int i; ft::map<int, int>::iterator itA; } s = {0, mapA.begin()}; s.itA != mapA.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapA.size() is	" << mapA.size() << std::endl;
+			std::cout << std::endl;
+
+
+			std::cout << "      mapB is		" ;
+			for ( struct { int i; ft::map<int, int>::iterator itA; } s = {0, mapB.begin()}; s.itA != mapB.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapB.size() is	" << mapB.size() << std::endl;
+			std::cout << std::endl;
+
+
+			std::cout << "      mapC is		" ;
+			for ( struct { int i; ft::map<int, int>::iterator itA; } s = {0, mapC.begin()}; s.itA != mapC.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapC.size() is	" << mapC.size() << std::endl;
+			std::cout << std::endl;
+
+
+			std::cout << "      mapD is		\n" ;
+			for ( struct { int i; ft::map<int, int>::iterator itA; } s = {0, mapD.begin()}; s.itA != mapD.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapD.size() is	" << mapD.size() << std::endl;
+			std::cout << std::endl;
+
+
+	mapA[90] = 90;
+	mapB[91] = 91;
+	mapC[92] = 92;
+	mapD[93] = 93;
+
+			std::cout << "  mapA[90] = 90;" << std::endl;
+			std::cout << "  mapB[91] = 91;" << std::endl;
+			std::cout << "  mapC[92] = 92;" << std::endl;
+			std::cout << "  mapD[93] = 93;" << std::endl << std::endl;
+
+			std::cout << "      mapA is		" ;
+			for ( struct { int i; ft::map<int, int>::iterator itA; } s = {0, mapA.begin()}; s.itA != mapA.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapA.size() is	" << mapA.size() << std::endl;
+			std::cout << std::endl;
+
+
+			std::cout << "      mapB is		" ;
+			for ( struct { int i; ft::map<int, int>::iterator itA; } s = {0, mapB.begin()}; s.itA != mapB.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapB.size() is	" << mapB.size() << std::endl;
+			std::cout << std::endl;
+
+
+			std::cout << "      mapC is		" ;
+			for ( struct { int i; ft::map<int, int>::iterator itA; } s = {0, mapC.begin()}; s.itA != mapC.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapC.size() is	" << mapC.size() << std::endl;
+			std::cout << std::endl;
+
+
+			std::cout << "      mapD is		" ;
+			for ( struct { int i; ft::map<int, int>::iterator itA; } s = {0, mapD.begin()}; s.itA != mapD.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapD.size() is	" << mapD.size() << std::endl;
+			std::cout << std::endl;
+
+	mapA.erase(mapA.begin());
+	mapB.erase(mapB.begin());
+	mapC.erase(mapC.begin());
+
+			std::cout << "  mapA.erase(mapA.begin());" << std::endl;
+			std::cout << "  mapB.erase(mapB.begin());" << std::endl;
+			std::cout << "  mapC.erase(mapC.begin());" << std::endl << std::endl;
+
+			std::cout << "      mapA is		" ;
+			for ( struct { int i; ft::map<int, int>::iterator itA; } s = {0, mapA.begin()}; s.itA != mapA.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapA.size() is	" << mapA.size() << std::endl;
+			std::cout << std::endl;
+
+
+			std::cout << "      mapB is		" ;
+			for ( struct { int i; ft::map<int, int>::iterator itA; } s = {0, mapB.begin()}; s.itA != mapB.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapB.size() is	" << mapB.size() << std::endl;
+			std::cout << std::endl;
+
+
+			std::cout << "      mapC is		" ;
+			for ( struct { int i; ft::map<int, int>::iterator itA; } s = {0, mapC.begin()}; s.itA != mapC.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapC.size() is	" << mapC.size() << std::endl;
+			std::cout << std::endl;
+
+
+			std::cout << "      mapD is		" ;
+			for ( struct { int i; ft::map<int, int>::iterator itA; } s = {0, mapD.begin()}; s.itA != mapD.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapD.size() is	" << mapD.size() << std::endl;
+			std::cout << std::endl;
+
+	mapE.swap(mapF);
+
+			std::cout << "  mapE.swap(mapF);" << std::endl << std::endl;
+
+	mapF[0] = 0;
+	mapF[1] = 1;
+	mapF[2] = 2;
+	mapF[3] = 3;
+	mapF[4] = 4;
+
+	mapE[0] = 0;
+	mapE[1] = 1;
+
+			std::cout << "  mapF[0] = 0;" << std::endl;
+			std::cout << "  mapF[1] = 1;" << std::endl;
+			std::cout << "  mapF[2] = 2;" << std::endl;
+			std::cout << "  mapF[3] = 3;" << std::endl;
+			std::cout << "  mapF[4] = 4;" << std::endl << std::endl;
+
+			std::cout << "  mapE[0] = 0;" << std::endl;
+			std::cout << "  mapE[1] = 1;" << std::endl << std::endl;
+
+			std::cout << "      mapE is		" ;
+			for ( struct { int i; ft::map<int, int>::iterator itA; } s = {0, mapE.begin()}; s.itA != mapE.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapE.size() is	" << mapE.size() << std::endl;
+			std::cout << std::endl;
+
+
+			std::cout << "      mapF is		" ;
+			for ( struct { int i; ft::map<int, int>::iterator itA; } s = {0, mapF.begin()}; s.itA != mapF.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapF.size() is	" << mapF.size() << std::endl;
+			std::cout << std::endl;
+}
 // void	testMap::member_functions__modifiers__clear() {
 // 			std::cout << "Modifiers - clear():" << std::endl << std::endl;
 

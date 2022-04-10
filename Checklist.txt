@@ -247,7 +247,7 @@ Map:
 				erase position		✅
 				key					✅
 				range				✅
-			swap					❌
+			swap					✅
 			clear					❌
 
 		Observers:

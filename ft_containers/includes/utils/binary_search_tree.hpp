@@ -21,6 +21,23 @@ class BSTNode {
 				rend_node(_rend)
 		{};
 
+		BSTNode (const BSTNode & x) {
+			*this = x;
+		}
+
+		BSTNode & operator=(const BSTNode & x) {
+			if (this == &x) {
+				return *this;
+			}
+			this->data = x.data;
+			this->left = x.left;
+			this->right = x.right;
+			this->parent = x.parent;
+			this->end_node = x.end_node;
+			this->rend_node = x.rend_node;
+			return *this;
+		}
+
         T           data;
         BSTNode     *left;
         BSTNode     *right;
@@ -70,21 +87,22 @@ class BST {
 			if (this == &obj) {
 				return *this;
 			}
+
 			if (_root != NULL) {
-				this->remove_all(false);
+				this->remove_all(true);
 			}
-			if (_root == NULL && obj._root != NULL) {
-				BSTNode<T>    *node_start_pos = obj._root;
+			if (obj._root != NULL &&
+				obj._root->end_node != true &&
+				obj._root->rend_node != true) {
 				BSTNode<T>    *node_loop = obj._root;
 
-				while (node_loop != NULL) {
+				this->insert(node_loop->data);
+
+				node_loop = obj.find_min();
+
+				while (node_loop != obj.find_max()) {
 					this->insert(node_loop->data);
-					node_loop = obj.predecessor(node_loop->data);
-				}
-				node_loop = obj._root;
-				while (node_loop != NULL) {
-					this->insert(node_loop->data);
-					node_loop = obj.successor(node_loop->data);
+					node_loop++;
 				}
 			}
 			return *this;

@@ -246,6 +246,20 @@ class map {
 			}
 		};
 
+		void swap (map & x) {
+			ft::BST<value_type>		bst_temp;
+			bst_temp = x._bst;
+			allocator_type			alloc_temp = x._alloc;
+			key_compare				comp_temp = x._comp;
+
+			x._bst = _bst;
+			x._alloc = _alloc;
+			x._comp = _comp;
+
+			_bst = bst_temp;
+			_alloc = alloc_temp;
+			_comp = comp_temp;
+		}
 
 		/****
 		** Observers

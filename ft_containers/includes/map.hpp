@@ -83,6 +83,10 @@ class map {
 			*this = x;
 		}
 
+		// Destructor
+		~map()
+		{};
+
 		/****
 		** Operator= (Assignment Operator)
 		*/
@@ -261,6 +265,11 @@ class map {
 			_comp = comp_temp;
 		}
 
+		void clear() {
+			_bst.remove_all(true);
+		}
+
+
 		/****
 		** Observers
 		*/
@@ -313,7 +322,6 @@ class map {
 		ft::BST<value_type>								_bst;
 		allocator_type									_alloc;
 		key_compare										_comp;
-		//ft::BSTNode<value_type>							*_root;
 
 };
 

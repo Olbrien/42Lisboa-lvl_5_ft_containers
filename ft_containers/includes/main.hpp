@@ -161,7 +161,7 @@ namespace testMap {
 	void	member_functions__modifiers__erase_key();
 	void	member_functions__modifiers__erase_range();
 	void	member_functions__modifiers__swap();
-	// void	member_functions__modifiers__clear();
+	void	member_functions__modifiers__clear();
 
 	void	member_functions__observers__key_comp();
 	void	member_functions__observers__value_comp();

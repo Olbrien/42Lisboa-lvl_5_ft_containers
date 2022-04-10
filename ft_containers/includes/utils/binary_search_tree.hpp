@@ -567,5 +567,3 @@ class BST {
 }
 
 #endif
-
-// https://medium.com/swlh/binary-search-trees-c-484377f0d349

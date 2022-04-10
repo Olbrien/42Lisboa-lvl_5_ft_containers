@@ -248,7 +248,7 @@ Map:
 				key					✅
 				range				✅
 			swap					✅
-			clear					❌
+			clear					✅
 
 		Observers:
 			key_comp				✅

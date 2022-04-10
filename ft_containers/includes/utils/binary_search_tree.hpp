@@ -97,6 +97,22 @@ class BST {
             _size++;
         };
 
+        void insert_hint(BSTNode<T> *node, T data) {
+            // Invoking Insert_hint() function
+            // and passing root node and given data
+
+			BSTNode<T> *tmp_root = _root;
+
+			_root = search(node->data);
+
+			if (_root != NULL) {
+				_root = insert_node(_root, data);
+			}
+
+			_root = search_node(tmp_root, tmp_root->data);
+            _size++;
+        };
+
         void print_tree_in_order() {
             // Traverse the BST from root node
             // then print all datas

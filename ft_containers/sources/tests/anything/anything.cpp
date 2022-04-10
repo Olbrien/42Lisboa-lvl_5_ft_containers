@@ -6,31 +6,10 @@ void	testAnything::anything__tests() {
 	ft::map<int, int> mapA;
 
 	mapA.insert(ft::pair<int, int>(1, 1));
-	mapA.insert(ft::pair<int, int>(1, 1));
-	mapA.insert(ft::pair<int, int>(2, 1));
-	mapA.insert(ft::pair<int, int>(3, 1));
 
 	ft::map<int, int>::iterator it = mapA.begin();
 
-	for (; it != mapA.end(); it++)
-	{
-		std::cout << it->first << " " << it->second << std::endl;
-	}
+	mapA.insert(it, ft::pair<int, int>(2, 2));
 
 
-	it--;
-
-	mapA.erase(it);
-
-
-	it = mapA.begin();
-
-	mapA.erase(it);
-
-	it = mapA.begin();
-
-	for (; it != mapA.end(); it++)
-	{
-		std::cout << it->first << " " << it->second << std::endl;
-	}
 }

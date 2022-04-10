@@ -398,16 +398,15 @@ int main(void) {
 	//MapBeginToEnd();
 	//MapTest2();
 
-
-	typedef ft::map<int, int>::iterator it;
-	ft::pair<ft::map<int, int>::iterator,bool> ret;
-
-
 	ft::map<int, int> mapA;
-	ft::map<int, int> mapB;
-	ft::map<int, int> mapC;
 
-	ret = mapA.insert(ft::pair<int, int>(1, 1));
+	mapA.insert(ft::pair<int, int>(1, 1));
+
+	ft::map<int, int>::iterator it = mapA.begin();
+
+	it++;
+
+
 
 
 }

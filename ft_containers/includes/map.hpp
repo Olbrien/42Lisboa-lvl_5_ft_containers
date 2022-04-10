@@ -173,6 +173,22 @@ class map {
 			}
 		};
 
+		// with hint
+		iterator insert (iterator position, const value_type& val) {
+			if (position._ptr->end_node == true || position._ptr->rend_node == true) {
+				insert(val);
+				return (_bst.search(val));
+			}
+			if (_bst.search(val) == NULL) {
+				_bst.insert_hint(position._ptr, val);
+				return (_bst.search(val));
+			}
+			else {
+				return (_bst.search(val));
+			}
+		}
+
+
 
 		void erase (iterator position) {
 			if (this->size() > 0) {

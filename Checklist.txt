@@ -236,7 +236,7 @@ Map:
 			max_size				✅
 
 		Element Access:
-			operator[]				❌
+			operator[]				✅
 
 		Modifiers:
 			insert:

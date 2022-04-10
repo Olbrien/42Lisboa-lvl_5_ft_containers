@@ -159,6 +159,27 @@ class map {
 		}
 
 		/****
+		** Element Access
+		*/
+
+		mapped_type& operator[] (const key_type& k) {
+			iterator it = find(k);
+
+			if (it == end()) {
+				ft::pair<iterator, bool> inserted = insert(ft::make_pair(k, mapped_type()));
+				return (inserted.first._ptr->data.second);
+			}
+			// This is case you're inserting a [0, ' ']
+			// It thinks [0, ' '] is empty, so it give "_bst.search(val) == NULL" on the
+			// insert function
+			else if (it._ptr->rend_node == true) {
+				_bst.insert(ft::make_pair(k, mapped_type()));
+			}
+
+			return (it._ptr->data.second);
+		}
+
+		/****
 		** Modifiers
 		*/
 

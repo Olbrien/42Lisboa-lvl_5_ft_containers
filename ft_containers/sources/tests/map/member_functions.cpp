@@ -980,49 +980,147 @@ void	testMap::member_functions__capacity__empty() {
 			std::cout << "      mapD.empty() is	" << mapD.empty() << std::endl;
 			std::cout << "      mapE.empty() is	" << mapE.empty() << std::endl << std::endl;
 }
-// void	testMap::member_functions__element__operator_at_position() {
-// 			std::cout << "Capacity - operator[]:" << std::endl << std::endl;
+void	testMap::member_functions__element__operator_at_position() {
+			std::cout << " Element access: - operator[]:" << std::endl << std::endl;
 
-// 	ft::vector<int> vectorA;
+	ft::map<int, std::string> mapA;
+	ft::map<int, std::string> mapB;
+	ft::map<int, int> mapC;
 
-// 			std::cout << "  vector<int> vectorA;" << std::endl << std::endl;
+			std::cout << "  map<int, std::string> mapA;" << std::endl;
+			std::cout << "  map<int, std::string> mapB;" << std::endl;
+			std::cout << "  map<int, int> mapC;" << std::endl << std::endl;
 
-// 	vectorA.push_back(5);
-// 	vectorA.push_back(10);
-// 	vectorA.push_back(15);
-// 	vectorA.push_back(20);
-// 	vectorA.push_back(25);
+	mapA[1] = "Uno";
+	mapA[2] = "Dos";
+	mapA[2] = "Dos";
+	mapA[3] = "Tres";
 
-// 			std::cout << "  vectorA.push_back(5);" << std::endl;
-// 			std::cout << "  vectorA.push_back(10);" << std::endl;
-// 			std::cout << "  vectorA.push_back(15);" << std::endl;
-// 			std::cout << "  vectorA.push_back(20);" << std::endl;
-// 			std::cout << "  vectorA.push_back(25);" << std::endl << std::endl;
+	mapB[11] = "Onze";
+	mapB[11] = "Onze";
+	mapB[12] = "Onze";
 
-// 	ft::vector<int>::reference ref0(vectorA[0]);
-// 	ft::vector<int>::const_reference ref1(vectorA[1]);
-// 	ft::vector<int>::const_reference ref2(vectorA[2]);
-// 	ft::vector<int>::reference ref3(vectorA[3]);
-// 	ft::vector<int>::reference ref4(vectorA[4]);
-// 	ft::vector<int>::const_reference ref5(vectorA[5]);
-// 	ft::vector<int>::const_reference ref6(vectorA[-123]);
+			std::cout << "  mapA[1] = \"Uno\"" << std::endl;
+			std::cout << "  mapA[2] = \"Dos\"" << std::endl;
+			std::cout << "  mapA[2] = \"Dos\"" << std::endl;
+			std::cout << "  mapA[3] = \"Tres\"" << std::endl << std::endl;
 
-// 			std::cout << "  vector<int>::reference	ref0(vectorA[0]);" << std::endl;
-// 			std::cout << "  vector<int>::const_reference	ref1(vectorA[1]);" << std::endl;
-// 			std::cout << "  vector<int>::const_reference	ref2(vectorA[2]);" << std::endl;
-// 			std::cout << "  vector<int>::reference	ref3(vectorA[3]);" << std::endl;
-// 			std::cout << "  vector<int>::reference	ref4(vectorA[4]);" << std::endl;
-// 			std::cout << "  vector<int>::const_reference	ref5(vectorA[5]);" << std::endl;
-// 			std::cout << "  vector<int>::const_reference	ref6(vectorA[-123]);" << std::endl << std::endl;
+			std::cout << "  mapB[11] = \"Onze\"" << std::endl;
+			std::cout << "  mapB[11] = \"Onze\"" << std::endl;
+			std::cout << "  mapB[12] = \"Onze\"" << std::endl << std::endl;
 
-// 			std::cout << "      ref0 is	" << ref0 << std::endl;
-// 			std::cout << "      ref1 is	" << ref1 << std::endl;
-// 			std::cout << "      ref2 is	" << ref2 << std::endl;
-// 			std::cout << "      ref3 is	" << ref3 << std::endl;
-// 			std::cout << "      ref4 is	" << ref4 << std::endl;
-// 			std::cout << "      ref5 is	" << ref5 << std::endl;
-// 			std::cout << "      ref6 is	" << ref6 << std::endl << std::endl;
-// }
+			std::cout << "      mapA is		" ;
+			for ( struct { int i; ft::map<int, std::string>::iterator itA; } s = {0, mapA.begin()}; s.itA != mapA.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapA.size() is	" << mapA.size() << std::endl;
+			std::cout << std::endl;
+
+
+			std::cout << "      mapB is		" ;
+			for ( struct { int i; ft::map<int, std::string>::iterator itA; } s = {0, mapB.begin()}; s.itA != mapB.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapB.size() is	" << mapB.size() << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      mapC is		\n" ;
+			for ( struct { int i; ft::map<int, int>::iterator itA; } s = {0, mapC.begin()}; s.itA != mapC.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapC.size() is	" << mapC.size() << std::endl;
+			std::cout << std::endl;
+
+
+
+			std::cout << "  mapA[1] = " << mapA[1] << std::endl;
+			std::cout << "  mapA[2] = " << mapA[2] << std::endl;
+			std::cout << "  mapA[2] = " << mapA[3] << std::endl;
+			std::cout << "  mapA[3] = " << mapA[4] << std::endl;
+			std::cout << "  mapA[3] = " << mapA[5] << std::endl;
+			std::cout << "  mapA[3] = " << mapA[6] << std::endl << std::endl;
+
+			std::cout << "  mapB[11] = " << mapB[11] << std::endl;
+			std::cout << "  mapB[11] = " << mapB[11] << std::endl;
+			std::cout << "  mapB[12] = " << mapB[12] << std::endl;
+			std::cout << "  mapB[1]  = " << mapB[1] << std::endl;
+			std::cout << "  mapB[0]  = " << mapB[0] << std::endl << std::endl;
+
+			std::cout << "  mapC[1]  = " << mapC[1] << std::endl;
+			std::cout << "  mapC[0]  = " << mapC[0] << std::endl << std::endl;
+
+
+			std::cout << "      mapA is		" ;
+			for ( struct { int i; ft::map<int, std::string>::iterator itA; } s = {0, mapA.begin()}; s.itA != mapA.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapA.size() is	" << mapA.size() << std::endl;
+			std::cout << std::endl;
+
+
+			std::cout << "      mapB is		" ;
+			for ( struct { int i; ft::map<int, std::string>::iterator itA; } s = {0, mapB.begin()}; s.itA != mapB.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapB.size() is	" << mapB.size() << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "      mapC is		" ;
+			for ( struct { int i; ft::map<int, int>::iterator itA; } s = {0, mapC.begin()}; s.itA != mapC.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapC.size() is	" << mapC.size() << std::endl;
+			std::cout << std::endl;
+
+	mapC[0];
+	mapC[1] = 2;
+	mapC[5] = 32;
+
+			std::cout << "  mapC[0];" << std::endl;
+			std::cout << "  mapC[1] = 2;" << std::endl;
+			std::cout << "  mapC[5] = 32;" << std::endl << std::endl;
+
+			std::cout << "  mapC[1]  = " << mapC[1] << std::endl;
+			std::cout << "  mapC[0]  = " << mapC[0] << std::endl;
+			std::cout << "  mapC[5]  = " << mapC[5] << std::endl;
+			std::cout << "  mapC[2]  = " << mapC[2] << std::endl;
+			std::cout << "  mapC[5]  = " << mapC[5] << std::endl << std::endl;
+
+			std::cout << "      mapC is		" ;
+			for ( struct { int i; ft::map<int, int>::iterator itA; } s = {0, mapC.begin()}; s.itA != mapC.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapC.size() is	" << mapC.size() << std::endl;
+			std::cout << std::endl;
+}
 void	testMap::member_functions__modifiers__insert_single_element() {
 			std::cout << "Modifiers - insert():" << std::endl << std::endl;
 			std::cout << "Single element:" << std::endl << std::endl;

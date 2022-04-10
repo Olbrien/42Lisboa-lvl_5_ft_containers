@@ -241,8 +241,8 @@ Map:
 		Modifiers:
 			insert:
 				single element		✅
-				with hint			❌
-				range				❌
+				with hint			✅
+				range				✅
 			erase					✅❌❌
 			swap					❌
 			clear					❌

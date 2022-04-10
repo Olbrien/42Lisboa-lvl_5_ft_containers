@@ -162,7 +162,7 @@ class map {
 		** Modifiers
 		*/
 
-		// single element
+		// Single Element
 		ft::pair<iterator,bool> insert (const value_type& val) {
 			if (_bst.search(val) == NULL || _bst.get_size() == 0) {
 				_bst.insert(val);
@@ -173,7 +173,7 @@ class map {
 			}
 		};
 
-		// with hint
+		// With Hint
 		iterator insert (iterator position, const value_type& val) {
 			if (position._ptr->end_node == true || position._ptr->rend_node == true) {
 				insert(val);
@@ -186,7 +186,17 @@ class map {
 			else {
 				return (_bst.search(val));
 			}
-		}
+		};
+
+		// Range
+		template <class InputIterator>
+		void insert (InputIterator first, InputIterator last,
+					 typename enable_if<!is_integral<InputIterator>::value>::type* = 0) {
+			while (first != last) {
+				insert(first._ptr->data);
+				first++;
+			}
+		};
 
 
 

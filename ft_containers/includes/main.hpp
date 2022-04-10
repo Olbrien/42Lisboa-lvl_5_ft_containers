@@ -156,7 +156,7 @@ namespace testMap {
 
 	void	member_functions__modifiers__insert_single_element();
 	void	member_functions__modifiers__insert_with_hint();
-	// void	member_functions__modifiers__insert_range();
+	void	member_functions__modifiers__insert_range();
 	void	member_functions__modifiers__erase_position();
 	// void	member_functions__modifiers__erase_key();
 	// void	member_functions__modifiers__erase_range();

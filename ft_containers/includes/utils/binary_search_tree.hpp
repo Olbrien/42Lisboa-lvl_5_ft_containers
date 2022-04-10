@@ -121,7 +121,7 @@ class BST {
         };
 
 		// Search a entire ::pair<key, value>
-        BSTNode<T>   *search(T data) {
+        BSTNode<T>   *search(T data) const {
             // Invoking Search() operation
             // and passing root node
             BSTNode<T> *result = search_node(_root, data);
@@ -130,7 +130,7 @@ class BST {
 
 		// Search for a Key of a ::pair<key, value>
 		template <typename K>
-        BSTNode<T>   *search(K key) {
+        BSTNode<T>   *search(K key) const {
 			BSTNode<T> *result = search_key(_root, key);
             return result;
         };
@@ -272,7 +272,7 @@ class BST {
 
         };
 
-        BSTNode<T>     *search_node(BSTNode<T> *node, T& data) {
+        BSTNode<T>     *search_node(BSTNode<T> *node, T& data) const {
             // The data is not found
             if (node == NULL) {
                 return NULL;
@@ -295,7 +295,7 @@ class BST {
         };
 
 		template <class K>
-        BSTNode<T>     *search_key(BSTNode<T> *node, K& key) {
+        BSTNode<T>     *search_key(BSTNode<T> *node, K& key) const {
             // The data is not found
             if (node == NULL) {
                 return NULL;

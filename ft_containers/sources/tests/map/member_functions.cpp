@@ -2670,7 +2670,33 @@ void	testMap::member_functions__operations__find() {
 
 
 }
+void	testMap::member_functions__operations__count() {
+			std::cout << "Operations - count():" << std::endl << std::endl;
 
+	ft::map<char, int> mapA;
+	ft::map<char, int> mapB;
+
+	mapA.insert(ft::pair<char, int>('a', 100));
+	mapA.insert(ft::pair<char, int>('b', 200));
+	mapA.insert(ft::pair<char, int>('c', 300));
+	mapA.insert(ft::pair<char, int>('d', 400));
+
+			std::cout << "  map<char, int> mapA;" << std::endl;
+			std::cout << "  map<char, int> mapB;" << std::endl << std::endl;
+
+			std::cout << "  mapA.insert(ft::pair<char, int>('a', 100));" << std::endl;
+			std::cout << "  mapA.insert(ft::pair<char, int>('b', 200));" << std::endl;
+			std::cout << "  mapA.insert(ft::pair<char, int>('c', 300));" << std::endl;
+			std::cout << "  mapA.insert(ft::pair<char, int>('d', 400));" << std::endl << std::endl;
+
+			std::cout << "      mapA.count('a') =	" << mapA.count('a') << std::endl;
+			std::cout << "      mapA.count('x') =	" << mapA.count('x') << std::endl;
+			std::cout << "      mapA.count('b') =	" << mapA.count('b') << std::endl;
+			std::cout << "      mapA.count('f') =	" << mapA.count('f') << std::endl;
+			std::cout << "      mapA.count('c') =	" << mapA.count('c') << std::endl << std::endl;
+			std::cout << "      mapB.count('Z') =	" << mapB.count('Z') << std::endl;
+			std::cout << "      mapB.count('X') =	" << mapB.count('X') << std::endl << std::endl;
+}
 
 
 

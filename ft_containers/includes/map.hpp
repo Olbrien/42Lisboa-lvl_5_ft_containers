@@ -239,11 +239,19 @@ class map {
 
 		const_iterator find (const key_type& k) const {
 			if (_bst.search(k) == NULL) {
-				return iterator(end());
+				return const_iterator(end());
 			}
 			return const_iterator(_bst.search(k));
 		}
 
+		size_type count (const key_type& k) const {
+			if (find(k) == end()) {
+				return (0);
+			}
+			else {
+				return (1);
+			}
+		}
 
 		/****
 		** Allocator

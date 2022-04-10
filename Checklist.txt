@@ -256,7 +256,7 @@ Map:
 
 		Operations:
 			find					✅
-			count					❌
+			count					✅
 			lower_bound				❌
 			upper_bound				❌
 			equal_range				❌

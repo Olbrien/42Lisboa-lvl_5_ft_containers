@@ -206,13 +206,17 @@ class map {
 		}
 
 		// Erase Key
-		/*size_type erase (const key_type& k) {
-			size_type count = 0;
+		size_type erase (const key_type& k) {
+			iterator it = this->find(k);
 
-			if (this->size() > 0 && _bst.search(k) != NULL) {
-				_bst.search_key(k);
+			if (it == this->end()) {
+				return (0);
 			}
-		}*/
+			else {
+				erase(it);
+				return (1);
+			}
+		}
 
 		/****
 		** Observers

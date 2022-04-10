@@ -245,7 +245,7 @@ Map:
 				range				✅
 			erase:
 				erase position		✅
-				key					❌
+				key					✅
 				range				❌
 			swap					❌
 			clear					❌

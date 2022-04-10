@@ -2006,12 +2006,134 @@ void	testMap::member_functions__modifiers__erase_position() {
 			std::cout << std::endl;
 
 }
-/*void	testMap::member_functions__modifiers__erase_key() {
+void	testMap::member_functions__modifiers__erase_key() {
 			std::cout << "Modifiers - erase():" << std::endl << std::endl;
 			std::cout << "Erase key:" << std::endl << std::endl;
 
+	ft::map<int, std::string> mapA;
+	ft::map<int, std::string> mapB;
+	ft::map<int, std::string> mapC;
 
-}*/
+			std::cout << "  map<int, std::string> mapA;" << std::endl;
+			std::cout << "  map<int, std::string> mapB;" << std::endl;
+			std::cout << "  map<int, std::string> mapC;" << std::endl << std::endl;
+
+	mapA.insert(ft::pair<int, std::string>(5, "Cinco"));
+	mapA.insert(ft::pair<int, std::string>(10, "Dez"));
+	mapA.insert(ft::pair<int, std::string>(15, "Quinze"));
+	mapA.insert(ft::pair<int, std::string>(20, "Vinte"));
+	mapA.insert(ft::pair<int, std::string>(25, "Vinte e Cinco"));
+	mapA.insert(ft::pair<int, std::string>(30, "Trinta"));
+
+	mapB.insert(ft::pair<int, std::string>(1, "Um"));
+	mapB.insert(ft::pair<int, std::string>(2, "Dois"));
+	mapB.insert(ft::pair<int, std::string>(3, "Três"));
+	mapB.insert(ft::pair<int, std::string>(4, "Quatro"));
+
+			std::cout << "  mapA.insert(ft::pair<int, std::string>(5, \"Cinco\"));" << std::endl;
+			std::cout << "  mapA.insert(ft::pair<int, std::string>(10, \"Dez\"));" << std::endl;
+			std::cout << "  mapA.insert(ft::pair<int, std::string>(15, \"Quinze\"));" << std::endl;
+			std::cout << "  mapA.insert(ft::pair<int, std::string>(20, \"Vinte\"));" << std::endl;
+			std::cout << "  mapA.insert(ft::pair<int, std::string>(25, \"Vinte e Cinco\"));" << std::endl;
+			std::cout << "  mapA.insert(ft::pair<int, std::string>(30, \"Trinta\"));" << std::endl << std::endl;
+
+			std::cout << "  mapB.insert(ft::pair<int, std::string>(1, \"Um\"));" << std::endl;
+			std::cout << "  mapB.insert(ft::pair<int, std::string>(2, \"Dois\"));" << std::endl;
+			std::cout << "  mapB.insert(ft::pair<int, std::string>(3, \"Três\"));" << std::endl;
+			std::cout << "  mapB.insert(ft::pair<int, std::string>(4, \"Quatro\"));" << std::endl << std::endl;
+
+			std::cout << "      mapA is		" ;
+			for ( struct { int i; ft::map<int, std::string>::iterator itA; } s = {0, mapA.begin()}; s.itA != mapA.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapA.size() is	" << mapA.size() << std::endl;
+			std::cout << std::endl;
+
+
+			std::cout << "      mapB is		" ;
+			for ( struct { int i; ft::map<int, std::string>::iterator itA; } s = {0, mapB.begin()}; s.itA != mapB.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapB.size() is	" << mapB.size() << std::endl;
+			std::cout << std::endl;
+
+
+			std::cout << "      mapC is		\n" ;
+			for ( struct { int i; ft::map<int, std::string>::iterator itA; } s = {0, mapC.begin()}; s.itA != mapC.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapC.size() is	" << mapC.size() << std::endl;
+			std::cout << std::endl;
+
+
+
+			std::cout << "mapA.erase(5) = " << mapA.erase(5) << std::endl;
+			std::cout << "mapA.erase(5) = " << mapA.erase(5) << std::endl;
+			std::cout << "mapA.erase(30) = " << mapA.erase(30) << std::endl;
+			std::cout << "mapA.erase(30) = " << mapA.erase(30) << std::endl;
+			std::cout << "mapA.erase(32) = " << mapA.erase(32) << std::endl;
+			std::cout << "mapA.erase(15) = " << mapA.erase(15) << std::endl << std::endl;
+
+			std::cout << "mapB.erase(4) = " << mapB.erase(4) << std::endl;
+			std::cout << "mapB.erase(2) = " << mapB.erase(2) << std::endl;
+			std::cout << "mapB.erase(1) = " << mapB.erase(1) << std::endl;
+			std::cout << "mapB.erase(3) = " << mapB.erase(3) << std::endl;
+			std::cout << "mapB.erase(5) = " << mapB.erase(5) << std::endl;
+			std::cout << "mapB.erase(0) = " << mapB.erase(0) << std::endl << std::endl;
+
+			std::cout << "mapC.erase(0) = " << mapC.erase(0) << std::endl << std::endl;
+
+
+			std::cout << "      mapA is		" ;
+			for ( struct { int i; ft::map<int, std::string>::iterator itA; } s = {0, mapA.begin()}; s.itA != mapA.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapA.size() is	" << mapA.size() << std::endl;
+			std::cout << std::endl;
+
+
+			std::cout << "      mapB is		\n" ;
+			for ( struct { int i; ft::map<int, std::string>::iterator itA; } s = {0, mapB.begin()}; s.itA != mapB.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapB.size() is	" << mapB.size() << std::endl;
+			std::cout << std::endl;
+
+
+			std::cout << "      mapC is		\n" ;
+			for ( struct { int i; ft::map<int, std::string>::iterator itA; } s = {0, mapC.begin()}; s.itA != mapC.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapC.size() is	" << mapC.size() << std::endl;
+			std::cout << std::endl;
+
+
+
+}
 // void	testMap::member_functions__modifiers__erase_range() {
 // 			std::cout << "Modifiers - erase():" << std::endl << std::endl;
 // 			std::cout << "Erase range:" << std::endl << std::endl;
@@ -2565,7 +2687,6 @@ void	testMap::member_functions__observers__value_comp() {
 
 	std::cout << std::endl;
 }
-
 void	testMap::member_functions__operations__find() {
 			std::cout << "Operations - find():" << std::endl << std::endl;
 
@@ -2697,9 +2818,6 @@ void	testMap::member_functions__operations__count() {
 			std::cout << "      mapB.count('Z') =	" << mapB.count('Z') << std::endl;
 			std::cout << "      mapB.count('X') =	" << mapB.count('X') << std::endl << std::endl;
 }
-
-
-
 void	testMap::member_functions__allocator__get_allocator() {
 			std::cout << "Allocator - get_allocator():" << std::endl << std::endl;
 

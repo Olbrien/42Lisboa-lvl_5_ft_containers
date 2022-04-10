@@ -255,7 +255,7 @@ Map:
 			value_comp				✅
 
 		Operations:
-			find					❌
+			find					✅
 			count					❌
 			lower_bound				❌
 			upper_bound				❌

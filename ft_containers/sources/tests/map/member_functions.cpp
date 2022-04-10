@@ -2566,6 +2566,111 @@ void	testMap::member_functions__observers__value_comp() {
 	std::cout << std::endl;
 }
 
+void	testMap::member_functions__operations__find() {
+			std::cout << "Operations - find():" << std::endl << std::endl;
+
+	ft::map<char, int> mapA;
+	typedef ft::map<char, int>::iterator it;
+	typedef ft::map<char, int>::const_iterator const_it;
+
+	mapA.insert(ft::pair<char, int>('a', 100));
+	mapA.insert(ft::pair<char, int>('b', 200));
+	mapA.insert(ft::pair<char, int>('c', 300));
+	mapA.insert(ft::pair<char, int>('d', 400));
+
+			std::cout << "  map<char, int> mapA;" << std::endl << std::endl;
+			std::cout << "  typedef ft::map<char, int>::iterator it;" << std::endl;
+			std::cout << "  typedef ft::map<char, int>::const_iterator const_it;" << std::endl << std::endl;
+
+			std::cout << "  mapA.insert(ft::pair<char, int>('a', 100));" << std::endl;
+			std::cout << "  mapA.insert(ft::pair<char, int>('b', 200));" << std::endl;
+			std::cout << "  mapA.insert(ft::pair<char, int>('c', 300));" << std::endl;
+			std::cout << "  mapA.insert(ft::pair<char, int>('d', 400));" << std::endl << std::endl;
+
+	it itA = mapA.find('a');
+	it itB = mapA.find('b');
+	it itC = mapA.find('c');
+	it itD = mapA.find('d');
+	it itE = mapA.find('A');
+	it itF = mapA.find('X');
+
+			std::cout << "  it itA = mapA.find('a');" << std::endl;
+			std::cout << "  it itB = mapA.find('b');" << std::endl;
+			std::cout << "  it itC = mapA.find('c');" << std::endl;
+			std::cout << "  it itD = mapA.find('d');" << std::endl;
+			std::cout << "  it itE = mapA.find('A');" << std::endl;
+			std::cout << "  it itF = mapA.find('X');" << std::endl << std::endl;
+
+			std::cout << "  if (itA != mapA.end()) " << std::endl;
+			std::cout << "  if (itB != mapA.end()) " << std::endl;
+			std::cout << "  if (itC != mapA.end()) " << std::endl;
+			std::cout << "  if (itD != mapA.end()) " << std::endl;
+			std::cout << "  if (itE != mapA.end()) " << std::endl;
+			std::cout << "  if (itF != mapA.end()) " << std::endl << std::endl;
+
+	if (itA != mapA.end()) {
+			std::cout << "      mapA has ('a')" << std::endl;
+	}
+	if (itB != mapA.end()) {
+			std::cout << "      mapA has ('b')" << std::endl;
+	}
+	if (itC != mapA.end()) {
+			std::cout << "      mapA has ('c')" << std::endl;
+	}
+	if (itD != mapA.end()) {
+			std::cout << "      mapA has ('d')" << std::endl;
+	}
+	if (itE == mapA.end()) {
+			std::cout << "      mapA doesn't have ('A')" << std::endl;
+	}
+	if (itF == mapA.end()) {
+			std::cout << "      mapA doesn't have ('X')" << std::endl << std::endl;
+	}
+
+
+	const_it itG = mapA.find('a');
+	const_it itH = mapA.find('b');
+	const_it itI = mapA.find('c');
+	const_it itJ = mapA.find('d');
+	const_it itK = mapA.find('A');
+	const_it itL = mapA.find('X');
+
+			std::cout << "  const_it itG = mapA.find('a');" << std::endl;
+			std::cout << "  const_it itH = mapA.find('b');" << std::endl;
+			std::cout << "  const_it itI = mapA.find('c');" << std::endl;
+			std::cout << "  const_it itJ = mapA.find('d');" << std::endl;
+			std::cout << "  const_it itK = mapA.find('A');" << std::endl;
+			std::cout << "  const_it itL = mapA.find('X');" << std::endl << std::endl;
+
+			std::cout << "  if (itG != mapA.end()) " << std::endl;
+			std::cout << "  if (itH != mapA.end()) " << std::endl;
+			std::cout << "  if (itI != mapA.end()) " << std::endl;
+			std::cout << "  if (itJ != mapA.end()) " << std::endl;
+			std::cout << "  if (itK != mapA.end()) " << std::endl;
+			std::cout << "  if (itL != mapA.end()) " << std::endl << std::endl;
+
+	if (itG != mapA.end()) {
+			std::cout << "      mapA has ('a')" << std::endl;
+	}
+	if (itH != mapA.end()) {
+			std::cout << "      mapA has ('b')" << std::endl;
+	}
+	if (itI != mapA.end()) {
+			std::cout << "      mapA has ('c')" << std::endl;
+	}
+	if (itJ != mapA.end()) {
+			std::cout << "      mapA has ('d')" << std::endl;
+	}
+	if (itK == mapA.end()) {
+			std::cout << "      mapA doesn't have ('A')" << std::endl;
+	}
+	if (itL == mapA.end()) {
+			std::cout << "      mapA doesn't have ('X')" << std::endl;
+	}
+
+
+}
+
 
 
 
@@ -2589,15 +2694,4 @@ void	testMap::member_functions__allocator__get_allocator() {
 
 			std::cout << "  mapA.get_allocator().deallocate(pair,5);" << std::endl << std::endl;
 }
-// void	testMap::member_functions__operations__find() {
-// 			std::cout << "Operations - find():" << std::endl << std::endl;
 
-// 	ft::map<int, int>	mapA;
-// 	ft::pair<const int, int>  *pair;
-
-// 	pair = mapA.get_allocator().allocate(1);
-
-// 			std::cout << "  map<int, int>	mapA;" << std::endl;
-// 			std::cout << "  pair<const int, int>  *pair;" << std::endl << std::endl;
-
-// }

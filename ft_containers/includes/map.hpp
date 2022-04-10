@@ -230,13 +230,19 @@ class map {
 		** Operations
 		*/
 
-		/*iterator find (const key_type& k) {
-
+		iterator find (const key_type& k) {
+			if (_bst.search(k) == NULL) {
+				return iterator(end());
+			}
+			return iterator(_bst.search(k));
 		}
 
 		const_iterator find (const key_type& k) const {
-
-		}*/
+			if (_bst.search(k) == NULL) {
+				return iterator(end());
+			}
+			return const_iterator(_bst.search(k));
+		}
 
 
 		/****

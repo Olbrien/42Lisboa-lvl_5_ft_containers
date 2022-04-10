@@ -166,7 +166,7 @@ namespace testMap {
 	void	member_functions__observers__key_comp();
 	void	member_functions__observers__value_comp();
 
-	// void	member_functions__operations__find();
+	void	member_functions__operations__find();
 	// void	member_functions__operations__count();
 	// void	member_functions__operations__lower_bound();
 	// void	member_functions__operations__upper_bound();

@@ -163,8 +163,8 @@ namespace testMap {
 	// void	member_functions__modifiers__swap();
 	// void	member_functions__modifiers__clear();
 
-	// void	member_functions__observers__key_comp();
-	// void	member_functions__observers__value_comp();
+	void	member_functions__observers__key_comp();
+	void	member_functions__observers__value_comp();
 
 	// void	member_functions__operations__find();
 	// void	member_functions__operations__count();

@@ -243,13 +243,16 @@ Map:
 				single element		✅
 				with hint			✅
 				range				✅
-			erase					✅❌❌
+			erase:
+				erase position		✅
+				key					❌
+				range				❌
 			swap					❌
 			clear					❌
 
 		Observers:
-			key_comp				❌
-			value_comp				❌
+			key_comp				✅
+			value_comp				✅
 
 		Operations:
 			find					❌

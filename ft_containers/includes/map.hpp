@@ -162,7 +162,7 @@ class map {
 		** Modifiers
 		*/
 
-		// Single Element
+		// Insert Single Element
 		ft::pair<iterator,bool> insert (const value_type& val) {
 			if (_bst.search(val) == NULL || _bst.get_size() == 0) {
 				_bst.insert(val);
@@ -173,7 +173,7 @@ class map {
 			}
 		};
 
-		// With Hint
+		// Insert With Hint
 		iterator insert (iterator position, const value_type& val) {
 			if (position._ptr->end_node == true || position._ptr->rend_node == true) {
 				insert(val);
@@ -188,7 +188,7 @@ class map {
 			}
 		};
 
-		// Range
+		// Insert Range
 		template <class InputIterator>
 		void insert (InputIterator first, InputIterator last,
 					 typename enable_if<!is_integral<InputIterator>::value>::type* = 0) {
@@ -198,14 +198,50 @@ class map {
 			}
 		};
 
-
-
+		// Erase Iterator
 		void erase (iterator position) {
 			if (this->size() > 0) {
 				_bst.remove(position._ptr->data);
 			}
 		}
 
+		// Erase Key
+		/*size_type erase (const key_type& k) {
+			size_type count = 0;
+
+			if (this->size() > 0 && _bst.search(k) != NULL) {
+				_bst.search_key(k);
+			}
+		}*/
+
+		/****
+		** Observers
+		*/
+
+		key_compare key_comp() const {
+			return (_comp);
+		}
+
+		value_compare value_comp() const {
+			return value_compare(_comp);
+		}
+
+		/****
+		** Operations
+		*/
+
+		/*iterator find (const key_type& k) {
+
+		}
+
+		const_iterator find (const key_type& k) const {
+
+		}*/
+
+
+		/****
+		** Allocator
+		*/
 
 		allocator_type get_allocator() const {
 			return _alloc;

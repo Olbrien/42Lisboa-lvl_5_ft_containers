@@ -190,14 +190,14 @@ int		map_argument(std::string argument) {
 	if (!argument.compare("111")) { header_text("map"); testMap::member_functions__modifiers__insert_single_element(); return 0; }
 	else if (!argument.compare("112")) { header_text("map"); testMap::member_functions__modifiers__insert_with_hint(); return 0; }
 	else if (!argument.compare("113")) { header_text("map"); testMap::member_functions__modifiers__insert_range(); return 0; }
-	if (!argument.compare("114")) { header_text("map"); testMap::member_functions__modifiers__erase_position(); return 0; }
+	else if (!argument.compare("114")) { header_text("map"); testMap::member_functions__modifiers__erase_position(); return 0; }
 	// else if (!argument.compare("115")) { header_text("map"); testMap::member_functions__modifiers__erase_key(); return 0; }
 	// else if (!argument.compare("116")) { header_text("map"); testMap::member_functions__modifiers__erase_range(); return 0; }
 	// else if (!argument.compare("117")) { header_text("map"); testMap::member_functions__modifiers__swap(); return 0; }
 	// else if (!argument.compare("118")) { header_text("map"); testMap::member_functions__modifiers__clear(); return 0; }
 
-	// if (!argument.compare("119")) { header_text("map"); testMap::member_functions__observers__key_comp(); return 0; }
-	// else if (!argument.compare("120")) { header_text("map"); testMap::member_functions__observers__value_comp(); return 0; }
+	if (!argument.compare("119")) { header_text("map"); testMap::member_functions__observers__key_comp(); return 0; }
+	else if (!argument.compare("120")) { header_text("map"); testMap::member_functions__observers__value_comp(); return 0; }
 
 	// if (!argument.compare("121")) { header_text("map"); testMap::member_functions__operations__find(); return 0; }
 	// else if (!argument.compare("122")) { header_text("map"); testMap::member_functions__operations__count(); return 0; }

@@ -202,8 +202,8 @@ Map:
 		key_type					✅
 		mapped_type					✅
 		value_type					✅
-		key_compare					✅ # Tests only done on key_comp()
-		value_compare				✅ # Tests only done on value_comp()
+		key_compare					✅
+		value_compare				✅
 		allocator_type				✅
 		reference					✅
 		const_reference				✅
@@ -246,7 +246,7 @@ Map:
 			erase:
 				erase position		✅
 				key					✅
-				range				❌
+				range				✅
 			swap					❌
 			clear					❌
 

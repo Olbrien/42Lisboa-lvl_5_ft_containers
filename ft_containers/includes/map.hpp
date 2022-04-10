@@ -203,7 +203,7 @@ class map {
 			if (this->size() > 0) {
 				_bst.remove(position._ptr->data);
 			}
-		}
+		};
 
 		// Erase Key
 		size_type erase (const key_type& k) {
@@ -216,7 +216,15 @@ class map {
 				erase(it);
 				return (1);
 			}
-		}
+		};
+
+		// Erase Range
+		void erase (iterator first, iterator last) {
+			while (first != last) {
+				erase(first++);
+			}
+		};
+
 
 		/****
 		** Observers

@@ -13,10 +13,12 @@
 #if FT
 	#include "../includes/vector.hpp"
 	#include "../includes/map.hpp"
+	#include "../includes/stack.hpp"
 	#include "../includes/utils/utility.hpp"
 #else
 	#include <vector>
 	#include <map>
+	#include <stack>
 	namespace ft = std;
 #endif
 
@@ -174,6 +176,21 @@ namespace testMap {
 
 	void	member_functions__allocator__get_allocator();
 }
+namespace testStack {
+	void	member_types__value_type();
+	// void	member_types__container_type();
+	// void	member_types__size_type();
+
+	// void	member_functions__stack_constructor();
+	// void	member_functions__stack_empty();
+	// void	member_functions__stack_size();
+	// void	member_functions__stack_top();
+	// void	member_functions__stack_push();
+	// void	member_functions__stack_pop();
+
+	// void	member_functions__overloads__relational_operators();
+}
+
 namespace testExtras {
 	void	extras__iterator_traits();
 	void	extras__enable_if();

@@ -345,6 +345,32 @@ Reverse Iterator (Reverse Iterator and Const Reverse Iterator):
 
 ---------------------------------------------------------------------------------------------
 
+Stack:
+
+	Member Types:
+		value_type					❌
+		container_type				❌
+		size_type					❌
+
+	Member Functions:
+		Default:
+			stack constructor		❌
+			empty					❌
+			size					❌
+			top						❌
+			push					❌
+			pop						❌
+
+		Non-member function overloads:
+			operator ==				❌
+			operator !=				❌
+			operator >=				❌
+			operator >				❌
+			operator <=				❌
+			operator <				❌
+
+---------------------------------------------------------------------------------------------
+
 Extras:
 
 	iterator_traits				✅

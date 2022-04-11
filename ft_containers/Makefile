@@ -25,12 +25,15 @@ TESTS_MAP = member_functions \
 			   const_iterator \
 			   reverse_iterator \
 			   const_reverse_iterator
+TESTS_STACK = member_functions \
+			   member_types
 TESTS_EXTRAS = extras
 TESTS_ANYTHING = anything
 
 SRC = $(addsuffix .cpp, $(addprefix sources/, $(MAIN))) \
 	  $(addsuffix .cpp, $(addprefix sources/tests/vector/, $(TESTS_VECTOR))) \
 	  $(addsuffix .cpp, $(addprefix sources/tests/map/, $(TESTS_MAP))) \
+	  $(addsuffix .cpp, $(addprefix sources/tests/stack/, $(TESTS_STACK))) \
 	  $(addsuffix .cpp, $(addprefix sources/tests/extras/, $(TESTS_EXTRAS))) \
 	  $(addsuffix .cpp, $(addprefix sources/tests/anything/, $(TESTS_ANYTHING)))
 

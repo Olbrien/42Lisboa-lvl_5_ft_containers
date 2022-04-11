@@ -209,6 +209,22 @@ int		map_argument(std::string argument) {
 
 	return 1;
 }
+int		stack_argument(std::string argument ) {
+	if (!argument.compare("127")) { header_text("stack"); testStack::member_types__value_type();	return 0; }
+	//else if (!argument.compare("128")) { header_text("stack"); testStack::member_types__container_type();	return 0; }
+	//else if (!argument.compare("129")) { header_text("stack"); testStack::member_types__size_type();	return 0; }
+
+	//if (!argument.compare("130")) { header_text("stack"); testStack::member_functions__stack_constructor();	return 0; }
+	//else if (!argument.compare("131")) { header_text("stack"); testStack::member_functions__stack_empty();	return 0; }
+	//else if (!argument.compare("132")) { header_text("stack"); testStack::member_functions__stack_size();	return 0; }
+	//else if (!argument.compare("133")) { header_text("stack"); testStack::member_functions__stack_top();	return 0; }
+	//else if (!argument.compare("134")) { header_text("stack"); testStack::member_functions__stack_push();	return 0; }
+	//else if (!argument.compare("135")) { header_text("stack"); testStack::member_functions__stack_pop();	return 0; }
+
+	//if (!argument.compare("136")) { header_text("stack"); testStack::member_functions__overloads__relational_operators();	return 0; }
+
+	return 1;
+}
 int		extras_argument(std::string argument) {
 	if (!argument.compare("200")) { header_text("extras"); testExtras::extras__iterator_traits(); return 0; }
 	else if (!argument.compare("201")) { header_text("extras"); testExtras::extras__enable_if(); return 0; }
@@ -409,6 +425,23 @@ void	welcome_message() {
 	std::cout << "*          Allocator:						    *" << std::endl;
 	std::cout << "*              get_allocator				     126    *" << std::endl;
 	std::cout << "*								    *" << std::endl;
+	std::cout << "*  Stack:							    *" << std::endl;
+	std::cout << "*      Member Types:						    *" << std::endl;
+	std::cout << "*          value_type					     127    *" << std::endl;
+	std::cout << "*          container_type				     128    *" << std::endl;
+	std::cout << "*          size_type					     129    *" << std::endl;
+	std::cout << "*								    *" << std::endl;
+	std::cout << "*      Member Functions:					    *" << std::endl;
+	std::cout << "*          Default:						    *" << std::endl;
+	std::cout << "*              stack constructor			     130    *" << std::endl;
+	std::cout << "*              empty					     131    *" << std::endl;
+	std::cout << "*              size					     132    *" << std::endl;
+	std::cout << "*              top					     133    *" << std::endl;
+	std::cout << "*              push					     134    *" << std::endl;
+	std::cout << "*              pop					     135    *" << std::endl;
+	std::cout << "*          Non-member Function Overloads:			    *" << std::endl;
+	std::cout << "*              relational operators			     136    *" << std::endl;
+	std::cout << "*								    *" << std::endl;
 	std::cout << "*  Extras:							    *" << std::endl;
 	std::cout << "*      iterator_traits					     200    *" << std::endl;
 	std::cout << "*      enable_if					     201    *" << std::endl;
@@ -440,6 +473,8 @@ int		main(int argc, char **argv) {
 	if (vector_argument(argument) == 0)
 		return 0;
 	else if (map_argument(argument) == 0)
+		return 0;
+	else if (stack_argument(argument) == 0)
 		return 0;
 	else if (extras_argument(argument) == 0)
 		return 0;

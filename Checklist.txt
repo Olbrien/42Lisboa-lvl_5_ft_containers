@@ -257,7 +257,7 @@ Map:
 		Operations:
 			find					✅
 			count					✅
-			lower_bound				❌
+			lower_bound				✅
 			upper_bound				❌
 			equal_range				❌
 

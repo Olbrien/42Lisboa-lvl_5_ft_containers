@@ -348,7 +348,7 @@ Reverse Iterator (Reverse Iterator and Const Reverse Iterator):
 Stack:
 
 	Member Types:
-		value_type					❌
+		value_type					✅
 		container_type				❌
 		size_type					❌
 

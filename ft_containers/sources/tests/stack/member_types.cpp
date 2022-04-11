@@ -3,26 +3,22 @@
 void	testStack::member_types__value_type() {
 			std::cout << "Value Type: " << std::endl << std::endl;
 
-	ft::map<int, int>::key_type kt1;
-	ft::map<std::string, double>::key_type kt2;
-	ft::map<int, char *>::key_type kt3;
-	ft::map<char *, int>::key_type kt4;
-	ft::map<double, int>::key_type kt5;
+	ft::stack<std::string, ft::vector<std::string> >::value_type stackA_value;
+	ft::stack<int>::value_type stackB_value;
+	ft::stack<double, ft::vector<std::string> >::value_type stackC_value;
 
-			std::cout << "  ft::map<int, int>::key_type			kt1;" << std::endl;
-			std::cout << "  ft::map<std::string, double>::key_type	kt2;" << std::endl;
-			std::cout << "  ft::map<int, char *>::key_type		kt3;" << std::endl;
-			std::cout << "  ft::map<char *, int>::key_type		kt4;" << std::endl;
-			std::cout << "  ft::map<double, int>::key_type		kt5;" << std::endl;
+			std::cout << "  stack<std::string, ft::vector<std::string>>::value_type stackA_value;"
+					  << std::endl;
+			std::cout << "  stack<int>::value_type stackB_value;" << std::endl;
+			std::cout << "  stack<double, ft::vector<std::string> >::value_type stackC_value;" << std::endl
+																					   << std::endl;
 
-			std::cout << std::endl;
-
-			std::cout << "      typeid(kt1).name() is	" << typeid(kt1).name() << std::endl;
-			std::cout << "      typeid(kt2).name() is	" << typeid(kt2).name() << std::endl;
-			std::cout << "      typeid(kt3).name() is	" << typeid(kt3).name() << std::endl;
-			std::cout << "      typeid(kt4).name() is	" << typeid(kt4).name() << std::endl;
-			std::cout << "      typeid(kt5).name() is	" << typeid(kt5).name() << std::endl;
-			std::cout << std::endl;
+			std::cout << "      typeid(stackA_value).name()  is	" << typeid(stackA_value).name()
+																  << std::endl;
+			std::cout << "      typeid(stackB_value).name() is	" << typeid(stackB_value).name()
+																  << std::endl;
+			std::cout << "      typeid(stackC_value).name() is	" << typeid(stackC_value).name()
+																  << std::endl << std::endl;
 }
 // void	testStack::member_types__container_type() {
 // 			std::cout << "Container Type: " << std::endl << std::endl;

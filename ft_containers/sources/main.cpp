@@ -218,7 +218,7 @@ int		stack_argument(std::string argument ) {
 	else if (!argument.compare("131")) { header_text("stack"); testStack::member_functions__stack_empty();	return 0; }
 	else if (!argument.compare("132")) { header_text("stack"); testStack::member_functions__stack_size();	return 0; }
 	else if (!argument.compare("133")) { header_text("stack"); testStack::member_functions__stack_top();	return 0; }
-	//else if (!argument.compare("134")) { header_text("stack"); testStack::member_functions__stack_push();	return 0; }
+	else if (!argument.compare("134")) { header_text("stack"); testStack::member_functions__stack_push();	return 0; }
 	//else if (!argument.compare("135")) { header_text("stack"); testStack::member_functions__stack_pop();	return 0; }
 
 	//if (!argument.compare("136")) { header_text("stack"); testStack::member_functions__overloads__relational_operators();	return 0; }

@@ -156,12 +156,49 @@ void	testStack::member_functions__stack_top() {
 			std::cout << "      stackC.top() is	" << stackC.top() << std::endl;
 			std::cout << "      stackD.top() is	" << stackD.top() << std::endl;
 			std::cout << "      stackE.top() is	" << stackE.top() << std::endl << std::endl;
+}
+void	testStack::member_functions__stack_push() {
+			std::cout << "push()" << std::endl << std::endl;
+
+	ft::stack<int, ft::vector<std::string> > stackA;
+	ft::stack<int, ft::vector<std::string> > stackB;
+	ft::stack<int, ft::vector<std::string> > stackC;
+	ft::stack<double> stackD;
+	ft::stack<double> stackE;
+
+			std::cout << "  stack<int, ft::vector<std::string> > stackA;" << std::endl;
+			std::cout << "  stack<int, ft::vector<std::string> > stackB;" << std::endl;
+			std::cout << "  stack<int, ft::vector<std::string> > stackC;" << std::endl;
+			std::cout << "  stack<double> stackD;" << std::endl;
+			std::cout << "  stack<double> stackE;" << std::endl << std::endl;
+
+	stackA.push("Me sócie");
+	stackB.push("Mekie sócie");
+	stackB.push("Mekiee sócie");
+	stackB.push("Mekieee sócie");
+	stackB.push("Mekieeee sócie");
+	stackC.push("Sócie");
+	stackD.push(10);
+	stackE.push(20);
+	stackE.push(30);
+
+			std::cout << "  stackA.push(\"Me sócie\");" << std::endl;
+			std::cout << "  stackB.push(\"Mekie sócie\");" << std::endl;
+			std::cout << "  stackB.push(\"Mekiee sócie\");" << std::endl;
+			std::cout << "  stackB.push(\"Mekieee sócie\");" << std::endl;
+			std::cout << "  stackB.push(\"Mekieeee sócie\");" << std::endl;
+			std::cout << "  stackC.push(\"Sócie\");" << std::endl;
+			std::cout << "  stackD.push(10);" << std::endl;
+			std::cout << "  stackE.push(20);" << std::endl;
+			std::cout << "  stackE.push(30);" << std::endl << std::endl;
+
+			std::cout << "      stackA.top() is	" << stackA.top() << std::endl;
+			std::cout << "      stackB.top() is	" << stackB.top() << std::endl;
+			std::cout << "      stackC.top() is	" << stackC.top() << std::endl;
+			std::cout << "      stackD.top() is	" << stackD.top() << std::endl;
+			std::cout << "      stackE.top() is	" << stackE.top() << std::endl << std::endl;
 
 }
-// void	testStack::member_functions__stack_push() {
-// 			std::cout << "push()" << std::endl << std::endl;
-
-// }
 // void	testStack::member_functions__stack_pop() {
 // 			std::cout << "pop():" << std::endl << std::endl;
 

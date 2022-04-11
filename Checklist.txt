@@ -358,7 +358,7 @@ Stack:
 			empty					✅
 			size					✅
 			top						✅
-			push					❌
+			push					✅
 			pop						❌
 
 		Non-member function overloads:

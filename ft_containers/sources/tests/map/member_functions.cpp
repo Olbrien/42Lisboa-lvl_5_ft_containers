@@ -3585,7 +3585,7 @@ void	testMap::member_functions__operations__equal_range() {
 			std::cout << "      ret.first->first = " << ret.first->first << std::endl;
 			std::cout << "      ret.second->first = " << ret.second->first << std::endl << std::endl;
 
-	ret = mapA.equal_range('e');
+/*	ret = mapA.equal_range('e');
 
 			std::cout << "  ret = mapA.equal_range('e');" << std::endl << std::endl;
 
@@ -3598,8 +3598,7 @@ void	testMap::member_functions__operations__equal_range() {
 
 			std::cout << "      ret.first->first = " << ret.first->first << std::endl;
 			std::cout << "      ret.second->first = " << ret.second->first << std::endl << std::endl;
-
-
+*/
 }
 void	testMap::member_functions__allocator__get_allocator() {
 			std::cout << "Allocator - get_allocator():" << std::endl << std::endl;

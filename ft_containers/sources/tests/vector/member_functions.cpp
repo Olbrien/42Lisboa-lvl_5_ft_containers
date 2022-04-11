@@ -648,7 +648,7 @@ void	testVector::member_functions__iterator__rend() {
 			std::cout << "  vector<int>::reverse_iterator itC = vectorC.rend();" << std::endl << std::endl;
 
 			std::cout << "      *itA is " << *itA << std::endl;
-			std::cout << "      *itB is " << *itB << std::endl << std::endl;
+			//std::cout << "      *itB is " << *itB << std::endl << std::endl;
 
 	itA = itA - 1;
 	itB = itB - 1;
@@ -3352,7 +3352,7 @@ void	testVector::member_functions__modifiers__swap() {
 			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
 			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
 			std::cout << "      vectorA.begin() is	" << *vectorA.begin() << std::endl;
-			std::cout << "      *itA is			" << *itA << std::endl;
+			//std::cout << "      *itA is			" << *itA << std::endl;
 			std::cout << std::endl;
 
 			std::cout << "      vectorB is		[ " ;
@@ -3372,7 +3372,7 @@ void	testVector::member_functions__modifiers__swap() {
 			std::cout << "      vectorC.capacity() is	" << vectorC.capacity() << std::endl;
 			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
 			std::cout << "      vectorC.begin() is	" << *vectorC.begin() << std::endl;
-			std::cout << "      *itC is			" << *itC << std::endl;
+			//std::cout << "      *itC is			" << *itC << std::endl;
 			std::cout << std::endl;
 
 			std::cout << "      vectorD is		[ " ;
@@ -3382,21 +3382,21 @@ void	testVector::member_functions__modifiers__swap() {
 			std::cout << "      vectorD.capacity() is	" << vectorD.capacity() << std::endl;
 			std::cout << "      vectorD.size() is		" << vectorD.size() << std::endl;
 			std::cout << "      vectorD.begin() is	" << *vectorD.begin() << std::endl;
-			std::cout << "      *itD is			" << *itD << std::endl;
+			//std::cout << "      *itD is			" << *itD << std::endl;
 			std::cout << std::endl;
 
 
-			std::cout << "      itA is		[ " ;
+			/*std::cout << "      itA is		[ " ;
 			for (int i = 0 ; i < 2; i++) { std::cout << *(itA + i) << " "; }
-			std::cout << "]" << std::endl;
+			std::cout << "]" << std::endl;*/
 
-			std::cout << "      itC is		[ " ;
+			/*std::cout << "      itC is		[ " ;
 			for (int i = 0 ; i < 3; i++) { std::cout << *(itC + i) << " "; }
-			std::cout << "]" << std::endl;
+			std::cout << "]" << std::endl;*/
 
-			std::cout << "      itD is		[ " ;
+			/*std::cout << "      itD is		[ " ;
 			for (int i = 0 ; i < 8; i++) { std::cout << *(itD + i) << " "; }
-			std::cout << "]" << std::endl;
+			std::cout << "]" << std::endl;*/
 
 }
 void	testVector::member_functions__modifiers__clear() {
@@ -3884,7 +3884,7 @@ void	testVector::member_functions__overloads__swap() {
 			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
 			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
 			std::cout << "      vectorA.begin() is	" << *vectorA.begin() << std::endl;
-			std::cout << "      *itA is			" << *itA << std::endl;
+			//std::cout << "      *itA is			" << *itA << std::endl;
 			std::cout << std::endl;
 
 			std::cout << "      vectorB is		[ " ;
@@ -3904,7 +3904,7 @@ void	testVector::member_functions__overloads__swap() {
 			std::cout << "      vectorC.capacity() is	" << vectorC.capacity() << std::endl;
 			std::cout << "      vectorC.size() is		" << vectorC.size() << std::endl;
 			std::cout << "      vectorC.begin() is	" << *vectorC.begin() << std::endl;
-			std::cout << "      *itC is			" << *itC << std::endl;
+			//std::cout << "      *itC is			" << *itC << std::endl;
 			std::cout << std::endl;
 
 			std::cout << "      vectorD is		[ " ;
@@ -3914,20 +3914,20 @@ void	testVector::member_functions__overloads__swap() {
 			std::cout << "      vectorD.capacity() is	" << vectorD.capacity() << std::endl;
 			std::cout << "      vectorD.size() is		" << vectorD.size() << std::endl;
 			std::cout << "      vectorD.begin() is	" << *vectorD.begin() << std::endl;
-			std::cout << "      *itD is			" << *itD << std::endl;
+			//std::cout << "      *itD is			" << *itD << std::endl;
 			std::cout << std::endl;
 
 
-			std::cout << "      itA is		[ " ;
+			/*std::cout << "      itA is		[ " ;
 			for (int i = 0 ; i < 2; i++) { std::cout << *(itA + i) << " "; }
-			std::cout << "]" << std::endl;
+			std::cout << "]" << std::endl;*/
 
-			std::cout << "      itC is		[ " ;
+			/*std::cout << "      itC is		[ " ;
 			for (int i = 0 ; i < 3; i++) { std::cout << *(itC + i) << " "; }
-			std::cout << "]" << std::endl;
+			std::cout << "]" << std::endl;*/
 
-			std::cout << "      itD is		[ " ;
+			/*std::cout << "      itD is		[ " ;
 			for (int i = 0 ; i < 8; i++) { std::cout << *(itD + i) << " "; }
-			std::cout << "]" << std::endl;
+			std::cout << "]" << std::endl;*/
 
 }

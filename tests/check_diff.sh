@@ -173,6 +173,11 @@ while [ $i -ne 69 ]
 do
         i=$(($i+1))
 
+		if [ "$i" == '4' ] || [ "$i" == '5' ] || [ "$i" == '53' ];
+		  then  # These have to be checked manually because of throws and addresses
+		    continue
+		fi
+
         ./ft_container "$i" > ../tests/ft.txt
         ./std_container "$i" > ../tests/std.txt
 

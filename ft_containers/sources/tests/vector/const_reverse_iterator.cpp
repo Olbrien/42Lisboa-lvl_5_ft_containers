@@ -292,7 +292,7 @@ void	testVector::member_types__const_reverse_iterator__arithmetic_operators() {
 			std::cout << "      *itB is	" << *itB << std::endl;
 			std::cout << "      *itC is	" << *itC << std::endl;
 			std::cout << "      *itD is	" << *itD << std::endl;
-			std::cout << "      *itE is	" << *itE << std::endl << std::endl;
+			//std::cout << "      *itE is	" << *itE << std::endl << std::endl;
 
 	 //******************************//
 	// Arithmetic operators + and - //

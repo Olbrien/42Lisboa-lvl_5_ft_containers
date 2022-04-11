@@ -349,8 +349,8 @@ Stack:
 
 	Member Types:
 		value_type					✅
-		container_type				❌
-		size_type					❌
+		container_type				✅
+		size_type					✅
 
 	Member Functions:
 		Default:

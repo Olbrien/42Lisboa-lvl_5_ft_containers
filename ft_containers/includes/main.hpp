@@ -178,8 +178,8 @@ namespace testMap {
 }
 namespace testStack {
 	void	member_types__value_type();
-	// void	member_types__container_type();
-	// void	member_types__size_type();
+	void	member_types__container_type();
+	void	member_types__size_type();
 
 	// void	member_functions__stack_constructor();
 	// void	member_functions__stack_empty();

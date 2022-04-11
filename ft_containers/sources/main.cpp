@@ -211,8 +211,8 @@ int		map_argument(std::string argument) {
 }
 int		stack_argument(std::string argument ) {
 	if (!argument.compare("127")) { header_text("stack"); testStack::member_types__value_type();	return 0; }
-	//else if (!argument.compare("128")) { header_text("stack"); testStack::member_types__container_type();	return 0; }
-	//else if (!argument.compare("129")) { header_text("stack"); testStack::member_types__size_type();	return 0; }
+	else if (!argument.compare("128")) { header_text("stack"); testStack::member_types__container_type();	return 0; }
+	else if (!argument.compare("129")) { header_text("stack"); testStack::member_types__size_type();	return 0; }
 
 	//if (!argument.compare("130")) { header_text("stack"); testStack::member_functions__stack_constructor();	return 0; }
 	//else if (!argument.compare("131")) { header_text("stack"); testStack::member_functions__stack_empty();	return 0; }

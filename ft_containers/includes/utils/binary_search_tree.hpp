@@ -516,7 +516,12 @@ class BST {
 
                     // Bypass node
 					if (node->right->right == NULL) {
-						node->left->right = node->right;
+						if (node->left->right == NULL) {
+							node->left->right = node->right;
+						}
+						else {
+							node->left->right->right = node->right;
+						}
 					}
 					else {
 						node->left->right->right = node->right;

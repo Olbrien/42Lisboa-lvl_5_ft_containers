@@ -258,7 +258,7 @@ Map:
 			find					✅
 			count					✅
 			lower_bound				✅
-			upper_bound				❌
+			upper_bound				✅
 			equal_range				❌
 
 		Allocator:

@@ -3373,11 +3373,168 @@ void	testMap::member_functions__operations__lower_bound() {
 			std::cout << "      mapA.size() is	" << mapA.size() << std::endl;
 			std::cout << std::endl;
 }
-// void	testMap::member_functions__operations__upper_bound() {
-// 		std::cout << "Operations - upper bound():" << std::endl << std::endl;
+void	testMap::member_functions__operations__upper_bound() {
+		std::cout << "Operations - upper bound():" << std::endl << std::endl;
+
+	ft::map<char, int> mapA;
+	ft::map<char, int>::iterator itA;
+	ft::map<char, int>::iterator itB;
+
+			std::cout << "  map<char, int> mapA;" << std::endl << std::endl;
+
+			std::cout << "  map<char, int>::iterator itA;" << std::endl;
+			std::cout << "  ft::map<char, int>::iterator itB;" << std::endl << std::endl;
+
+	mapA['a'] = 20;
+	mapA['b'] = 40;
+	mapA['c'] = 60;
+	mapA['d'] = 80;
+	mapA['e'] = 100;
+
+			std::cout << "  mapA['a'] = 20;" << std::endl;
+			std::cout << "  mapA['b'] = 40;" << std::endl;
+			std::cout << "  mapA['c'] = 60;" << std::endl;
+			std::cout << "  mapA['d'] = 80;" << std::endl;
+			std::cout << "  mapA['e'] = 100;" << std::endl << std::endl;
+
+	itA = mapA.upper_bound ('b');
+	itB = mapA.upper_bound ('d');
+
+			std::cout << "  itA = mapA.upper_bound ('b');" << std::endl;
+			std::cout << "  itB = mapA.upper_bound ('d');" << std::endl << std::endl;
+
+	mapA.erase(itA, itB);
+
+			std::cout << "  mapA.erase(itA, itB);" << std::endl << std::endl;
 
 
-// }
+			std::cout << "      mapA is		" ;
+			for ( struct { int i; ft::map<char, int>::iterator itA; } s = {0, mapA.begin()}; s.itA != mapA.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapA.size() is	" << mapA.size() << std::endl;
+			std::cout << std::endl;
+
+	mapA['a'] = 20;
+	mapA['b'] = 40;
+	mapA['c'] = 60;
+	mapA['d'] = 80;
+	mapA['e'] = 100;
+
+			std::cout << "  mapA['a'] = 20;" << std::endl;
+			std::cout << "  mapA['b'] = 40;" << std::endl;
+			std::cout << "  mapA['c'] = 60;" << std::endl;
+			std::cout << "  mapA['d'] = 80;" << std::endl;
+			std::cout << "  mapA['e'] = 100;" << std::endl << std::endl;
+
+	itA = mapA.upper_bound ('x');
+	itB = mapA.upper_bound ('z');
+
+			std::cout << "  itA = mapA.upper_bound ('x');" << std::endl;
+			std::cout << "  itB = mapA.upper_bound ('z');" << std::endl << std::endl;
+
+	mapA.erase(itA, itB);
+
+
+			std::cout << "      mapA is		" ;
+			for ( struct { int i; ft::map<char, int>::iterator itA; } s = {0, mapA.begin()}; s.itA != mapA.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapA.size() is	" << mapA.size() << std::endl;
+			std::cout << std::endl;
+
+	itA = mapA.upper_bound ('a');
+	itB = mapA.upper_bound ('b');
+
+			std::cout << "  itA = mapA.upper_bound ('a');" << std::endl;
+			std::cout << "  itB = mapA.upper_bound ('b');" << std::endl << std::endl;
+
+	mapA.erase(itA, itB);
+
+
+			std::cout << "      mapA is		" ;
+			for ( struct { int i; ft::map<char, int>::iterator itA; } s = {0, mapA.begin()}; s.itA != mapA.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapA.size() is	" << mapA.size() << std::endl;
+			std::cout << std::endl;
+
+	mapA['a'] = 20;
+	mapA['b'] = 40;
+	mapA['c'] = 60;
+	mapA['d'] = 80;
+	mapA['e'] = 100;
+
+			std::cout << "  mapA['a'] = 20;" << std::endl;
+			std::cout << "  mapA['b'] = 40;" << std::endl;
+			std::cout << "  mapA['c'] = 60;" << std::endl;
+			std::cout << "  mapA['d'] = 80;" << std::endl;
+			std::cout << "  mapA['e'] = 100;" << std::endl << std::endl;
+
+	itA = mapA.upper_bound ('d');
+	itB = mapA.upper_bound ('e');
+
+			std::cout << "  itA = mapA.upper_bound ('d');" << std::endl;
+			std::cout << "  itB = mapA.upper_bound ('e');" << std::endl << std::endl;
+
+	mapA.erase(itA, itB);
+
+
+			std::cout << "      mapA is		" ;
+			for ( struct { int i; ft::map<char, int>::iterator itA; } s = {0, mapA.begin()}; s.itA != mapA.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapA.size() is	" << mapA.size() << std::endl;
+			std::cout << std::endl;
+
+	mapA['a'] = 20;
+	mapA['b'] = 40;
+	mapA['c'] = 60;
+	mapA['d'] = 80;
+	mapA['e'] = 100;
+
+			std::cout << "  mapA['a'] = 20;" << std::endl;
+			std::cout << "  mapA['b'] = 40;" << std::endl;
+			std::cout << "  mapA['c'] = 60;" << std::endl;
+			std::cout << "  mapA['d'] = 80;" << std::endl;
+			std::cout << "  mapA['e'] = 100;" << std::endl << std::endl;
+
+	itA = mapA.upper_bound ('a');
+	itB = mapA.upper_bound ('e');
+
+			std::cout << "  itA = mapA.upper_bound ('a');" << std::endl;
+			std::cout << "  itB = mapA.upper_bound ('e');" << std::endl << std::endl;
+
+	mapA.erase(itA, itB);
+
+
+			std::cout << "      mapA is		" ;
+			for ( struct { int i; ft::map<char, int>::iterator itA; } s = {0, mapA.begin()}; s.itA != mapA.end(); s.itA++) {
+				if (s.i == 0)
+					std::cout << "[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				else
+					std::cout << "      			[ " << s.itA->first << " : " << s.itA->second << " ]" << std::endl;
+				s.i = 1;
+			}
+			std::cout << "      mapA.size() is	" << mapA.size() << std::endl;
+			std::cout << std::endl;
+}
 // void	testMap::member_functions__operations__equal_bound() {
 // 		std::cout << "Operations - equal bound():" << std::endl << std::endl;
 

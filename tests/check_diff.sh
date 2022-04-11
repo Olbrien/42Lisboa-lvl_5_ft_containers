@@ -168,7 +168,7 @@ do
 		fi
 done
 
-while [ $i -ne 123 ]
+while [ $i -ne 124 ]
 do
         i=$(($i+1))
 

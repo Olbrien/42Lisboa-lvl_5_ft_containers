@@ -263,11 +263,11 @@ class map {
 			_bst = bst_temp;
 			_alloc = alloc_temp;
 			_comp = comp_temp;
-		}
+		};
 
 		void clear() {
 			_bst.remove_all(true);
-		}
+		};
 
 		/****
 		** Observers
@@ -275,11 +275,11 @@ class map {
 
 		key_compare key_comp() const {
 			return (_comp);
-		}
+		};
 
 		value_compare value_comp() const {
 			return value_compare(_comp);
-		}
+		};
 
 		/****
 		** Operations
@@ -290,14 +290,14 @@ class map {
 				return iterator(end());
 			}
 			return iterator(_bst.search(k));
-		}
+		};
 
 		const_iterator find (const key_type& k) const {
 			if (_bst.search(k) == NULL) {
 				return const_iterator(end());
 			}
 			return const_iterator(_bst.search(k));
-		}
+		};
 
 		size_type count (const key_type& k) const {
 			if (find(k) == end()) {
@@ -306,7 +306,7 @@ class map {
 			else {
 				return (1);
 			}
-		}
+		};
 
 		iterator lower_bound (const key_type& k) {
 			iterator it = begin();
@@ -316,7 +316,7 @@ class map {
 			}
 
 			return (it);
-		}
+		};
 
 		const_iterator lower_bound (const key_type& k) const {
 			const_iterator it = begin();
@@ -326,7 +326,33 @@ class map {
 			}
 
 			return (it);
-		}
+		};
+
+		iterator upper_bound (const key_type& k) {
+			iterator it = begin();
+
+			while (it != end() && key_comp()((*it).first, k) == true) {
+				it++;
+			}
+
+			if (it != end())
+				it++;
+
+			return (it);
+		};
+
+		const_iterator upper_bound (const key_type& k) const {
+			const_iterator it = begin();
+
+			while (it != end() && key_comp()((*it).first, k) == true) {
+				it++;
+			}
+
+			if (it != end())
+				it++;
+
+			return (it);
+		};
 
 		/****
 		** Allocator
@@ -334,7 +360,7 @@ class map {
 
 		allocator_type get_allocator() const {
 			return _alloc;
-		}
+		};
 
 
 	private:

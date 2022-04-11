@@ -71,10 +71,51 @@ void	testStack::member_functions__stack_empty() {
 			std::cout << std::boolalpha << "      stackE.empty() is	" << stackE.empty() << std::endl << std::endl;
 
 }
-// void	testStack::member_functions__stack_size() {
-// 			std::cout << "size()" << std::endl << std::endl;
+void	testStack::member_functions__stack_size() {
+			std::cout << "size()" << std::endl << std::endl;
 
-// }
+	ft::stack<int, ft::vector<std::string> > stackA;
+	ft::stack<int, ft::vector<std::string> > stackB;
+	ft::stack<int, ft::vector<std::string> > stackC;
+	ft::stack<double> stackD;
+	ft::stack<double> stackE;
+
+			std::cout << "  stack<int, ft::vector<std::string> > stackA;" << std::endl;
+			std::cout << "  stack<int, ft::vector<std::string> > stackB;" << std::endl;
+			std::cout << "  stack<int, ft::vector<std::string> > stackC;" << std::endl;
+			std::cout << "  stack<double> stackD;" << std::endl;
+			std::cout << "  stack<double> stackE;" << std::endl << std::endl;
+
+			std::cout << "      stackA.size() is	" << stackA.size() << std::endl;
+			std::cout << "      stackB.size() is	" << stackB.size() << std::endl;
+			std::cout << "      stackC.size() is	" << stackC.size() << std::endl;
+			std::cout << "      stackD.size() is	" << stackD.size() << std::endl;
+			std::cout << "      stackE.size() is	" << stackE.size() << std::endl << std::endl;
+
+	stackB.push("Mekie sócie");
+	stackB.push("Mekiee sócie");
+	stackB.push("Mekieee sócie");
+	stackB.push("Mekieeee sócie");
+	stackD.push(10);
+	stackE.push(20);
+	stackE.push(30);
+
+			std::cout << "  stackB.push(\"Mekie sócie\");" << std::endl;
+			std::cout << "  stackB.push(\"Mekiee sócie\");" << std::endl;
+			std::cout << "  stackB.push(\"Mekieee sócie\");" << std::endl;
+			std::cout << "  stackB.push(\"Mekieeee sócie\");" << std::endl;
+			std::cout << "  stackD.push(10);" << std::endl;
+			std::cout << "  stackE.push(20);" << std::endl;
+			std::cout << "  stackE.push(30);" << std::endl << std::endl;
+
+			std::cout << "      stackA.size() is	" << stackA.size() << std::endl;
+			std::cout << "      stackB.size() is	" << stackB.size() << std::endl;
+			std::cout << "      stackC.size() is	" << stackC.size() << std::endl;
+			std::cout << "      stackD.size() is	" << stackD.size() << std::endl;
+			std::cout << "      stackE.size() is	" << stackE.size() << std::endl << std::endl;
+
+
+}
 // void	testStack::member_functions__stack_top() {
 // 			std::cout << "top()" << std::endl << std::endl;
 

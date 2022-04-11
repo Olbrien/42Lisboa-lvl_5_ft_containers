@@ -183,7 +183,7 @@ namespace testStack {
 
 	void	member_functions__stack_constructor();
 	void	member_functions__stack_empty();
-	// void	member_functions__stack_size();
+	void	member_functions__stack_size();
 	// void	member_functions__stack_top();
 	// void	member_functions__stack_push();
 	// void	member_functions__stack_pop();

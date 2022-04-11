@@ -176,7 +176,7 @@ do
         ./ft_container "$i" > ../tests/ft.txt
         ./std_container "$i" > ../tests/std.txt
 
-		if cmp -s "../tests/ft.txt" "../tests/ft.txt"; then
+		if cmp -s "../tests/ft.txt" "../tests/std.txt"; then
 			printf "${WHITE} Vector ${LPURPLE}diff test argument  ✅ ${LGREEN}	[ ${arguments[$i]} ] ${YELLO} %i ${NC}\n" $i
 		else
 			printf "${WHITE} Vector ${LPURPLE}diff test argument${LGREEN} -> [ ${arguments[$i]} ] ${YELLO} %i ${NC} ❌\n" $i
@@ -184,14 +184,14 @@ do
 		fi
 done
 
-while [ $i -ne 124 ]
+while [ $i -ne 125 ]
 do
         i=$(($i+1))
 
         ./ft_container "$i" > ../tests/ft.txt
         ./std_container "$i" > ../tests/std.txt
 
-		if cmp -s "../tests/ft.txt" "../tests/ft.txt"; then
+		if cmp -s "../tests/ft.txt" "../tests/std.txt"; then
 			printf "${WHITE} Map ${LPURPLE}diff test argument  ✅ ${LGREEN}	[ ${arguments[$i]} ] ${YELLO} %i ${NC}\n" $i
 		else
 			printf "${WHITE} Map ${LPURPLE}diff test argument${LGREEN} -> [ ${arguments[$i]} ] ${YELLO} %i ${NC} ❌\n" $i

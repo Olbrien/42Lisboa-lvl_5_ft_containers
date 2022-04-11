@@ -269,7 +269,6 @@ class map {
 			_bst.remove_all(true);
 		}
 
-
 		/****
 		** Observers
 		*/
@@ -307,6 +306,26 @@ class map {
 			else {
 				return (1);
 			}
+		}
+
+		iterator lower_bound (const key_type& k) {
+			iterator it = begin();
+
+			while (it != end() && key_comp()((*it).first, k) == true) {
+				it++;
+			}
+
+			return (it);
+		}
+
+		const_iterator lower_bound (const key_type& k) const {
+			const_iterator it = begin();
+
+			while (it != end() && key_comp()((*it).first, k) == true) {
+				it++;
+			}
+
+			return (it);
 		}
 
 		/****

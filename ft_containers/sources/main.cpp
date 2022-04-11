@@ -201,7 +201,7 @@ int		map_argument(std::string argument) {
 
 	if (!argument.compare("121")) { header_text("map"); testMap::member_functions__operations__find(); return 0; }
 	else if (!argument.compare("122")) { header_text("map"); testMap::member_functions__operations__count(); return 0; }
-	// else if (!argument.compare("123")) { header_text("map"); testMap::member_functions__operations__lower_bound(); return 0; }
+	else if (!argument.compare("123")) { header_text("map"); testMap::member_functions__operations__lower_bound(); return 0; }
 	// else if (!argument.compare("124")) { header_text("map"); testMap::member_functions__operations__upper_bound(); return 0; }
 	// else if (!argument.compare("125")) { header_text("map"); testMap::member_functions__operations__equal_range(); return 0; }
 

@@ -495,7 +495,12 @@ class BST {
                     node->right->parent = node->parent;
 
                     // Bypass node
-					node->right->left = node->left;
+					if (node->right->left == NULL) {
+						node->right->left = node->left;
+					}
+					else {
+						node->right->left->left = node->left;
+					}
                     node = node->right;
 					_node_allocator.destroy(tmp_node);
 					_node_allocator.deallocate(tmp_node, 1);
@@ -510,7 +515,12 @@ class BST {
                     node->left->parent = node->parent;
 
                     // Bypass node
-					node->left->right = node->right;
+					if (node->right->right == NULL) {
+						node->left->right = node->right;
+					}
+					else {
+						node->left->right->right = node->right;
+					}
                     node = node->left;
 					_node_allocator.destroy(tmp_node);
 					_node_allocator.deallocate(tmp_node, 1);

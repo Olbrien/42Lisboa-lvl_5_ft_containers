@@ -512,7 +512,7 @@ void	testVector::member_functions__iterator__begin() {
 
 	ft::vector<std::string>::iterator itA = vectorA.begin();
 	ft::vector<float>::iterator itB = vectorB.begin();
-	ft::vector<int>::iterator itC = vectorC.begin();
+	//ft::vector<int>::iterator itC = vectorC.begin();
 
 			std::cout << "  vector<std::string>::iterator itA = vectorA.begin();" << std::endl;
 			std::cout << "  vector<float>::iterator itB = vectorB.begin();" << std::endl;
@@ -520,8 +520,8 @@ void	testVector::member_functions__iterator__begin() {
 
 			std::cout << "      *itA is " << *itA << std::endl;
 			std::cout << "      *itB is " << *itB << std::endl;
-			std::cout << "      *itC is Segmentation Fault" << std::endl << std::endl;
-			std::cout <<  *itC << std::endl;
+			// std::cout << "      *itC is Segmentation Fault" << std::endl << std::endl;
+			// std::cout <<  *itC << std::endl;
 }
 void	testVector::member_functions__iterator__end() {
 			std::cout << "Iterators - end():" << std::endl << std::endl;
@@ -552,7 +552,7 @@ void	testVector::member_functions__iterator__end() {
 
 	ft::vector<std::string>::iterator itA = vectorA.end();
 	ft::vector<float>::iterator itB = vectorB.end();
-	ft::vector<int>::iterator itC = vectorC.end();
+	//ft::vector<int>::iterator itC = vectorC.end();
 
 			std::cout << "  vector<std::string>::iterator itA = vectorA.end();" << std::endl;
 			std::cout << "  vector<float>::iterator itB = vectorB.end();" << std::endl;
@@ -569,8 +569,8 @@ void	testVector::member_functions__iterator__end() {
 
 			std::cout << "      *itA is " << *itA << std::endl;
 			std::cout << "      *itB is " << *itB << std::endl;
-			std::cout << "      *itC is Segmentation Fault" << std::endl << std::endl;
-			std::cout <<  *itC << std::endl;
+			// std::cout << "      *itC is Segmentation Fault" << std::endl << std::endl;
+			// std::cout <<  *itC << std::endl;
 }
 void	testVector::member_functions__iterator__rbegin() {
 			std::cout << "Iterators - rbegin():" << std::endl << std::endl;
@@ -601,7 +601,7 @@ void	testVector::member_functions__iterator__rbegin() {
 
 	ft::vector<std::string>::reverse_iterator itA = vectorA.rbegin();
 	ft::vector<float>::reverse_iterator itB = vectorB.rbegin();
-	ft::vector<int>::reverse_iterator itC = vectorC.rbegin();
+	//ft::vector<int>::reverse_iterator itC = vectorC.rbegin();
 
 			std::cout << "  vector<std::string>::reverse_iterator itA = vectorA.rbegin();" << std::endl;
 			std::cout << "  vector<float>::reverse_iterator itB = vectorB.rbegin();" << std::endl;
@@ -609,8 +609,8 @@ void	testVector::member_functions__iterator__rbegin() {
 
 			std::cout << "      *itA is " << *itA << std::endl;
 			std::cout << "      *itB is " << *itB << std::endl;
-			std::cout << "      *itC is Segmentation Fault" << std::endl << std::endl;
-			std::cout <<  *itC << std::endl;
+			// std::cout << "      *itC is Segmentation Fault" << std::endl << std::endl;
+			// std::cout <<  *itC << std::endl;
 }
 void	testVector::member_functions__iterator__rend() {
 			std::cout << "Iterators - rend():" << std::endl << std::endl;
@@ -641,7 +641,7 @@ void	testVector::member_functions__iterator__rend() {
 
 	ft::vector<std::string>::reverse_iterator itA = vectorA.rend();
 	ft::vector<float>::reverse_iterator itB = vectorB.rend();
-	ft::vector<int>::reverse_iterator itC = vectorC.rend();
+	//ft::vector<int>::reverse_iterator itC = vectorC.rend();
 
 			std::cout << "  vector<std::string>::reverse_iterator itA = vectorA.rend();" << std::endl;
 			std::cout << "  vector<float>::reverse_iterator itB = vectorB.rend();" << std::endl;
@@ -658,8 +658,8 @@ void	testVector::member_functions__iterator__rend() {
 
 			std::cout << "      *itA is " << *itA << std::endl;
 			std::cout << "      *itB is " << *itB << std::endl;
-			std::cout << "      *itC is Segmentation Fault" << std::endl << std::endl;
-			std::cout <<  *itC << std::endl;
+			// std::cout << "      *itC is Segmentation Fault" << std::endl << std::endl;
+			// std::cout <<  *itC << std::endl;
 }
 
 void	testVector::member_functions__capacity__size() {
@@ -1117,8 +1117,8 @@ void	testVector::member_functions__element__front() {
 			std::cout << "      vectorA.front() is	" << vectorA.front() << std::endl;
 			std::cout << "      vectorA[0] is		" << vectorA[0] << std::endl << std::endl;
 
-			std::cout << "      vectorB.front() is Segmentation Fault !" << std::endl << std::endl;
-			std::cout << vectorB.front() << std::endl;
+			// std::cout << "      vectorB.front() is Segmentation Fault !" << std::endl << std::endl;
+			// std::cout << vectorB.front() << std::endl;
 }
 void	testVector::member_functions__element__back() {
 			std::cout << "Capacity - back():" << std::endl << std::endl;
@@ -1150,8 +1150,8 @@ void	testVector::member_functions__element__back() {
 			std::cout << "      vectorA.back() is		" << vectorA.back() << std::endl;
 			std::cout << "      vectorA[0] is		" << vectorA[0] << std::endl << std::endl;
 
-			std::cout << "      vectorB.back() is Segmentation Fault !" << std::endl << std::endl;
-			std::cout << vectorB.back() << std::endl;
+			// std::cout << "      vectorB.back() is Segmentation Fault !" << std::endl << std::endl;
+			// std::cout << vectorB.back() << std::endl;
 }
 
 void	testVector::member_functions__modifiers__assign_range() {

@@ -401,27 +401,27 @@ void	testVector::member_types__reverse_iterator__base() {
 			std::cout << "  vector<int>	vectorC;" << std::endl;
 			std::cout << "  vector<int>	vectorD;" << std::endl << std::endl;
 
-	ft::vector<int>::reverse_iterator itC = vectorC.rbegin();
-	ft::vector<int>::reverse_iterator itD = vectorD.rbegin();
-	ft::vector<int>::reverse_iterator::iterator_type baseC = itC.base();
-	ft::vector<int>::reverse_iterator::iterator_type baseD = itD.base();
+	//ft::vector<int>::reverse_iterator itC = vectorC.rbegin();
+	//ft::vector<int>::reverse_iterator itD = vectorD.rbegin();
+	//ft::vector<int>::reverse_iterator::iterator_type baseC = itC.base();
+	//ft::vector<int>::reverse_iterator::iterator_type baseD = itD.base();
 
-			std::cout << "  vector<int>::reverse_iterator itC = vectorC.rbegin();" << std::endl;
-			std::cout << "  vector<int>::reverse_iterator itD = vectorD.rbegin();" << std::endl;
-			std::cout << "  vector<int>::reverse_iterator::iterator_type baseC = itC.base();" << std::endl;
-			std::cout << "  vector<int>::reverse_iterator::iterator_type baseD = itD.base();" << std::endl << std::endl;
-			std::cout << "  Segmentation Fault here is excepted!" << std::endl << std::endl;
+			//std::cout << "  vector<int>::reverse_iterator itC = vectorC.rbegin();" << std::endl;
+			//std::cout << "  vector<int>::reverse_iterator itD = vectorD.rbegin();" << std::endl;
+			//std::cout << "  vector<int>::reverse_iterator::iterator_type baseC = itC.base();" << std::endl;
+			//std::cout << "  vector<int>::reverse_iterator::iterator_type baseD = itD.base();" << std::endl << std::endl;
+			//std::cout << "  Segmentation Fault here is excepted!" << std::endl << std::endl;
 
-			std::cout << "      *baseC is	" << *baseC << std::endl;
-			std::cout << "      *baseD is	" << *baseD << std::endl;
-			std::cout << std::endl;
+			//std::cout << "      *baseC is	" << *baseC << std::endl;
+			//std::cout << "      *baseD is	" << *baseD << std::endl;
+			//std::cout << std::endl;
 
-	baseC = baseC - 1;
-	baseD = baseD - 1;
+	//baseC = baseC - 1;
+	//baseD = baseD - 1;
 
-			std::cout << "  baseC = baseC - 1;" << std::endl;
-			std::cout << "  baseC = baseC - 1;" << std::endl << std::endl;
-			std::cout << "      *baseC is	" << *baseC << std::endl;
-			std::cout << "      *baseD is	" << *baseD << std::endl;
-			std::cout << std::endl;
+			//std::cout << "  baseC = baseC - 1;" << std::endl;
+			//std::cout << "  baseC = baseC - 1;" << std::endl << std::endl;
+			//std::cout << "      *baseC is	" << *baseC << std::endl;
+			//std::cout << "      *baseD is	" << *baseD << std::endl;
+			//std::cout << std::endl;
 }

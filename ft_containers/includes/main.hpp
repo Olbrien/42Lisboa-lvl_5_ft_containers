@@ -188,7 +188,7 @@ namespace testStack {
 	void	member_functions__stack_push();
 	void	member_functions__stack_pop();
 
-	// void	member_functions__overloads__relational_operators();
+	void	member_functions__overloads__relational_operators();
 }
 
 namespace testExtras {

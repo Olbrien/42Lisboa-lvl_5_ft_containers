@@ -221,23 +221,23 @@ int		stack_argument(std::string argument ) {
 	else if (!argument.compare("134")) { header_text("stack"); testStack::member_functions__stack_push();	return 0; }
 	else if (!argument.compare("135")) { header_text("stack"); testStack::member_functions__stack_pop();	return 0; }
 
-	//if (!argument.compare("136")) { header_text("stack"); testStack::member_functions__overloads__relational_operators();	return 0; }
+	if (!argument.compare("136")) { header_text("stack"); testStack::member_functions__overloads__relational_operators();	return 0; }
 
 	return 1;
 }
 int		extras_argument(std::string argument) {
-	if (!argument.compare("200")) { header_text("extras"); testExtras::extras__iterator_traits(); return 0; }
-	else if (!argument.compare("201")) { header_text("extras"); testExtras::extras__enable_if(); return 0; }
-	else if (!argument.compare("202")) { header_text("extras"); testExtras::extras__is_integral(); return 0; }
-	else if (!argument.compare("203")) { header_text("extras"); testExtras::extras__equal(); return 0; }
-	else if (!argument.compare("204")) { header_text("extras"); testExtras::extras__lexicographical_compare(); return 0; }
-	else if (!argument.compare("205")) { header_text("extras"); testExtras::extras__pair(); return 0; }
-	else if (!argument.compare("206")) { header_text("extras"); testExtras::extras__make_pair(); return 0; }
+	if (!argument.compare("137")) { header_text("extras"); testExtras::extras__iterator_traits(); return 0; }
+	else if (!argument.compare("138")) { header_text("extras"); testExtras::extras__enable_if(); return 0; }
+	else if (!argument.compare("139")) { header_text("extras"); testExtras::extras__is_integral(); return 0; }
+	else if (!argument.compare("140")) { header_text("extras"); testExtras::extras__equal(); return 0; }
+	else if (!argument.compare("141")) { header_text("extras"); testExtras::extras__lexicographical_compare(); return 0; }
+	else if (!argument.compare("142")) { header_text("extras"); testExtras::extras__pair(); return 0; }
+	else if (!argument.compare("143")) { header_text("extras"); testExtras::extras__make_pair(); return 0; }
 
 	return 1;
 }
 int		anything_argument(std::string argument) {
-	if (!argument.compare("207")) { header_text("anything"); testAnything::anything__tests(); return 0; }
+	if (!argument.compare("144")) { header_text("anything"); testAnything::anything__tests(); return 0; }
 
 	return 1;
 }
@@ -443,16 +443,16 @@ void	welcome_message() {
 	std::cout << "*              relational operators			     136    *" << std::endl;
 	std::cout << "*								    *" << std::endl;
 	std::cout << "*  Extras:							    *" << std::endl;
-	std::cout << "*      iterator_traits					     200    *" << std::endl;
-	std::cout << "*      enable_if					     201    *" << std::endl;
-	std::cout << "*      is_integral					     202    *" << std::endl;
-	std::cout << "*      equal						     203    *" << std::endl;
-	std::cout << "*      lexicographical_compare				     204    *" << std::endl;
-	std::cout << "*      pair						     205    *" << std::endl;
-	std::cout << "*      make_pair					     206    *" << std::endl;
+	std::cout << "*      iterator_traits					     137    *" << std::endl;
+	std::cout << "*      enable_if					     138    *" << std::endl;
+	std::cout << "*      is_integral					     139    *" << std::endl;
+	std::cout << "*      equal						     140    *" << std::endl;
+	std::cout << "*      lexicographical_compare				     141    *" << std::endl;
+	std::cout << "*      pair						     142    *" << std::endl;
+	std::cout << "*      make_pair					     143    *" << std::endl;
 	std::cout << "*								    *" << std::endl;
 	std::cout << "*  Anything:							    *" << std::endl;
-	std::cout << "*      test_anything					     207    *" << std::endl;
+	std::cout << "*      test_anything					     144    *" << std::endl;
 	std::cout << "*								    *" << std::endl;
 	std::cout << "*********************************************************************"
 				<< std::endl;

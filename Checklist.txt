@@ -362,12 +362,12 @@ Stack:
 			pop						✅
 
 		Non-member function overloads:
-			operator ==				❌
-			operator !=				❌
-			operator >=				❌
-			operator >				❌
-			operator <=				❌
-			operator <				❌
+			operator ==				✅
+			operator !=				✅
+			operator >=				✅
+			operator >				✅
+			operator <=				✅
+			operator <				✅
 
 ---------------------------------------------------------------------------------------------
 

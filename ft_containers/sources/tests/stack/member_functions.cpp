@@ -311,7 +311,198 @@ void	testStack::member_functions__stack_pop() {
 			// std::cout << "      stackE.top() is	" << stackE.top() << std::endl << std::endl;
 }
 
-// void	testStack::member_functions__overloads__relational_operators() {
-// 			std::cout << "Non-member function overloads:" << std::endl << std::endl;
+void	testStack::member_functions__overloads__relational_operators() {
+			std::cout << "Non-member function overloads:" << std::endl << std::endl;
 
-// }
+	ft::stack<int, ft::vector<int> > stackA;
+	ft::stack<int, ft::vector<int> > stackB;
+	ft::stack<int, ft::vector<int> > stackC;
+	ft::stack<int, ft::vector<int> > stackD;
+	ft::stack<int, ft::vector<int> > stackE;
+
+	ft::stack<std::string, ft::vector<std::string> > stackF;
+	ft::stack<std::string, ft::vector<std::string> > stackG;
+	ft::stack<std::string, ft::vector<std::string> > stackH;
+	ft::stack<std::string, ft::vector<std::string> > stackI;
+	ft::stack<std::string, ft::vector<std::string> > stackJ;
+
+	stackA.push(5);
+	stackB.push(5);
+	stackC.push(4);
+	stackD.push(12);
+
+	stackF.push("Olah");
+	stackG.push("Olah");
+	stackH.push("Olahn");
+	stackI.push("Not Olah");
+
+			std::cout << "  stack<int>		stackA;" << std::endl;
+			std::cout << "  stack<int>		stackB;" << std::endl;
+			std::cout << "  stack<int>		stackC;" << std::endl;
+			std::cout << "  stack<int>		stackD;" << std::endl;
+			std::cout << "  stack<int>		stackE;" << std::endl << std::endl;
+			std::cout << "  stack<std::string>	stackF;" << std::endl;
+			std::cout << "  stack<std::string>	stackG;" << std::endl;
+			std::cout << "  stack<std::string>	stackH;" << std::endl;
+			std::cout << "  stack<std::string>	stackI;" << std::endl;
+			std::cout << "  stack<std::string>	stackJ;" << std::endl << std::endl;
+
+			std::cout << "  stackA.push(5);" << std::endl;
+			std::cout << "  stackB.push(5);" << std::endl;
+			std::cout << "  stackC.push(4);" << std::endl;
+			std::cout << "  stackD.push(12);" << std::endl << std::endl;
+			std::cout << "  stackF.push(\"Olah\");" << std::endl;
+			std::cout << "  stackG.push(\"Olah\");" << std::endl;
+			std::cout << "  stackH.push(\"Olahn\");" << std::endl;
+			std::cout << "  stackI.push(\"Not Olah\");" << std::endl << std::endl;
+
+	// operator==
+
+			std::cout << "      stackA == stackB is	"; (stackA == stackB) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA == stackC is	"; (stackA == stackC) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA == stackD is	"; (stackA == stackD) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA == stackE is	"; (stackA == stackE) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+			std::cout << "      stackF == stackG is	"; (stackF == stackG) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF == stackH is	"; (stackF == stackH) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF == stackI is	"; (stackF == stackI) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF == stackJ is	"; (stackF == stackJ) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+	// operator!=
+
+			std::cout << "      stackA != stackB is	"; (stackA != stackB) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA != stackC is	"; (stackA != stackC) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA != stackD is	"; (stackA != stackD) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA != stackE is	"; (stackA != stackE) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+			std::cout << "      stackF != stackG is	"; (stackF != stackG) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF != stackH is	"; (stackF != stackH) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF != stackI is	"; (stackF != stackI) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF != stackJ is	"; (stackF != stackJ) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+	// operator<
+
+			std::cout << "      stackA < stackB is	"; (stackA < stackB) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA < stackC is	"; (stackA < stackC) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA < stackD is	"; (stackA < stackD) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA < stackE is	"; (stackA < stackE) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+			std::cout << "      stackF < stackG is	"; (stackF < stackG) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF < stackH is	"; (stackF < stackH) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF < stackI is	"; (stackF < stackI) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF < stackJ is	"; (stackF < stackJ) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+	// operator<=
+
+			std::cout << "      stackA <= stackB is	"; (stackA <= stackB) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA <= stackC is	"; (stackA <= stackC) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA <= stackD is	"; (stackA <= stackD) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA <= stackE is	"; (stackA <= stackE) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+			std::cout << "      stackF <= stackG is	"; (stackF <= stackG) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF <= stackH is	"; (stackF <= stackH) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF <= stackI is	"; (stackF <= stackI) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF <= stackJ is	"; (stackF <= stackJ) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+	// operator>
+
+			std::cout << "      stackA > stackB is	"; (stackA > stackB) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA > stackC is	"; (stackA > stackC) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA > stackD is	"; (stackA > stackD) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA > stackE is	"; (stackA > stackE) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+			std::cout << "      stackF > stackG is	"; (stackF > stackG) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF > stackH is	"; (stackF > stackH) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF > stackI is	"; (stackF > stackI) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF > stackJ is	"; (stackF > stackJ) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+	// operator>=
+
+			std::cout << "      stackA >= stackB is	"; (stackA >= stackB) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA >= stackC is	"; (stackA >= stackC) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA >= stackD is	"; (stackA >= stackD) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA >= stackE is	"; (stackA >= stackE) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+			std::cout << "      stackF >= stackG is	"; (stackF >= stackG) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF >= stackH is	"; (stackF >= stackH) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF >= stackI is	"; (stackF >= stackI) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF >= stackJ is	"; (stackF >= stackJ) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+
+	stackA.push(5);
+	stackB.push(5);
+	stackC.push(5);
+	stackC.push(5);
+	stackD.push(5000);
+	stackF.push("Oi");
+	stackG.push("Yo");
+
+			std::cout << "  stackA.push_back(5);" << std::endl;
+			std::cout << "  stackB.push_back(5);" << std::endl;
+			std::cout << "  stackC.push_back(5);" << std::endl;
+			std::cout << "  stackC.push_back(5);" << std::endl;
+			std::cout << "  stackD.push_back(5000);" << std::endl << std::endl;
+			std::cout << "  stackF.push_back(\"Oi\");" << std::endl;
+			std::cout << "  stackG.push_back(\"Yo\");" << std::endl << std::endl;
+
+	// operator==
+
+			std::cout << "      stackA == stackB is	"; (stackA == stackB) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA == stackC is	"; (stackA == stackC) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA == stackD is	"; (stackA == stackD) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA == stackE is	"; (stackA == stackE) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+			std::cout << "      stackF == stackG is	"; (stackF == stackG) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF == stackH is	"; (stackF == stackH) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF == stackI is	"; (stackF == stackI) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF == stackJ is	"; (stackF == stackJ) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+	// operator!=
+
+			std::cout << "      stackA != stackB is	"; (stackA != stackB) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA != stackC is	"; (stackA != stackC) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA != stackD is	"; (stackA != stackD) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA != stackE is	"; (stackA != stackE) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+			std::cout << "      stackF != stackG is	"; (stackF != stackG) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF != stackH is	"; (stackF != stackH) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF != stackI is	"; (stackF != stackI) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF != stackJ is	"; (stackF != stackJ) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+	// operator<
+
+			std::cout << "      stackA < stackB is	"; (stackA < stackB) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA < stackC is	"; (stackA < stackC) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA < stackD is	"; (stackA < stackD) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA < stackE is	"; (stackA < stackE) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+			std::cout << "      stackF < stackG is	"; (stackF < stackG) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF < stackH is	"; (stackF < stackH) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF < stackI is	"; (stackF < stackI) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF < stackJ is	"; (stackF < stackJ) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+	// operator<=
+
+			std::cout << "      stackA <= stackB is	"; (stackA <= stackB) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA <= stackC is	"; (stackA <= stackC) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA <= stackD is	"; (stackA <= stackD) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA <= stackE is	"; (stackA <= stackE) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+			std::cout << "      stackF <= stackG is	"; (stackF <= stackG) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF <= stackH is	"; (stackF <= stackH) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF <= stackI is	"; (stackF <= stackI) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF <= stackJ is	"; (stackF <= stackJ) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+	// operator>
+
+			std::cout << "      stackA > stackB is	"; (stackA > stackB) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA > stackC is	"; (stackA > stackC) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA > stackD is	"; (stackA > stackD) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA > stackE is	"; (stackA > stackE) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+			std::cout << "      stackF > stackG is	"; (stackF > stackG) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF > stackH is	"; (stackF > stackH) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF > stackI is	"; (stackF > stackI) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF > stackJ is	"; (stackF > stackJ) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+	// operator>=
+
+			std::cout << "      stackA >= stackB is	"; (stackA >= stackB) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA >= stackC is	"; (stackA >= stackC) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA >= stackD is	"; (stackA >= stackD) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackA >= stackE is	"; (stackA >= stackE) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+			std::cout << "      stackF >= stackG is	"; (stackF >= stackG) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF >= stackH is	"; (stackF >= stackH) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF >= stackI is	"; (stackF >= stackI) ? std::cout << "True\n" : std::cout << "False\n";
+			std::cout << "      stackF >= stackJ is	"; (stackF >= stackJ) ? std::cout << "True\n\n" : std::cout << "False\n\n";
+
+}

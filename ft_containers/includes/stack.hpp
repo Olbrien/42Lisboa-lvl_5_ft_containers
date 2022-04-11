@@ -23,9 +23,52 @@ class stack {
 		void push (const value_type& val) { _ctnr.push_back(val); };
 		void pop() { _ctnr.pop_back(); };
 
-	private:
+		template <class TF, class ContainerF>
+			friend bool operator== (const stack<TF,ContainerF>& lhs, const stack<TF,ContainerF>& rhs);
+		template <class TF, class ContainerF>
+			friend bool operator!= (const stack<TF,ContainerF>& lhs, const stack<TF,ContainerF>& rhs);
+		template <class TF, class ContainerF>
+			friend bool operator<  (const stack<TF,ContainerF>& lhs, const stack<TF,ContainerF>& rhs);
+		template <class TF, class ContainerF>
+			friend bool operator<= (const stack<TF,ContainerF>& lhs, const stack<TF,ContainerF>& rhs);
+		template <class TF, class ContainerF>
+			friend bool operator>  (const stack<TF,ContainerF>& lhs, const stack<TF,ContainerF>& rhs);
+		template <class TF, class ContainerF>
+			friend bool operator>= (const stack<TF,ContainerF>& lhs, const stack<TF,ContainerF>& rhs);
+
+	protected:
 		container_type			_ctnr;
 
+};
+
+template <class T, class Container>
+bool operator== (const stack<T,Container>& lhs, const stack<T,Container>& rhs) {
+	return (lhs._ctnr == rhs._ctnr);
+};
+
+template <class T, class Container>
+bool operator!= (const stack<T,Container>& lhs, const stack<T,Container>& rhs){
+	return (lhs._ctnr != rhs._ctnr);
+};
+
+template <class T, class Container>
+bool operator<  (const stack<T,Container>& lhs, const stack<T,Container>& rhs){
+	return (lhs._ctnr < rhs._ctnr);
+};
+
+template <class T, class Container>
+bool operator<= (const stack<T,Container>& lhs, const stack<T,Container>& rhs){
+	return (lhs._ctnr <= rhs._ctnr);
+};
+
+template <class T, class Container>
+bool operator>  (const stack<T,Container>& lhs, const stack<T,Container>& rhs){
+	return (lhs._ctnr > rhs._ctnr);
+};
+
+template <class T, class Container>
+bool operator>= (const stack<T,Container>& lhs, const stack<T,Container>& rhs){
+	return (lhs._ctnr >= rhs._ctnr);
 };
 
 }

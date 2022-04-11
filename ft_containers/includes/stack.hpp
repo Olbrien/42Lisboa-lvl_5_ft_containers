@@ -18,8 +18,8 @@ class stack {
 
 		bool empty() const { return _ctnr.empty(); };
 		size_type size() const { return _ctnr.size(); };
-		value_type & top() { return _ctnr.front(); };
-		const value_type & top() const { return _ctnr.front(); };
+		value_type & top() { return _ctnr.back(); };
+		const value_type & top() const { return _ctnr.back(); };
 		void push (const value_type& val) { _ctnr.push_back(val); };
 		void pop() { _ctnr.pop_back(); };
 

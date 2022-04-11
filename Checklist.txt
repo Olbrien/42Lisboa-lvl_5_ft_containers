@@ -356,8 +356,8 @@ Stack:
 		Default:
 			stack constructor		✅
 			empty					✅
-			size					❌
-			top						❌
+			size					✅
+			top						✅
 			push					❌
 			pop						❌
 

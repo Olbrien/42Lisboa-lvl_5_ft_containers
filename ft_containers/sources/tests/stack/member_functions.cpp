@@ -1,18 +1,42 @@
 #include "../../../includes/main.hpp"
 
-// void	testStack::member_functions__stack_constructor() {
-// 		std::cout << "Stack Constructor:" << std::endl << std::endl;
+void	testStack::member_functions__stack_constructor() {
+		std::cout << "Stack Constructor:" << std::endl << std::endl;
 
-// 	ft::vector<int> vectorA;
-// 	ft::vector<int> vectorB;
+	ft::stack<std::string> stackA(ft::vector<std::string>);
+	ft::stack<int> 		   stackB(ft::vector<std::string>);
+	ft::stack<int> 		   stackC(ft::vector<int>);
+	ft::stack<double>	   stackD(ft::vector<long>);
+	ft::stack<double>	   stackE;
+	ft::stack<int>		   stackF;
 
-// 			std::cout << "  vector<int> vectorA;" << std::endl;
-// 			std::cout << "  vector<int> vectorA;" << std::endl << std::endl;
+			std::cout << "  stack<std::string>	   stackA(ft::vector<std::string>);" << std::endl;
+			std::cout << "  stack<int>		   stackB(ft::vector<std::string>);" << std::endl;
+			std::cout << "  stack<int>		   stackC(ft::vector<int>);" << std::endl;
+			std::cout << "  stack<double>		   stackD(ft::vector<long>);" << std::endl;
+			std::cout << "  stack<double>		   stackE;" << std::endl;
+			std::cout << "  stack<int>		   stackF;" << std::endl << std::endl;
 
-// 			std::cout << "      vectorA.size() is		" << vectorA.size() << std::endl;
-// 			std::cout << "      vectorA.capacity() is	" << vectorA.capacity() << std::endl;
-// 			std::cout << std::endl;
-// }
+			std::cout << "  stack<std::string, ft::vector<std::string>>::container_type stackA_value;"
+					  << std::endl;
+			std::cout << "  stack<int>::container_type stackB_value;" << std::endl;
+			std::cout << "  stack<double, ft::vector<std::string> >::container_type stackC_value;" << std::endl
+																					   << std::endl;
+
+			std::cout << "      typeid(stackA).name()  is	" << typeid(stackA).name()
+																  << std::endl;
+			std::cout << "      typeid(stackB).name() is	" << typeid(stackB).name()
+																  << std::endl;
+			std::cout << "      typeid(stackC).name() is	" << typeid(stackC).name()
+																  << std::endl;
+			std::cout << "      typeid(stackD).name() is	" << typeid(stackD).name()
+																  << std::endl;
+			std::cout << "      typeid(stackE).name() is	" << typeid(stackE).name()
+																  << std::endl;
+			std::cout << "      typeid(stackF).name() is	" << typeid(stackF).name()
+																  << std::endl << std::endl;
+
+}
 // void	testStack::member_functions__stack_empty() {
 // 			std::cout << "empty():" << std::endl << std::endl;
 

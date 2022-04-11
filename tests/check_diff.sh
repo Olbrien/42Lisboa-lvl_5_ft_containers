@@ -204,11 +204,11 @@ do
 		fi
 done
 
-while [ $i -ne 128 ]
+while [ $i -ne 130 ]
 do
         i=$(($i+1))
 
-		if [ "$i" == '128' ];
+		if [ "$i" == '128' ] || [ "$i" == '130' ];
 		  then  # These have to be checked manually
 		    continue
 		fi

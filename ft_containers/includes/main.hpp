@@ -181,7 +181,7 @@ namespace testStack {
 	void	member_types__container_type();
 	void	member_types__size_type();
 
-	// void	member_functions__stack_constructor();
+	void	member_functions__stack_constructor();
 	// void	member_functions__stack_empty();
 	// void	member_functions__stack_size();
 	// void	member_functions__stack_top();

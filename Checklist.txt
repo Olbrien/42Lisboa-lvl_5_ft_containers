@@ -359,7 +359,7 @@ Stack:
 			size					✅
 			top						✅
 			push					✅
-			pop						❌
+			pop						✅
 
 		Non-member function overloads:
 			operator ==				❌

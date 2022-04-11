@@ -186,7 +186,7 @@ namespace testStack {
 	void	member_functions__stack_size();
 	void	member_functions__stack_top();
 	void	member_functions__stack_push();
-	// void	member_functions__stack_pop();
+	void	member_functions__stack_pop();
 
 	// void	member_functions__overloads__relational_operators();
 }

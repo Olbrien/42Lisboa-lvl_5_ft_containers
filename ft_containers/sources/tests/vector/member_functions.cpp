@@ -558,8 +558,8 @@ void	testVector::member_functions__iterator__end() {
 			std::cout << "  vector<float>::iterator itB = vectorB.end();" << std::endl;
 			std::cout << "  vector<int>::iterator itC = vectorC.end();" << std::endl << std::endl;
 
-			std::cout << "      *itA is " << *itA << std::endl;
-			std::cout << "      *itB is " << *itB << std::endl << std::endl;
+			//std::cout << "      *itA is " << *itA << std::endl;
+			//std::cout << "      *itB is " << *itB << std::endl << std::endl;
 
 	itA = itA - 1;
 	itB = itB - 1;
@@ -1011,7 +1011,7 @@ void	testVector::member_functions__element__operator_at_position() {
 	ft::vector<int>::reference ref3(vectorA[3]);
 	ft::vector<int>::reference ref4(vectorA[4]);
 	ft::vector<int>::const_reference ref5(vectorA[5]);
-	ft::vector<int>::const_reference ref6(vectorA[-123]);
+	//ft::vector<int>::const_reference ref6(vectorA[-123]);
 
 			std::cout << "  vector<int>::reference	ref0(vectorA[0]);" << std::endl;
 			std::cout << "  vector<int>::const_reference	ref1(vectorA[1]);" << std::endl;
@@ -1019,15 +1019,15 @@ void	testVector::member_functions__element__operator_at_position() {
 			std::cout << "  vector<int>::reference	ref3(vectorA[3]);" << std::endl;
 			std::cout << "  vector<int>::reference	ref4(vectorA[4]);" << std::endl;
 			std::cout << "  vector<int>::const_reference	ref5(vectorA[5]);" << std::endl;
-			std::cout << "  vector<int>::const_reference	ref6(vectorA[-123]);" << std::endl << std::endl;
+		//	std::cout << "  vector<int>::const_reference	ref6(vectorA[-123]);" << std::endl << std::endl;
 
 			std::cout << "      ref0 is	" << ref0 << std::endl;
 			std::cout << "      ref1 is	" << ref1 << std::endl;
 			std::cout << "      ref2 is	" << ref2 << std::endl;
 			std::cout << "      ref3 is	" << ref3 << std::endl;
 			std::cout << "      ref4 is	" << ref4 << std::endl;
-			std::cout << "      ref5 is	" << ref5 << std::endl;
-			std::cout << "      ref6 is	" << ref6 << std::endl << std::endl;
+			std::cout << "      ref5 is	" << ref5 << std::endl << std::endl;
+		//	std::cout << "      ref6 is	" << ref6 << std::endl << std::endl;
 }
 void	testVector::member_functions__element__at() {
 			std::cout << "Capacity - at():" << std::endl << std::endl;

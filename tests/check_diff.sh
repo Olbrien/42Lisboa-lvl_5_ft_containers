@@ -150,7 +150,23 @@ arguments=(
 )
 
 cd ../ft_containers
-make -f Makefile
+
+if [ $# -eq 0 ]
+  then
+    echo "Please insert argument. \"normal\" or \"sanitize\""
+	exit 1
+fi
+
+if [ $1 == "normal" ]
+  then
+    make -f Makefile
+elif [ $1 == "sanitize" ]
+  then
+    make f -f Makefile
+else
+	echo "Please insert argument. \"normal\" or \"sanitize\""
+	exit 1
+fi
 
 i=-1
 while [ $i -ne 69 ]

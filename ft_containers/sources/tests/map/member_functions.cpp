@@ -3535,11 +3535,72 @@ void	testMap::member_functions__operations__upper_bound() {
 			std::cout << "      mapA.size() is	" << mapA.size() << std::endl;
 			std::cout << std::endl;
 }
-// void	testMap::member_functions__operations__equal_bound() {
-// 		std::cout << "Operations - equal bound():" << std::endl << std::endl;
+void	testMap::member_functions__operations__equal_range() {
+		std::cout << "Operations - equal range():" << std::endl << std::endl;
+
+	ft::map<char, int> mapA;
+	ft::pair<ft::map<char, int>::iterator, ft::map<char, int>::iterator> ret;
+
+			std::cout << "  map<char, int> mapA;" << std::endl << std::endl;
+			std::cout << "  pair<ft::map<char, int>::iterator, ft::map<char, int>::iterator> ret;"
+					  << std::endl << std::endl;
+
+	mapA['a'] = 20;
+	mapA['b'] = 40;
+	mapA['c'] = 60;
+	mapA['d'] = 80;
+	mapA['e'] = 100;
+
+			std::cout << "  mapA['a'] = 20;" << std::endl;
+			std::cout << "  mapA['b'] = 40;" << std::endl;
+			std::cout << "  mapA['c'] = 60;" << std::endl;
+			std::cout << "  mapA['d'] = 80;" << std::endl;
+			std::cout << "  mapA['e'] = 100;" << std::endl << std::endl;
+
+	ret = mapA.equal_range('a');
+
+			std::cout << "  ret = mapA.equal_range('a');" << std::endl << std::endl;
+
+			std::cout << "      ret.first->first = " << ret.first->first << std::endl;
+			std::cout << "      ret.second->first = " << ret.second->first << std::endl << std::endl;
+
+	ret = mapA.equal_range('b');
+
+			std::cout << "  ret = mapA.equal_range('b');" << std::endl << std::endl;
+
+			std::cout << "      ret.first->first = " << ret.first->first << std::endl;
+			std::cout << "      ret.second->first = " << ret.second->first << std::endl << std::endl;
+
+	ret = mapA.equal_range('c');
+
+			std::cout << "  ret = mapA.equal_range('c');" << std::endl << std::endl;
+
+			std::cout << "      ret.first->first = " << ret.first->first << std::endl;
+			std::cout << "      ret.second->first = " << ret.second->first << std::endl << std::endl;
+
+	ret = mapA.equal_range('d');
+
+			std::cout << "  ret = mapA.equal_range('d');" << std::endl << std::endl;
+
+			std::cout << "      ret.first->first = " << ret.first->first << std::endl;
+			std::cout << "      ret.second->first = " << ret.second->first << std::endl << std::endl;
+
+	ret = mapA.equal_range('e');
+
+			std::cout << "  ret = mapA.equal_range('e');" << std::endl << std::endl;
+
+			std::cout << "      ret.first->first = " << ret.first->first << std::endl;
+			std::cout << "      ret.second->first = " << ret.second->first << std::endl << std::endl;
+
+	ret = mapA.equal_range('f');
+
+			std::cout << "  ret = mapA.equal_range('f');" << std::endl << std::endl;
+
+			std::cout << "      ret.first->first = " << ret.first->first << std::endl;
+			std::cout << "      ret.second->first = " << ret.second->first << std::endl << std::endl;
 
 
-// }
+}
 void	testMap::member_functions__allocator__get_allocator() {
 			std::cout << "Allocator - get_allocator():" << std::endl << std::endl;
 

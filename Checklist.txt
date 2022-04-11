@@ -259,7 +259,7 @@ Map:
 			count					✅
 			lower_bound				✅
 			upper_bound				✅
-			equal_range				❌
+			equal_range				✅
 
 		Allocator:
 			get_allocator			✅

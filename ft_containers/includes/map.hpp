@@ -354,6 +354,14 @@ class map {
 			return (it);
 		};
 
+		pair<iterator,iterator> equal_range (const key_type& k) {
+			return ft::make_pair(iterator(lower_bound(k)), iterator(upper_bound(k)));
+		}
+
+		pair<const_iterator,const_iterator> equal_range (const key_type& k) const {
+			return ft::make_pair(const_iterator(lower_bound(k)), const_iterator(upper_bound(k)));
+		}
+
 		/****
 		** Allocator
 		*/

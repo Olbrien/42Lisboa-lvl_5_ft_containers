@@ -37,10 +37,40 @@ void	testStack::member_functions__stack_constructor() {
 																  << std::endl << std::endl;
 
 }
-// void	testStack::member_functions__stack_empty() {
-// 			std::cout << "empty():" << std::endl << std::endl;
+void	testStack::member_functions__stack_empty() {
+			std::cout << "empty():" << std::endl << std::endl;
 
-// }
+	ft::stack<int, ft::vector<std::string> > stackA;
+	ft::stack<int, ft::vector<std::string> > stackB;
+	ft::stack<int, ft::vector<std::string> > stackC;
+	ft::stack<double> stackD;
+	ft::stack<double> stackE;
+
+			std::cout << "  stack<int, ft::vector<std::string> > stackA;" << std::endl;
+			std::cout << "  stack<int, ft::vector<std::string> > stackB;" << std::endl;
+			std::cout << "  stack<int, ft::vector<std::string> > stackC;" << std::endl;
+			std::cout << "  stack<double> stackD;" << std::endl;
+			std::cout << "  stack<double> stackE;" << std::endl << std::endl;
+
+			std::cout << std::boolalpha << "      stackA.empty() is	" << stackA.empty() << std::endl;
+			std::cout << std::boolalpha << "      stackB.empty() is	" << stackB.empty() << std::endl;
+			std::cout << std::boolalpha << "      stackC.empty() is	" << stackC.empty() << std::endl;
+			std::cout << std::boolalpha << "      stackD.empty() is	" << stackD.empty() << std::endl;
+			std::cout << std::boolalpha << "      stackE.empty() is	" << stackE.empty() << std::endl << std::endl;
+
+	stackB.push("Mekie sócie");
+	stackD.push(10);
+
+			std::cout << "  stackB.push(\"Mekie sócie\");" << std::endl;
+			std::cout << "  stackD.push(10);" << std::endl << std::endl;
+
+			std::cout << std::boolalpha << "      stackA.empty() is	" << stackA.empty() << std::endl;
+			std::cout << std::boolalpha << "      stackB.empty() is	" << stackB.empty() << std::endl;
+			std::cout << std::boolalpha << "      stackC.empty() is	" << stackC.empty() << std::endl;
+			std::cout << std::boolalpha << "      stackD.empty() is	" << stackD.empty() << std::endl;
+			std::cout << std::boolalpha << "      stackE.empty() is	" << stackE.empty() << std::endl << std::endl;
+
+}
 // void	testStack::member_functions__stack_size() {
 // 			std::cout << "size()" << std::endl << std::endl;
 

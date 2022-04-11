@@ -354,8 +354,8 @@ Stack:
 
 	Member Functions:
 		Default:
-			stack constructor		❌
-			empty					❌
+			stack constructor		✅
+			empty					✅
 			size					❌
 			top						❌
 			push					❌

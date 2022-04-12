@@ -2,6 +2,7 @@
 # define MAP_HPP
 
 #include <iostream>
+#include "../includes/utils/type_traits.hpp"
 #include "../includes/utils/utility.hpp"
 #include "../includes/utils/binary_search_tree.hpp"
 #include "../includes/utils/binary_search_tree_iterator.hpp"

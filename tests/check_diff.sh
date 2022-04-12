@@ -138,6 +138,16 @@ arguments=(
 "lower_bound"
 "upper_bound"
 "equal_range"
+"value_type"
+"container_type"
+"size_type"
+"stack constructor"
+"empty"
+"size"
+"top"
+"push"
+"pop"
+"relational operators"
 "get_allocator"
 "iterator_traits"
 "enable_if"
@@ -204,7 +214,7 @@ do
 		fi
 done
 
-while [ $i -ne 130 ]
+while [ $i -ne 136 ]
 do
         i=$(($i+1))
 
@@ -220,6 +230,41 @@ do
 			printf "${WHITE} Map ${LPURPLE}diff test argument  ✅ ${LGREEN}	[ ${arguments[$i]} ] ${YELLO} %i ${NC}\n" $i
 		else
 			printf "${WHITE} Map ${LPURPLE}diff test argument${LGREEN} -> [ ${arguments[$i]} ] ${YELLO} %i ${NC} ❌\n" $i
+			exit 1
+		fi
+done
+
+while [ $i -ne 143 ]
+do
+        i=$(($i+1))
+
+		if [ "$i" == '142' ] || [ "$i" == '143' ];
+		  then  # These have to be checked manually because of addresses
+		    continue
+		fi
+
+        ./ft_container "$i" > ../tests/ft.txt
+        ./std_container "$i" > ../tests/std.txt
+
+		if cmp -s "../tests/ft.txt" "../tests/std.txt"; then
+			printf "${WHITE} Extras ${LPURPLE}diff test argument  ✅ ${LGREEN}	[ ${arguments[$i]} ] ${YELLO} %i ${NC}\n" $i
+		else
+			printf "${WHITE} Extras ${LPURPLE}diff test argument${LGREEN} -> [ ${arguments[$i]} ] ${YELLO} %i ${NC} ❌\n" $i
+			exit 1
+		fi
+done
+
+while [ $i -ne 144 ]
+do
+        i=$(($i+1))
+
+        ./ft_container "$i" > ../tests/ft.txt
+        ./std_container "$i" > ../tests/std.txt
+
+		if cmp -s "../tests/ft.txt" "../tests/std.txt"; then
+			printf "${WHITE} Anything ${LPURPLE}diff test argument  ✅ ${LGREEN}	[ ${arguments[$i]} ] ${YELLO} %i ${NC}\n" $i
+		else
+			printf "${WHITE} Anything ${LPURPLE}diff test argument${LGREEN} -> [ ${arguments[$i]} ] ${YELLO} %i ${NC} ❌\n" $i
 			exit 1
 		fi
 done

@@ -3,19 +3,17 @@
 NAME_FT = ft_container
 NAME_STD = std_container
 
-INC_DIR     = /includes
+INC_DIR     = includes
 FLAGS_INC   = -I $(INC_DIR)
 
 CC = clang++
 FT = 0
-CFLAGS = -Wall -Wextra -Werror "-D=FT $(FT)" -g -std=c++98
-FFLAGS = -Wall -Wextra -Werror -fsanitize=address "-D=FT $(FT)" -g -std=c++98
+CFLAGS = -Wall -Wextra -Werror $(FLAGS_INC) "-D=FT $(FT)" -g -std=c++98
+FFLAGS = -Wall -Wextra -Werror $(FLAGS_INC) -fsanitize=address "-D=FT $(FT)" -g -std=c++98
 
 #### ######## #### #### ######## #### #### ######## #### #### ######## #### #### ######## ####
 
 MAIN = main
-EVALUATION_MAIN = evaluation_main
-
 TESTS_VECTOR = member_functions \
 			   member_types \
 			   iterator \
@@ -32,23 +30,20 @@ TESTS_STACK = member_functions \
 			   member_types
 TESTS_EXTRAS = extras
 TESTS_ANYTHING = anything
+TESTS_SUBJECT = subject
 
 SRC = $(addsuffix .cpp, $(addprefix sources/, $(MAIN))) \
 	  $(addsuffix .cpp, $(addprefix sources/tests/vector/, $(TESTS_VECTOR))) \
 	  $(addsuffix .cpp, $(addprefix sources/tests/map/, $(TESTS_MAP))) \
 	  $(addsuffix .cpp, $(addprefix sources/tests/stack/, $(TESTS_STACK))) \
 	  $(addsuffix .cpp, $(addprefix sources/tests/extras/, $(TESTS_EXTRAS))) \
-	  $(addsuffix .cpp, $(addprefix sources/tests/anything/, $(TESTS_ANYTHING)))
-
-SBJ = $(addsuffix .cpp, $(addprefix sources/tests/subject/, $(EVALUATION_MAIN)))
+	  $(addsuffix .cpp, $(addprefix sources/tests/anything/, $(TESTS_ANYTHING))) \
+	  $(addsuffix .cpp, $(addprefix sources/tests/subject/, $(TESTS_SUBJECT)))
 
 #### ######## #### #### ######## #### #### ######## #### #### ######## #### #### ######## ####
 
 OBJ = $(SRC:cpp=std.o)
 OBJ2 = $(SRC:cpp=ft.o)
-
-EVA = $(SBJ:cpp=std.o)
-EVA2 = $(SBJ:cpp=ft.o)
 
 #### ######## #### #### ######## #### #### ######## #### #### ######## #### #### ######## ####
 
@@ -70,14 +65,6 @@ ft: clear fclean message $(NAME_FT) clean
 
 
 
-#         Compiles eval      #
-eval_c: clear fclean message eval_std eval_ft clean
-
-#         Compiles with fsanitize=address     #
-eval_f: clear fclean message eval_std_sanitize eval_ft_sanitize clean
-
-
-
 $(NAME_STD): $(OBJ) #
 	@echo "\n\033[0;32mCompiling ${NAME_STD}..."
 	@$(CC) $(CFLAGS) -o $(NAME_STD) $(OBJ)
@@ -92,27 +79,6 @@ std_sanitize: $(OBJ) #
 	@$(CC) $(FFLAGS) -o $(NAME_STD) $(OBJ)
 
 ft_sanitize: $(OBJ2) #
-	@echo "\033[0;32mCompiling ${NAME_FT}..."
-	@$(CC) $(FFLAGS) -o $(NAME_FT) $(OBJ2)
-	@echo "\n\033[0mDone !\n"
-
-
-
-
-eval_std: $(EVA) #
-	@echo "\n\033[0;32mCompiling ${NAME_STD}..."
-	@$(CC) $(CFLAGS) -o $(NAME_STD) $(EVA)
-
-eval_ft: $(EVA2) #
-	@echo "\033[0;32mCompiling ${NAME_FT}..."
-	@$(CC)  $(CFLAGS) -o $(NAME_FT) $(EVA2)
-	@echo "\n\033[0mDone !\n"
-
-eval_std_sanitize: $(OBJ) #
-	@echo "\n\033[0;32mCompiling ${NAME_STD}..."
-	@$(CC) $(FFLAGS) -o $(NAME_STD) $(OBJ)
-
-eval_ft_sanitize: $(OBJ2) #
 	@echo "\033[0;32mCompiling ${NAME_FT}..."
 	@$(CC) $(FFLAGS) -o $(NAME_FT) $(OBJ2)
 	@echo "\n\033[0mDone !\n"

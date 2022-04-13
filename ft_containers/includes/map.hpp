@@ -105,8 +105,6 @@ class map {
 			return *this;
 		}
 
-
-
 		/****
 		** Iterators
 		*/

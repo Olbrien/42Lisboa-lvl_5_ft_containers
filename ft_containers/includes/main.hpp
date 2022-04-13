@@ -190,7 +190,6 @@ namespace testStack {
 
 	void	member_functions__overloads__relational_operators();
 }
-
 namespace testExtras {
 	void	extras__iterator_traits();
 	void	extras__enable_if();
@@ -202,6 +201,9 @@ namespace testExtras {
 }
 namespace testAnything {
 	void	anything__tests();
+}
+namespace testSubject {
+	void	subject__tests();
 }
 
 #endif

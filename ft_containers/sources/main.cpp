@@ -33,19 +33,19 @@ void	header_text(std::string str) {
 		std::cout << "*********************************************************************"
 				<< std::endl;
 	}
-	else if (!str.compare("extras")) {
-		std::cout << std::endl;
-		std::cout << "*********************************************************************"
-				<< std::endl;
-		std::cout << "				Extras				" << std::endl;
-		std::cout << "*********************************************************************"
-				<< std::endl;
-	}
 	else if (!str.compare("anything")) {
 		std::cout << std::endl;
 		std::cout << "*********************************************************************"
 				<< std::endl;
 		std::cout << "				Anything			" << std::endl;
+		std::cout << "*********************************************************************"
+				<< std::endl;
+	}
+	else if (!str.compare("subject")) {
+		std::cout << std::endl;
+		std::cout << "*********************************************************************"
+				<< std::endl;
+		std::cout << "				Subject			" << std::endl;
 		std::cout << "*********************************************************************"
 				<< std::endl;
 	}
@@ -238,6 +238,11 @@ int		extras_argument(std::string argument) {
 }
 int		anything_argument(std::string argument) {
 	if (!argument.compare("144")) { header_text("anything"); testAnything::anything__tests(); return 0; }
+
+	return 1;
+}
+int		subject_argument(std::string argument) {
+	if (!argument.compare("145")) { header_text("subject"); testSubject::subject__tests(); return 0; }
 
 	return 1;
 }
@@ -454,6 +459,9 @@ void	welcome_message() {
 	std::cout << "*  Anything:							    *" << std::endl;
 	std::cout << "*      test_anything					     144    *" << std::endl;
 	std::cout << "*								    *" << std::endl;
+	std::cout << "*  Subject:							    *" << std::endl;
+	std::cout << "*      subject						     145    *" << std::endl;
+	std::cout << "*								    *" << std::endl;
 	std::cout << "*********************************************************************"
 				<< std::endl;
 
@@ -479,6 +487,8 @@ int		main(int argc, char **argv) {
 	else if (extras_argument(argument) == 0)
 		return 0;
 	else if (anything_argument(argument) == 0)
+		return 0;
+	else if (subject_argument(argument) == 0)
 		return 0;
 
 	// no valid argument found

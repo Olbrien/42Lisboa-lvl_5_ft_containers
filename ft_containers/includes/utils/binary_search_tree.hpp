@@ -21,6 +21,12 @@ class BSTNode {
 				rend_node(_rend)
 		{};
 
+		// To initialize the Data as NULL
+		BSTNode () {
+			T A = T();
+			data = A;
+		};
+
 		BSTNode (const BSTNode & x) {
 			*this = x;
 		}
@@ -71,8 +77,21 @@ class BST {
 			_root = _node_allocator.allocate(1);
 			BSTNode<T> *rend = _node_allocator.allocate(1);
 
-			_node_allocator.construct(_root, node_type(rend, NULL, NULL, true, false));
-			_node_allocator.construct(rend, node_type(NULL, NULL, _root, false, true));
+			// To initialize the Data as NULL
+			_allocator_type.construct(&_root->data, T());
+			_allocator_type.construct(&rend->data, T());
+
+			_root->left = rend;
+			_root->right = NULL;
+			_root->parent = NULL;
+			_root->end_node = true;
+			_root->rend_node = false;
+
+			rend->left = NULL;
+			rend->right = NULL;
+			rend->parent = _root;
+			rend->end_node = false;
+			rend->rend_node = true;
 		};
 
 		BST(const BST & obj) {
@@ -206,8 +225,21 @@ class BST {
 				_root = _node_allocator.allocate(1);
 				BSTNode<T> *rend = _node_allocator.allocate(1);
 
-				_node_allocator.construct(_root, node_type(rend, NULL, NULL, true, false));
-				_node_allocator.construct(rend, node_type(NULL, NULL, _root, false, true));
+				// To initialize the Data as NULL
+				_allocator_type.construct(&_root->data, T());
+				_allocator_type.construct(&rend->data, T());
+
+				_root->left = rend;
+				_root->right = NULL;
+				_root->parent = NULL;
+				_root->end_node = true;
+				_root->rend_node = false;
+
+				rend->left = NULL;
+				rend->right = NULL;
+				rend->parent = _root;
+				rend->end_node = false;
+				rend->rend_node = true;
 			}
 		}
 
@@ -220,7 +252,13 @@ class BST {
 			// or the rend_node(empty node)
 			if (node == NULL) {
 				node = _node_allocator.allocate(1);
-				_node_allocator.construct(node, node_type(data, NULL, NULL, NULL, false, false));
+				_allocator_type.construct(&node->data, data);
+				node->data = data;
+				node->left = NULL;
+				node->right = NULL;
+				node->parent = NULL;
+				node->end_node = false;
+				node->rend_node = false;
 			}
 			// If it's the first element being inserted
 			// If the end_node and rend_node are connected
@@ -229,7 +267,13 @@ class BST {
 					node->left->rend_node == true) {
 
 				BSTNode<T> *newNode = _node_allocator.allocate(1);
-				_node_allocator.construct(newNode, node_type(data, node->left, node, node->parent, false, false));
+				_allocator_type.construct(&newNode->data, data);
+				newNode->data = data;
+				newNode->left = node->left;
+				newNode->right = node;
+				newNode->parent = node->parent;
+				newNode->end_node = false;
+				newNode->rend_node = false;
 
 				node->parent = newNode;
 				node->left->parent = newNode;
@@ -242,7 +286,13 @@ class BST {
 			// If it's being inserted before the end_node(empty node)
             else if (node->end_node == true) {
 				BSTNode<T> *newNode = _node_allocator.allocate(1);
-				_node_allocator.construct(newNode, node_type(data, node->left, node, node->parent, false, false));
+				_allocator_type.construct(&newNode->data, data);
+				newNode->data = data;
+				newNode->left = node->left;
+				newNode->right = node;
+				newNode->parent = node->parent;
+				newNode->end_node = false;
+				newNode->rend_node = false;
 
 				node->parent = newNode;
 
@@ -252,7 +302,13 @@ class BST {
             else if (node->rend_node == true) {
 
 				BSTNode<T> *newNode = _node_allocator.allocate(1);
-				_node_allocator.construct(newNode, node_type(data, node, node->right, node->parent, false, false));
+				_allocator_type.construct(&newNode->data, data);
+				newNode->data = data;
+				newNode->left = node;
+				newNode->right = node->right;
+				newNode->parent = node->parent;
+				newNode->end_node = false;
+				newNode->rend_node = false;
 
 				node->parent = newNode;
 
@@ -564,17 +620,21 @@ class BST {
 				if (node->right)
 					remove_all_nodes(node->right);
 
-				_node_allocator.destroy(node);
+				if (node->end_node != true && node->rend_node != true)
+					_allocator_type.destroy(&node->data);
 				_node_allocator.deallocate(node, 1);
 				node = NULL;
 			}
 		}
 
-        /****************/
-		/* Private Data */
+        /***************/
+		/* Public Data */
+
+	public:
 
         BSTNode<T>                      *_root;
 		node_allocator_type				 _node_allocator;
+		allocator_type					 _allocator_type;
         size_type		                 _size;
 
 };

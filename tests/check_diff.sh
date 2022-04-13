@@ -258,6 +258,11 @@ while [ $i -ne 144 ]
 do
         i=$(($i+1))
 
+		if [ "$i" == '144' ];
+		  then  # Take this off only if you're doing small tests, big tests invalidate diffs
+		    continue
+		fi
+
         ./ft_container "$i" > ../tests/ft.txt
         ./std_container "$i" > ../tests/std.txt
 

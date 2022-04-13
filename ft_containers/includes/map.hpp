@@ -233,7 +233,7 @@ class map {
 		size_type erase (const key_type& k) {
 			iterator it = this->find(k);
 
-			if (it == this->end()) {
+			if (it._ptr->end_node == true || it._ptr->rend_node == true) {
 				return (0);
 			}
 			else {

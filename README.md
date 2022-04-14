@@ -59,6 +59,7 @@ It also shows Try and Catches.
 ## Research:
 
 <code>
+
 Value categories:
 
     lvalues and rvalues:

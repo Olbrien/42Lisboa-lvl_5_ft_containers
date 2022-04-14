@@ -60,8 +60,6 @@ It also shows Try and Catches.
 
 <code>
 
----------------------------------------------------------------------------------------------
-
 Value categories:
 
     lvalues and rvalues:

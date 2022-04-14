@@ -59,7 +59,6 @@ It also shows Try and Catches.
 ## Research:
 
 <code>
-
 Value categories:
 
     lvalues and rvalues:
@@ -636,31 +635,31 @@ What is an Iterator?
 	   /   \       std::forward_iterator_tag
 	  /     \
 	 /__| |__\       Forward iterators are iterators that can be used to access the sequence of
-		| |         elements in a range in the direction that goes from its beginning towards
-		| |         its end.
-		| |         Performing operations on a forward iterator that is dereferenceable never
-		| |         makes its iterator value non-dereferenceable. This enables algorithms that
-		| |         use this category of iterators to use multiple copies of an iterator to pass
-		| |         more than once by the same iterator values.
-		| |
-		| |
-		| |     Bidirectional Iterator:
-		| |         std::bidirectional_iterator_tag
-		| |
-		| |        Bidirectional iterators are iterators that can be used to access the sequence
-		| |        of elements in a range in both directions (towards the end and towards the
-		| |		   beginning).
-		| |
-		| |     Random Access Iterator:
-		| |        std::random_access_iterator_tag
-		| |
-		| |        Random-access iterators are iterators that can be used to access elements at an
-		| |        arbitrary offset position relative to the element they point to, offering the same
-		| |        functionality as pointers.
-		| |
-		| |         Random-access iterators are the most complete iterators in terms of functionality.
-		| |         All pointer types are also valid random-access iterators.
-		---
+	    | |         elements in a range in the direction that goes from its beginning towards
+	    | |         its end.
+	    | |         Performing operations on a forward iterator that is dereferenceable never
+	    | |         makes its iterator value non-dereferenceable. This enables algorithms that
+	    | |         use this category of iterators to use multiple copies of an iterator to pass
+	    | |         more than once by the same iterator values.
+	    | |
+	    | |
+	    | |     Bidirectional Iterator:
+	    | |         std::bidirectional_iterator_tag
+	    | |
+	    | |        Bidirectional iterators are iterators that can be used to access the sequence
+	    | |        of elements in a range in both directions (towards the end and towards the
+	    | |		   beginning).
+	    | |
+	    | |     Random Access Iterator:
+	    | |        std::random_access_iterator_tag
+	    | |
+	    | |        Random-access iterators are iterators that can be used to access elements at an
+	    | |        arbitrary offset position relative to the element they point to, offering the same
+	    | |        functionality as pointers.
+	    | |
+	    | |         Random-access iterators are the most complete iterators in terms of functionality.
+	    | |         All pointer types are also valid random-access iterators.
+	    ---
 
 	This arrow represents the hierarchy.
         .Random Access Iterator has everything the others have.

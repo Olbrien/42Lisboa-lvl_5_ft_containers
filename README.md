@@ -630,7 +630,7 @@ What is an Iterator?
 	|              the iterator is incremented.
 	|
 	\-------------
-		 .
+	     .
 	    / \     Forward Iterator:
 	   /   \       std::forward_iterator_tag
 	  /     \
